@@ -30,11 +30,11 @@ const beforeEachUnitTest = () => {
 describe('<AddMovie /> component', () => {
   beforeEach(() => beforeEachUnitTest());
 
-  it('renders without crashing', () => {
+  it.skip('renders without crashing', () => {
     addMovie();
   });
 
-  it('renders a form', () => {
+  it.skip('renders a form', () => {
     expect(addMovie().find('form').length).toEqual(1);
   });
 });
