@@ -14,13 +14,14 @@ class AddMovie extends React.Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({[name]: value});
   };
-  createMovieCard = () => {
+
+  addNewMovie = async () => {
     const onClick = this.props.onClick;
-    onClick();
+    await onClick(this.state);
     this.setState({
       subtitle: '',
       title: '',
@@ -63,7 +64,7 @@ class AddMovie extends React.Component {
               <option value="thriller">Suspense</option>
             </select>
           </label>
-          <button onClick={this.createMovieCard}>Adicionar filme</button>
+          <button onClick={this.addNewMovie}>Adicionar filme</button>
         </form>
       </div>
 

@@ -15,12 +15,12 @@ class MovieLibrary extends React.Component {
     };
   }
   
-  onSearchTextChange = async (event) => {
+  onSearchTextChange = async event => {
     const { value } = event.target;
     await this.setState({ searchText: value });
     const movieList = this.props.movies;
     const searchTerm = this.state.searchText;
-    const filteredList = movieList.filter((movie) => {
+    let filteredList = movieList.filter((movie) => {
       if (movie.title.includes(searchTerm)) {
         return movie;
       }
@@ -31,13 +31,16 @@ class MovieLibrary extends React.Component {
         return movie;
       }
     });
+    if(searchTerm === '') {
+      filteredList = this.props.movies;
+    }
     this.setState({ movies: filteredList });
   }
 
   onBookmarkedChange = async (event) => {
     const { checked } = event.target;
     await this.setState({ bookmarkedOnly: checked });
-    const movieList = this.props.movies;
+    const movieList = this.state.movies;
     const marked = this.state.bookmarkedOnly;
     if (marked === true) {
       const filteredList = movieList.filter((movie) => {
@@ -46,8 +49,6 @@ class MovieLibrary extends React.Component {
         }
       });
       this.setState({ movies: filteredList });
-    } else {
-      this.setState({ movies: this.props.movies });
     }
   }
 
@@ -64,8 +65,9 @@ class MovieLibrary extends React.Component {
     this.setState({ movies: filteredList });
   }
 
-  onClick = () => {
-
+  onClick = (movieInform) => {
+    const newMovie = movieInform;
+    this.setState({ movies: [...this.props.movies, newMovie] });
   }
 
   render() {
@@ -86,6 +88,5 @@ class MovieLibrary extends React.Component {
     )
   }
 }
-
 
 export default MovieLibrary;
