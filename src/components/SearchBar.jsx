@@ -1,5 +1,23 @@
 import React, { Component } from 'react';
 
+const Input = (props) => {
+  const {
+    value,
+    onChange,
+  } = props;
+  return (
+    <label htmlFor="search-value">
+          Inclui o texto
+      <input
+        type="text"
+        value={value}
+        onChange={onChange}
+        key="search-value"
+      />
+    </label>
+  );
+};
+
 class SearchBar extends Component {
   render() {
     const {
@@ -10,15 +28,7 @@ class SearchBar extends Component {
     } = this.props;
     return (
       <form>
-        <label htmlFor="search-value">
-        Inclui o texto
-          <input
-            type="text"
-            value={searchText}
-            onChange={onSearchTextChange}
-            key="search-value"
-          />
-        </label>
+        <Input value={searchText} onChange={onSearchTextChange} />
         <label htmlFor="filter-bookmarked">
         Mostrar somente favoritos
           <input
