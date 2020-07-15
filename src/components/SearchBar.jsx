@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputText from './inputText';
 import InputCB from './InputCB';
-import InputSelect from './InputSelect';
+import InpSel from './InputSelect';
 
 class SearchBar extends Component {
   render() {
@@ -19,7 +19,7 @@ class SearchBar extends Component {
       <form>
         <InputText LT="Inclui o texto" v={searchText} oCFn={onSearchTextChange} />
         <InputCB LT="Mostrar somente favoritos" c={bookmarkedOnly} oCFn={onBookmarkedChange} />
-        <InputSelect LT="Filtrar por gênero" v={selectedGenre} oCFn={onSelectedGenreChange} a={gO} />
+        <InpSel LT="Filtrar por gênero" v={selectedGenre} oCFn={onSelectedGenreChange} a={gO} />
       </form>
     );
   }
