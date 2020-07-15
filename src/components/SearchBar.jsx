@@ -6,9 +6,12 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor (props) {
     super(props);
+    this.TextInput = this.TextInput.bind(this);
+    this.CheckBox = this.CheckBox.bind(this);
+    this.Genre = this.Genre.bind(this);
   }
   
-  TextInput = () => {
+  TextInput() {
     return (
       <label htmlFor="text">
       Inclui o texto:
@@ -21,7 +24,7 @@ class SearchBar extends React.Component {
     );
   }
 
-  CheckBox = () => {
+  CheckBox() {
     return (
       <label htmlFor="checkbox">
       Mostrar somente favoritos
@@ -34,7 +37,7 @@ class SearchBar extends React.Component {
     );
   }
 
-  Genre = () => {
+  Genre() {
     return (
       <label htmlFor="genre">
         Filtrar por gênero
