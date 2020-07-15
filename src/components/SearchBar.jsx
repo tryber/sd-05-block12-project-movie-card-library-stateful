@@ -37,8 +37,12 @@ const Bookmarked = (props) => {
 
 const MovieGenre = (props) => {
   const { onChange, selectedGenre, genresToFilter = [] } = props;
-  const genres = [{ text: 'Todos', value: '' }];
-  genresToFilter.forEach((genre) => genres.push({ text: toTitle(genre), value: genre }));
+  const genres = [
+    { text: 'Todos', value: '' },
+    { text: 'Ação', value: 'action' },
+    { text: 'Comédia', value: 'comedy' },
+    { text: 'Suspense', value: 'thriller' },
+  ];
 
   return (
     <label htmlFor="filter-genre">
