@@ -1,8 +1,11 @@
 // implem git add ent Sea rchBar comp onent here
 
 import React from 'react';
+import TextBar from './TextBar';
+import CheckBoxBar from './CheckBoxBar';
 
-class Searchbar extends React.Component {
+
+class searchBar extends React.Component {
   render() {
     const {
       searchText,
@@ -13,23 +16,10 @@ class Searchbar extends React.Component {
 
     return (
       <form type="submit">
-        <label htmlFor="#filme">Inclui o texto:
-          <div>
-            <input
-              id="#filme" type="text" name="filme" value={searchText}
-              onChange={onSearchTextChange}
-            />
-          </div>
-        </label>
-        <div>
-          <input
-            id="#favoritos"type="checkbox"
-            checked={bookmarkedOnly} onChange={onBookmarkedChange}
-          />
-          <label htmlFor="#favoritos">Mostrar somente favoritos</label>
-        </div>
+        <TextBar value={searchText} change={onSearchTextChange} />
+        <CheckBoxBar check={bookmarkedOnly} change={onBookmarkedChange} />
       </form>
     );
   }
 }
-export default Searchbar;
+export default searchBar;
