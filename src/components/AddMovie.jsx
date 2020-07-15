@@ -41,19 +41,14 @@ class AddMovie extends React.Component {
       <div>
         <form action="">
           <CreateInput
-            name="title" title="Título"
-            value={this.state.title} function={this.handleChange}
+            name="title" title="Título" value={this.state.title} function={this.handleChange}
           />
           <CreateInput
-            name="subtitle" title="Subtítulo"
-            value={this.state.subtitle} function={this.handleChange}
+            name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange}
           />
           <CreateInput
-            name="image" title="Imagem"
-            value={this.state.imagePath} function={this.handleChange} />
-          <CreateInput
-            name="imagePath" title="Imagem"
-            value={this.state.imagePath} function={this.handleChange} />
+            name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
+          />
           <label htmlFor="story">
             Sinopse
             <textarea
