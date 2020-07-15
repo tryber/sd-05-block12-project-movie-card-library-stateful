@@ -34,7 +34,7 @@ class MovieLibrary extends React.Component {
       if (movie.storyline.includes(searchTerm)) {
         return movie;
       }
-      return;
+      return false;
     });
     if (searchTerm === '') {
       filteredList = this.props.movies;
@@ -52,7 +52,7 @@ class MovieLibrary extends React.Component {
         if (movie.bookmarked === true) {
           return movie;
         }
-        return;
+        return false;
       });
       this.setState({ movies: filteredList });
     }
@@ -67,7 +67,7 @@ class MovieLibrary extends React.Component {
       if (movie.genre === selectedGenre || selectedGenre === '') {
         return movie;
       }
-      return;
+      return false;
     });
     this.setState({ movies: filteredList });
   }
