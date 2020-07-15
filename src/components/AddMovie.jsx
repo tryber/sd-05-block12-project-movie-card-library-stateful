@@ -36,9 +36,9 @@ class AddMovie extends React.Component {
   render() {
     return (
       <form action="">
-        
+
       </form>
     )
   }
 
-export default AddMovie;
+// export default AddMovie;
