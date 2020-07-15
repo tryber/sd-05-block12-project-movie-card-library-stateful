@@ -52,10 +52,10 @@ const MovieGenre = (props) => {
         onChange={onChange}
         value={selectedGenre}
       >
-        {genres.map(({ text, value }, index) => (
+        {genres.map(({ text, value }) => (
           <option
             value={value}
-            key={index.toString()}
+            key={value}
           >
             {text}
           </option>
@@ -66,15 +66,28 @@ const MovieGenre = (props) => {
 };
 
 class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 'action' };
+  }
+
+  onSearchTextChange = (event) => {
+    this.setState({[value]: event.target.value});
+  }
+
+  onSelectedGenreChange = (event) => {
+    this.setState({[value]: event.target.value})
+  }
+  // selectedGenre = () => this.state.value;
+
   render() {
     const {
       searchText,
       onSearchTextChange,
       bookmarkedOnly,
       onBookmarkedChange,
-      onSelectedGenreChange,
       selectedGenre,
-      genres,
+      onSelectedGenreChange,
     } = this.props;
     return (
       <form>
@@ -82,8 +95,7 @@ class SearchBar extends Component {
         <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
         <MovieGenre
           onChange={onSelectedGenreChange}
-          value={selectedGenre}
-          genresToFilter={genres}
+          selectedGenre={this.state.value}
         />
       </form>
     );
