@@ -42,7 +42,9 @@ const movieLibrary = () => {
   return movieLibraryWrapper;
 };
 
-const beforeEachUnitTest = () => (movieLibraryWrapper = undefined);
+function beforeEachUnitTest() {
+  movieLibraryWrapper = undefined;
+}
 
 describe('<MovieLibrary /> component', () => {
   it('renders without crashing', () => {
