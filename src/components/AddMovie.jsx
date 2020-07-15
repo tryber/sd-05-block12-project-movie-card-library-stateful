@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import InputText from './inputText';
+import TextArea from './TextArea';
+import InputNumber from './InputNumber';
+import InputSelect from './InputSelect';
 
 class AddMovie extends Component {
   constructor(props) {
@@ -37,67 +41,19 @@ class AddMovie extends Component {
   render() {
     const { onClick } = this.props;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
-    const genreOptions = [
-      { value: 'action', text: 'Ação' },
-      { value: 'comedy', text: 'Comédia' },
-      { value: 'thriller', text: 'Suspense' },
+    const gO = [
+      { value: 'action', text: 'Ação' }, { value: 'comedy', text: 'Comédia' }, { value: 'thriller', text: 'Suspense' },
     ];
 
     return (
       <form>
-        <label htmlFor="title">
-          Título
-          <input type="text" value={title} onChange={(event) => this.changeState(event, 'title')} />
-        </label>
-        <label htmlFor="subtitle">
-          Subtítulo
-          <input
-            type="text"
-            value={subtitle}
-            onChange={(event) => this.changeState(event, 'subtitle')}
-          />
-        </label>
-        <label htmlFor="imagePath">
-          Imagem
-          <input
-            type="text"
-            value={imagePath}
-            onChange={(event) => this.changeState(event, 'imagePath')}
-          />
-        </label>
-        <label htmlFor="Sinopse">
-          Sinopse
-          <textarea
-            type="text"
-            value={storyline}
-            onChange={(event) => this.changeState(event, 'storyline')}
-          />
-        </label>
-        <label htmlFor="Rating">
-          Avaliação
-          <input
-            type="number"
-            value={rating}
-            onChange={(event) => this.changeNumberState(event, 'rating')}
-          />
-        </label>
-        <label htmlFor="Genre">
-          Gênero
-          <select value={genre} onChange={(event) => this.changeState(event, 'genre')}>
-            {genreOptions.map((genreopt) => (
-              <option key={Math.random() * 100} value={genreopt.value}>
-                {genreopt.text}
-              </option>
-            ))}
-          </select>
-        </label>
-        <button
-          type="button"
-          onClick={() => {
-            onClick(this.state);
-            this.reset();
-          }}
-        >
+        <InputText LT="Título" v={title} oCFn={(event) => this.changeState(event, 'title')} />
+        <InputText LT="Subtítulo" v={subtitle} oCFn={(event) => this.changeState(event, 'subtitle')} />
+        <InputText LT="Imagem" v={imagePath} oCFn={(event) => this.changeState(event, 'imagePath')} />
+        <TextArea LT="Sinopse" v={storyline} oCFn={(event) => this.changeState(event, 'storyline')} />
+        <InputNumber LT="Avaliação" v={rating} oCFn={(event) => this.changeNumberState(event, 'rating')} />
+        <InputSelect LT="Gênero" v={genre} a={gO} oCFn={(event) => this.changeState(event, 'genre')} />
+        <button type="button" onClick={() => { onClick(this.state); this.reset(); }}>
           Adicionar filme
         </button>
       </form>
