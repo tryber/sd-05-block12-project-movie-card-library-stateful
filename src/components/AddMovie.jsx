@@ -41,29 +41,27 @@ class AddMovie extends React.Component {
 
   render() {
     return (
-      <div>
-        <form action="">
-          <CreateInput
-            name="title" title="Título" value={this.state.title} function={this.handleChange}
-          />
-          <CreateInput
-            name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange}
-          />
-          <CreateInput
-            name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
-          />
-          <CreateTextArea
-            name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange}
-          />
-          <CreateInputNumber
-            name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
-          />
-          <CreateComboBox
-            name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
-          />
-          <button onClick={this.addNewMovie}>Adicionar filme</button>
-        </form>
-      </div>
+      <form action="">
+        <CreateInput
+          name="title" title="Título" value={this.state.title} function={this.handleChange}
+        />
+        <CreateInput
+          name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange}
+        />
+        <CreateInput
+          name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
+        />
+        <CreateTextArea
+          name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange}
+        />
+        <CreateInputNumber
+          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
+        />
+        <CreateComboBox
+          name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
+        />
+        <button onClick={this.addNewMovie}>Adicionar filme</button>
+      </form>
     );
   }
 }

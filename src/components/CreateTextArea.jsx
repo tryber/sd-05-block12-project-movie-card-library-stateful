@@ -8,7 +8,7 @@ class CreateTextArea extends React.Component {
         <textarea
           name={this.props.name} value={this.props.value} onChange={this.props.function}
         />
-      </label>      
+      </label>  
     );
   }
 }
