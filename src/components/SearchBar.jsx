@@ -3,14 +3,9 @@ import React from 'react';
 
 class SearchBar extends React.Component {
   render() {
-    const {
-      searchText,
-      onSearchTextChange,
-      bookmarkedOnly,
-      onBookmarkedChange,
-    } = this.props;
+    const { searchText, onSearchTextChange, bookmarkedOnly, onBookmarkedChange } = this.props;
 
-return (
+    return (
       <form>
         <label htmlFor="search-value">
         Inclui o texto
