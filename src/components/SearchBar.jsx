@@ -6,17 +6,17 @@ class SearchBar extends React.Component {
     return (
       <div>
         <form>
-          <label htmlFor="">
+          <label htmlFor="serachText">
             Inclui o texto:
-            <input value={this.props.searchText} onChange={this.props.onSearchTextChange} />
+            <input value={this.props.searchText} onChange={this.props.onSearchTextChange} name="serachText" />
           </label>
-          <label>
+          <label htmlFor="checkbox">
             Mostrar somente favoritos
-            <input type="checkbox" checked={this.props.bookmarkedOnly} />
+            <input type="checkbox" checked={this.props.bookmarkedOnly} name="checkbox" />
           </label>
-          <label>
+          <label htmlFor="genre">
             Filtrar por gênero
-            <select value={this.props.selectedGenre} onChange={this.props.onSelectedGenreChange}>
+            <select value={this.props.selectedGenre} onChange={this.props.onSelectedGenreChange} name="genre">
               <option value="">Todos</option>
               <option value="action">Ação</option>
               <option value="comedy">Comédia</option>
