@@ -1,6 +1,7 @@
 // implement SearchBar component here
 import React from 'react';
 import CreateInput from './CreateInput';
+import CreateComboBox2 from './CreateComboBox2'
 
 class SearchBar extends React.Component {
   render() {
@@ -17,15 +18,10 @@ class SearchBar extends React.Component {
             checked={this.props.bookmarkedOnly} onChange={this.props.onBookmarkedChange}
           />
         </label>
-        <label htmlFor="genero">
-          Filtrar por gênero:{' '}
-          <select name="genero" value={this.props.selectedGenre} onChange={this.props.onSelectedGenreChange}>
-            <option value="">Todos</option>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-          </select>
-        </label>
+        <CreateComboBox2
+          name="genre" title="Filtrar por gênero: " value={this.props.selectedGenre}
+          function={this.props.onSelectedGenreChange}
+        />
       </form>
     );
   }
