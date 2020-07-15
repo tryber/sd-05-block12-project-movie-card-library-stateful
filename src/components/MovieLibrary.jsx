@@ -13,9 +13,10 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
+    this.onSearchTextChange = this.onSearchTextChange.bind(this);
   }
   
-  onSearchTextChange = async (e) => {
+  async onSearchTextChange(e) {
     const { value } = e.target;
     await this.setState({ searchText: value });
     const movieList = this.props.movies;
