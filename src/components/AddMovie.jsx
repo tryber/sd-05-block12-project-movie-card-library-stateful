@@ -1,6 +1,9 @@
 // implement AddMovie component here
 import React from 'react';
 import CreateInput from './CreateInput';
+import CreateInputNumber from './CreateInputNumber';
+import CreateComboBox from './CreateComboBox';
+import CreateTextArea from './CreateTextArea';
 
 
 class AddMovie extends React.Component {
@@ -49,29 +52,15 @@ class AddMovie extends React.Component {
           <CreateInput
             name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
           />
-          <label htmlFor="story">
-            Sinopse
-            <textarea
-              name="storyline" value={this.state.storyline} onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="score">
-            Avaliação
-            <input
-              type="number"
-              name="rating"
-              value={this.state.rating}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="genre">
-            Gênero
-            <select name="genre" value={this.state.genre} onChange={this.handleChange}>
-              <option value="action">Ação</option>
-              <option value="comedy">Comédia</option>
-              <option value="thriller">Suspense</option>
-            </select>
-          </label>
+          <CreateTextArea
+            name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange}
+          />
+          <CreateInputNumber
+            name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
+          />
+          <CreateComboBox
+            name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
+          />
           <button onClick={this.addNewMovie}>Adicionar filme</button>
         </form>
       </div>
