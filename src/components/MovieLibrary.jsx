@@ -1,5 +1,5 @@
 // implement MovieLibrary component here
-import React, { component } from React;
+import React, { Component } from React;
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
