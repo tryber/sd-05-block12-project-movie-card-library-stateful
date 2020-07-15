@@ -1,14 +1,15 @@
 // implement SearchBar component here
 import React from 'react';
+import CreateInput from './CreateInput';
 
 class SearchBar extends React.Component {
   render() {
     return (
       <form>
-        <label htmlFor="texto">
-          Inclui o texto:{' '}
-          <input type="text" name="title" value={this.props.searchText} onChange={this.props.onSearchTextChange;} />
-        </label>
+        <CreateInput
+          name="title" title="Subtítulo: "
+          value={this.props.searchText} function={this.props.onSearchTextChange}
+        />
         <label htmlFor="fav">
           Mostrar somente favoritos{' '}
           <input
