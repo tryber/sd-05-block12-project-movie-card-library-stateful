@@ -2,12 +2,15 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  // constructor(props) {
+  //   super(props);
+  // }
+  
   render() {
-    const { searchText, onSearchTextChange, bookmarkedOnly, onBookmarkedChange, selectedGenre, onSelectedGenreChange } = this.props;
+    const { 
+      searchText, onSearchTextChange, bookmarkedOnly, 
+      onBookmarkedChange, selectedGenre, onSelectedGenreChange 
+    } = this.props;
     return (
       <form>
         <label htmlFor="search">
