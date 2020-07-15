@@ -18,6 +18,21 @@ const Input = (props) => {
   );
 };
 
+const Bookmarked = (props) => {
+  const { onChange, checked } = props;
+  return (
+    <label htmlFor="filter-bookmarked">
+    Mostrar somente favoritos
+      <input
+        onChange={onChange}
+        checked={checked}
+        type="checkbox"
+        key="filter-bookmarked"
+      />
+    </label>
+  );
+};
+
 class SearchBar extends Component {
   render() {
     const {
@@ -29,16 +44,7 @@ class SearchBar extends Component {
     return (
       <form>
         <Input value={searchText} onChange={onSearchTextChange} />
-        <label htmlFor="filter-bookmarked">
-        Mostrar somente favoritos
-          <input
-            onChange={onBookmarkedChange}
-            checked={bookmarkedOnly}
-            type="checkbox"
-            key="filter-bookmarked"
-          />
-        </label>
-
+        <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
       </form>
     );
   }
