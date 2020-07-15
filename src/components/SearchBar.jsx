@@ -12,8 +12,6 @@ class SearchBar extends Component {
       onSelectedGenreChange,
     } = this.props;
 
-    blablablabla
-
     return (
       <section>
         <form>
