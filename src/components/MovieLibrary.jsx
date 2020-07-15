@@ -5,20 +5,17 @@ import AddMovie from './AddMovie';
 import MovieList from './MovieList';
 
 const filterList = (movieList, searchTerm) => {
-  let filteredList = movieList.filter((movie) => {
-    if (movie.title.includes(searchTerm)) {
-      return movie;
-    }
-    if (movie.subtitle.includes(searchTerm)) {
-      return movie;
-    }
-    if (movie.storyline.includes(searchTerm)) {
+  const filteredList = movieList.filter((movie) => {
+    if (movie.title.includes(searchTerm)
+      || movie.subtitle.includes(searchTerm)
+      || movie.storyline.includes(searchTerm)) {
       return movie;
     }
     return false;
   });
   return filteredList;
-}
+};
+
 class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
