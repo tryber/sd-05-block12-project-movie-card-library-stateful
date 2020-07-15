@@ -4,9 +4,6 @@ import SearchBar from './SearchBar.jsx';
 import AddMovie from './AddMovie.jsx';
 
 class MovieLibrary extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
