@@ -11,7 +11,7 @@ class MovieLibrary extends React.Component {
     searchText: '',
     bookmarkedOnly: false,
     selectedGenre: '',
-    movies: {movies}
+    movies: props.movies
     }
     this.changeHandler = this.changeHandler.bind(this);
     // this.updateState = this.updateState.bind(this);
@@ -29,12 +29,22 @@ class MovieLibrary extends React.Component {
     }));
   }
 
+// funcao pra mostrar os movies
+
+// função pra colocar movie
+
   render() {
-    const { movie } = this.props;
-    const { title, subtitle, storyline, rating, imagePath } = movie;
+    // const { title, subtitle, storyline, rating, imagePath } = movie;
     return (
       <div>
-      <SearchBar searchText={this.state.searchText} onChange={this.changeHandler} />
+      <SearchBar
+        searchText={this.state.searchText}
+        // colocar function do onChange={this.changeHandler} 
+        bookmarkedOnly={this.state.bookmarkedOnly}
+        // function
+        selectedGenre={this.state.selectedGenre}
+        //function
+      />
       <MovieList />
       <AddMovie />
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 class AddMovie extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       subtitle: '',
       title: '',
@@ -14,7 +14,7 @@ class AddMovie extends React.Component {
     } 
     this.changeHandler = this.changeHandler.bind(this);
     // this.updateState = this.updateState.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   changeHandler = event => {
     event.preventDefault();
@@ -28,35 +28,43 @@ class AddMovie extends React.Component {
     }));
   }
 
-  handleSubmit = state => {
-
-  };
+  clear() {
+    this.setState({
+      title: '',
+      subtitle: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
+  }
 
   render() {
+    const { onClick } = this.props;
     return (
       <div>
       <form>
-        <label>
+        <label htmlFor='title'>
         Título
         <input name="title" type="text" value={this.state.title} onChange={this.changeHandler} />
         </label>
-        <label>
+        <label htmlFor='subtitle'>
         Subtítulo
         <input name="subtitle" type="text" value={this.state.subtitle} onChange={this.changeHandler} />
         </label>
-        <label>
+        <label htmlFor='imagePath'>
         Imagem
         <input name="imagePath" type="text" value={this.state.imagePath} onChange={this.changeHandler} />
         </label>
-        <label>
+        <label htmlFor='storyline'>
         Sinopse
           <textarea name="storyline" value={this.state.storyline} onChange={this.changeHandler} />
         </label>
-        <label>
+        <label htmlFor='rating'>
         Avaliação
         <input name="rating" type="number" value={this.state.rating} onChange={this.changeHandler} />
         </label>
-        <label>
+        <label htmlFor='genre'>
         Gênero
             <select value={this.state.genre} onChange={this.changeHandler}>
               <option value="action">Ação</option>
@@ -64,7 +72,7 @@ class AddMovie extends React.Component {
               <option value="thriller">Suspense</option>
             </select>
           </label>
-          <button onClick={} type='submit'>Adicionar filme</button>
+          <button onClick={() => { onClick(this.state); this.clear(); }} >Adicionar filme</button>
       </form>
       </div>
     );
