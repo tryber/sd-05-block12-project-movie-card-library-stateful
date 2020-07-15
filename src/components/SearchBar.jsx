@@ -3,23 +3,10 @@
 import React from 'react';
 
 class Searchbar extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
-
-  submitFormHandler = event => {
-    event.preventDefault();
-    console.log(this.refs.name.value);
-  }
-  onSearchTextChange = () =>{
-
-  };
   
   render(){
     return(
-      <form onSubmit={this.submitFormHandler}>
+      <form>
         <label> Inclui o texto:
          <div>
             <input 

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
 import data from './data';
-import SearchBar from './components/SearchBar'
+import SearchBar from './components/SearchBar';
 
 import Header from './components/Header';
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar />
-      <MovieList movies={data} />      
+      <MovieList movies={data}/>      
     </div>
   );
 }
