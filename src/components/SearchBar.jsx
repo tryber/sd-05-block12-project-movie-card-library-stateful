@@ -3,7 +3,7 @@ import React from 'react';
 
 class SearchBar extends React.Component {
   render() {
-    const { searchText, onSearchTextChange, bookmarkedOnly, onBookmarkedChange } = this.props;
+    const { searchText, onSearchTextChange, bookmarkedOnly, onBookmarkedChange, selectedGenre, onSelectedGenreChange } = this.props;
     return (
       <form>
         <label htmlFor="search-value">
@@ -23,6 +23,15 @@ class SearchBar extends React.Component {
             onChange={onBookmarkedChange}
             key="filter-bookmarked"
           />
+        </label>
+        <label htmlFor="genre-list">
+          Filtrar por gênero
+          <select name="genre-list" value={selectedGenre} onChange={onSelectedGenreChange}>
+            <option value="">Todos</option>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
         </label>
       </form>
     );
