@@ -3,17 +3,17 @@ import React from 'react';
 class SearchBar extends React.Component {
   render() {
     return (
-      <form>
+      <form className="SearchBar">
         <label htmlFor="serchText">Inclui o texto:</label>
         <input
           id="serchText" type="text" value={this.props.searchText}
           onChange={this.props.onSearchTextChange}
         />
-        <label htmlFor="bookmarkedOnly">Mostrar somente favoritos</label>
         <input
           id="bookmarkedOnly" type="checkbox" checked={this.props.bookmarkedOnly}
           onChange={this.props.onBookmarkedChange}
         />
+        <label htmlFor="bookmarkedOnly">Mostrar somente favoritos</label>
         <label htmlFor="selectedGenre">Filtrar por gênero</label>
         <select
           id="selectedGenre" value={this.props.selectedGenre}

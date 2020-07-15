@@ -1,1 +1,61 @@
-// implement AddMovie component here
+import React from 'react';
+
+class AddMovie extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action'
+    };
+  }
+  onChangeHandle = (event) => {
+    this.setState({
+      [event.target.name]: (event.target.name === 'rating') ? parseFloat(event.target.value) : event.target.value
+    });
+    console.log(this.state);
+  }
+
+  resetaEstados = () => {
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action'
+    });
+  }
+
+  render() {
+    return (
+      <form className="AddMove">
+        <label htmlFor="teste">Título</label>
+        <input id="teste" name="title" type="text" value={this.state.title} onChange={this.onChangeHandle} />
+        <label htmlFor="teste1">Subtítulo</label>
+        <input id="teste1" type="text" name="subtitle" value={this.state.subtitle} onChange={this.onChangeHandle} />
+        <label htmlFor="teste2">Imagem</label>
+        <input id="teste2" type="text" name="imagePath" value={this.state.imagePath} onChange={this.onChangeHandle} />
+        <label htmlFor="teste3">Sinopse</label>
+        <textarea id="teste3" name="storyline" value={this.state.storyline} onChange={this.onChangeHandle} />
+        <label htmlFor="teste4">Avaliação</label>
+        <input type="number" id="teste4" name="rating" value={this.state.rating} onChange={this.onChangeHandle} />
+        <label htmlFor="selectedGenre">Gênero</label>
+        <select
+          id="selectedGenre" name="genre" value={this.state.genre}
+          onChange={this.onChangeHandle}
+        >
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
+        <button onClick={this.resetaEstados}>Adicionar filme</button>
+      </form>
+    );
+  }
+}
+
+export default AddMovie;
