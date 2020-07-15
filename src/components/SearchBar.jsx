@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
-const toTitle = (str) => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+const genres = [
+  { text: 'Todos', value: '' },
+  { text: 'Ação', value: 'action' },
+  { text: 'Comédia', value: 'comedy' },
+  { text: 'Suspense', value: 'thriller' },
+];
 
 const Input = (props) => {
   const {
@@ -35,14 +40,9 @@ const Bookmarked = (props) => {
   );
 };
 
+
 const MovieGenre = (props) => {
-  const { onChange, selectedGenre, genresToFilter = [] } = props;
-  const genres = [
-    { text: 'Todos', value: '' },
-    { text: 'Ação', value: 'action' },
-    { text: 'Comédia', value: 'comedy' },
-    { text: 'Suspense', value: 'thriller' },
-  ];
+  const { onChange, selectedGenre } = props;
 
   return (
     <label htmlFor="filter-genre">
