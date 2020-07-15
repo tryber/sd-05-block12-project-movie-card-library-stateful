@@ -1,6 +1,6 @@
 // implement MovieLibrary component here
 import React from 'react';
-import movies from '../data';
+// import movies from '../data';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class MovieLibrary extends React.Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: this.props.movies
-    }
+      movies: this.props.movies,
+    };
   }
   render() {
     return (
@@ -18,3 +18,5 @@ class MovieLibrary extends React.Component {
     );
   }
 }
+
+export default MovieLibrary;
