@@ -12,7 +12,8 @@ class SearchBar extends React.Component {
             type="text"
             value={searchText}
             onChange={onSearchTextChange}
-            key="search-value" />
+            key="search-value"
+          />
         </label>
         <label htmlFor="filter-bookmarked">
           Mostrar somente favoritos
@@ -20,7 +21,8 @@ class SearchBar extends React.Component {
             type="checkbox"
             checked={bookmarkedOnly}
             onChange={onBookmarkedChange}
-            key="filter-bookmarked" />
+            key="filter-bookmarked"
+          />
         </label>
       </form>
     );
