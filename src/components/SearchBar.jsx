@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     return (
       <form>
         <CreateInput
-          name="title" title="Subtítulo: "
+          name="title" title="Inclui o texto: "
           value={this.props.searchText} function={this.props.onSearchTextChange}
         />
         <label htmlFor="fav">
