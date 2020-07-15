@@ -76,7 +76,11 @@ class SearchBar extends Component {
       <form>
         <Input value={searchText} onChange={onSearchTextChange} />
         <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
-        <MovieGenre onChange={onSelectedGenreChange} value={selectedGenre} genresToFilter={genres} />
+        <MovieGenre
+          onChange={onSelectedGenreChange}
+          value={selectedGenre}
+          genresToFilter={genres}
+        />
       </form>
     );
   }
