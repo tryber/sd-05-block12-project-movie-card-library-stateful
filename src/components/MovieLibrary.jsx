@@ -7,13 +7,14 @@ class MovieLibrary extends React.Component {
     this.state = {
 
     };
+  }
 
-    render() {
-      return(
+  render() {
+    return(
 
-      )
-    }
+    )
   }
 }
+
 
 export default MovieLibrary;

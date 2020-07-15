@@ -4,42 +4,44 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+  }
 
-    };
-
-    render() {
-      const searchText = this.props.searchText;
-      const onSearchTextChange = this.props.onSearchTextChange;
-      const bookmarkedOnly = this.props.bookmarkedOnly;
-      const onBookmarkedChange = this.props.onBookmarkedChange;
-      const selectedGenre = this.props.selectedGenre;
-      const onSelectedGenreChange = this.props.onSelectedGenreChange;
-      return(
-        <div className="formContainer">
-          <form>
-            <label>
-              Nome do Filme:{" "}
-              <input type="text" name="title" value={searchText} onChange={onSearchTextChange} />
-            </label>
-            <label htmlFor="fav">
-              Mostrar Apenas Favoritos{' '}
-              <input type="checkbox" id="fav" name="favoritos" value={bookmarkedOnly} onChange={onBookmarkedChange} />
-            </label>
-            <label>
-              Genêro:{" "}
-              <select name="genero" value={selectedGenre} onChange={onSelectedGenreChange}>
-                <option value="action">action</option>
-                <option value="fantasy">fantasy</option>
-                <option value="comedy">comedy</option>
-                <option value="terror">terror</option>
-              </select>
-            </label>
-          </form>
-        </div>
-
-      )
-    }
+  render() {
+    const searchText = this.props.searchText;
+    const onSearchTextChange = this.props.onSearchTextChange;
+    const bookmarkedOnly = this.props.bookmarkedOnly;
+    const onBookmarkedChange = this.props.onBookmarkedChange;
+    const selectedGenre = this.props.selectedGenre;
+    const onSelectedGenreChange = this.props.onSelectedGenreChange;
+    return (
+      <div className='formContainer'>
+        <form>
+          <label>
+            Inclui o texto:{' '}
+            <input type='text' name='title' value={searchText} onChange={onSearchTextChange} />
+          </label>
+          <label htmlFor='fav'>
+            Mostrar somente favoritos{' '}
+            <input
+              type='checkbox'
+              id='fav'
+              name='favoritos'
+              checked={bookmarkedOnly}
+              onChange={onBookmarkedChange}
+            />
+          </label>
+          <label>
+            Filtrar por gênero:{' '}
+            <select name='genero' value={selectedGenre} onChange={onSelectedGenreChange}>
+              <option value=''></option>
+              <option value='action'>Ação</option>
+              <option value='comedy'>Comédia</option>
+              <option value='thriller'>Suspense</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    );
   }
 }
 

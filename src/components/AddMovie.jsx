@@ -7,12 +7,11 @@ class AddMovie extends React.Component {
     this.state = {
 
     };
+  }
+  render() {
+    return(
 
-    render() {
-      return(
-
-      )
-    }
+    )
   }
 }
 
