@@ -1,9 +1,9 @@
 import React from 'react';
-import MovieList from '.components/MovieList';
-import SearchBar from '.components/SearchBar';
-import AddMovie from '.components/AddMovie';
+import MovieList from './MovieList.jsx';
+import SearchBar from './SearchBar.jsx';
+import AddMovie from './AddMovie.jsx';
 
-class MovieLibrary extends Component {
+class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
   }
