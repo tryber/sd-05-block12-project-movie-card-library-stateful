@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const toTitle = (str) => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+
 const Input = (props) => {
   const {
     value,
@@ -33,6 +35,32 @@ const Bookmarked = (props) => {
   );
 };
 
+const MovieGenre = (props) => {
+  const { onChange, selectedGenre, genresToFilter = [] } = props;
+  const genres = [{ text: 'Todos', value: '' }];
+  genresToFilter.forEach((genre) => genres.push({ text: toTitle(genre), value: genre }));
+
+  return (
+    <label htmlFor="filter-genre">
+      Filtrar por gênero
+      <select
+        key="filter-genre"
+        onChange={onChange}
+        value={selectedGenre}
+      >
+        {genres.map(({ text, value }, index) => (
+          <option
+            value={value}
+            key={index.toString()}
+          >
+            {text}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+};
+
 class SearchBar extends Component {
   render() {
     const {
@@ -40,11 +68,15 @@ class SearchBar extends Component {
       onSearchTextChange,
       bookmarkedOnly,
       onBookmarkedChange,
+      onSelectedGenreChange,
+      selectedGenre,
+      genres,
     } = this.props;
     return (
       <form>
         <Input value={searchText} onChange={onSearchTextChange} />
         <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
+        <MovieGenre onChange={onSelectedGenreChange} value={selectedGenre} genresToFilter={genres} />
       </form>
     );
   }
