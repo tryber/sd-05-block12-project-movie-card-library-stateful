@@ -10,17 +10,25 @@ class SearchBar extends React.Component {
       onBookmarkedChange,
     } = this.props;
 
-    return (
+return (
       <form>
         <label htmlFor="search-value">
         Inclui o texto
-          <input type="text" value={searchText} onChange={onSearchTextChange} 
-          key="search-value" />
+          <input
+            type="text"
+            value={searchText}
+            onChange={onSearchTextChange}
+            key="search-value"
+          />
         </label>
         <label htmlFor="filter-bookmarked">
         Mostrar somente favoritos
-          <input onChange={onBookmarkedChange} checked={bookmarkedOnly} type="checkbox"
-            key="filter-bookmarked" />
+          <input
+            onChange={onBookmarkedChange}
+            checked={bookmarkedOnly}
+            type="checkbox"
+            key="filter-bookmarked"
+          />
         </label>
       </form>
     );
