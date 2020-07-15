@@ -13,6 +13,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.addNewMovie = this.addNewMovie.bind(this);
   }
 
   handleChange(e) {
@@ -20,7 +21,7 @@ class AddMovie extends React.Component {
     this.setState({[name]: value});
   };
 
-  addNewMovie = async () => {
+  async addNewMovie() {
     const onClick = this.props.onClick;
     await onClick(this.state);
     this.setState({

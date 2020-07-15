@@ -14,6 +14,9 @@ class MovieLibrary extends React.Component {
       movies: this.props.movies,
     };
     this.onSearchTextChange = this.onSearchTextChange.bind(this);
+    this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
+    this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
   
   async onSearchTextChange(e) {
@@ -38,7 +41,7 @@ class MovieLibrary extends React.Component {
     this.setState({ movies: filteredList });
   }
 
-  onBookmarkedChange = async (event) => {
+  async onBookmarkedChange(event) {
     const { checked } = event.target;
     await this.setState({ bookmarkedOnly: checked });
     const movieList = this.state.movies;
@@ -53,7 +56,7 @@ class MovieLibrary extends React.Component {
     }
   }
 
-  onSelectedGenreChange = async (event) => {
+  async onSelectedGenreChange(event) {
     const { value } = event.target;
     await this.setState({selectedGenre: value});
     const movieList = this.props.movies;
@@ -66,7 +69,7 @@ class MovieLibrary extends React.Component {
     this.setState({ movies: filteredList });
   }
 
-  onClick = (movieInform) => {
+  onClick(movieInform) {
     const newMovie = movieInform;
     this.setState({ movies: [...this.props.movies, newMovie] });
   }
