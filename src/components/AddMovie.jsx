@@ -40,10 +40,12 @@ class AddMovie extends React.Component {
     return (
       <div>
         <form action="">
-          <CreateInput name="title" title="Título"
-            value={ this.state.title } function={ this.handleChange }
+          <CreateInput
+            name="title" title="Título"
+            value={this.state.title} function={this.handleChange}
           />
-          <CreateInput name="subtitle" title="Subtítulo"
+          <CreateInput
+            name="subtitle" title="Subtítulo"
             value={this.state.subtitle} function={this.handleChange}
           />
           <label htmlFor="image">
