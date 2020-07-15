@@ -61,7 +61,8 @@ class AddMovie extends React.Component {
           name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange}
         />
         <CreateInputNumber
-          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChangeNumber}
+          name="rating" title="Avaliação" value={this.state.rating}
+          function={this.handleChangeNumber}
         />
         <CreateComboBox
           name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
