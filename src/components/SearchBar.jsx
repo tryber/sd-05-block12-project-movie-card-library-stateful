@@ -1,7 +1,7 @@
 // implement SearchBar component here
 import React from 'react';
 import CreateInput from './CreateInput';
-import CreateComboBox2 from './CreateComboBox2'
+import CreateComboBox2 from './CreateComboBox2';
 
 class SearchBar extends React.Component {
   render() {
