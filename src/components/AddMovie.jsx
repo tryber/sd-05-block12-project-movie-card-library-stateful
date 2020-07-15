@@ -18,8 +18,8 @@ class AddMovie extends React.Component {
 
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({[name]: value});
-  };
+    this.setState({ [name]: value });
+  }
 
   async addNewMovie() {
     const onClick = this.props.onClick;
@@ -35,30 +35,54 @@ class AddMovie extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <form action="">
-          <label>
+          <label htmlFor="title">
             Título
-            <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+            <input
+              type="text"
+              name="title"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
+          <label htmlFor="subtitle">
             Subtítulo
-            <input type="text" name="subtitle" value={this.state.subtitle} onChange={this.handleChange} />
+            <input 
+              type="text"
+              name="subtitle"
+              value={this.state.subtitle}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
+          <label htmlFor="image">
             Imagem
-            <input type="text" name="imagePath" value={this.state.imagePath} onChange={this.handleChange} />
+            <input
+              type="text"
+              name="imagePath"
+              value={this.state.imagePath}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
+          <label htmlFor="story">
             Sinopse
-            <textarea name="storyline" value={this.state.storyline} onChange={this.handleChange} />
+            <textarea
+              name="storyline"
+              value={this.state.storyline}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
+          <label htmlFor="score">
             Avaliação
-            <input type="number" name="rating" value={this.state.rating} onChange={this.handleChange} />
+            <input
+              type="number"
+              name="rating"
+              value={this.state.rating}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
+          <label htmlFor="genre">
             Gênero
             <select name="genre" value={this.state.genre} onChange={this.handleChange}>
               <option value="action">Ação</option>
@@ -69,8 +93,7 @@ class AddMovie extends React.Component {
           <button onClick={this.addNewMovie}>Adicionar filme</button>
         </form>
       </div>
-
-    )
+    );
   }
 }
 

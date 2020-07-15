@@ -7,7 +7,7 @@ import MovieList from './MovieList';
 class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
@@ -18,7 +18,7 @@ class MovieLibrary extends React.Component {
     this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
     this.onClick = this.onClick.bind(this);
   }
-  
+
   async onSearchTextChange(e) {
     const { value } = e.target;
     await this.setState({ searchText: value });
@@ -34,8 +34,9 @@ class MovieLibrary extends React.Component {
       if (movie.storyline.includes(searchTerm)) {
         return movie;
       }
+      return;
     });
-    if(searchTerm === '') {
+    if (searchTerm === '') {
       filteredList = this.props.movies;
     }
     this.setState({ movies: filteredList });
@@ -51,6 +52,7 @@ class MovieLibrary extends React.Component {
         if (movie.bookmarked === true) {
           return movie;
         }
+        return;
       });
       this.setState({ movies: filteredList });
     }
@@ -58,13 +60,14 @@ class MovieLibrary extends React.Component {
 
   async onSelectedGenreChange(event) {
     const { value } = event.target;
-    await this.setState({selectedGenre: value});
+    await this.setState({ selectedGenre: value });
     const movieList = this.props.movies;
     const selectedGenre = this.state.selectedGenre;
     const filteredList = movieList.filter((movie) => {
       if (movie.genre === selectedGenre || selectedGenre === '') {
-        return movie
+        return movie;
       }
+      return;
     });
     this.setState({ movies: filteredList });
   }
@@ -75,10 +78,10 @@ class MovieLibrary extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <SearchBar
-          searchText={this.state.searchText} 
+          searchText={this.state.searchText}
           onSearchTextChange={this.onSearchTextChange}
           bookmarkedOnly={this.state.bookmarkedOnly}
           onBookmarkedChange={this.onBookmarkedChange}
@@ -88,8 +91,7 @@ class MovieLibrary extends React.Component {
         <MovieList movies={this.state.movies} />
         <AddMovie onClick={this.onClick} />
       </div>
-
-    )
+    );
   }
 }
 
