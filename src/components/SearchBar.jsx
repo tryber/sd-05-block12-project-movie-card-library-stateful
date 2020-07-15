@@ -14,8 +14,33 @@ class SearchBar extends Component {
     return (
       <fieldset>
         <form>
-          <label htmlFor="searchText">Inclui o texto:</label>
-          <input type="text" value={searchText} onChange={onSearchTextChange} />
+          <label> 
+            Inclui o texto:
+            <input type="text" value={searchText} onChange={onSearchTextChange} />
+          </label>
+
+          <label htmlFor="checkbox">
+            Mostrar somente favoritos
+            <input
+              type="checkbox"
+              name="checkbox"
+              id="checkbox"
+              checked={bookmarkedOnly}
+              onChange={onBookmarkedChange} 
+            />
+          </label>
+
+        <label>
+          Filtrar por gênero
+          <select name="genre-filter" id="genre-filter" value={selectedGenre} onChange={onSelectedGenreChange}>
+
+            <option value="">Todos</option>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
+        </label>
+
         </form>
       </fieldset>
     );
@@ -24,16 +49,17 @@ class SearchBar extends Component {
 
 export default SearchBar;
 
+// Renderize um select dentro do formulário em SearchBar
+// O select deve ter uma label associada com o texto: "Filtrar por gênero";
 
-// Esse componente renderizará uma barra com filtros acima da listagem de cartões. Quais cartões serão mostrados no componente MovieList dependerá dos filtros escolhidos. SearchBar deve receber como props:
+// A propriedade value do select deve receber o valor da prop selectedGenre;
 
-// searchText, uma string
-// onSearchTextChange, uma callback
-// bookmarkedOnly, um boolean
-// onBookmarkedChange, uma callback
-// selectedGenre, uma string
-// onSelectedGenreChange, uma callback
+// A propriedade onChange do input deve receber o valor da prop onSelectedGenreChange;
 
+// O select deve renderizar quatro tags option, com as opções de filtragem por gênero, na seguinte ordem:
 
-// Renderize um formulário dentro de SearchBar
-// Dentro desse formulário haverá campos usados na filtragem de cartões.
+// Todos, com o valor "";
+// Ação, com o valor action;
+// Comédia, com o valor comedy;
+// Suspense, com o valor thriller.
+// Crie um componente chamado AddMovie
