@@ -1,1 +1,1 @@
-// implem git addent Sea rchBar comp onent here
+// implem git add ent Sea rchBar comp onent here
