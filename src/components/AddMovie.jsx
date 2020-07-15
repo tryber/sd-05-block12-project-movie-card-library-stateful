@@ -1,6 +1,21 @@
 // implement AddMovie component here
 import React from 'react';
 
+class CreateInput extends React.Component {
+  render() {
+    return (
+      <label htmlFor={this.props.name}>
+        {this.props.title}
+        <input
+          type="text"
+          name={this.props.name}
+          value={this.props.value}
+          onChange={this.props.function}
+        />
+      </label>
+    )
+  }
+}
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
@@ -38,15 +53,7 @@ class AddMovie extends React.Component {
     return (
       <div>
         <form action="">
-          <label htmlFor="title">
-            Título
-            <input
-              type="text"
-              name="title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          </label>
+          <CreateInput name="title" title="Título" value={this.state.title} function={this.handleChange}/>
           <label htmlFor="subtitle">
             Subtítulo
             <input
