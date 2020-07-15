@@ -17,7 +17,7 @@ class AddMovie extends React.Component {
   }
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value});
+    this.setState({ [name]: value });
   }
 
   async handleSubmit() {
@@ -32,8 +32,8 @@ class AddMovie extends React.Component {
       genre: 'action',
     });
   }
-
-  render() {
+}
+/*  render() {
     return (
       <form action="">
 
@@ -41,4 +41,4 @@ class AddMovie extends React.Component {
     )
   }
 
-// export default AddMovie;
+export default AddMovie; */
