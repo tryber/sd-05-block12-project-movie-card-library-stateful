@@ -5,7 +5,6 @@ class SearchBar extends Component {
   // constructor(props) {
   //   super(props);
   // }
-  
   render() {
     const {
       onSearchTextChange,
@@ -15,7 +14,6 @@ class SearchBar extends Component {
       onBookmarkedChange,
       bookmarkedOnly,
     } = this.props;
-
     return (
       <form>
         <label htmlFor="text">
