@@ -1,16 +1,14 @@
 // implement SearchBar component here
 import React from 'react';
 
-
-
 class SearchBar extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.TextInput = this.TextInput.bind(this);
     this.CheckBox = this.CheckBox.bind(this);
     this.Genre = this.Genre.bind(this);
   }
-  
+
   TextInput() {
     return (
       <label htmlFor="text">
@@ -20,7 +18,7 @@ class SearchBar extends React.Component {
         value={this.props.searchText}
         onChange={this.props.onSearchTextChange}
       />
-    </label>
+      </label>
     );
   }
 
@@ -33,7 +31,7 @@ class SearchBar extends React.Component {
         checked={this.props.bookmarkedOnly}
         onChange={this.props.onBookmarkedChange}
       />
-    </label>
+      </label>
     );
   }
 
@@ -41,7 +39,7 @@ class SearchBar extends React.Component {
     return (
       <label htmlFor="genre">
         Filtrar por gênero
-        <select 
+        <select
           value={this.props.selectedGenre}
           onChange={this.props.onSelectedGenreChange}
         >
