@@ -8,14 +8,30 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.searchText}
-        {this.props.onSearchTextChange}
-        {this.props.bookmarkedOnly}
-        {this.props.onBookmarkedChange}
-        {this.props.selectedGenre}
-        {this.props.onSelectedGenreChange}
-      </div>
+      <section>
+        <form>
+          <label>Inclui o texto:
+          <input type="text"
+          value={this.props.searchText}
+          onChange={this.props.onSearchTextChange}/>
+          </label>
+          <label>Mostrar somente favoritos
+          <input
+          type="checkbox"
+          checked={this.props.bookmarkedOnly}
+          onChange={this.props.onBookmarkedChange}/>
+          </label>
+          <label>Filtrar por gênero
+          <select
+          value={this.props.selectedGenre}
+          onChange={this.props.onSelectedGenreChange}/>
+          <option value="">Todos</option>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+          </label>
+        </form>
+      </section>
     );
   }
 }
