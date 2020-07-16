@@ -6,7 +6,7 @@ class InputNumber extends Component {
     return (
       <label className="movie-rating" htmlFor="text">
         {LT}
-        <input type="number" value={v} onChange={oCFn} />
+        <input className="number" type="number" value={v} onChange={oCFn} />
       </label>
     );
   }

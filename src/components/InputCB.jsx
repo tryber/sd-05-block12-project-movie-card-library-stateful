@@ -6,7 +6,7 @@ class InputCB extends Component {
     return (
       <label htmlFor="select">
         {LT}
-        <input type="checkbox" checked={c} onChange={oCFn} />
+        <input className="checkbox" type="checkbox" checked={c} onChange={oCFn} />
       </label>
     );
   }

@@ -44,7 +44,6 @@ class AddMovie extends Component {
     const gO = [
       { value: 'action', text: 'Ação' }, { value: 'comedy', text: 'Comédia' }, { value: 'thriller', text: 'Suspense' },
     ];
-
     return (
       <form className="add-movie">
         <div className="add-movie-div-1">
