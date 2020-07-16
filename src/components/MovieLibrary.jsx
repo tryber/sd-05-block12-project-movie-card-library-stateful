@@ -13,11 +13,11 @@ class MovieLibrary extends React.Component {
     selectedGenre: '',
     movies: props.movies
     }
-    this.changeHandler = this.changeHandler.bind(this);
+    this.CH = this.CH.bind(this);
     // this.updateState = this.updateState.bind(this);
   };
 // precisa alterar todos os states menos movies
-  changeHandler = event => {
+  CH(event) {
     event.preventDefault();
     let { name, value } = event.target;
     this.updateState(name, value)
