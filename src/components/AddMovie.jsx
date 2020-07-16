@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
+import { InputText, InputTextArea, InputNumber, InputSelect } from './Inputs';
 
 const intialState = {
   subtitle: '',
@@ -10,40 +11,18 @@ const intialState = {
   genre: 'action',
 };
 
-const input = (type, title, name, value, onChange) => {
-  const id = `${title}-${Math.round(Math.random() * 9999)}`;
-  if (type !== 'textarea') {
-    return (
-      <label htmlFor={id}>
-        {title}
-        <input
-          id={id}
-          type={type}
-          name={name}
-          value={value}
-          onChange={(ev) => { onChange(ev); }}
-        />
-      </label>
-    );
-  }
-  return (
-    <label htmlFor={id}>
-      {title}
-      <textarea
-        id={id}
-        name={name}
-        value={value}
-        onChange={(ev) => { onChange(ev); }}
-      />
-    </label>
-  );
-};
+const genders = [
+  { value: 'action', innerText: 'Ação' },
+  { value: 'comedy', innerText: 'Comédia' },
+  { value: 'thriller', innerText: 'Suspense' },
+];
 
 class AddMovie extends Component {
   constructor() {
     super();
     this.state = Object.assign(intialState);
     this.setMovie = this.setMovie.bind(this);
+    this.doEvent = this.doEvent.bind(this);
   }
 
   setMovie(ev) {
@@ -52,24 +31,21 @@ class AddMovie extends Component {
     this.setState(state);
   }
 
+  doEvent(ev) {
+    this.setMovie(ev);
+  }
+
   render() {
     const { onClick } = this.props;
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
-        { input('text', 'Título', 'title', title, this.setMovie) }
-        { input('text', 'Subtítulo', 'subtitle', subtitle, this.setMovie) }
-        { input('text', 'Imagem', 'imagePath', imagePath, this.setMovie) }
-        { input('textarea', 'Sinopse', 'storyline', storyline, this.setMovie) }
-        { input('number', 'Avaliação', 'rating', rating, this.setMovie) }
-        <label htmlFor="genre">
-          Gênero
-          <select name="genre" value={genre} onChange={(ev) => { this.setMovie(ev); }}>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-          </select>
-        </label>
+        <InputText title="Título" name="title" value={title} onChange={this.doEvent} />
+        <InputText title="Subtítulo" name="subtitle" value={subtitle} onChange={this.doEvent} />
+        <InputText title="Imagem" name="imagePath" value={imagePath} onChange={this.doEvent} />
+        <InputTextArea title="Sinopse" name="storyline" value={storyline} onChange={this.doEvent} />
+        <InputNumber title="Avaliação" name="rating" value={rating} onChange={this.doEvent} />
+        <InputSelect title="Gênero" value={genre} onChange={this.doEvent} options={genders} />
         <button
           type="button"
           onClick={() => {
@@ -80,7 +56,7 @@ class AddMovie extends Component {
         Adicionar filme
         </button>
       </form>
-    )
+    );
   }
 }
 
