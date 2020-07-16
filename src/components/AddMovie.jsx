@@ -21,7 +21,7 @@ class AddMovie extends React.Component {
     this.SelectInput = this.SelectInput.bind(this);
     this.ChangeRating = this.ChangeRating.bind(this);
     this.ButtonInput = this.ButtonInput.bind(this);
-    this.functionAddMovie = this.functionAddMovie.bind(this);
+    this.buttonAdd = this.buttonAdd.bind(this);
   }
 
   ChangeHandler(event) {
@@ -34,7 +34,7 @@ class AddMovie extends React.Component {
     this.setState({ [name]: Number(value) });
   }
 
-  functionAddMovie() {
+  buttonAdd() {
     const onClick = this.props.onClick;
     onClick(this.state);
     this.setState({
@@ -132,7 +132,7 @@ class AddMovie extends React.Component {
 
   ButtonInput() {
     return (
-      <button onClick={this.functionAddMovie}>Adicionar filme</button>
+      <button onClick={this.buttonAdd}>Adicionar filme</button>
     );
   }
 
