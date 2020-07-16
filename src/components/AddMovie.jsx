@@ -55,7 +55,7 @@ class AddMovie extends React.Component {
         <FieldA
           name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
         />
-        <Num 
+        <Num
           name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
         />
       </form>
