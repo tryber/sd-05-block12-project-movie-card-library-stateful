@@ -25,18 +25,21 @@ class MovieLibrary extends React.Component {
   // funcao pra filtrar/mostrar os movies
   movieFilter() {
     const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
-    if(bookmarkedOnly) { return(movies.filter((film) => film.bookmarked === true)) };
-    if(selectedGenre) { return(movies
-      .filter((film) => film.genre === selectedGenre))};
-     if(searchText) { return(movies
-      .filter((film) => film.title.includes(searchText)
-      || film.subtitle.includes(searchText)
-      || film.storyline.includes(searchText)))};
+    if (bookmarkedOnly) { return (movies.filter((film) => film.bookmarked === true)); }
+    if (selectedGenre) {
+      return (movies
+        .filter((film) => film.genre === selectedGenre));
+      }
+    if (searchText) {
+      return (movies
+        .filter((film) => film.title.includes(searchText)
+        || film.subtitle.includes(searchText)
+        || film.storyline.includes(searchText)));
+    }
     return this.state.movies;
   }
-// função pra colocar movie
+// função pra colocar movie onclick
 
-  
   render() {
     // const { title, subtitle, storyline, rating, imagePath } = movie;
     return (
@@ -49,7 +52,7 @@ class MovieLibrary extends React.Component {
           selectedGenre={this.state.selectedGenre}
           onSelectedGenreChange={(event) => this.setState({ selectedGenre: event.target.value })}
         />
-        <MovieList movies={this.movieFilter()}/>
+        <MovieList movies={this.movieFilter()} />
         <AddMovie />
       </div>
     );
