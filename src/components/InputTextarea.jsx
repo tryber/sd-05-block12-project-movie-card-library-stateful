@@ -5,7 +5,11 @@ class TextArea extends React.Component {
     return (
       <label htmlFor={this.props.label}>
         {this.props.visibletext}
-        <textarea value={this.state.storyline} name={this.props.label} onChange={this.props.change} />
+        <textarea
+          value={this.props.storyline}
+          name={this.props.label}
+          onChange={this.props.change}
+        />
       </label>
     );
   }
