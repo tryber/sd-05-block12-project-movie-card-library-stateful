@@ -16,7 +16,7 @@ class SearchBar extends Component {
       { text: 'Suspense', value: 'thriller' },
     ];
     return (
-      <form>
+      <form className="movie-card-search">
         <InputText LT="Inclui o texto" v={searchText} oCFn={onSearchTextChange} />
         <InputCB LT="Mostrar somente favoritos" c={bookmarkedOnly} oCFn={onBookmarkedChange} />
         <InpSel LT="Filtrar por gênero" v={selectedGenre} oCFn={onSelectedGenreChange} a={gO} />

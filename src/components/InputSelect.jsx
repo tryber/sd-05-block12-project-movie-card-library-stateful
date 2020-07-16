@@ -6,9 +6,9 @@ class InputSelect extends Component {
     return (
       <label htmlFor="select">
         {LT}
-        <select value={v} onChange={oCFn}>
+        <select className="drop" value={v} onChange={oCFn}>
           {a.map((genre) => (
-            <option key={Math.random() * 10} value={genre.value}>
+            <option className="option" key={Math.random() * 10} value={genre.value}>
               {genre.text}
             </option>
           ))}

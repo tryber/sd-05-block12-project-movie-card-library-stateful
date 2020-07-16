@@ -31,7 +31,7 @@ class AddMovie extends Component {
   }
 
   changeState({ target: { value } }, name) {
-    return this.setState({ [name]: value });
+    this.setState({ [name]: value });
   }
 
   changeNumberState({ target: { value } }, name) {
@@ -46,16 +46,20 @@ class AddMovie extends Component {
     ];
 
     return (
-      <form>
-        <InputText LT="Título" v={title} oCFn={(event) => this.changeState(event, 'title')} />
-        <InputText LT="Subtítulo" v={subtitle} oCFn={(event) => this.changeState(event, 'subtitle')} />
+      <form className="add-movie">
+        <div className="add-movie-div-1">
+          <InputText LT="Título" v={title} oCFn={(event) => this.changeState(event, 'title')} />
+          <InputText LT="Subtítulo" v={subtitle} oCFn={(event) => this.changeState(event, 'subtitle')} />
+        </div>
         <InputText LT="Imagem" v={imagePath} oCFn={(event) => this.changeState(event, 'imagePath')} />
         <TextArea LT="Sinopse" v={storyline} oCFn={(event) => this.changeState(event, 'storyline')} />
-        <InputNumber LT="Avaliação" v={rating} oCFn={(event) => this.changeNumberState(event, 'rating')} />
-        <InputSelect LT="Gênero" v={genre} a={gO} oCFn={(event) => this.changeState(event, 'genre')} />
-        <button type="button" onClick={() => { onClick(this.state); this.reset(); }}>
-          Adicionar filme
-        </button>
+        <div className="add-movie-div-2">
+          <InputNumber LT="Avaliação" v={rating} oCFn={(event) => this.changeNumberState(event, 'rating')} />
+          <InputSelect LT="Gênero" v={genre} a={gO} oCFn={(event) => this.changeState(event, 'genre')} />
+          <button className="addbutton" type="button" onClick={() => { onClick(this.state); this.reset(); }}>
+            Adicionar filme
+          </button>
+        </div>
       </form>
     );
   }

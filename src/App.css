@@ -22,7 +22,7 @@ body {
 .movie-list {
   display: flex;
   flex-flow: row wrap;
-  padding: 48px 30px;
+  padding: 20px 30px;
 }
 
 .movie-card {
@@ -36,7 +36,6 @@ body {
   overflow: hidden;
   width: 300px;
 }
-
 
 .movie-card-image {
   width: 100%;
@@ -66,7 +65,7 @@ body {
 }
 
 .rating {
-  background-color: #007bff;
+  background-color: rgb(52, 58, 64);
   border-radius: 25px;
   color: white;
   font-size: 16px;
@@ -81,3 +80,135 @@ body {
   justify-content: flex-end;
   padding: 12px 20px;
 }
+
+.movie-card-search {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 30px;
+  width: 920px;
+}
+
+.movie-list {
+  display: flex;
+  justify-content: center;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  border: 0;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  margin-left: 5px;
+  outline: 0;
+}
+
+input[type='checkbox'] {
+  all: unset;
+  border-radius: 3px;
+  border: 1px solid black;
+  display: inline-block;
+  height: 10px;
+  margin-left: 5px;
+  width: 10px;
+}
+
+input[type='checkbox']:checked {
+  background-color: rgb(52, 58, 64);
+}
+
+.add-movie {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 900px;
+}
+
+.add-movie input,
+.add-movie label,
+.add-movie textarea {
+  margin: auto;
+  width: 100%;
+}
+
+.add-movie-div-1 {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+}
+
+.add-movie-div-1 input {
+  width: 100%;
+}
+
+.add-movie-div-1 label:nth-child(2) {
+  margin-left: 2%;
+}
+
+.add-movie-div-2 {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.add-movie-div-2 input {
+  width: 50%;
+}
+
+.movie-rating {
+  padding-left: 100px;
+}
+
+.addbutton {
+  background-color: rgb(52, 58, 64);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  height: 30px;
+  margin-right: 100px;
+  outline: none;
+  transition: 0.5s;
+  width: 400px;
+}
+
+.addbutton:hover {
+  border: none;
+  color: white;
+  font-size: 16px;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.addbutton:focus,
+.drop:focus {
+  outline-width: 0;
+}
+
+.drop {
+  background-color: rgb(52, 58, 64);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 2px;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="number"]{
+  margin-left: 5px;
+  width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
