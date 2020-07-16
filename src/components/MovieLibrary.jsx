@@ -10,7 +10,7 @@ class MovieLibrary extends React.Component {
       bookmarkedOnly: false,
       selectedGenre: '',
       movies: this.props.movies,
-    }
+    };
   }
 
   handleChange(event) {
@@ -18,19 +18,22 @@ class MovieLibrary extends React.Component {
       searchText: event.target.value,
       bookmarkedOnly: true,
       selectedGenre: event.target.value,
-    }
+    };
   }
 
   render() {
-    <div>
-      <SearchBar
-        searchText={this.state.searchText}
-        onSearchTextChange={() => this.handleChange}
-        bookmarkedOnly={this.state.bookmarkedOnly}
-        onBookmarkedChange={() => this.handleChange}
-        selectedGenre={this.state.selectedGenre}
-        onSelectedGenreChange={() => this.handleChange} />
-    </div>
+    return (
+      <div>
+        <SearchBar
+          searchText={this.state.searchText}
+          onSearchTextChange={() => this.handleChange}
+          bookmarkedOnly={this.state.bookmarkedOnly}
+          onBookmarkedChange={() => this.handleChange}
+          selectedGenre={this.state.selectedGenre}
+          onSelectedGenreChange={() => this.handleChange}
+        />
+      </div>
+    );
   }
 }
 
