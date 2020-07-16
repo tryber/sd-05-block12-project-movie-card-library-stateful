@@ -20,18 +20,16 @@ class AddMovie extends Component {
   constructor() {
     super();
     this.state = Object.assign(intialState);
-    this.setMovie = this.setMovie.bind(this);
-    this.doEvent = this.doEvent.bind(this);
   }
 
-  setMovie(ev) {
-    const { name, value, type } = ev.target;
-    const state = type === 'number' ? { [name]: Number(value) } : { [name]: value };
-    this.setState(state);
+  doEvent = (ev) => {
+    const { name, value } = ev.target;
+    this.setState({ [name]: value });
   }
 
-  doEvent(ev) {
-    this.setMovie(ev);
+  doEventNumber = (ev) => {
+    const { name, value } = ev.target;
+    this.setState({ [name]: Number(value) });
   }
 
   render() {
@@ -43,7 +41,7 @@ class AddMovie extends Component {
         <InputText title="Subtítulo" name="subtitle" value={subtitle} onChange={this.doEvent} />
         <InputText title="Imagem" name="imagePath" value={imagePath} onChange={this.doEvent} />
         <InputTextArea title="Sinopse" name="storyline" value={storyline} onChange={this.doEvent} />
-        <InputNumber title="Avaliação" name="rating" value={rating} onChange={this.doEvent} />
+        <InputNumber title="Avaliação" name="rating" value={rating} onChange={this.doEventNumber} />
         <InputSelect title="Gênero" value={genre} onChange={this.doEvent} options={genders} />
         <button
           type="button"

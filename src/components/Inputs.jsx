@@ -18,7 +18,7 @@ function InputNumber(props) {
   return (
     <label htmlFor={id}>
       {title}
-      <input id={id} type="number" name={name} value={value} onChange={onChange} />
+      <input id={id} type="number" name={name} value={Number(value)} onChange={onChange} />
     </label>
   );
 }
