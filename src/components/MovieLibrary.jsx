@@ -17,17 +17,17 @@ class MovieLibrary extends React.Component {
   }
 
   filteredMovies() {
-    let { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
+    const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
     if (bookmarkedOnly === true) {
-      return movies.filter((movie) => movie.bookmarked === true); 
+      return movies.filter((movie) => movie.bookmarked === true);
     }
     if (selectedGenre) {
-      return movies.filter((movie) => movie.genre === selectedGenre)
+      return movies.filter((movie) => movie.genre === selectedGenre);
     }
     if (searchText) {
-      return movies.filter((movie) => 
-        movie.title.includes(searchText) || 
-        movie.subtitle.includes(searchText) || 
+      return movies.filter((movie) =>
+        movie.title.includes(searchText) ||
+        movie.subtitle.includes(searchText) ||
         movie.storyline.includes(searchText)
       );
     }
