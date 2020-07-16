@@ -19,7 +19,7 @@ const OptionsGenre = ({ value, onChange }) => (
   </div>
 );
 
-const TextInput = ({ child, type, name, id, value, onChange }) => (
+const TextInput = ({ child, type, name, id, value, fnc }) => (
   <div>
     <label htmlFor={id}>
       {child}
@@ -28,7 +28,23 @@ const TextInput = ({ child, type, name, id, value, onChange }) => (
         name={name}
         id={id}
         value={value}
-        onChange={onChange}
+        onChange={fnc}
+      />
+    </label>
+  </div>
+);
+
+
+const TextArea = ({ value, fnc }) => (
+  <div>
+    <label htmlFor="storyline">
+  Sinopse
+
+      <textarea
+        name="storyline"
+        id="storyline"
+        value={value}
+        onChange={fnc}
       />
     </label>
   </div>
@@ -82,55 +98,18 @@ class AddMovie extends Component {
   }
 
   render() {
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    const hC = this.handlerChange;
     return (
-      <div>
-        <form>
-
-          <TextInput
-            child="Título"
-            type="text"
-            id="titulo"
-            value={this.state.title}
-            onChange={this.handlerChange}
-          />
-          <TextInput
-            child="Subtítulo"
-            type="text"
-            id="titusubtitulolo"
-            value={this.state.subtitle}
-            onChange={this.handlerChange}
-          />
-          <TextInput
-            child="Imagem"
-            type="text"
-            id="imagePath"
-            value={this.state.imagePath}
-            onChange={this.handlerChange}
-          />
-
-          <label htmlFor="storyline">Sinopse</label>
-          <textarea
-            name="storyline"
-            value={this.state.storyline}
-            onChange={this.handlerChange}
-            id="storyline"
-            cols="30"
-            rows="10"
-          />
-          <label htmlFor="rating">Avaliação</label>
-          <input
-            type="number"
-            name="rating"
-            id="rating"
-            value={this.state.rating}
-            onChange={this.handlerChange}
-          />
-
-          <OptionsGenre value={this.state.genre} onChange={this.handlerChange} />
-          <button onClick={this.handleButtonClick}>Adicionar filme</button>
-
-        </form>
-      </div>
+      <form>
+        <TextInput child="Título" type="text" id="titulo" value={title} fnc={hC} />
+        <TextInput child="Subtítulo" type="text" id="subtitulo" value={subtitle} fnc={hC} />
+        <TextInput child="Imagem" type="text" id="imagePath" value={imagePath} fnc={hC} />
+        <TextArea value={storyline} fnc={hC} />
+        <TextInput child="Avaliação" type="number" id="imagePath" value={rating} fnc={hC} />
+        <OptionsGenre value={genre} onChange={hC} />
+        <button type="button" onClick={this.handleButtonClick}>Adicionar filme</button>
+      </form>
     );
   }
 }
