@@ -29,7 +29,7 @@ class MovieLibrary extends React.Component {
     if (selectedGenre) {
       return (movies
         .filter((film) => film.genre === selectedGenre));
-      }
+    }
     if (searchText) {
       return (movies
         .filter((film) => film.title.includes(searchText)
@@ -39,6 +39,7 @@ class MovieLibrary extends React.Component {
     return this.state.movies;
   }
 // função pra colocar movie onclick
+
 
   render() {
     // const { title, subtitle, storyline, rating, imagePath } = movie;
