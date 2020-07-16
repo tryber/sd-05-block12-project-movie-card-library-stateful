@@ -14,7 +14,7 @@ const filterByText = (movies, searchText) => {
     return null;
   });
   return filterList;
-}
+};
 
 class MovieLibrary extends React.Component {
   constructor(props) {
