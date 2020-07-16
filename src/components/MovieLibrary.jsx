@@ -21,7 +21,7 @@ class MovieLibrary extends React.Component {
   onClick(newMovie) {
     this.setState({ movies: [...this.props.movies, newMovie] });
   }
-      
+     
   OnChangeGenre(event) {
     this.setState({ selectedGenre: event.target.value });
   }
@@ -40,8 +40,8 @@ class MovieLibrary extends React.Component {
     const textfiltered =
     movies.filter((movie) =>
       movie.title.includes(searchText) ||
-      movie.subtitle.includes(searchText)||
-      movie.storyline.includes(searchText)
+      movie.subtitle.includes(searchText) ||
+      movie.storyline.includes(searchText),
     );
 
     const genrefiltered = selectedGenre === '' ? textfiltered : textfiltered.filter((genre) =>
