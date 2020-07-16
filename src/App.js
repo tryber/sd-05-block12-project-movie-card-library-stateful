@@ -11,10 +11,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/*
       <SearchBar />
       <AddMovie />
-      */}
       <MovieLibrary movies={Data} />
     </div>
   );
