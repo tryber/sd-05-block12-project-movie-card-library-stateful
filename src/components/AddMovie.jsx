@@ -12,20 +12,25 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    // this.changeHandler = this.changeHandler.bind(this);
+     this.CH = this.CH.bind(this);
+     this.CN = this.CH.bind(this);
     // this.updateState = this.updateState.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
-// changeHandler = event => {
-//   event.preventDefault();
-//   let { name, value } = event.target;
-//    this.updateState(name, value)
-//  }
+  CH(event) {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState(() => ({ [name]: value }));
+  }
 
+  CN(event) {
+    event.preventDefault();
+    const { name, value } = event.target;
+    const num = parseFloat(value);
+    this.setState(() => ({ [name]: num }));
+  }
 //  updateState(name, value) {
-//    this.setState((state) => ({
-//      [name]: value,
-//    }));
+//    this.setState(() => ({ [name]: value }));
 //  }
 
   clear() {
@@ -53,7 +58,7 @@ class AddMovie extends React.Component {
         <label htmlFor="storyline">Sinopse
           <textarea name="storyline" value={S.storyline} onChange={this.CH} /></label>
         <label htmlFor="rating">Avaliação
-        <input name="rating" type="number" value={S.rating} onChange={this.CH} /></label>
+        <input name="rating" type="number" value={S.rating} onChange={this.CN} /></label>
         <label htmlFor="genre">Gênero
             <select value={this.state.genre} onChange={this.CH}>
               <option value="action">Ação</option>
