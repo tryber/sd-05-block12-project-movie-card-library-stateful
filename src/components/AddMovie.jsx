@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const MovieTitle = (props) => {
-  const { title, titleChange } = props;
+  const { value, titleChange } = props;
   return (
     <label htmlFor="input-title">
 Título
@@ -9,7 +9,7 @@ Título
         name="title"
         type="text"
         key="input-title"
-        value={title}
+        value={value}
         onChange={titleChange}
       />
     </label>
@@ -17,7 +17,7 @@ Título
 };
 
 const MovieSubtitle = (props) => {
-  const { subtitle, subtitleChange } = props;
+  const { value, subtitleChange } = props;
   return (
     <label htmlFor="input-subtitle">
 Subtítulo
@@ -25,7 +25,7 @@ Subtítulo
         name="subtitle"
         type="text"
         key="input-subtitle"
-        value={subtitle}
+        value={value}
         onChange={subtitleChange}
       />
     </label>
@@ -41,6 +41,19 @@ Imagem
       type="text"
       value={value}
       onChange={getPath}
+    />
+  </label>
+);
+
+const Storyline = ({ value, onChange }) => (
+  <label htmlFor="storyline-input">
+Sinopse
+    <textarea
+      key="storyline-input"
+      name="storyline"
+      type="text"
+      value={value}
+      onChange={onChange}
     />
   </label>
 );
@@ -66,20 +79,24 @@ class AddMovie extends Component {
   }
 
   render() {
-    const { title, subtitle, imagePath } = this.state;
+    const { title, subtitle, imagePath, storyline } = this.state;
     return (
       <form>
         <MovieTitle
-          title={title}
+          value={title}
           titleChange={this.updateState}
         />
         <MovieSubtitle
-          subtitle={subtitle}
+          value={subtitle}
           subtitleChange={this.updateState}
         />
         <ImagePath
           getPath={this.updateState}
           value={imagePath}
+        />
+        <Storyline
+          onChange={this.updateState}
+          value={storyline}
         />
       </form>
     );
