@@ -48,10 +48,10 @@ class AddMovie extends React.Component {
     return (
       <form action="">
         <Field name="title" title="Título" value={this.state.title} function={this.handleChange} />
-        <Field 
+        <Field
           name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange}
         />
-        <Field 
+        <Field
           name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
         />
         <FieldA
