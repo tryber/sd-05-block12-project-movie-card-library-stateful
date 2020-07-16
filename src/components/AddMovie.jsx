@@ -63,7 +63,7 @@ class AddMovie extends React.Component {
         <Sel
           name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
         />
-        <button onClick={this.addNewMovie}>Adicionar filme</button>
+        <button onClick={this.handleSubmit}>Adicionar filme</button>
       </form>
     );
   }

@@ -5,7 +5,11 @@ class Sel extends React.Component {
     return (
       <label htmlFor={this.props.name}>
         {this.props.title}
-        <select name={this.props.name} value={this.props.value} onChange={this.props.function} />
+        <select name={this.props.name} value={this.props.value} onChange={this.props.function}>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
       </label>
     );
   }
