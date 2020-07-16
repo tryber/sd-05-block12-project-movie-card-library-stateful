@@ -9,7 +9,8 @@ class InputNumber extends React.Component {
           type="number"
           name={this.props.label}
           value={this.props.value}
-          onChange={this.props.change} />
+          onChange={this.props.change}
+        />
       </label>
     );
   }
