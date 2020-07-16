@@ -1,6 +1,7 @@
 // implement MovieLibrary component here
 import React from 'react';
 // import movies from '../data';
+import SearchBar from './SearchBar';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -14,7 +15,11 @@ class MovieLibrary extends React.Component {
   }
   render() {
     return (
-      <div>teste</div>
+      <div>
+        <SearchBar
+          searchText={this.state.searchText}        
+        />
+      </div>
     );
   }
 }
