@@ -1,7 +1,7 @@
 import React from 'react';
 
 class MovieLibrary extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       searchText: '',
@@ -9,7 +9,7 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
-  };
+  }
 
   render() {
     const { movies } = this.props;
@@ -17,7 +17,6 @@ class MovieLibrary extends React.Component {
     return (
       <p>{movies[0].title}</p>
     );
-
   }
 }
 
