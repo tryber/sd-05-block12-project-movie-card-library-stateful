@@ -1,6 +1,7 @@
 // implement AddMovie component here
-// implement SearchBar component here
 import React, { Component } from 'react';
+import InputText from './InputText.jsx';
+import InputTextarea from './InputTextarea.jsx';
 
 class AddMovie extends Component {
   constructor(props) {
@@ -13,13 +14,12 @@ class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.newAddMovie = this.newAddMovie.bind(this);
-    // maybe i won't need bind using arrow function for both these functions
+    this.handleChange = this.handleChange.bind(this);
+    this.newAddMovie = this.newAddMovie.bind(this);
   }
 
   // atribuindo a cada peça do form o valor do input.
-  handleChange = (event) => {
+  handleChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
@@ -30,7 +30,8 @@ class AddMovie extends Component {
   // Executa a callback passada para o componente AddMovie via props, chamada onClick,
   // que recebe como parâmetro o estado atual de AddMovie;
   // Reseta o estado de AddMovie, voltando para o inicial, conforme mencionado anteriormente.
-  newAddMovie = (actualState) => {
+  newAddMovie(actualState) {
+    actualState.preventDefault();
     const onClick = this.props.onClick;
     // onClick(actualState);
     this.setState({
@@ -46,32 +47,18 @@ class AddMovie extends Component {
   render() {
     return (
       <form>
-        <label htmlFor="title">
-          Título
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-        </label>
-        <label htmlFor="subtitle">
-          Subtítulo
-          <input
-            type="text"
-            name="subtitle"
-            value={this.state.subtitle}
-            onChange={this.handleChange}
-          />
-        </label>
-        <label htmlFor="image">
-          Imagem
-          <input
-            type="text"
-            name="imagePath"
-            value={this.state.imagePath}
-            onChange={this.handleChange}
-          />
-        </label>
-        <label htmlFor="label">
-          Sinopse
-          <textarea value={this.state.storyline} name="storyline" onChange={this.handleChange} />
-        </label>
+        <InputText 
+          label="title" visibletext="Título" value={this.state.title} change={this.handleChange}
+        />
+        <InputText 
+          label="subtitle" visibletext="Subtítulo" value={this.state.subtitle} change={this.handleChange}
+        />
+        <InputText 
+          label="image" visibletext="Imagem" value={this.state.imagePath} change={this.handleChange}
+        />
+        <InputTextarea 
+          label="storyline" value={this.state.storyline} visibletext="Sinopse" change={this.handleChange}
+        />
         <label htmlFor="rating">
           Avaliação
           <input
@@ -89,7 +76,7 @@ class AddMovie extends Component {
             <option value="thriller">Suspense</option>
           </select>
         </label>
-        <button onClick={this.newAddMovie}>Adicionar filme</button>
+        <button type="submit" onClick={this.newAddMovie}>Adicionar filme</button>
       </form>
     );
   }

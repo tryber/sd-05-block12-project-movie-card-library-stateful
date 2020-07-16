@@ -1,5 +1,7 @@
 // implement SearchBar component here
 import React, { Component } from 'react';
+import InputText from './InputText.jsx';
+import InputTextarea from './InputTextarea.jsx';
 
 class SearchBar extends Component {
   // constructor(props) {
@@ -16,10 +18,9 @@ class SearchBar extends Component {
     } = this.props;
     return (
       <form>
-        <label htmlFor="text">
-          Inclui o texto:
-          <input type="text" value={searchText} onChange={onSearchTextChange} />
-        </label>
+        <InputText 
+          label="subtitle" visibletext="Subtítulo" value={searchText} change={onSearchTextChange}
+        />
         <label htmlFor="favorites">
           Mostrar somente favoritos
           <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
