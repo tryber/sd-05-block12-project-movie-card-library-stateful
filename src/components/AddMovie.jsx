@@ -30,8 +30,8 @@ class AddMovie extends React.Component {
  //   this.setState({ [name]: num });
  // }
 
-  cn({ target: { value } }, name) {
-   this.setState({ rating: Number(value) });
+  cn({ target: { value } }) {
+    this.setState({ rating: Number(value) });
   }
 
   clear() {
