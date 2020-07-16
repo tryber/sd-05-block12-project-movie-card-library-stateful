@@ -33,7 +33,7 @@ class AddMovie extends React.Component {
           type="text"
           name="title"
           value={this.state.title}
-          onChange={() => this.ChangeHandler}
+          onChange={this.ChangeHandler}
         />
       </label>
     );
@@ -47,7 +47,7 @@ class AddMovie extends React.Component {
           type="text"
           name="subtitle"
           value={this.state.subtitle}
-          onChange={() => this.ChangeHandler}
+          onChange={this.ChangeHandler}
         />
       </label>
     );
@@ -61,7 +61,7 @@ class AddMovie extends React.Component {
           type="text"
           name="imagePath"
           value={this.state.imagePath}
-          onChange={() => this.ChangeHandler}
+          onChange={this.ChangeHandler}
         />
       </label>
     );
@@ -75,7 +75,7 @@ class AddMovie extends React.Component {
           type="textarea"
           name="storyline"
           value={this.state.storyline}
-          onChange={() => this.ChangeHandler}
+          onChange={this.ChangeHandler}
         />
       </label>
     );
@@ -89,7 +89,7 @@ class AddMovie extends React.Component {
           type="number"
           name="rating"
           value={this.state.rating}
-          onChange={() => this.ChangeHandler}
+          onChange={this.ChangeHandler}
         />
       </label>
     );
