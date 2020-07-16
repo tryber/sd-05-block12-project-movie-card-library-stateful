@@ -35,7 +35,7 @@ class MovieLibrary extends React.Component {
           bookmarkedOnly={this.state.bookmarkedOnly}
           onBookmarkedChange={this.BookmarkChange}
           selectedGenre={this.state.selectedGenre}
-          onSelectedGenreChange={(event) => this.setState({selectedGenre : event.target.value })}
+          onSelectedGenreChange={(event) => this.setState({ selectedGenre: event.target.value })}
         />
         <MovieList />
         <AddMovie />
