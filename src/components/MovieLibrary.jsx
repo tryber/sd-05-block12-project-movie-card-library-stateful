@@ -18,44 +18,39 @@ class MovieLibrary extends React.Component {
     this.OnChangeGenre = this.OnChangeGenre.bind(this);
   }
 
-  OnChangeText(event) {
-    this.setState({ searchText: event.target.value });
-  }
-
   OnChangeBook() {
     this.setState({
       bookmarkedOnly: !this.state.bookmarkedOnly,
     });
   }
-
+  
   OnChangeGenre(event) {
     this.setState({
       selectedGenre: event.target.value,
     });
   }
-
+  
   onClick(newMovie) {
     this.setState({ movies: [...this.props.movies, newMovie] });
   }
-
+  
+  OnChangeText(event) {
+    this.setState({ searchText: event.target.value });
+  }
   render() {
     const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
 
     const textfiltered =
-    movies.filter(
-      (movie) => 
-      movie.title.includes(searchText)
-      || movie.subtitle.includes(searchText)
-      || movie.storyline.includes(searchText)
+    movies.filter((movie) =>
+      movie.title.includes(searchText) ||
+      movie.subtitle.includes(searchText)||
+      movie.storyline.includes(searchText)
     );
-    const genrefiltered =
-      selectedGenre === ''
-        ? textfiltered
-        : textfiltered.filter((genre) => genre.genre === selectedGenre);
-    const bookfilter =
-      bookmarkedOnly === true
-        ? genrefiltered.filter((book) => book.bookmarked === bookmarkedOnly)
-        : genrefiltered;
+
+    const genrefiltered = selectedGenre === '' ? textfiltered : textfiltered.filter((genre) =>
+      genre.genre === selectedGenre);
+    const bookfilter = bookmarkedOnly === true ? genrefiltered.filter((book) =>
+      book.bookmarked === bookmarkedOnly) : genrefiltered;
     return (
       <div>
         <SearchBar

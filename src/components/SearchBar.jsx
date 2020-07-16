@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
         />
         <label htmlFor="fav">
           Mostrar somente favoritos{' '}
-          <input 
+          <input
             type="checkbox" id="fav" name="favoritos"
             value={this.props.bookmarkedOnly}
             onChange={this.props.onBookmarkedChange}
