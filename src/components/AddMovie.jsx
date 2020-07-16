@@ -30,10 +30,9 @@ class AddMovie extends Component {
   // Executa a callback passada para o componente AddMovie via props, chamada onClick,
   // que recebe como parâmetro o estado atual de AddMovie;
   // Reseta o estado de AddMovie, voltando para o inicial, conforme mencionado anteriormente.
-  newAddMovie(actualState) {
-    actualState.preventDefault();
-    // const onClick = this.props.onClick;
-    // onClick(actualState);
+  newAddMovie() {
+    const onClick = this.props.onClick;
+    onClick(this.state);
     this.setState({
       subtitle: '',
       title: '',
@@ -65,8 +64,8 @@ class AddMovie extends Component {
         {this.renderinputstext()}
         <InputTextarea
           label="storyline"
+          text="Sinopse"
           value={this.state.storyline}
-          visibletext="Sinopse"
           change={this.handleChange}
         />
         <InputNumber
