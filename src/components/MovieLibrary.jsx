@@ -8,25 +8,23 @@ class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    searchText: '',
-    bookmarkedOnly: false,
-    selectedGenre: '',
-    movies: props.movies
-    }
+      searchText: '',
+      bookmarkedOnly: false,
+      selectedGenre: '',
+      movies: props.movies,
+    };
     this.CH = this.CH.bind(this);
-    // this.updateState = this.updateState.bind(this);
-  };
+    this.updateState = this.updateState.bind(this);
+  }
 // precisa alterar todos os states menos movies
   CH(event) {
     event.preventDefault();
-    let { name, value } = event.target;
-    this.updateState(name, value)
+    const { name, value } = event.target;
+    this.updateState(name, value);
   }
 
   updateState(name, value) {
-    this.setState((state) => ({
-      [name]: value,
-    }));
+    this.setState(() => ({ [name]: value, }));
   }
 
 // funcao pra mostrar os movies
@@ -37,19 +35,19 @@ class MovieLibrary extends React.Component {
     // const { title, subtitle, storyline, rating, imagePath } = movie;
     return (
       <div>
-      <SearchBar
-        searchText={this.state.searchText}
-        // colocar function do onChange={this.changeHandler} 
-        bookmarkedOnly={this.state.bookmarkedOnly}
+        <SearchBar
+          searchText={this.state.searchText}
+        // colocar function do onChange={this.changeHandler}
+          bookmarkedOnly={this.state.bookmarkedOnly}
         // function
-        selectedGenre={this.state.selectedGenre}
-        //function
-      />
-      <MovieList />
-      <AddMovie />
+          selectedGenre={this.state.selectedGenre}
+        // function
+        />
+        <MovieList />
+        <AddMovie />
       </div>
-    )
+    );
   }
-};
+}
 
 export default MovieLibrary;
