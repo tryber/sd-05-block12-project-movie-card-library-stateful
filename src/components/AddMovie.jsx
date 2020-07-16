@@ -43,7 +43,7 @@ class AddMovie extends Component {
       genre: 'action',
     });
   }
-  
+
   renderinputstext() {
     return (
       <div>
