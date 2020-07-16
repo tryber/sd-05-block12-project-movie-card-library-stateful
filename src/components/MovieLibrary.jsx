@@ -40,8 +40,8 @@ class MovieLibrary extends React.Component {
     return this.state.movies;
   }
 // função pra colocar movie onclick
-  plusOneClick(Novo){
-    this.setState({ movies : [...this.props.movies, Novo]})
+  plusOneClick(Novo) {
+    this.setState({ movies: [...this.props.movies, Novo] });
   }
 
   render() {
@@ -57,7 +57,7 @@ class MovieLibrary extends React.Component {
           onSelectedGenreChange={(event) => this.setState({ selectedGenre: event.target.value })}
         />
         <MovieList movies={this.movieFilter()} />
-        <AddMovie onClick={this.plusOneClick}/>
+        <AddMovie onClick={this.plusOneClick} />
       </div>
     );
   }
