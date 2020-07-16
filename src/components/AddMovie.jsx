@@ -11,29 +11,29 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
   }
 
   render() {
     return (
       <form>
         <label htmlFor="sub ">
-          <input type="text"/>
+          <input type="text" />
         </label>
         <label htmlFor="title">
-          <input type="text"/>
+          <input type="text" />
         </label>
         <label htmlFor="img">
-          <input type="text"/>
+          <input type="text" />
         </label>
         <label htmlFor="sinopse">
-          <input type="text"/>
+          <input type="text" />
         </label>
         <label htmlFor="avaliacao">
-          <input type="text"/>
+          <input type="text" />
         </label>
         <label htmlFor="genero">
-          <input type="text"/>
+          <input type="text" />
         </label>
       </form>
     );
