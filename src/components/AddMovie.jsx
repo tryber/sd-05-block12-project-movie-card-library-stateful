@@ -16,10 +16,10 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.hC = this.hC.bind(this);
     this.addNewMovie = this.addNewMovie.bind(this);
   }
-  handleChange(e) {
+  hC(e) {
     const { name, value } = e.target;
     this.setState({ [name]: name === 'rating' ? Number(value) : value });
   }
@@ -40,12 +40,12 @@ class AddMovie extends React.Component {
   render() {
     return (
       <form>
-        <CI name="title" title="Título" value={this.state.title} function={this.handleChange} />
-        <CI name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange} />
-        <CIP name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange} />
-        <CSLI name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange} />
-        <CRI name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange} />
-        <CGI name="genre" title="Gênero" value={this.state.genre} function={this.handleChange} />
+        <CI name="title" title="Título" value={this.state.title} function={this.hC} />
+        <CI name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.hC} />
+        <CIP name="imagePath" title="Imagem" value={this.state.imagePath} function={this.hC} />
+        <CSLI name="storyline" title="Sinopse" value={this.state.storyline} function={this.hC} />
+        <CRI name="rating" title="Avaliação" value={this.state.rating} function={this.hC} />
+        <CGI name="genre" title="Gênero" value={this.state.genre} function={this.hC} />
         <button onClick={this.addNewMovie} type="button">Adicionar filme</button>
       </form>
     );
