@@ -1,6 +1,24 @@
 // implement SearchBar component here
 import React from 'react';
 
+
+class Bookmarked extends React.Component {
+  render() {
+    const { checked, onChange } = this.props;
+    return (
+      <div>
+        <input
+          id="bookmarked"
+          type="checkbox"
+          checked={checked}
+          onChange={onChange}
+        />
+        <label htmlFor="bookmarked">Mostrar somente favoritos</label>
+      </div>
+    );
+  }
+}
+
 class SearchBar extends React.Component {
   render() {
     const {
@@ -15,13 +33,7 @@ class SearchBar extends React.Component {
       <form>
         <label htmlFor="searchText">Inclui o texto:</label>
         <input id="searchText" type="text" value={searchText} onChange={onSearchTextChange} />
-        <input
-          id="bookmarked"
-          type="checkbox"
-          checked={bookmarkedOnly}
-          onChange={onBookmarkedChange}
-        />
-        <label htmlFor="bookmarked">Mostrar somente favoritos</label>
+        <Bookmarked checked={bookmarkedOnly} onChange={onBookmarkedChange}/>
         <label htmlFor="genre">Filtrar por gênero:</label>
         <select id="genre" value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
