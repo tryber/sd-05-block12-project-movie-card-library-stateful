@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
         Inclui o Texto:
         <input
           type="text"
-          value={this.props.searchText}
+          value={this.props.searchText} 
           onChange={this.props.onSearchTextChange}
         />
       </label>

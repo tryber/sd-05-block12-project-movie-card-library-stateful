@@ -17,7 +17,7 @@ class MovieLibrary extends React.Component {
     return (
       <div>
         <SearchBar
-          searchText={this.state.searchText}        
+          searchText={this.state.searchText}
         />
       </div>
     );
