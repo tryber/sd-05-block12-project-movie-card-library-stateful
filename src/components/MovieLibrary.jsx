@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import MovieList from './MovieList';
+import SearchBar from './SearchBar';
+import AddMovie from './AddMovie';
 import movies from '../data';
 
-class MovieLibrary extends React.Component {
+class MovieLibrary extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+
   render() {
     return (
-      <MovieList movies={movies} />);
+      <div>
+        <h2> My awesome movie library </h2>
+        <SearchBar />
+        <MovieList movies={movies} />
+        <AddMovie />
+      </div>
+    );
   }
 }
+
 export default MovieLibrary;
