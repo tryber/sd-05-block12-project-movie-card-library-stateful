@@ -52,7 +52,7 @@ class AddMovie extends React.Component {
           function={this.handleChange}
         />
         <FieldA
-        name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
+          name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
         />
       </form>
     );
