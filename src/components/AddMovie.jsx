@@ -18,7 +18,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleChangeNumber = this.handleChangeNumber.bind(this);
+    this.handleChangeNum = this.handleChangeNum.bind(this);
     this.addNewMovie = this.addNewMovie.bind(this);
   }
 
@@ -27,7 +27,7 @@ class AddMovie extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleChangeNumber(e) {
+  handleChangeNum(e) {
     const { name, value } = e.target;
     this.setState({ [name]: Number(value) });
   }
@@ -61,7 +61,7 @@ class AddMovie extends React.Component {
           name="storyline" title="Sinopse" value={this.state.storyline} function={this.handleChange}
         />
         <CreateInputNumber
-          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChangeNumber}
+          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChangeNum}
         />
         <CreateComboBox
           name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}

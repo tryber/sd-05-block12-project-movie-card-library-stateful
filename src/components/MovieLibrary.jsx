@@ -4,6 +4,18 @@ import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
 import MovieList from './MovieList';
 
+const filterByText = (movies, searchText) => {
+  const filterList = movies.filter((movie) => {
+    if (movie.title.includes(searchText)
+      || movie.subtitle.includes(searchText)
+      || movie.storyline.includes(searchText)) {
+      return movie;
+    }
+    return null;
+  });
+  return filterList;
+}
+
 class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +29,7 @@ class MovieLibrary extends React.Component {
     this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
     this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
     this.onClick = this.onClick.bind(this);
-    this.filterListMovies = this.filterListMovies.bind(this); 
+    this.filterListMovies = this.filterListMovies.bind(this);
   }
 
   onSearchTextChange(e) {
@@ -42,16 +54,7 @@ class MovieLibrary extends React.Component {
   filterListMovies() {
     const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
     if (searchText) {
-      const filterList = movies.filter((movie) => {
-        if (movie.title.includes(searchText)
-          || movie.subtitle.includes(searchText)
-          || movie.storyline.includes(searchText)) {
-            return movie;
-          } else {
-            return null;
-          }
-      });
-      return filterList;
+      return filterByText(movies, searchText);
     }
     if (bookmarkedOnly) {
       const filterList = movies.filter((movie) => movie.bookmarked === true);
