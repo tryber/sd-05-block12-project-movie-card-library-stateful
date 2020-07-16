@@ -19,11 +19,17 @@ class AddMovie extends React.Component {
     this.SinopseInput = this.SinopseInput.bind(this);
     this.RatingInput = this.RatingInput.bind(this);
     this.SelectInput = this.SelectInput.bind(this);
+    this.ChangeRating = this.ChangeRating.bind(this);
   }
 
   ChangeHandler(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+  }
+
+  ChangeRating(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: Number(value) });
   }
 
   TitleInput() {
@@ -90,7 +96,7 @@ class AddMovie extends React.Component {
           type="number"
           name="rating"
           value={this.state.rating}
-          onChange={this.ChangeHandler}
+          onChange={this.ChangeRating}
         />
       </label>
     );
