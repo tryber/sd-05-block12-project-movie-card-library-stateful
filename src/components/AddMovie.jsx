@@ -25,7 +25,7 @@ class AddMovie extends Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  } 
+  }
 
   // para corrigir erro do rating
   handleChangeNum(event) {
