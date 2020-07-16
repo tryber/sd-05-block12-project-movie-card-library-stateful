@@ -17,29 +17,21 @@ class MovieLibrary extends React.Component {
     this.OnChangeBook = this.OnChangeBook.bind(this);
     this.OnChangeGenre = this.OnChangeGenre.bind(this);
   }
+  
+  onClick(newMovie) {
+    this.setState({ movies: [...this.props.movies, newMovie] });
+  }
 
   OnChangeText(event) {
-    this.setState({
-      searchText: event.target.value,
-    });
-  };
+    this.setState({ searchText: event.target.value });
+  }
 
   OnChangeBook() {
-    this.setState({
-      bookmarkedOnly: !this.state.bookmarkedOnly,
-    });
-  };
+    this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
+  }
 
   OnChangeGenre(event) {
-    this.setState({
-      selectedGenre: event.target.value,
-    });
-  };
-
-  onClick(newMovie) {
-    this.setState({
-      movies: [...this.props.movies, newMovie],
-    });
+    this.setState({ selectedGenre: event.target.value });
   }
 
   render() {
