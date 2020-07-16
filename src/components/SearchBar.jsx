@@ -11,11 +11,10 @@ class SearchBar extends React.Component {
       selectedGenre: '',
     }
   }
-
-  onSearchTextChange = () => { }
-  bookmarkedOnly = () => { }
-  onBookmarkedChange = () => { }
-  onSelectedGenreChange = () => { }
+  // onSearchTextChange = () => { }
+  // bookmarkedOnly = () => { }
+  // onBookmarkedChange = () => { }
+  // onSelectedGenreChange = () => { }
 
   render() {
     const { searchText, selectedGenre } = this.state;
