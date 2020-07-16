@@ -16,19 +16,25 @@ class SearchBar extends Component {
 
   render() {
     const {
-      searchText,
-      onSearchTextChange,
-      bookmarkedOnly,
-      onBookmarkedChange,
-      selectedGenre,
-      onSelectedGenreChange,
+      searchText: st,
+      onSearchTextChange: ost,
+      bookmarkedOnly: bo,
+      onBookmarkedChange: obmc,
+      selectedGenre: sg,
+      onSelectedGenreChange: osgc,
     } = this.props;
 
     return (
       <form className="search-bar">
-        <InputText value={searchText} name={searchText} title="Inclui o texto" onChange={onSearchTextChange} />
-        <InputCheckBox title="Mostrar somente favoritos" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
-        <InputSelect value={selectedGenre} name={searchText} title="Filtrar por gênero" onChange={onSelectedGenreChange} options={genders} />
+        <InputText value={st} name={st} title="Inclui o texto" onChange={ost} />
+        <InputCheckBox title="Mostrar somente favoritos" checked={bo} onChange={obmc} />
+        <InputSelect
+          value={sg}
+          name={st}
+          title="Filtrar por gênero"
+          onChange={osgc}
+          options={genders}
+        />
       </form>
     );
   }
