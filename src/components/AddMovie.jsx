@@ -18,6 +18,7 @@ class AddMovie extends React.Component {
     this.ImageInput = this.ImageInput.bind(this);
     this.SinopseInput = this.SinopseInput.bind(this);
     this.RatingInput = this.RatingInput.bind(this);
+    this.SelectInput = this.SelectInput.bind(this);
   }
 
   ChangeHandler(event) {
@@ -91,6 +92,23 @@ class AddMovie extends React.Component {
           value={this.state.rating}
           onChange={this.ChangeHandler}
         />
+      </label>
+    );
+  }
+
+  SelectInput() {
+    return (
+      <label htmlFor="select">
+        Gênero
+        <select
+          name="genre"
+          value={this.state.genre}
+          onChange={this.ChangeHandler}
+        >
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
       </label>
     );
   }
