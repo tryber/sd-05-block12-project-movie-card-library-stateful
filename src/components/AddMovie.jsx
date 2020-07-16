@@ -1,6 +1,7 @@
 // implement AddMovie component here
 import React from 'react';
 import Field from './Field';
+import FieldA from './FieldA';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -49,6 +50,9 @@ class AddMovie extends React.Component {
           title="Imagem"
           value={this.state.imagePath}
           function={this.handleChange}
+        />
+        <FieldA
+        name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
         />
       </form>
     );
