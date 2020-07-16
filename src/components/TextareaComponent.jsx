@@ -1,10 +1,6 @@
 import React from 'react';
 
 class TextAreaComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       labelName,
@@ -12,12 +8,10 @@ class TextAreaComponent extends React.Component {
       value,
       type,
       callFunction,
-      inputType,
     } = this.props;
 
     return (
-      <label>
-        {labelName}
+      <label htmlFor={name}>{labelName}
         <textarea
           type={type}
           value={value}

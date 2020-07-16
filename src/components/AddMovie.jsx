@@ -17,7 +17,7 @@ class AddMovie extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange = (event) => {
+  onChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: name === 'rating' ? Number(value) : value,

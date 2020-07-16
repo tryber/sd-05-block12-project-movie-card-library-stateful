@@ -1,10 +1,6 @@
 import React from 'react';
 
 class InputComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       labelName,
@@ -12,11 +8,10 @@ class InputComponent extends React.Component {
       value,
       type,
       callFunction,
-      inputType,
     } = this.props;
 
     return (
-      <label>
+      <label htmlFor={name}>
         {labelName}
         <input type={type} value={value} onChange={callFunction} name={name} />
       </label>

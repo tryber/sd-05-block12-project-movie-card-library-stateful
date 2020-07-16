@@ -13,9 +13,10 @@ class MovieLibrary extends React.Component {
       movies: this.props.movies,
     };
     this.onClick = this.onClick.bind(this);
+    this.OnChangeText = this.OnChangeText.bind(this);
   }
 
-  OnChangeText = (event) => {
+  OnChangeText(event) {
     this.setState({
       searchText: event.target.value,
     });
@@ -42,29 +43,21 @@ class MovieLibrary extends React.Component {
   render() {
     const { searchText, bookmarkedOnly, selectedGenre, movies } = this.state;
 
-    const textfiltered = movies.filter(
-      (movie) =>
+    const textfiltered = movies.filter((movie) =>
         movie.title.includes(searchText) ||
         movie.subtitle.includes(searchText) ||
         movie.storyline.includes(searchText)
     );
-    const genrefiltered =
-      selectedGenre === ''
-        ? textfiltered
+    const genrefiltered = selectedGenre === '' ? textfiltered
         : textfiltered.filter((genre) => genre.genre === selectedGenre);
-    const bookfilter =
-      bookmarkedOnly === true
-        ? genrefiltered.filter((book) => book.bookmarked === bookmarkedOnly)
+    const bookfilter = bookmarkedOnly === true ? genrefiltered.filter((book) =>
+      book.bookmarked === bookmarkedOnly)
         : genrefiltered;
     return (
       <div>
-        <SearchBar
-          searchText={searchText}
-          onSearchTextChange={this.OnChangeText}
-          bookmarkedOnly={bookmarkedOnly}
-          onBookmarkedChange={this.OnChangeBook}
-          selectedGenre={selectedGenre}
-          onSelectedGenreChange={this.OnChangeGenre}
+        <SearchBar searchText={searchText} onSearchTextChange={this.OnChangeText} 
+          bookmarkedOnly={bookmarkedOnly} onBookmarkedChange={this.OnChangeBook}
+          selectedGenre={selectedGenre} onSelectedGenreChange={this.OnChangeGenre}
         />
         <MovieList movies={bookfilter} />
         <AddMovie onClick={this.onClick} />
