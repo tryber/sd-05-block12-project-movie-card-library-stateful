@@ -1,5 +1,8 @@
 import React from 'react';
 import InputElement from './InputElement';
+import TextInput from './TextInput.jsx';
+import InputNumber from './InputNumber.jsx';
+import BoxOptions from './BoxOptions.jsx';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -41,12 +44,28 @@ class AddMovie extends React.Component {
   }
 
   render() {
-    const { subtitle, title, imagePath, storyline, genre } = this.props;
+    // const { subtitle, title, imagePath, storyline, genre } = this.props;
     return (
       <form>
         <InputElement 
           label="title" titulo="Título" value={this.state.title} change={this.handleChange}
         />
+        <InputElement
+          label="subtitle" titulo="Subtítulo" value={this.state.subtitle} change={this.handleChange}
+        />
+        <InputElement
+          label="img" titulo="Imagem" value={this.state.imagePath} change={this.handleChange}
+        />
+        <TextInput
+          label="storyline" titulo="Sinopse" value={this.state.storyline} change={this.handleChange}
+        />
+        <InputNumber
+          label="rating" titulo="Avaliação" value={this.state.rating} change={this.handleChangeNum}
+        />
+        <BoxOptions
+          label="gender" titulo="Gênero" value={this.state.genre} change={this.handleChange}
+        />
+        <button type="button" onClick={this.NewMovie}>Adicionar filme</button>
       </form>
     );
   }
