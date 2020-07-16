@@ -83,19 +83,19 @@ body {
 }
 
 .formulario {
-  margin: 50px;
   display: flex;
   flex-direction: column;
-  width: 100vh;
+  margin: 10px auto;
+  width: 90%;
 }
 
 .caixaImput {
-  width: 100ch;
   height: 25px;
+  width: 1700px;
 }
 
 .caixaCheck {
-  width: 20px;
   height: 20px;
   margin: 5px 5px 5px 0;
+  width: 20px;
 }
