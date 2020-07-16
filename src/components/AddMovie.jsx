@@ -17,7 +17,7 @@ class AddMovie extends Component {
       genre: 'action',
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleChangeNum = this.handleChangeNum.bind(this);
+    this.handleChangeNumber = this.handleChangeNumber.bind(this);
     this.newAddMovie = this.newAddMovie.bind(this);
   }
 
@@ -76,14 +76,14 @@ class AddMovie extends Component {
           change={this.handleChange}
         />
         <InputNumber
-          label="rating" text="Avaliação" value={this.state.rating} change={this.handleChangeNum}
+          label="rating" text="Avaliação" value={this.state.rating} change={this.handleChangeNumber}
         />
         <InputSelect2
           label="genre" text="Gênero" value={this.state.genre} change={this.handleChange}
         />
-        <button type="submit" onClick={this.newAddMovie}>
-          Adicionar filme
-        </button>
+        {/* <button type="submit" onClick={this.newAddMovie}> */}
+          {/* Adicionar filme
+        </button> */}
       </form>
     );
   }
