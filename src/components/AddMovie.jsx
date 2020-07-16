@@ -17,6 +17,7 @@ class AddMovie extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeNum = this.handleChangeNum.bind(this);
   }
   handleChange(event) {
     const { name, value } = event.target;
@@ -56,7 +57,7 @@ class AddMovie extends React.Component {
           name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
         />
         <Num
-          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
+          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChangeNum}
         />
       </form>
     );
