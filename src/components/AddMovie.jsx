@@ -13,6 +13,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.TitleInput = this.TitleInput.bind(this);
+    this.SubtitleInput = this.SubtitleInput.bind(this);
     this.ChangeHandler = this.ChangeHandler.bind(this);
   }
 
@@ -30,10 +31,20 @@ class AddMovie extends React.Component {
     );
   }
 
+  SubtitleInput() {
+    return (
+      <label htmlFor="subtitle">
+        Subtítulo
+        <input type="text" name="subtitle" value={this.state.subtitle} onChange={this.ChangeHandler} />
+      </label>
+    );
+  }
+
   render() {
     return (
       <form>
         {this.TitleInput()}
+        {this.SubtitleInput()}
       </form>
     );
   }
