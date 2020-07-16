@@ -1,4 +1,3 @@
-// implement AddMovie component here
 // adicionar filme
 // import React from 'react';
 
