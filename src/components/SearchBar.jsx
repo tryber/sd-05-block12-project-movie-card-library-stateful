@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import SelectOptions from './SelectOptions';
 
 class SearchBar extends React.Component {
   render() {
@@ -25,10 +26,7 @@ class SearchBar extends React.Component {
         />
         <label htmlFor="gender">Filtrar por gênero</label>
         <select id="gender" onChange={onSelectedGenreChange} value={selectedGenre}>
-          <option value="">Todos</option>
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
+          <SelectOptions />
         </select>
       </form>
     );
