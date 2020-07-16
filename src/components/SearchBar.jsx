@@ -23,8 +23,8 @@ class SearchBar extends Component {
           label="" text="Inclui o texto: " value={searchText} change={onSearchTextChange}
         />
         <InputCheckbox
-         label="favorites" text="Mostrar somente favoritos"
-         checked={bookmarkedOnly} change={onBookmarkedChange}
+          label="favorites" text="Mostrar somente favoritos"
+          checked={bookmarkedOnly} change={onBookmarkedChange}
         />
         <InputSelect1
           label="genre" text="Filtrar por gênero"
