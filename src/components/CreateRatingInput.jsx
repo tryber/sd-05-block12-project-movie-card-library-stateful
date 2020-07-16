@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class CreateRatingInput extends React.Component {
   render() {
@@ -6,7 +6,8 @@ class CreateRatingInput extends React.Component {
       <label htmlFor={this.props.name}>
         {this.props.title}
         <input
-          type='number'
+          type="number"
+          name={this.props.name}
           step={0.5}
           value={this.props.value}
           onChange={this.props.function}

@@ -1,11 +1,12 @@
 import React from 'react';
 
-class CreateGenreInput extends React.Component {
+class CreateComboBox2 extends React.Component {
   render() {
     return (
       <label htmlFor={this.props.name}>
         {this.props.title}
         <select name={this.props.name} value={this.props.value} onChange={this.props.function}>
+          <option value="">Todos</option>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
@@ -15,4 +16,4 @@ class CreateGenreInput extends React.Component {
   }
 }
 
-export default CreateGenreInput;
+export default CreateComboBox2;
