@@ -17,6 +17,7 @@ class AddMovie extends Component {
       genre: 'action',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeNum = this.handleChangeNum.bind(this);
     this.newAddMovie = this.newAddMovie.bind(this);
   }
 
@@ -24,6 +25,12 @@ class AddMovie extends Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+  } 
+
+  // para corrigir erro do rating
+  handleChangeNum(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: Number(value) });
   }
 
   // A propriedade onClick do botão invoca uma função definida por você, em AddMovie, que:
@@ -69,7 +76,7 @@ class AddMovie extends Component {
           change={this.handleChange}
         />
         <InputNumber
-          label="rating" text="Avaliação" value={this.state.rating} change={this.handleChange}
+          label="rating" text="Avaliação" value={this.state.rating} change={this.handleChangeNum}
         />
         <InputSelect2
           label="genre" text="Gênero" value={this.state.genre} change={this.handleChange}
