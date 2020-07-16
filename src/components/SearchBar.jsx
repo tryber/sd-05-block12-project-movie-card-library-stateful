@@ -1,7 +1,6 @@
 // implement SearchBar component here
 import React, { Component } from 'react';
 import InputText from './InputText.jsx';
-import InputTextarea from './InputTextarea.jsx';
 import InputSelect1 from './InputSelect1.jsx';
 import InputCheckbox from './InputCheckbox.jsx';
 
@@ -20,7 +19,7 @@ class SearchBar extends Component {
     } = this.props;
     return (
       <form>
-        <InputText 
+        <InputText
           label="" text="Inclui o texto" value={searchText} change={onSearchTextChange}
         />
         <InputCheckbox

@@ -7,7 +7,7 @@ class InputNumber extends React.Component {
         {this.props.text}
         <input
           type="number"
-          value={this.state.value}
+          value={this.props.value}
           name={this.props.label}
           onChange={this.props.change}
         />
