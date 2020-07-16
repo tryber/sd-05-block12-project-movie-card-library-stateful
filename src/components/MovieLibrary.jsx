@@ -28,7 +28,7 @@ class MovieLibrary extends React.Component {
       return movies.filter((movie) =>
         movie.title.includes(searchText) ||
         movie.subtitle.includes(searchText) ||
-        movie.storyline.includes(searchText)
+        movie.storyline.includes(searchText),
       );
     }
     return movies;
