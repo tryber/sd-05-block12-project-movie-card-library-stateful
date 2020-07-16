@@ -12,8 +12,8 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-     this.CH = this.CH.bind(this);
-     this.CN = this.CH.bind(this);
+    this.CH = this.CH.bind(this);
+    this.CN = this.CH.bind(this);
     // this.updateState = this.updateState.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
