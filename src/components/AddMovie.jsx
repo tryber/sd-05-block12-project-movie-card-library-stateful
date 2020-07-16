@@ -15,6 +15,7 @@ class AddMovie extends React.Component {
     this.TitleInput = this.TitleInput.bind(this);
     this.SubtitleInput = this.SubtitleInput.bind(this);
     this.ChangeHandler = this.ChangeHandler.bind(this);
+    this.ImageInput = this.ImageInput.bind(this);
   }
 
   ChangeHandler(event) {
@@ -50,11 +51,26 @@ class AddMovie extends React.Component {
     );
   }
 
+  ImageInput() {
+    return (
+      <label htmlFor="image">
+        Imagem
+        <input
+          type="text"
+          name="imagePath"
+          value={this.state.imagePath}
+          onChange={this.ChangeHandler}
+        />
+      </label>
+    );
+  }
+
   render() {
     return (
       <form>
         {this.TitleInput()}
         {this.SubtitleInput()}
+        {this.ImageInput()}
       </form>
     );
   }
