@@ -12,7 +12,7 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.insertTitle = this.insertTitle.bind(this);
     this.insertSubtitle = this.insertSubtitle.bind(this);
@@ -26,7 +26,6 @@ class AddMovie extends React.Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
-    console.log(this.state)
   }
 
   insertTitle() {
@@ -101,7 +100,7 @@ class AddMovie extends React.Component {
 
   insertGenre() {
     return (
-      <label>
+      <label htmlFor="genre">
         Gênero
         <select
           name="genre"
@@ -116,6 +115,7 @@ class AddMovie extends React.Component {
     );
   }
 
+  // Arrumar
   insertButton() {
     return (
       <button
