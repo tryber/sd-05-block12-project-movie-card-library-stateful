@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class CreateTitleInput extends React.Component {
   render() {
@@ -6,7 +6,7 @@ class CreateTitleInput extends React.Component {
       <label htmlFor={this.props.name}>
         {this.props.title}
         <input
-          type='text'
+          type="text"
           name={this.props.name}
           value={this.props.value}
           onChange={this.props.function}

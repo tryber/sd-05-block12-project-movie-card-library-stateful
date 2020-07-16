@@ -5,30 +5,20 @@ import CreateComboBox2 from './CreateComboBox2';
 
 class SearchBar extends React.Component {
   render() {
-    
     return (
       <form>
-        <CreateInput
-          name="title"
-          title="Inclui o texto:"
-          value={this.props.searchText}
+        <CreateInput name="title" title="Inclui o texto:" value={this.props.searchText}
           function={this.props.onSearchTextChange}
         />
         <label htmlFor="fav">
           Mostrar somente favoritos{" "}
-          <input
-            type="checkbox"
-            id="fav"
-            name="favoritos"
+          <input type="checkbox" id="fav" name="favoritos"
             value={this.props.bookmarkedOnly}
             onChange={this.props.onBookmarkedChange}
             checked={this.props.bookmarkedOnly}
           />
         </label>
-        <CreateComboBox2
-          name="genre"
-          title="Filtrar por gênero: "
-          value={this.props.selectedGenre}
+        <CreateComboBox2 name="genre" title="Filtrar por gênero: " value={this.props.selectedGenre}
           function={this.props.onSelectedGenreChange}
         />
       </form>
