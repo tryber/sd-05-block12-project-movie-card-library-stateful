@@ -81,9 +81,9 @@ class AddMovie extends Component {
         <InputSelect2
           label="genre" text="Gênero" value={this.state.genre} change={this.handleChange}
         />
-        {/* <button type="submit" onClick={this.newAddMovie}> */}
-          {/* Adicionar filme
-        </button> */}
+        <button type="submit" onClick={this.newAddMovie}>
+          Adicionar filme
+        </button>
       </form>
     );
   }
