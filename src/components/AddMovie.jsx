@@ -20,6 +20,8 @@ class AddMovie extends React.Component {
     this.RatingInput = this.RatingInput.bind(this);
     this.SelectInput = this.SelectInput.bind(this);
     this.ChangeRating = this.ChangeRating.bind(this);
+    this.ButtonInput = this.ButtonInput.bind(this);
+    this.functionAddMovie = this.functionAddMovie.bind(this);
   }
 
   ChangeHandler(event) {
@@ -30,6 +32,19 @@ class AddMovie extends React.Component {
   ChangeRating(event) {
     const { name, value } = event.target;
     this.setState({ [name]: Number(value) });
+  }
+
+  functionAddMovie() {
+    const onClick = this.props.onClick;
+    onClick(this.state);
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
   }
 
   TitleInput() {
@@ -106,16 +121,18 @@ class AddMovie extends React.Component {
     return (
       <label htmlFor="select">
         Gênero
-        <select
-          name="genre"
-          value={this.state.genre}
-          onChange={this.ChangeHandler}
-        >
+        <select name="genre" value={this.state.genre} onChange={this.ChangeHandler}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
       </label>
+    );
+  }
+
+  ButtonInput() {
+    return (
+      <button onClick={this.functionAddMovie}>Adicionar filme</button>
     );
   }
 
@@ -127,6 +144,8 @@ class AddMovie extends React.Component {
         {this.ImageInput()}
         {this.SinopseInput()}
         {this.RatingInput()}
+        {this.SelectInput()}
+        {this.ButtonInput()}
       </form>
     );
   }
