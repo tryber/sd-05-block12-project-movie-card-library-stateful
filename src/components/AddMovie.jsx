@@ -26,7 +26,7 @@ class AddMovie extends React.Component {
   CN(event) {
     event.preventDefault();
     const { name, value } = event.target;
-    const num = parseFloat(value);
+    const num = number(value);
     this.setState(() => ({ [name]: num }));
   }
 //  updateState(name, value) {
