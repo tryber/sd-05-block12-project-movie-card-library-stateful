@@ -18,19 +18,17 @@ class AddMovie extends React.Component {
 
   ChangeHandler(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    })
+    this.setState({[name]: value});
   }
 
   TitleInput() {
     return (
-      <label>
-      Título
-      <input type="text" name="title" value={this.state.title} onChange={this.ChangeHandler} />
-    </label>
+      <label htmlFor="title">
+        Título
+        <input type="text" name="title" value={this.state.title} onChange={this.ChangeHandler} />
+      </label>
     );
-  }  
+  }
 
   render() {
     return (
