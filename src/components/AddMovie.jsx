@@ -17,6 +17,7 @@ class AddMovie extends React.Component {
     this.ChangeHandler = this.ChangeHandler.bind(this);
     this.ImageInput = this.ImageInput.bind(this);
     this.SinopseInput = this.SinopseInput.bind(this);
+    this.RatingInput = this.RatingInput.bind(this);
   }
 
   ChangeHandler(event) {
@@ -80,6 +81,20 @@ class AddMovie extends React.Component {
     );
   }
 
+  RatingInput() {
+    return (
+      <label htmlFor="rating">
+        Avaliação
+        <input
+          type="number"
+          name="rating"
+          value={this.state.rating}
+          onChange={this.ChangeHandler}
+        />
+      </label>
+    );
+  }
+
   render() {
     return (
       <form>
@@ -87,6 +102,7 @@ class AddMovie extends React.Component {
         {this.SubtitleInput()}
         {this.ImageInput()}
         {this.SinopseInput()}
+        {this.RatingInput()}
       </form>
     );
   }
