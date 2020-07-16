@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   TextInput() {
     return (
       <label htmlFor="text">
-        Inclui o Texto:
+        Inclui o texto:
         <input
           type="text"
           value={this.props.searchText}
