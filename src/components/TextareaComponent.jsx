@@ -3,19 +3,19 @@ import React from 'react';
 class TextAreaComponent extends React.Component {
   render() {
     const {
-      labelName,
+      lN,
       name,
       value,
       type,
-      callFunction,
+      CF,
     } = this.props;
 
     return (
-      <label htmlFor={name}>{labelName}
+      <label htmlFor={name}>{lN}
         <textarea
           type={type}
           value={value}
-          onChange={callFunction}
+          onChange={CF}
           name={name}
         />
       </label>

@@ -1,6 +1,6 @@
 import React from 'react';
-import InputComponent from './InputComponent';
-import TextAreaComponent from './TextareaComponent';
+import IC from './InputComponent';
+import TC from './TextareaComponent';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -19,10 +19,8 @@ class AddMovie extends React.Component {
 
   onChange(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: name === 'rating' ? Number(value) : value,
-    });
-  };
+    this.setState({[name]: name === 'rating' ? Number(value) : value});
+  }
 
   addNewMovie(event) {
     const callback = this.props.onClick;
@@ -42,16 +40,11 @@ class AddMovie extends React.Component {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
-        <InputComponent labelName="Título" name="title"
-          value={title} type="text" callFunction={this.onChange} />
-        <InputComponent labelName="Subtítulo" name="subtitle"
-          value={subtitle} type="text" callFunction={this.onChange} />
-        <InputComponent labelName="Imagem" name="imagePath"
-          value={imagePath} type="text" callFunction={this.onChange} />
-        <TextAreaComponent labelName="Sinopse" name="storyline"
-          value={storyline} callFunction={this.onChange} />
-        <InputComponent labelName="Avaliação" name="rating"
-          value={rating} type="number" callFunction={this.onChange} />
+        <IC lN="Título" name="title" value={title} type="text" CF={this.onChange} />
+        <IC lN="Subtítulo" name="subtitle" value={subtitle} type="text" CF={this.onChange} />
+        <IC lN="Imagem" name="imagePath" value={imagePath} type="text" CF={this.onChange} />
+        <TC lN="Sinopse" name="storyline" value={storyline} CF={this.onChange} />
+        <IC lN="Avaliação" name="rating" value={rating} type="number" CF={this.onChange} />
         <label>Gênero<select name="genre" value={genre} onChange={this.onChange}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>

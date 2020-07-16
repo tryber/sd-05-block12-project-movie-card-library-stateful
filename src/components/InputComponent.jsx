@@ -3,17 +3,17 @@ import React from 'react';
 class InputComponent extends React.Component {
   render() {
     const {
-      labelName,
+      lN,
       name,
       value,
       type,
-      callFunction,
+      CF,
     } = this.props;
 
     return (
       <label htmlFor={name}>
-        {labelName}
-        <input type={type} value={value} onChange={callFunction} name={name} />
+        {lN}
+        <input type={type} value={value} onChange={CF} name={name} />
       </label>
     );
   }
