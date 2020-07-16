@@ -20,10 +20,7 @@ class SearchBar extends React.Component {
       <div>
         <form>
           <label htmlFor="label">Inclui o texto:
-            <input
-              type="text"
-              value={searchText}
-            />
+            <input type="text" value={searchText} />
           </label>
           <label htmlFor="label">
             <input type="checkbox" />
