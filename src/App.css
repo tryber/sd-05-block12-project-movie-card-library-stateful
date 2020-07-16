@@ -82,7 +82,7 @@ body {
   padding: 12px 20px;
 }
 
-.AddMove, .SearchBar {
+.AddMove , .SearchBar {
   display: flex;
   flex-direction: column;
 }
