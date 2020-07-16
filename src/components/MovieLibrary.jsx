@@ -33,6 +33,15 @@ class MovieLibrary extends React.Component {
     this.filtrados = this.filtrados.bind(this);
   }
 
+  onClick(addFilme) {
+    this.setState({ movies: [...this.props.movies, addFilme] });
+  }
+
+  mudaTexto(event) {
+    const { value } = event.target;
+    this.setState({ searchText: value });
+  }
+
   mudaBox(event) {
     const { checked } = event.target;
     this.setState({ bookmarkedOnly: checked });
@@ -41,15 +50,6 @@ class MovieLibrary extends React.Component {
   mudaGenre(event) {
     const { value } = event.target;
     this.setState({ selectedGenre: value });
-  }
-
-  onClick(addFilme) {
-    this.setState({ movies: [...this.props.movies, addFilme] });
-  }
-
-  mudaTexto(event) {
-    const { value } = event.target;
-    this.setState({ searchText: value });
   }
 
   filtrados() {
