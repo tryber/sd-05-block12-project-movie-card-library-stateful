@@ -56,7 +56,11 @@ class AddMovie extends Component {
         <div className="add-movie-div-2">
           <InputNumber LT="Avaliação" v={rating} oCFn={(event) => this.changeNumberState(event, 'rating')} />
           <InputSelect LT="Gênero" v={genre} a={gO} oCFn={(event) => this.changeState(event, 'genre')} />
-          <button className="addbutton" type="button" onClick={() => { onClick(this.state); this.reset(); }}>
+          <button
+            className="addbutton"
+            type="button"
+            onClick={() => { onClick(this.state); this.reset(); }}
+          >
             Adicionar filme
           </button>
         </div>
