@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import InputText from './InputText.jsx';
 import InputTextarea from './InputTextarea.jsx';
+import InputSelect1 from './InputSelect1.jsx';
+import InputCheckbox from './InputCheckbox.jsx';
 
 class SearchBar extends Component {
   // constructor(props) {
@@ -19,21 +21,14 @@ class SearchBar extends Component {
     return (
       <form>
         <InputText 
-          label="subtitle" visibletext="Subtítulo" value={searchText} change={onSearchTextChange}
+          label="" text="Inclui o texto" value={searchText} change={onSearchTextChange}
         />
-        <label htmlFor="favorites">
-          Mostrar somente favoritos
-          <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
-        </label>
-        <label htmlFor="style">
-          Filtrar por gênero
-          <select value={selectedGenre} onChange={onSelectedGenreChange}>
-            <option value="">Todos</option>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-          </select>
-        </label>
+        <InputCheckbox
+         label="favorites" text="Mostrar somente favoritos" checked={bookmarkedOnly} change={onBookmarkedChange}
+        />
+        <InputSelect1
+          label="genre" text="Filtrar por gênero" value={selectedGenre} change={onSelectedGenreChange}
+        />
       </form>
     );
   }
