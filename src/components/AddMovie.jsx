@@ -1,5 +1,6 @@
 // implement AddMovie component here
 import React from 'react';
+import Field from './Field';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -32,13 +33,25 @@ class AddMovie extends React.Component {
       genre: 'action',
     });
   }
-}
-/*  render() {
+
+  render() {
     return (
       <form action="">
-
+        <Field name="title" title="Título" value={this.state.title} function={this.handleChange} />
+        <Field
+          name="subtitle"
+          title="Subtítulo"
+          value={this.state.subtitle}
+          function={this.handleChange}
+        />
+        <Field
+          name="imagePath"
+          title="Imagem"
+          value={this.state.imagePath}
+          function={this.handleChange}
+        />
       </form>
-    )
+    );
   }
-
-export default AddMovie; */
+}
+export default AddMovie;
