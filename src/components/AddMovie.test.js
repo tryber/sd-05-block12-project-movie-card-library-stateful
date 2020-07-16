@@ -30,11 +30,11 @@ const beforeEachUnitTest = () => {
 describe('<AddMovie /> component', () => {
   beforeEach(() => beforeEachUnitTest());
 
-  it.skip('renders without crashing', () => {
+  it('renders without crashing', () => {
     addMovie();
   });
 
-  it.skip('renders a form', () => {
+  it('renders a form', () => {
     expect(addMovie().find('form').length).toEqual(1);
   });
 });
@@ -42,7 +42,7 @@ describe('<AddMovie /> component', () => {
 describe('<AddMovie /> component initial state', () => {
   beforeEach(() => beforeEachUnitTest());
 
-  it.skip('sets expected initial state', () => {
+  it('sets expected initial state', () => {
     expect(addMovie().state()).toEqual(initialState);
   });
 });
@@ -50,7 +50,7 @@ describe('<AddMovie /> component initial state', () => {
 describe('<AddMovie /> component Form', () => {
   beforeEach(() => beforeEachUnitTest());
 
-  it.skip('renders a form', () => {
+  it('renders a form', () => {
     expect(addMovie().find('form').length).toEqual(1);
   });
 });
@@ -60,20 +60,20 @@ describe('<AddMovie /> component title input', () => {
 
   const titleInput = () => addMovie().find('form input[type="text"]').at(0);
 
-  it.skip('renders a text input so as the user can type the movie title', () => {
+  it('renders a text input so as the user can type the movie title', () => {
     expect(titleInput().exists()).toBeTruthy();
   });
 
-  it.skip('renders the label "Título" for the movie title input', () => {
+  it('renders the label "Título" for the movie title input', () => {
     expect(addMovie().find('label').at(0).text()).toEqual('Título');
   });
 
-  it.skip('the title input initial value, "", comes from the AddMovie initial state, via "title"', () => {
+  it('the title input initial value, "", comes from the AddMovie initial state, via "title"', () => {
     expect(titleInput().prop('value')).toEqual(initialState.title);
   });
 
-  it.skip('updates the component state when title input changes', () => {
-    const simulatedEvent = { target: { value: 'my awesome movie title', name: 'title'  } };
+  it('updates the component state when title input changes', () => {
+    const simulatedEvent = { target: { value: 'my awesome movie title', name: 'title' } };
 
     titleInput().simulate('change', simulatedEvent);
     expect(addMovie().state('title')).toEqual('my awesome movie title');
@@ -85,20 +85,20 @@ describe('<AddMovie /> component subtitle input', () => {
 
   const subtitleInput = () => addMovie().find('form input[type="text"]').at(1);
 
-  it.skip('renders a subtitle input so as the user can type the movie subtitle', () => {
+  it('renders a subtitle input so as the user can type the movie subtitle', () => {
     expect(subtitleInput().exists()).toBeTruthy();
   });
 
-  it.skip('renders the label "Subtítulo" for the movie subtitle input', () => {
+  it('renders the label "Subtítulo" for the movie subtitle input', () => {
     expect(addMovie().find('label').at(1).text()).toEqual('Subtítulo');
   });
 
-  it.skip('the subtitle input initial value, "", comes from the AddMovie initial state, via "subtitle"', () => {
+  it('the subtitle input initial value, "", comes from the AddMovie initial state, via "subtitle"', () => {
     expect(subtitleInput().prop('value')).toEqual(initialState.subtitle);
   });
 
-  it.skip('updates the component state when subtitle input changes', () => {
-    const simulatedEvent = { target: { value: 'my awesome movie subtitle', name: 'subtitle'  } };
+  it('updates the component state when subtitle input changes', () => {
+    const simulatedEvent = { target: { value: 'my awesome movie subtitle', name: 'subtitle' } };
 
     subtitleInput().simulate('change', simulatedEvent);
     expect(addMovie().state('subtitle')).toEqual('my awesome movie subtitle');
@@ -110,20 +110,20 @@ describe('<AddMovie /> component image path input', () => {
 
   const imageInput = () => addMovie().find('form input[type="text"]').at(2);
 
-  it.skip('renders an image input so as the user can type the movie image path', () => {
+  it('renders an image input so as the user can type the movie image path', () => {
     expect(imageInput().exists()).toBeTruthy();
   });
 
-  it.skip('renders the label "Imagem" for the movie image path input', () => {
+  it('renders the label "Imagem" for the movie image path input', () => {
     expect(addMovie().find('label').at(2).text()).toEqual('Imagem');
   });
 
-  it.skip('the image input initial value, "", comes from the AddMovie initial state, via "imagePath"', () => {
+  it('the image input initial value, "", comes from the AddMovie initial state, via "imagePath"', () => {
     expect(imageInput().prop('value')).toEqual(initialState.imagePath);
   });
 
-  it.skip('updates the component state when image path input changes', () => {
-    const simulatedEvent = { target: { value: 'http://localhost:3000/images/Appleseed_Alpha.jpg', name: 'imagePath'  } };
+  it('updates the component state when image path input changes', () => {
+    const simulatedEvent = { target: { value: 'http://localhost:3000/images/Appleseed_Alpha.jpg', name: 'imagePath' } };
 
     imageInput().simulate('change', simulatedEvent);
     expect(addMovie().state('imagePath')).toEqual('http://localhost:3000/images/Appleseed_Alpha.jpg');
@@ -148,7 +148,7 @@ describe('<AddMovie /> component storyline input', () => {
   });
 
   it.skip('updates the component state when movie storyline input changes', () => {
-    const simulatedEvent = { target: { value: 'In the following movie, everyone dies.', name: 'storyline'  } };
+    const simulatedEvent = { target: { value: 'In the following movie, everyone dies.', name: 'storyline' } };
 
     storylineInput().simulate('change', simulatedEvent);
     expect(addMovie().state('storyline')).toEqual('In the following movie, everyone dies.');
@@ -173,7 +173,7 @@ describe('<AddMovie /> component rating input', () => {
   });
 
   it.skip('updates the component state when movie rating input changes', () => {
-    const simulatedEvent = { target: { value: '1.5', name: 'rating'  } };
+    const simulatedEvent = { target: { value: '1.5', name: 'rating' } };
 
     ratingInput().simulate('change', simulatedEvent);
     expect(addMovie().state('rating')).toEqual(1.5);
@@ -215,7 +215,7 @@ describe('<AddMovie /> component genre selection', () => {
 
   it.skip('updates the component state when movie genre selection changes', () => {
     const givenGenre = genreOptions[0];
-    const simulatedEvent = { target: { value: givenGenre, name: 'genre'  } };
+    const simulatedEvent = { target: { value: givenGenre, name: 'genre' } };
 
     genreSelection().simulate('change', simulatedEvent);
     expect(addMovie().state('genre')).toEqual(givenGenre);
