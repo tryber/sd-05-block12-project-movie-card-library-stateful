@@ -18,15 +18,20 @@ class SearchBar extends React.Component {
     const { searchText, selectedGenre } = this.state;
     return (
       <div>
-        <label>Inclui o texto:
-          <input type="text" value={searchText} />
+        <label htmlFor="label">Inclui o texto:
+          <input
+            type="text"
+            value={searchText}
+          />
         </label>
 
-        <label>
-          <input type="checkbox" />
+        <label htmlFor="label">
+          <input
+            type="checkbox"
+          />
         </label>Mostrar somente favoritos
 
-        <label>Filtrar por gênero
+        <label htmlFor="label">Filtrar por gênero
           <select value={selectedGenre} onChange={() => this.onSelectedGenreChange}>
             <option value="">Todos</option>
             <option value="action">Ação</option>
@@ -34,7 +39,6 @@ class SearchBar extends React.Component {
             <option value="thriller">Suspense</option>
           </select>
         </label>
-        
       </div>
     );
   }
