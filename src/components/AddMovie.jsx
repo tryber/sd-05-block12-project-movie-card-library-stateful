@@ -2,6 +2,7 @@
 import React from 'react';
 import Field from './Field';
 import FieldA from './FieldA';
+import Num from './Num';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -53,6 +54,9 @@ class AddMovie extends React.Component {
         />
         <FieldA
           name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
+        />
+        <Num 
+          name="rating" title="Avaliação" value={this.state.rating} function={this.handleChange}
         />
       </form>
     );
