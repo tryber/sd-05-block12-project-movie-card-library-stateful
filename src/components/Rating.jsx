@@ -1,5 +1,5 @@
 import React from 'react';
-
+// avaliação
 class Rating extends React.Component {
   render() {
     const { rating } = this.props;

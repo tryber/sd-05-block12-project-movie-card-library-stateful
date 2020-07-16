@@ -1,12 +1,14 @@
 import React from 'react';
-
+import SearchBar from './SearchBar';
 class Header extends React.Component {
   render() {
     return (
-      <header className="movie-card-header">
-        <h1 className="page-title">Movie Cards Library</h1>
-        <h2>VQV!</h2>
-      </header>
+      <div>
+        <header className="movie-card-header">
+          <h1 className="page-title">Movie Cards Library</h1>
+        </header>
+        <SearchBar />
+      </div>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-
 import MovieCard from './MovieCard';
-
+//Lista de filmes
 class MovieList extends React.Component {
   render() {
     const { movies } = this.props;
