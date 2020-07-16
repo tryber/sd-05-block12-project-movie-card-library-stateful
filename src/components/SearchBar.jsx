@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { InputText, InputCheckBox, InputSelect } from './Inputs';
 
@@ -27,24 +26,9 @@ class SearchBar extends Component {
 
     return (
       <form className="search-bar">
-        <InputText
-          value={searchText}
-          name={searchText}
-          title="Inclui o texto"
-          onChange={onSearchTextChange}
-        />
-        <InputCheckBox
-          title="Mostrar somente favoritos"
-          checked={bookmarkedOnly}
-          onChange={onBookmarkedChange}
-        />
-        <InputSelect
-          value={selectedGenre}
-          name={searchText}
-          title="Filtrar por gênero"
-          onChange={onSelectedGenreChange}
-          options={genders}
-        />
+        <InputText value={searchText} name={searchText} title="Inclui o texto" onChange={onSearchTextChange} />
+        <InputCheckBox title="Mostrar somente favoritos" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+        <InputSelect value={selectedGenre} name={searchText} title="Filtrar por gênero" onChange={onSelectedGenreChange} options={genders} />
       </form>
     );
   }
