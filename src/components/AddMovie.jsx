@@ -20,14 +20,16 @@ class AddMovie extends Component {
   constructor() {
     super();
     this.state = Object.assign(intialState);
+    this.doEvent = this.doEvent.bind(this);
+    this.doEventNumber = this.doEventNumber.bind(this);
   }
 
-  doEvent = (ev) => {
+  doEvent(ev) {
     const { name, value } = ev.target;
     this.setState({ [name]: value });
   }
 
-  doEventNumber = (ev) => {
+  doEventNumber(ev) {
     const { name, value } = ev.target;
     this.setState({ [name]: Number(value) });
   }
