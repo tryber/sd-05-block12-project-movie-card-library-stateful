@@ -41,27 +41,27 @@ class AddMovie extends React.Component {
 
   render() {
     const { onClick } = this.props;
+    const S = this.state;
     return (
-      <div><form>
+      <form>
         <label htmlFor="title">Título
-        <input name="title" type="text" value={this.state.title} onChange={changeHandler} /></label>
+        <input name="title" type="text" value={S.title} onChange={this.CH} /></label>
         <label htmlFor="subtitle">Subtítulo
-        <input name="subtitle" type="text" value={this.state.subtitle} onChange={changeHandler} /></label>
+        <input name="subtitle" type="text" value={S.subtitle} onChange={this.CH} /></label>
         <label htmlFor="imagePath">Imagem
-        <input name="imagePath" type="text" value={this.state.imagePath} onChange={changeHandler} /></label>
+        <input name="imagePath" type="text" value={S.imagePath} onChange={this.CH} /></label>
         <label htmlFor="storyline">Sinopse
-          <textarea name="storyline" value={this.state.storyline} onChange={changeHandler} /></label>
+          <textarea name="storyline" value={S.storyline} onChange={this.CH} /></label>
         <label htmlFor="rating">Avaliação
-        <input name="rating" type="number" value={this.state.rating} onChange={changeHandler} /></label>
+        <input name="rating" type="number" value={S.rating} onChange={this.CH} /></label>
         <label htmlFor="genre">Gênero
-            <select value={this.state.genre} onChange={changeHandler}>
+            <select value={this.state.genre} onChange={this.CH}>
               <option value="action">Ação</option>
               <option value="comedy">Comédia</option>
               <option value="thriller">Suspense</option>
             </select></label>
-        <button onClick={() => { onClick(this.state); this.clear(); }} >Adicionar filme</button>
+        <button onClick={() => { onClick(S); this.clear(); }} >Adicionar filme</button>
       </form>
-      </div>
     );
   }
 }
