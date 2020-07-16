@@ -44,7 +44,6 @@ class AddMovie extends React.Component {
   }
 
   render() {
-    // const { subtitle, title, imagePath, storyline, genre } = this.props;
     return (
       <form>
         <InputElement
