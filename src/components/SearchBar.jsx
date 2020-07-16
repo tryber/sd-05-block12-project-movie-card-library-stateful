@@ -4,12 +4,10 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form>
-      <label>
-        Inclui o texto: <br></br>
-        <input className="searchText" type="text" />
-      </label>
+          Inclui o texto:
+        <input id="searchText" type="text" />
       </form>
-    )
+    );
   }
 }
 
