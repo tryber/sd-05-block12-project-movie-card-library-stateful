@@ -13,21 +13,15 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: props.movies,
     };
-    this.CH = this.CH.bind(this);
-    this.updateState = this.updateState.bind(this);
-  }
-// precisa alterar todos os states menos movies
-  CH(event) {
-    event.preventDefault();
-    const { name, value } = event.target;
-    this.updateState(name, value);
+    this.BookmarkChange = this.BookmarkChange.bind(this);
   }
 
-  updateState(name, value) {
-    this.setState(() => ({ [name]: value }));
+  BookmarkChange() {
+    const { bookmarkedOnly } = this.state;
+    this.setState({ bookmarkedOnly: !bookmarkedOnly });
   }
 
-// funcao pra mostrar os movies
+// funcao pra filtrar/mostrar os movies
 
 // função pra colocar movie
 
@@ -37,11 +31,11 @@ class MovieLibrary extends React.Component {
       <div>
         <SearchBar
           searchText={this.state.searchText}
-        // colocar function do onChange={this.changeHandler}
+          onSearchTextChange={(event) => this.setState({ searchText: event.target.value })}
           bookmarkedOnly={this.state.bookmarkedOnly}
-        // function
+          onBookmarkedChange={this.BookmarkChange}
           selectedGenre={this.state.selectedGenre}
-        // function
+          onSelectedGenreChange={(event) => this.setState({selectedGenre : event.target.value })}
         />
         <MovieList />
         <AddMovie />
