@@ -153,7 +153,7 @@ input , textarea {
   padding-left: 100px;
 }
 
-.addbutton {
+button {
   background-color: rgb(52, 58, 64);
   border: none;
   border-radius: 5px;
@@ -167,7 +167,7 @@ input , textarea {
   width: 400px;
 }
 
-.addbutton:hover {
+button:hover {
   border: none;
   color: white;
   font-size: 16px;
@@ -187,7 +187,7 @@ input , textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.addbutton:focus , .drop:focus {
+button:focus , .drop:focus {
   outline-width: 0;
 }
 
