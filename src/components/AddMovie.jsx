@@ -3,6 +3,7 @@ import React from 'react';
 import Field from './Field';
 import FieldA from './FieldA';
 import Num from './Num';
+import Sel from './Sel';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -64,6 +65,9 @@ class AddMovie extends React.Component {
         />
         <Num
           name="rating" title="Avaliação" value={this.state.rating} function={this.handleChangeNum}
+        />
+        <Sel
+          name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
         />
       </form>
     );
