@@ -4,7 +4,7 @@ class TextArea extends React.Component {
   render() {
     return (
       <label htmlFor={this.props.label}>
-        {this.props.visibletext}
+        {this.props.text}
         <textarea
           value={this.props.storyline}
           name={this.props.label}
