@@ -6,7 +6,7 @@ class TextArea extends React.Component {
       <label htmlFor={this.props.label}>
         {this.props.text}
         <textarea
-          value={this.props.storyline}
+          value={this.props.value}
           name={this.props.label}
           onChange={this.props.change}
         />
