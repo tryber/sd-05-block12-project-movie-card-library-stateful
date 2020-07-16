@@ -9,10 +9,9 @@ class SearchBar extends React.Component {
     } = this.props;
     return (
       <form>
-        <IC lN="Inclui o texto:" type="text" value={searchText}
-        CF={onSearchTextChange} />
+        <IC lN="Inclui o texto:" type="text" value={searchText} CF={onSearchTextChange} />
         <label htmlFor="book">Mostrar somente favoritos</label>
-        <input 
+        <input
         type="checkbox" name="book" value={bookmarkedOnly}
         onChange={onBookmarkedChange} checked={bookmarkedOnly}
         />
