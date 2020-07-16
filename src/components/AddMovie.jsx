@@ -19,6 +19,12 @@ class AddMovie extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeNum = this.handleChangeNum.bind(this);
   }
+
+  handleChangeNum(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: Number(value) });
+  }
+
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
