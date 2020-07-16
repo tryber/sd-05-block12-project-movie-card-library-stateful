@@ -21,7 +21,7 @@ class MovieLibrary extends React.Component {
   onClick(newMovie) {
     this.setState({ movies: [...this.props.movies, newMovie] });
   }
-     
+
   OnChangeGenre(event) {
     this.setState({ selectedGenre: event.target.value });
   }
