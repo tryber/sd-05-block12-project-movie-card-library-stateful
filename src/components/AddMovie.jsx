@@ -26,7 +26,8 @@ class AddMovie extends React.Component {
   CN(event) {
     event.preventDefault();
     const { name, value } = event.target;
-    this.setState(() => ({ [name]: Number(value) }));
+    // const num = Number(value);
+    this.setState({ [name]: Number(value) });
   }
 //  updateState(name, value) {
 //    this.setState(() => ({ [name]: value }));
