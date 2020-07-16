@@ -1,6 +1,35 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 
+const input = (type, title, name, value, onChange) => {
+  const id = `${title}-${Math.round(Math.random() * 9999)}`;
+  if (type !== 'textarea') {
+    return (
+      <label htmlFor={id}>
+        {title}
+        <input
+          id={id}
+          type={type}
+          name={name}
+          value={value}
+          onChange={(ev) => { onChange(ev); }}
+        />
+      </label>
+    );
+  }
+  return (
+    <label htmlFor={id}>
+      {title}
+      <textarea
+        id={id}
+        name={name}
+        value={value}
+        onChange={(ev) => { onChange(ev); }}
+      />
+    </label>
+  );
+};
+
 class SearchBar extends Component {
   constructor() {
     super();
@@ -19,15 +48,7 @@ class SearchBar extends Component {
 
     return (
       <form className="search-bar">
-        <label htmlFor="search-text">
-          Inclui o texto
-          <input
-            type="text"
-            id="search-text"
-            value={searchText}
-            onChange={onSearchTextChange}
-          />
-        </label>
+        {input('text', 'Inclui o texto', 'search-text', searchText, onSearchTextChange)}
         <label htmlFor="show-fav">
           Mostrar somente favoritos
           <input

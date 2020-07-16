@@ -7,23 +7,49 @@ const intialState = {
   imagePath: '',
   storyline: '',
   rating: 0,
-  genre: 'action'
+  genre: 'action',
+};
+
+const input = (type, title, name, value, onChange) => {
+  const id = `${title}-${Math.round(Math.random() * 9999)}`;
+  if (type !== 'textarea') {
+    return (
+      <label htmlFor={id}>
+        {title}
+        <input
+          id={id}
+          type={type}
+          name={name}
+          value={value}
+          onChange={(ev) => { onChange(ev); }}
+        />
+      </label>
+    );
+  }
+  return (
+    <label htmlFor={id}>
+      {title}
+      <textarea
+        id={id}
+        name={name}
+        value={value}
+        onChange={(ev) => { onChange(ev); }}
+      />
+    </label>
+  );
 };
 
 class AddMovie extends Component {
   constructor() {
     super();
     this.state = Object.assign(intialState);
+    this.setMovie = this.setMovie.bind(this);
   }
 
-  setMovie = (ev) => {
-    const { id: key, value } = ev.target;
-    this.setState((state) => (
-      {
-        ...state,
-        [key]: value
-      }
-    ));
+  setMovie(ev) {
+    const { name, value, type } = ev.target;
+    const state = type === 'number' ? { [name]: Number(value) } : { [name]: value };
+    this.setState(state);
   }
 
   render() {
@@ -31,55 +57,21 @@ class AddMovie extends Component {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
-        <label htmlFor="title">
-          Título
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(ev) => {this.setMovie(ev)}}
-          />
-        </label>
-        <label htmlFor="subtitle">
-          Subtítulo
-          <input
-            type="text"
-            id="subtitle"
-            value={subtitle}
-            onChange={(ev) => {this.setMovie(ev)}}
-          />
-        </label>
-        <label htmlFor="imagePath">
-          Imagem
-          <input
-            type="text"
-            id="imagePath"
-            value={imagePath}
-            onChange={(ev) => {this.setMovie(ev)}}
-          />
-        </label>
-        <label htmlFor="storyline">
-          Sinopse
-          <textarea id="storyline" value={storyline} onChange={(ev) => {this.setMovie(ev)}} />
-        </label>
-        <label htmlFor="rating">
-          Avaliação
-          <input
-            type="number"
-            id="rating"
-            value={rating}
-            onChange={(ev) => {this.setMovie(ev)}}
-          />
-        </label>
+        { input('text', 'Título', 'title', title, this.setMovie) }
+        { input('text', 'Subtítulo', 'subtitle', subtitle, this.setMovie) }
+        { input('text', 'Imagem', 'imagePath', imagePath, this.setMovie) }
+        { input('textarea', 'Sinopse', 'storyline', storyline, this.setMovie) }
+        { input('number', 'Avaliação', 'rating', rating, this.setMovie) }
         <label htmlFor="genre">
           Gênero
-          <select id="genre" value={genre} onChange={(ev) => {this.setMovie(ev)}} >
+          <select name="genre" value={genre} onChange={(ev) => { this.setMovie(ev); }}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
         </label>
         <button
+          type="button"
           onClick={() => {
             onClick(this.state);
             this.setState(Object.assign(intialState));
