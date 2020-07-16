@@ -48,17 +48,11 @@ class AddMovie extends React.Component {
     return (
       <form action="">
         <Field name="title" title="Título" value={this.state.title} function={this.handleChange} />
-        <Field
-          name="subtitle"
-          title="Subtítulo"
-          value={this.state.subtitle}
-          function={this.handleChange}
+        <Field 
+          name="subtitle" title="Subtítulo" value={this.state.subtitle} function={this.handleChange}
         />
-        <Field
-          name="imagePath"
-          title="Imagem"
-          value={this.state.imagePath}
-          function={this.handleChange}
+        <Field 
+          name="imagePath" title="Imagem" value={this.state.imagePath} function={this.handleChange}
         />
         <FieldA
           name="storyLine" title="Sinopse" value={this.state.storyLine} function={this.handleChange}
@@ -69,6 +63,7 @@ class AddMovie extends React.Component {
         <Sel
           name="genre" title="Gênero" value={this.state.genre} function={this.handleChange}
         />
+        <button onClick={this.addNewMovie}>Adicionar filme</button>
       </form>
     );
   }
