@@ -7,9 +7,9 @@ class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchText: "",
+      searchText: '',
       bookmarkedOnly: false,
-      selectedGenre: "",
+      selectedGenre: '',
       movies: this.props.movies,
     };
     this.onClick = this.onClick.bind(this);

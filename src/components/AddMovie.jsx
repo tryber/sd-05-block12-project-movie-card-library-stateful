@@ -40,18 +40,24 @@ class AddMovie extends React.Component {
   render() {
     return (
       <form>
-        <CreateInput name="title"
-         title="Título" value={this.state.title} function={this.handleChange} />
-        <CreateInput name="subtitle"
-         title="Subtítulo" value={this.state.subtitle} function={this.handleChange} />
-        <CreateImagePath name="imagePath"
-         title="Imagem" value={this.state.imagePath} function={this.handleChange} />
-        <CreateStorylineInput name="storyline"
-         title="Sinopse" value={this.state.storyline} function={this.handleChange} />
-        <CreateRatingInput name="rating"
-         title="Avaliação" value={this.state.rating} function={this.handleChange} />
-        <CreateGenreInput name="genre"
-         title="Gênero" value={this.state.genre} function={this.handleChange} />
+        <CreateInput
+          name="title"
+          title="Título" value={this.state.title} function={this.handleChange} />
+        <CreateInput
+          name="subtitle"
+          title="Subtítulo" value={this.state.subtitle} function={this.handleChange} />
+        <CreateImagePath
+          name="imagePath"
+          title="Imagem" value={this.state.imagePath} function={this.handleChange} />
+        <CreateStorylineInput
+          name="storyline"
+          title="Sinopse" value={this.state.storyline} function={this.handleChange} />
+        <CreateRatingInput
+          name="rating"
+          title="Avaliação" value={this.state.rating} function={this.handleChange} />
+        <CreateGenreInput
+          name="genre"
+          title="Gênero" value={this.state.genre} function={this.handleChange} />
         <button onClick={this.addNewMovie} type="button">Adicionar filme</button>
       </form>
     );
