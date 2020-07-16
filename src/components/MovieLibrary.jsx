@@ -24,7 +24,7 @@ class MovieLibrary extends React.Component {
   }
 
   updateState(name, value) {
-    this.setState(() => ({ [name]: value, }));
+    this.setState(() => ({ [name]: value }));
   }
 
 // funcao pra mostrar os movies
