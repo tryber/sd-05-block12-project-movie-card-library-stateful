@@ -16,6 +16,7 @@ class AddMovie extends React.Component {
     this.SubtitleInput = this.SubtitleInput.bind(this);
     this.ChangeHandler = this.ChangeHandler.bind(this);
     this.ImageInput = this.ImageInput.bind(this);
+    this.SinopseInput = this.SinopseInput.bind(this);
   }
 
   ChangeHandler(event) {
@@ -65,12 +66,27 @@ class AddMovie extends React.Component {
     );
   }
 
+  SinopseInput() {
+    return (
+      <label htmlFor="sinopse">
+        Sinopse
+        <input
+          type="textarea"
+          name="storyline"
+          value={this.state.storyline}
+          onChange={this.ChangeHandler}
+        />
+      </label>
+    );
+  }
+
   render() {
     return (
       <form>
         {this.TitleInput()}
         {this.SubtitleInput()}
         {this.ImageInput()}
+        {this.SinopseInput()}
       </form>
     );
   }
