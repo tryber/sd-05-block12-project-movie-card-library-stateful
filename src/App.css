@@ -81,3 +81,14 @@ body {
   justify-content: flex-end;
   padding: 12px 20px;
 }
+
+.AddMove , .SearchBar {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+button {
+  align-self: center;
+  width: 600px;
+}
