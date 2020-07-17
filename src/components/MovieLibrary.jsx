@@ -1,6 +1,9 @@
 // implement MovieLibrary component here
 import React from 'react';
 // import MovieCard from './MovieCard';
+import SearchBar from './SearchBar';
+import MovieList from './MovieList';
+import AddMovie from './AddMovie';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -9,10 +12,17 @@ class MovieLibrary extends React.Component {
   }
 
   render() {
+    const { movies } = this.props;
     return (
-      <p>{console.log('oi')}</p>
+      <div>
+        <SearchBar />
+        <MovieList movies={movies} />
+        <AddMovie />
+      </div>
     );
   }
 }
 
 export default MovieLibrary;
+// const { name, value } = event.target;
+// onSearchTextChange={(event) => this.setState({ searchText: event.target.value })}

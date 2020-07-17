@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
     // DH => texto que vai aparecer nas labels, e tambem a identificacao entre label seu input
     return (
       <fieldset className="searchBar">
-        <form>
+        <form className="searchBar">
           <TextoDeEntrada onChange={onSearchTextChange} DH="Inclui o texto" value={searchText} />
           <SelecaoFavorito
             onChange={onBookmarkedChange}
@@ -36,12 +36,5 @@ class SearchBar extends React.Component {
     );
   }
 }
-
-// searchText, uma string
-// onSearchTextChange, uma callback
-// bookmarkedOnly, um boolean
-// onBookmarkedChange, uma callback
-// selectedGenre, uma string
-// onSelectedGenreChange, uma callback
 
 export default SearchBar;
