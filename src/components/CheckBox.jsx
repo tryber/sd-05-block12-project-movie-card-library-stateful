@@ -7,7 +7,7 @@ class CheckBox extends React.Component {
       <div>
         <label htmlFor={name}>{title}</label>
         <select value={value} onClick={handleChange}>
-          {ids.map((id, index) => <option value={id}>{types[index]}</option>)}
+          {ids.map((id, index) => <option key={id} value={id}>{types[index]}</option>)}
         </select>
       </div>
     );
