@@ -1,11 +1,12 @@
 import React from 'react';
 
-class TextAreaInput extends React.Component {
+class InputNumber extends React.Component {
   render() {
     return (
       <label htmlFor={this.props.label}>
         {this.props.topic}
-        <textarea
+        <input
+          type="number"
           name={this.props.label}
           value={this.props.value}
           onChange={this.props.changeFunction}
@@ -15,4 +16,4 @@ class TextAreaInput extends React.Component {
   }
 }
 
-export default TextAreaInput;
+export default InputNumber;
