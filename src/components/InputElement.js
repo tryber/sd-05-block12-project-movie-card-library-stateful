@@ -16,4 +16,4 @@ class InputElement extends React.Component {
   }
 }
 
-exports default InputElement;
+export default InputElement;
