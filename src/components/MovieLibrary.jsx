@@ -31,8 +31,8 @@ class MovieLibrary extends React.Component {
       return movies.filter((filme) => filme.genre === selectedGenre);
     }
     if (searchText) {
-    return (movies.filter((filme) => filme.title.includes(searchText) ||
-      filme.subtitle.includes(searchText) || filme.storyline.includes(searchText)));
+      return (movies.filter((filme) => filme.title.includes(searchText) ||
+        filme.subtitle.includes(searchText) || filme.storyline.includes(searchText)));
     }
 
     return this.state.movies;
