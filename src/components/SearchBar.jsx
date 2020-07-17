@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
         <label htmlFor="searchText" >
           Inclui o texto:<br />
           <input
-            className="searchText caixaImput"
+            className="searchText caixaInput"
             name="searchText"
             type="text"
             value={searchText}
@@ -42,11 +42,11 @@ class SearchBar extends React.Component {
     const { selectedGenre, onSelectedGenreChange } = this.props;
     return (
       <div>
-        <label htmlFor="caixaImput">
+        <label htmlFor="caixaInput">
           Filtrar por gênero<br />
           <select
-            className="caixaImput"
-            name="caixaImput"
+            className="caixaInput"
+            name="caixaInput"
             value={selectedGenre}
             onChange={onSelectedGenreChange}
           >
