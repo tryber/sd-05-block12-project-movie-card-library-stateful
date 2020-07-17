@@ -3,7 +3,7 @@ import React from 'react';
 function SelectFunction({ value, onChange }) {
   return (
     <div>
-      <label htmlFor="selectedGenre">Gênero</label>
+      <label htmlFor="selectedGenre">Gênero</label><br/>
       <select
         id="selectedGenre" name="genre" value={value}
         onChange={onChange}
@@ -69,6 +69,7 @@ class AddMovie extends React.Component {
         <label htmlFor="e">Avaliação</label>
         <input type="number" id="e" name="rating" value={rating} onChange={this.onChangeHandle} />
         <SelectFunction onChange={this.onChangeHandle} value={genre} />
+        <br/>
         <button type="button" onClick={this.resetaEstados}>Adicionar filme</button>
       </form>
     );

@@ -85,4 +85,10 @@ body {
 .AddMove , .SearchBar {
   display: flex;
   flex-direction: column;
+  margin: 15px;
+}
+
+button {
+  width: 600px;
+  align-self: center;
 }
