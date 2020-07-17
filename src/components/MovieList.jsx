@@ -10,7 +10,7 @@ class MovieList extends React.Component {
     return (
       <div className="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-        <SearchBar searchText="está é a props"/>
+        <SearchBar searchText="está é a props" />
       </div>
     );
   }
