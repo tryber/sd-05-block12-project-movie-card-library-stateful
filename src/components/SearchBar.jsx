@@ -3,6 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props.searchText);
     this.state = {
       searchText: '',
       onSearchTextChange: '',
@@ -15,11 +16,11 @@ class SearchBar extends React.Component {
   render() {
     const {
       searchText,
-      onSearchTextChange,
+      // onSearchTextChange,
       bookmarkedOnly,
       onBookmarkedChange,
       selectedGenre,
-      onSelectedGenreChange,
+      // onSelectedGenreChange,
     } = this.state;
     return (
       <div>
