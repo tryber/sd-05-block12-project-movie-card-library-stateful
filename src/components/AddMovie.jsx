@@ -1,5 +1,8 @@
 // implement AddMovie component here
 import React from 'react';
+import InputField from './InputField';
+import TextArea from './TextAreaField';
+import CheckBox from './CheckBox';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -11,32 +14,43 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
+
+    this.change = this.change.bind(this);
+  }
+
+  change(event) {
+    const { name } = event.target;
+    let { value } = event.target;
+    if (name === 'rating') value = parseFloat(value);
+    this.setState({ [name]: value });
   }
 
   render() {
     return (
       <form>
-        <label htmlFor="title">Título</label>
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={(e) => this.setState({ title: e.target.value })}
+        <InputField
+          name="title" title="Título" type="text" value={this.state.title} func={this.change}
         />
-        <label htmlFor="subtitle">Subtítulo</label>
-        <input
-          type="text"
-          value={this.state.subtitle}
-          onChange={(e) => this.setState({ subtitle: e.target.value })}
+        <InputField
+          name="subtitle" title="Subtítulo" type="text" value={this.state.subtitle}
+          func={this.change}
         />
-        <label htmlFor="image">Imagem</label>
-        <input
-          type="text"
-          value={this.state.imagePath}
-          onChange={(e) => this.setState({ imagePath: e.target.value })}
+        <InputField
+          name="image" title="Imagem" type="text" value={this.state.imagePath} func={this.change}
+        />
+        <TextArea
+          name="storyline" title="Sinopse" value={this.state.storyline} handleChange={this.change}
+        />
+        <InputField
+          name="rating" title="Avaliação" type="number" value={this.state.rating} func={this.change}
+        />
+        <CheckBox
+          name="genre" title="Gênero" value={this.state.genre} handleChange={this.change}
+          ids={['action', 'comedy', 'thriller']} types={['Ação', 'Comédia', 'Suspense']}
         />
       </form>
-    )
+    );
   }
 }
 
