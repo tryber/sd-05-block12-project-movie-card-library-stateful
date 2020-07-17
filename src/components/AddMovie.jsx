@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+const genres = [
+  { value: 'action', text: 'Ação' },
+  { value: 'comedy', text: 'Comédia' },
+  { value: 'thriller', text: 'Suspense' },
+];
+
 const MovieTitle = (props) => {
   const { value, onchange } = props;
   return (
@@ -71,6 +77,27 @@ Avaliação
   </label>
 );
 
+const SelectGenre = ({ selectedGenre, onchange }) => (
+  <label htmlFor="genre-new-movie">
+Gênero
+    <select
+      key="genre-new-movie"
+      onChange={onchange}
+      name="genre"
+      value={selectedGenre}
+    >
+      {genres.map(({ text, value }) => (
+        <option
+          value={value}
+          key={value}
+        >
+          {text}
+        </option>
+      ))}
+    </select>
+  </label>
+);
+
 class AddMovie extends Component {
   constructor(props) {
     super(props);
@@ -98,7 +125,7 @@ class AddMovie extends Component {
   }
 
   render() {
-    const { title, subtitle, imagePath, storyline, rating } = this.state;
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
         <MovieTitle
@@ -118,6 +145,7 @@ class AddMovie extends Component {
           value={storyline}
         />
         <Rating valueRating={rating} onchange={this.updateRating} />
+        <SelectGenre selectedGenre={genre} onchange={this.updateState} />
       </form>
     );
   }
