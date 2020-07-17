@@ -16,10 +16,10 @@ const Input = (props) => {
     <label htmlFor="search-value">
           Inclui o texto
       <input
+        key="search-value"
         type="text"
         value={searchText}
         onChange={onSearchTextChange}
-        key="search-value"
       />
     </label>
   );
