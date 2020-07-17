@@ -24,21 +24,32 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.addMovie = this.addMovie.bind(this);
+    this.onClickMovie = this.onClickMovie.bind(this);
+  }
+
+  onClickMovie(callback) {
+    callback(this.state);
+    this.setState(() => ({
+      title: '',
+      subtitle: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      //  bookmarked: '',
+      genre: 'action',
+    }));
   }
 
   addMovie(event) {
-    console.log(event.target);
+  // console.log(event.target);
     const { name, value } = event.target;
     this.setState(() => ({ [name]: (name !== 'rating') ? value : parseFloat(value) }));
   }
 
-  // onClick() {
-  //   this.callBack();
-  // }
-
   render() {
     // const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     const cadastroDeFilme = Object.keys(this.state).slice(0, 3);
+    const { onClick } = this.props;
     // console.log(cadastroDeFilme);
     return (
       <form>
@@ -58,6 +69,7 @@ class AddMovie extends React.Component {
         <input name="title" type="text" value={title} onChange={this.addMovie} />
         */}
         <Genero onChange={this.addMovie} DH="Gênero:" value={this.state.genre} />
+        <button type="submit" onClick={() => this.onClickMovie(onClick)}>Adicionar filme</button>
       </form>
     );
   }
