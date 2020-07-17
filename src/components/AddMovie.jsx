@@ -9,12 +9,11 @@ const initialState = {
   storyline: '',
   rating: 0,
   genre: 'action',
-}
+};
 
 class AddMovie extends React.Component {
-
   constructor() {
-    super()
+    super();
     this.state = initialState;
     this.handleChange = this.handleChange.bind(this);
     this.resetState = this.resetState.bind(this);
@@ -22,7 +21,7 @@ class AddMovie extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    name === "rating" ? this.setState({[name]: Number(value)}) : this.setState({[name]: value})
+    this.setState(name === 'rating' ? { [name]: Number(value) } : { [name]: value });
   }
 
   resetState(event) {
@@ -32,37 +31,103 @@ class AddMovie extends React.Component {
     event.preventDefault();
   }
 
-  render () {
-    const {onClick} = this.props;
-
+  renderTitle() {
     return (
-      <form>
-        <label htmlFor="title">Título</label>
-        <input type="text" id="title" value={this.state.title} onChange={this.handleChange} name="title"/>
+      <label htmlFor="title">Título
+        <input
+          type="text"
+          id="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+          name="title"
+        />
+      </label>
+    );
+  }
 
-        <label htmlFor="subtitle">Subtítulo</label>
-        <input type="text" id="subtitle" value={this.state.subtitle} onChange={this.handleChange} name="subtitle"/>
+  renderSubtitle() {
+    return (
+      <label htmlFor="subtitle">Subtítulo
+        <input
+          type="text"
+          id="subtitle"
+          value={this.state.subtitle}
+          onChange={this.handleChange}
+          name="subtitle"
+        />
+      </label>
+    );
+  }
 
-        <label htmlFor="imagePath">Imagem</label>
-        <input type="text" id="imagePath" value={this.state.imagePath} onChange={this.handleChange} name="imagePath"/>
+  renderImagePath() {
+    return (
+      <label htmlFor="imagePath">Imagem
+        <input
+          type="text"
+          id="imagePath"
+          value={this.state.imagePath}
+          onChange={this.handleChange}
+          name="imagePath"
+        />
+      </label>
+    );
+  }
 
-        <label htmlFor="storyLine">Sinopse</label>
-        <textarea id="storyLine" value={this.state.storyline} onChange={this.handleChange} name="storyline"/>
+  renderStoryline() {
+    return (
+      <label htmlFor="storyLine">Sinopse
+        <textarea
+          id="storyLine"
+          value={this.state.storyline}
+          onChange={this.handleChange}
+          name="storyline"
+        />
+      </label>
+    );
+  }
 
-        <label htmlFor="rating">Avaliação</label>
-        <input type="number" id="rating" value={this.state.rating} onChange={this.handleChange} name="rating"/>
+  renderRating() {
+    return (
+      <label htmlFor="rating">Avaliação
+        <input
+          type="number"
+          id="rating"
+          value={this.state.rating}
+          onChange={this.handleChange}
+          name="rating"
+        />
+      </label>
+    );
+  }
 
-        <label htmlFor="genre">Gênero</label>
-        <select value={this.state.genre} onChange={this.handleChange} name="genre">
-          <option value="action">Ação</option>    
+  renderGenre() {
+    return (
+      <label htmlFor="genre">Gênero
+        <select
+          value={this.state.genre}
+          onChange={this.handleChange}
+          name="genre"
+        >
+          <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
+      </label>
+    );
+  }
 
-      <button onClick={this.resetState}>Adicionar filme</button>
-
+  render() {
+    return (
+      <form>
+        {this.renderTitle()}
+        {this.renderSubtitle()}
+        {this.renderImagePath()}
+        {this.renderStoryline()}
+        {this.renderRating()}
+        {this.renderGenre()}
+        <button onClick={this.resetState}>Adicionar filme</button>
       </form>
-    )
+    );
   }
 }
 
