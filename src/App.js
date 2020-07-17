@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar />
+      <AddMovie />
     </div>
   );
 }
