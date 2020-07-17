@@ -1,5 +1,21 @@
 import React from 'react';
 
+function SelectFunction({ value, onChange }) {
+  return (
+    <div>
+      <label htmlFor="selectedGenre">Gênero</label>
+      <select
+        id="selectedGenre" name="genre" value={value}
+        onChange={onChange}
+      >
+        <option value="action">Ação</option>
+        <option value="comedy">Comédia</option>
+        <option value="thriller">Suspense</option>
+      </select>
+    </div>
+  );
+}
+
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +38,9 @@ class AddMovie extends React.Component {
   }
 
   resetaEstados() {
+    const onClick = this.props.onClick;
+    onClick(this.state);
+
     this.setState({
       subtitle: '',
       title: '',
@@ -31,17 +50,9 @@ class AddMovie extends React.Component {
       genre: 'action',
     });
   }
-  economizaLinha() {
-    return (
-      <input
-        id="c" type="text" name="imagePath" value={this.props.imagePath}
-        onChange={this.props.onChangeHandle}
-      />
-    );
-  }
 
   render() {
-    const { title, subtitle, storyline, rating, genre } = this.state;
+    const { title, subtitle, storyline, rating, genre, imagePath } = this.state;
     return (
       <form className="AddMove">
         <label htmlFor="a">Título</label>
@@ -49,21 +60,16 @@ class AddMovie extends React.Component {
         <label htmlFor="b">Subtítulo</label>
         <input id="b" type="text" name="subtitle" value={subtitle} onChange={this.onChangeHandle} />
         <label htmlFor="c">Imagem</label>
-        {this.economizaLinha()}
+        <input
+          id="c" type="text" name="imagePath" value={imagePath}
+          onChange={this.onChangeHandle}
+        />
         <label htmlFor="d">Sinopse</label>
         <textarea id="d" name="storyline" value={storyline} onChange={this.onChangeHandle} />
         <label htmlFor="e">Avaliação</label>
         <input type="number" id="e" name="rating" value={rating} onChange={this.onChangeHandle} />
-        <label htmlFor="selectedGenre">Gênero</label>
-        <select
-          id="selectedGenre" name="genre" value={genre}
-          onChange={this.onChangeHandle}
-        >
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
-        <button onClick={this.resetaEstados}>Adicionar filme</button>
+        <SelectFunction onChange={this.onChangeHandle} value={genre} />
+        <button type="button" onClick={this.resetaEstados}>Adicionar filme</button>
       </form>
     );
   }

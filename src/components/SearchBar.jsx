@@ -6,9 +6,9 @@ class SearchBar extends React.Component {
     const { selectedGenre, onSelectedGenreChange } = this.props;
     return (
       <form className="SearchBar">
-        <label htmlFor="serchText">Inclui o texto:</label>
+        <label htmlFor="searchText">Inclui o texto:</label>
         <input
-          id="serchText" type="text" value={searchText}
+          id="searchText" type="text" value={searchText}
           onChange={onSearchTextChange}
         />
         <input
