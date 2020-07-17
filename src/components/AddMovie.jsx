@@ -98,6 +98,20 @@ Gênero
   </label>
 );
 
+const AddMovieButon = ({ onclick, resetState, actualState }) => (
+  <div>
+    <button
+      type="button"
+      onClick={() => {
+        // onclick(actualState);
+        resetState();
+      }}
+    >
+Adicionar filme
+    </button>
+  </div>
+);
+
 class AddMovie extends Component {
   constructor(props) {
     super(props);
@@ -111,6 +125,7 @@ class AddMovie extends Component {
     };
     this.updateState = this.updateState.bind(this);
     this.updateRating = this.updateRating.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   updateState(event) {
@@ -124,8 +139,20 @@ class AddMovie extends Component {
     this.setState({ [name]: Number(value) });
   }
 
+  resetState() {
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
+  }
+
   render() {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    const { onClick } = this.props;
     return (
       <form>
         <MovieTitle
@@ -146,6 +173,11 @@ class AddMovie extends Component {
         />
         <Rating valueRating={rating} onchange={this.updateRating} />
         <SelectGenre selectedGenre={genre} onchange={this.updateState} />
+        <AddMovieButon
+          addMovieState={this.state}
+          resetState={this.resetState}
+          // onclick={onClick(this.state)}
+        />
       </form>
     );
   }
