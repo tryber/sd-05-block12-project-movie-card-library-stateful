@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
 
   render() {
     const {
-      searchText, onSearchTextChange, bookmarkedOnly = true,
+      searchText, onSearchTextChange, bookmarkedOnly = 'defaultChecked',
       onBookmarkedChange, selectedGenre, onSelectedGenreChange,
     } = this.props;
 

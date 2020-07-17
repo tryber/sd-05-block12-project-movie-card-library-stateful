@@ -2,6 +2,7 @@
 import React from 'react';
 // import MovieCard from './MovieCard';
 import CadastraMovie from './CadastraMovie';
+import Genero from './FilmeGenero';
 // const checkType = (tipo) => {
 //   let texto;
 //   if (tipo === 4) texto = 'number';
@@ -31,7 +32,7 @@ class AddMovie extends React.Component {
     this.setState(() => ({ [name]: (name !== 'rating') ? value : parseFloat(value) }));
   }
 
-  // addMovie() {
+  // onClick() {
   //   this.callBack();
   // }
 
@@ -46,7 +47,7 @@ class AddMovie extends React.Component {
             campo={input}
             contador={index}
             estado={this.state[input]}
-            func={this.addMovie}
+            mudaEstado={this.addMovie}
           />
         ))}
         <label htmlFor="storyline">Sinopse</label>
@@ -54,10 +55,9 @@ class AddMovie extends React.Component {
         <label htmlFor="rating">Avaliação</label>
         <input name="rating" type="number" value={(this.state.rating)} onChange={this.addMovie} />
         {/* <label htmlFor="title">Título</label>
-        <input name="title" type="text" value={titl
-          e} onChange={this.addMovie} />
-        <label htmlFor="subtitle">Subtítulo</label>
-      <input name="title" type="text" value={subtitle} onChange={this.addMovie} /> */}
+        <input name="title" type="text" value={title} onChange={this.addMovie} />
+        */}
+        <Genero onChange={this.addMovie} DH="Gênero:" value={this.state.genre} />
       </form>
     );
   }
