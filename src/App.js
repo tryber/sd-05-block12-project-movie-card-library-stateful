@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import MovieLibrary from './components/MovieLibrary';
 import Header from './components/Header';
 import movies from './data';
-import AddMovie from './components/AddMovie'
+import AddMovie from './components/AddMovie';
 
 function App() {
   return (
