@@ -152,32 +152,15 @@ class AddMovie extends Component {
 
   render() {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
-    const { onClick } = this.props;
     return (
       <form>
-        <MovieTitle
-          value={title}
-          onchange={this.updateState}
-        />
-        <MovieSubtitle
-          value={subtitle}
-          onchange={this.updateState}
-        />
-        <ImagePath
-          onchange={this.updateState}
-          value={imagePath}
-        />
-        <Storyline
-          onchange={this.updateState}
-          value={storyline}
-        />
+        <MovieTitle value={title} onchange={this.updateState} />
+        <MovieSubtitle value={subtitle} onchange={this.updateState} />
+        <ImagePath onchange={this.updateState} value={imagePath} />
+        <Storyline onchange={this.updateState} value={storyline} />
         <Rating valueRating={rating} onchange={this.updateRating} />
         <SelectGenre selectedGenre={genre} onchange={this.updateState} />
-        <AddMovieButon
-          addMovieState={this.state}
-          resetState={this.resetState}
-          // onclick={onClick(this.state)}
-        />
+        <AddMovieButon addMovieState={this.state} resetState={this.resetState} />
       </form>
     );
   }
