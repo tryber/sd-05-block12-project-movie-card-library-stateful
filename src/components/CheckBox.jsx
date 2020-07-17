@@ -10,7 +10,7 @@ class CheckBox extends React.Component {
           {ids.map((id, index) => <option value={id}>{types[index]}</option>)}
         </select>
       </div>
-    )
+    );
   }
 }
 
