@@ -160,19 +160,19 @@ describe('<AddMovie /> component rating input', () => {
 
   const ratingInput = () => addMovie().find('form input[type="number"]');
 
-  it.skip('renders a rating input so as the user can type the movie rating', () => {
+  it('renders a rating input so as the user can type the movie rating', () => {
     expect(ratingInput(addMovie()).length).toEqual(1);
   });
 
-  it.skip('renders the label "Avaliação" for the movie rating input', () => {
+  it('renders the label "Avaliação" for the movie rating input', () => {
     expect(addMovie().find('label').at(4).text()).toEqual('Avaliação');
   });
 
-  it.skip('the rating input initial value, 0, comes from the AddMovie initial state, via "rating"', () => {
+  it('the rating input initial value, 0, comes from the AddMovie initial state, via "rating"', () => {
     expect(ratingInput().prop('value')).toEqual(initialState.rating);
   });
 
-  it.skip('updates the component state when movie rating input changes', () => {
+  it('updates the component state when movie rating input changes', () => {
     const simulatedEvent = { target: { value: '1.5', name: 'rating' } };
 
     ratingInput().simulate('change', simulatedEvent);
