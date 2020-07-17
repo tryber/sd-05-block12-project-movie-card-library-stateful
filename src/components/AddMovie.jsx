@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const MovieTitle = (props) => {
-  const { value, titleChange } = props;
+  const { value, onchange } = props;
   return (
     <label htmlFor="input-title">
 Título
@@ -10,14 +10,14 @@ Título
         type="text"
         key="input-title"
         value={value}
-        onChange={titleChange}
+        onChange={onchange}
       />
     </label>
   );
 };
 
 const MovieSubtitle = (props) => {
-  const { value, subtitleChange } = props;
+  const { value, onchange } = props;
   return (
     <label htmlFor="input-subtitle">
 Subtítulo
@@ -26,13 +26,13 @@ Subtítulo
         type="text"
         key="input-subtitle"
         value={value}
-        onChange={subtitleChange}
+        onChange={onchange}
       />
     </label>
   );
 };
 
-const ImagePath = ({ getPath, value }) => (
+const ImagePath = ({ onchange, value }) => (
   <label htmlFor="input-image">
 Imagem
     <input
@@ -40,12 +40,12 @@ Imagem
       name="imagePath"
       type="text"
       value={value}
-      onChange={getPath}
+      onChange={onchange}
     />
   </label>
 );
 
-const Storyline = ({ value, onChange }) => (
+const Storyline = ({ value, onchange }) => (
   <label htmlFor="storyline-input">
 Sinopse
     <textarea
@@ -53,7 +53,20 @@ Sinopse
       name="storyline"
       type="text"
       value={value}
-      onChange={onChange}
+      onChange={onchange}
+    />
+  </label>
+);
+
+const Rating = ({ onchange, valueRating }) => (
+  <label htmlFor="input-rating">
+Avaliação
+    <input
+      key="input-rating"
+      name="rating"
+      type="number"
+      value={valueRating}
+      onChange={onchange}
     />
   </label>
 );
@@ -70,6 +83,7 @@ class AddMovie extends Component {
       genre: 'action',
     };
     this.updateState = this.updateState.bind(this);
+    this.updateRating = this.updateRating.bind(this);
   }
 
   updateState(event) {
@@ -78,26 +92,32 @@ class AddMovie extends Component {
     this.setState({ [stateChange]: value });
   }
 
+  updateRating(event) {
+    const { value, name } = event.target;
+    this.setState({ [name]: Number(value) });
+  }
+
   render() {
-    const { title, subtitle, imagePath, storyline } = this.state;
+    const { title, subtitle, imagePath, storyline, rating } = this.state;
     return (
       <form>
         <MovieTitle
           value={title}
-          titleChange={this.updateState}
+          onchange={this.updateState}
         />
         <MovieSubtitle
           value={subtitle}
-          subtitleChange={this.updateState}
+          onchange={this.updateState}
         />
         <ImagePath
-          getPath={this.updateState}
+          onchange={this.updateState}
           value={imagePath}
         />
         <Storyline
-          onChange={this.updateState}
+          onchange={this.updateState}
           value={storyline}
         />
+        <Rating valueRating={rating} onchange={this.updateRating} />
       </form>
     );
   }
