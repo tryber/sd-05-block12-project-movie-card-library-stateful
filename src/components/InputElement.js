@@ -5,14 +5,14 @@ class InputElement extends React.Component {
     return (
       <label htmlFor={this.props.label}>
         {this.props.topic}
-        <input 
-        type="text"
-        name={this.props.label}
-        value={this.props.value}
-        onChange={this.props.changeFunction}
+        <input
+          type="text"
+          name={this.props.label}
+          value={this.props.value}
+          onChange={this.props.changeFunction}
         />
       </label>
-    )
+    );
   }
 }
 
