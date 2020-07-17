@@ -14,11 +14,17 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.newData = this.newData.bind(this);
+    this.newRating = this.newRating.bind(this);
   }
 
   newData(element) {
     const { name, value } = element.target;
     this.setState({ [name]: value });
+  }
+
+  newRating(element) {
+    const { name, value } = element.target;
+    this.setState({ [name]: Number(value) });
   }
 
   sinopse() {
@@ -48,7 +54,7 @@ class AddMovie extends React.Component {
           min="0"
           max="5"
           value={this.state.rating}
-          onChange={this.newData}
+          onChange={this.newRating}
         />
       </label>
     );
@@ -79,7 +85,7 @@ class AddMovie extends React.Component {
       <button
         className="botao"
         type="button"
-        onClick={this.state}
+        onClick={() => this.setState(state)}
       >
       Adicionar filme
       </button>
