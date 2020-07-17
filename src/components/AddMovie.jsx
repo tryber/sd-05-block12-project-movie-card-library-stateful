@@ -85,7 +85,7 @@ class AddMovie extends React.Component {
       <button
         className="botao"
         type="button"
-        onClick={() => this.setState(state)}
+        onClick={() => this.setState(this.state)}
       >
       Adicionar filme
       </button>
