@@ -93,8 +93,7 @@ class AddMovie extends React.Component {
     return (
       <label htmlFor="sinopse">
         Sinopse
-        <input
-          type="textarea"
+        <textarea
           name="storyline"
           value={this.state.storyline}
           onChange={this.ChangeHandler}
