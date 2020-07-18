@@ -43,7 +43,7 @@ class AddMovie extends React.Component {
     return (
       <form> <label htmlFor="title"> Título
           <input type="text" value={this.state.title} onChange={this.changeInputValue} />
-        </label>
+      </label>
         <label htmlFor="subtitle"> Subtítulo
           <input type="text" value={this.state.subtitle} onChange={this.changeInputValue} />
         </label>
