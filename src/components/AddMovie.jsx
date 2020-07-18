@@ -110,7 +110,7 @@ class AddMovie extends React.Component {
         <div>
           {this.sinopse()}
           {this.avaliacao()}
-          {this.filGenero()}<br/>
+          {this.filGenero()}<br />
           {this.botao()}
         </div>
       </form>

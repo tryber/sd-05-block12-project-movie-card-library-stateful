@@ -13,14 +13,14 @@ class MovieLibrary extends Component {
       bookmarkedOnly: false,
       selectedGenre: '',
       movies: props.movies,
-    }
+    };
   }
 
-  selectSearchText() {
+  /* selectSearchText() {
     return (
       luis
     );
-  }
+  } */
 
   render() {
     return (
