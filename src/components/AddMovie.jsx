@@ -10,7 +10,7 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
   }
 
   render() {
@@ -18,9 +18,11 @@ class AddMovie extends React.Component {
       <div>
         <form>
           <label htmlFor="title">Título</label>
-          <input id="title"/>
+          <input id="title" />
         </form>
       </div>
     );
   }
 }
+
+export default AddMovie;
