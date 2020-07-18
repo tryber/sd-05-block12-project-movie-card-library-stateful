@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
+import AddMovie from './AddMovie.jsx';
 
 class MovieLibrary extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class MovieLibrary extends Component {
     this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
     this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
     this.filterMovies = this.filterMovies.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   onSearchTextChange(event) {
@@ -56,6 +58,10 @@ class MovieLibrary extends Component {
     // Caso contrario para todos esses ifs, simplesmente passa todos filmes
   }
 
+  onClick(newMovie) {
+    this.setState({ movies: [...this.props.movies, newMovie] });
+  }
+
   render() {
     return (
       <div>
@@ -69,6 +75,7 @@ class MovieLibrary extends Component {
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
         <MovieList movies={this.filterMovies()} />
+        <AddMovie onClick={this.onClick} />
       </div>
     );
   }
