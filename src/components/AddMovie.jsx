@@ -41,7 +41,6 @@ class AddMovie extends React.Component {
 
   render() {
     return (
-      <section>
         <form>
           <label htmlFor="title"> Título
             <input type="text" value={this.state.title} onChange={this.changeInputValue} />
@@ -67,7 +66,6 @@ class AddMovie extends React.Component {
           </label>
           <button type="button" onClick={this.onClick}>Adicionar filme</button>
         </form>
-      </section>
     );
   }
 }
