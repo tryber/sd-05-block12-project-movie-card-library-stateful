@@ -29,10 +29,10 @@ class AddMovie extends React.Component {
 
   sinopse() {
     return (
-      <label htmlFor="Sinopse">
+      <label htmlFor="Sinopse" className="caixaInputTexterea">
         Sinopse<br />
         <textarea
-          className="caixaInput"
+          className="caixaInputTexterea"
           type="text"
           name="storyline"
           value={this.state.storyline}
@@ -44,7 +44,7 @@ class AddMovie extends React.Component {
 
   avaliacao() {
     return (
-      <label htmlFor="Avaliação">
+      <label htmlFor="Avaliação" className="caixaInput">
         Avaliação<br />
         <input
           className="caixaInput"
@@ -63,7 +63,7 @@ class AddMovie extends React.Component {
   filGenero() {
     return (
       <div>
-        <label htmlFor="Gênero">
+        <label htmlFor="Gênero" className="caixaInput">
           Gênero<br />
           <select
             className="caixaInput"
@@ -110,7 +110,7 @@ class AddMovie extends React.Component {
         <div>
           {this.sinopse()}
           {this.avaliacao()}
-          {this.filGenero()}
+          {this.filGenero()}<br/>
           {this.botao()}
         </div>
       </form>

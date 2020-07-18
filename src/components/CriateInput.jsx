@@ -4,7 +4,7 @@ class CriateInput extends React.Component {
   render() {
     return (
       <div>
-        <label htmlFor={this.props.title}>
+        <label htmlFor={this.props.title} className="caixaInput">
           {this.props.title}<br />
           <input
             className="caixaInput"
