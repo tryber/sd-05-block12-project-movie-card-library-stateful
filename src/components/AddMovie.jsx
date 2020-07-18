@@ -41,31 +41,29 @@ class AddMovie extends React.Component {
 
   render() {
     return (
-        <form>
-          <label htmlFor="title"> Título
-            <input type="text" value={this.state.title} onChange={this.changeInputValue} />
-          </label>
-          <label htmlFor="subtitle"> Subtítulo
-            <input type="text" value={this.state.subtitle} onChange={this.changeInputValue} />
-          </label>
-          <label htmlFor="image"> Imagem
-            <input type="text" value={this.state.imagePath} onChange={this.changeInputValue} />
-          </label>
-          <label htmlFor="storyline"> Sinopse
-            <textarea type="text" value={this.state.storyline} onChange={this.changeInputValue} />
-          </label>
-          <label htmlFor="rating"> Rating
-            <input type="number" value={this.state.rating} onChange={this.changeInputRatingValue} />
-          </label>
-          <label htmlFor="genre"> Gênero
-            <select value={this.state.genre} onChange={this.changeInputValue}>
-              <option value="action">Ação</option>
-              <option value="comedy">Comédia</option>
-              <option value="thriller">Suspense</option>
-            </select>
-          </label>
-          <button type="button" onClick={this.onClick}>Adicionar filme</button>
-        </form>
+      <form> <label htmlFor="title"> Título
+          <input type="text" value={this.state.title} onChange={this.changeInputValue} />
+        </label>
+        <label htmlFor="subtitle"> Subtítulo
+          <input type="text" value={this.state.subtitle} onChange={this.changeInputValue} />
+        </label>
+        <label htmlFor="image"> Imagem
+          <input type="text" value={this.state.imagePath} onChange={this.changeInputValue} />
+        </label>
+        <label htmlFor="storyline"> Sinopse
+          <textarea type="text" value={this.state.storyline} onChange={this.changeInputValue} />
+        </label>
+        <label htmlFor="rating"> Rating
+          <input type="number" value={this.state.rating} onChange={this.changeInputRatingValue} />
+        </label>
+        <label htmlFor="genre"> Gênero
+          <select value={this.state.genre} onChange={this.changeInputValue}>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
+        </label>
+        <button type="button" onClick={this.onClick}>Adicionar filme</button> </form>
     );
   }
 }
