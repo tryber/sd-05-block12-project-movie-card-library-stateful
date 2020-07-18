@@ -12,8 +12,12 @@ class MovieLibrary extends Component {
     };
   }
 
-  // render() {
-  // }
+  render() {
+    const { searchText } = this.state;
+    return (
+      <SearchBar searchText={searchText} />
+    );
+  }
 }
 
 export default MovieLibrary;
