@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from './SearchBar';
 
 class Header extends React.Component {
   render() {
@@ -8,7 +7,6 @@ class Header extends React.Component {
         <header className="movie-card-header">
           <h1 className="page-title">Movie Cards Library</h1>
         </header>
-        <SearchBar />
       </div>
     );
   }

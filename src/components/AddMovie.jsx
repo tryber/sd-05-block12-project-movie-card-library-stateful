@@ -1,16 +1,26 @@
-// adicionar filme
-// import React from 'react';
+import React from 'react';
 
-// class AddMovie extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
+class AddMovie extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    }
+  }
 
-//     }
-//   }
-//   render() {
-//     return ()
-//   }
-// }
-
-// export default AddMovie;
+  render() {
+    return (
+      <div>
+        <form>
+          <label htmlFor="title">Título</label>
+          <input id="title"/>
+        </form>
+      </div>
+    );
+  }
+}

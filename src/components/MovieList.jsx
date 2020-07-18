@@ -1,6 +1,5 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import SearchBar from './SearchBar';
 // Lista de filmes
 
 class MovieList extends React.Component {
@@ -10,7 +9,6 @@ class MovieList extends React.Component {
     return (
       <div className="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-        <SearchBar searchText="está é a props" />
       </div>
     );
   }
