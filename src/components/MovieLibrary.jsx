@@ -35,6 +35,10 @@ class MovieLibrary extends Component {
     this.setState({ bookmarkedOnly: checked });
   }
 
+  onClick(newMovie) {
+    this.setState({ movies: [...this.props.movies, newMovie] });
+  }
+
   filterMovies() {
     const { selectedGenre, movies, searchText, bookmarkedOnly } = this.state;
     // tem que repetir o destruturing pois n parece pegar de cima
@@ -56,10 +60,6 @@ class MovieLibrary extends Component {
     ));
     return movieByText;
     // Caso contrario para todos esses ifs, simplesmente passa todos filmes
-  }
-
-  onClick(newMovie) {
-    this.setState({ movies: [...this.props.movies, newMovie] });
   }
 
   render() {
