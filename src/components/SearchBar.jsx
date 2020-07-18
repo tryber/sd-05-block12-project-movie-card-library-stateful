@@ -3,7 +3,8 @@ import React from 'react';
 class SearchBar extends React.Component {
 
   incluir() {
-    const { searchText, onSearchTextChange } = this.props;
+    const searchText = this.props.searchText;
+    const onSearchTextChange = this.props.onSearchTextChange
     return (
       <div>
         <label htmlFor="searchText" className="caixaInput">
@@ -26,6 +27,7 @@ class SearchBar extends React.Component {
       <div>
         <label htmlFor="caixaCheck">
           <input
+            id="caixaCheck"
             className="caixaCheck"
             name="caixaCheck"
             type="checkbox"
