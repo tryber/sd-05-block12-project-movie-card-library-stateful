@@ -27,17 +27,17 @@ class AddMovie extends React.Component {
       <div>
         <form>
           <label htmlFor="title">Título</label>
-          <input type="text" id="title" onChange={this.setFilterValue.title} />
+          <input type="text" id="title" onChange={this.setFilterValue} />
           <label htmlFor="subtitle">Subtítulo</label>
-          <input type="text" id="subtitle" onChange={this.setFilterValue.subtitle} />
+          <input type="text" id="subtitle" onChange={this.setFilterValue} />
           <label htmlFor="image">Imagem</label>
-          <input type="text" id="image" onChange={this.setFilterValue.imagePath} />
+          <input type="text" id="image" onChange={this.setFilterValue} />
           <label htmlFor="synopsis">Sinopse</label>
-          <textarea id="synopsis" onChange={this.setFilterValue.storyline}></textarea>
+          <textarea id="synopsis" onChange={this.setFilterValue}></textarea>
           <label htmlFor="number">Avaliação</label>
-          <input type="number" id="number" onChange={this.setFilterValue.rating} />
+          <input type="number" id="number" onChange={this.setFilterValue} />
           <label htmlFor="gender">Gênero</label>
-          <select id="gender" onChange={this.setFilterValue.genre}>
+          <select id="gender" onChange={this.setFilterValue}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
