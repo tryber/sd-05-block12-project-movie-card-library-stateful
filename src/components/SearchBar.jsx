@@ -48,8 +48,8 @@ class SearchBar extends React.Component {
     } = this.props;
     return (
       <form>
-        <Input onSearchTextChange={onSearchTextChange} searchText={searchText} />
-        <Input1 onBookmarkedChange={onBookmarkedChange} bookmarkedOnly={bookmarkedOnly} />
+        <Input onSearchTextChange={onSearchTextChange} searchText={searchText} /><br />
+        <Input1 onBookmarkedChange={onBookmarkedChange} bookmarkedOnly={bookmarkedOnly} /><br />
         <Input2 onSelectedGenreChange={onSelectedGenreChange} selectedGenre={this.state.genre} />
       </form>
     );
