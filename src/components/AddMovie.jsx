@@ -15,6 +15,7 @@ class AddMovie extends React.Component {
     };
     this.newData = this.newData.bind(this);
     this.newRating = this.newRating.bind(this);
+    this.addNewMovie = this.addNewMovie.bind(this);
   }
 
   newData(element) {
@@ -79,19 +80,18 @@ class AddMovie extends React.Component {
       </div>
     );
   }
- 
+
   addNewMovie() {
     const onClick = this.props.onClick;
     onClick(this.state);
     this.setState({
-        subtitle: '',
-        title: '',
-        imagePath: '',
-        storyline: '',
-        rating: 0,
-        genre: 'action',
-      }
-    );
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
   }
 
   botao() {

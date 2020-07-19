@@ -82,9 +82,13 @@ body {
   padding: 12px 20px;
 }
 
+.sub {
+  margin: 20px 30px;
+}
+
 .formulario {
-  margin: 10px auto;
-  width: 90%;
+  margin: 0 30px;
+  width: 100% (- 60px);
 }
 
 .caixaInput {

@@ -4,7 +4,7 @@ class SearchBar extends React.Component {
 
   incluir() {
     const searchText = this.props.searchText;
-    const onSearchTextChange = this.props.onSearchTextChange
+    const onSearchTextChange = this.props.onSearchTextChange;
     return (
       <div>
         <label htmlFor="searchText" className="caixaInput">
