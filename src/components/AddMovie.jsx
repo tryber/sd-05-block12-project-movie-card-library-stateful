@@ -1,26 +1,51 @@
 // implement AddMovie component here
 import React from 'react';
 
+const Input = () => {
+  const { type, id, onChange, name, value } = this.props;
+  return (
+    <input
+      type={type}
+      id={id}
+      onChange={onChange}
+      name={name}
+      value={value}
+    />
+  );
+};
+
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = { subtitle: '', title: '', imagePath: '', storyline: '', rating: 0, genre: 'action' };
+
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: [value] });
+  }
+
   render() {
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
         <label htmlFor="label1">Título</label>
-        <input type="text" value={this.state.title} onChange={this.title} id="label1" />
+        <Input name="title" type="text" value={title} onChange={this.title} id="label1" />
         <label htmlFor="label2">Subtítulo</label>
-        <input type="text" value={this.state.subtitle} onChange={this.subtitle} id="label2" />
-        <label htmlFor="label3">Imagem</label>
-        <input type="file" value={this.state.imagePath} onChange={this.imagePath} id="label3" />
-        <label htmlFor="label4">Sinopse</label>
-        <input type="textarea" value={this.state.storyline} onChange={this.storyline} id="label4" />
-        <label htmlFor="label5">Avaliação</label>
-        <input type="number" value={this.state.rating} onChange={this.rating} id="label5" />
+        <Input name="subtitle" type="text" value={subtitle} onChange={this.subtitle} id="label2" />
+        <label htmlFor="label3">Imagem
+        <Input name="imagePath" type="file" value={imagePath} onChange={this.imagePath} />
+        </label>
+        <label htmlFor="label4">Sinopse
+        <Input name="sinopse" type="textarea" value={storyline} onChange={this.storyline} />
+        </label>
+        <label htmlFor="label5">Avaliação
+        <Input name="rating" type="number" value={rating} onChange={this.rating} />
+        </label>
         <label htmlFor="label6">Gênero</label>
-        <select value={this.state.genre} onChange={this.genre} id="label6">
+        <select value={genre} onChange={this.genre} id="label6">
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
