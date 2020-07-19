@@ -22,7 +22,7 @@ body {
 .movie-list {
   display: flex;
   flex-flow: row wrap;
-  padding: 48px 30px;
+  padding: 0 3%;
 }
 
 .movie-card {
@@ -83,12 +83,12 @@ body {
 }
 
 .sub {
-  margin: 20px 30px;
+  margin: 20px 3%;
 }
 
 .formulario {
-  margin: 0 30px;
-  width: 100% (- 60px);
+  margin: 30px 3%;
+  width: 94%;
 }
 
 .caixaInput {
