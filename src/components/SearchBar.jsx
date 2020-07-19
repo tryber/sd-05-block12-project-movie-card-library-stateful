@@ -6,17 +6,36 @@ import Genero from './FilmeGenero';
 import '../App.css';
 
 class SearchBar extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
+    this.state = { };
+  }
+  //   this.state = {
+  //     searchText: '',
+  //     bookmarkedOnly: '',
+  //     selectedGenre: '',
+  //   };
   //   this.onSearchTextChange = this.onSearchTextChange.bind(this);
+  //   this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
+  //   this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
   // }
 
-  // onSearchTextChange() {
+  // onSearchTextChange(event) {
+  //   // const { name, value } = event.target;
+  //   this.setState({ searchText: event.target.value });
+  // }
+
+  // onSelectedGenreChange(event) {
+  //   this.setState({ selectedGenre: event.target.value });
+  // }
+
+  // onBookmarkedChange(event) {
+  //   this.setState({ bookmarkedOnly: event.target.value });
   // }
 
   render() {
     const {
-      searchText, onSearchTextChange, bookmarkedOnly = 'defaultChecked',
+      searchText, onSearchTextChange, bookmarkedOnly,
       onBookmarkedChange, selectedGenre, onSelectedGenreChange,
     } = this.props;
 
@@ -30,7 +49,7 @@ class SearchBar extends React.Component {
             DH="Mostrar somente favoritos"
             checked={bookmarkedOnly}
           />
-          <Genero onChange={onSelectedGenreChange} DH="Filtrar por gênero:" value={selectedGenre} />
+          <Genero onChange={onSelectedGenreChange} DH="Filtrar por gênero:" valor={selectedGenre} />
         </form>
       </fieldset>
     );

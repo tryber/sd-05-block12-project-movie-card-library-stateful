@@ -4,7 +4,7 @@ import React from 'react';
 // const funcao = new AddMovie();
 class FilmeGenero extends React.Component {
   render() {
-    const { value, onChange, DH } = this.props;
+    const { valor, onChange, DH } = this.props;
     const opcao = [
       { key: 'Todos', value: '' },
       { key: 'Ação', value: 'action' },
@@ -12,12 +12,12 @@ class FilmeGenero extends React.Component {
       { key: 'Suspense', value: 'thriller' },
     ];
     if (onChange.name === 'bound addMovie') { opcao.shift(); }
-    // console.log(opcao);
     return (
       <label htmlFor={DH}>
         {DH}
-        <select onChange={onChange} value={value}>
-          {opcao.map((opt) => (<option key={opt.key} value={opt.value}>{opt.key}</option>))}
+        {/* name="genre" onChange={onChange} key={opt.value} value={opt.value} */}
+        <select name="genre" onChange={onChange} value={valor}>
+          {opcao.map((opt) => (<option key={opt.value} value={opt.value}>{opt.key}</option>))}
         </select>
       </label>
     );

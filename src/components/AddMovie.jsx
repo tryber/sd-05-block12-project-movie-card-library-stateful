@@ -3,6 +3,8 @@ import React from 'react';
 // import MovieCard from './MovieCard';
 import CadastraMovie from './CadastraMovie';
 import Genero from './FilmeGenero';
+// import movies from '../data';
+
 // const checkType = (tipo) => {
 //   let texto;
 //   if (tipo === 4) texto = 'number';
@@ -20,16 +22,21 @@ class AddMovie extends React.Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      //  bookmarked: '',
       genre: 'action',
+      // bookmarked: 'false',
     };
     this.addMovie = this.addMovie.bind(this);
     this.onClickMovie = this.onClickMovie.bind(this);
+    this.limpaEstado = this.limpaEstado.bind(this);
   }
 
   onClickMovie(callback) {
-    callback(this.state);
-    this.setState(() => ({
+    callback(Object.assign(this.state));
+    this.limpaEstado();
+  }
+
+  limpaEstado() {
+    this.setState({
       title: '',
       subtitle: '',
       imagePath: '',
@@ -37,7 +44,7 @@ class AddMovie extends React.Component {
       rating: 0,
       //  bookmarked: '',
       genre: 'action',
-    }));
+    });
   }
 
   addMovie(event) {
@@ -45,6 +52,7 @@ class AddMovie extends React.Component {
     const { name, value } = event.target;
     this.setState(() => ({ [name]: (name !== 'rating') ? value : parseFloat(value) }));
   }
+
 
   render() {
     // const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
@@ -55,6 +63,7 @@ class AddMovie extends React.Component {
       <form>
         {cadastroDeFilme.map((input, index) => (
           <CadastraMovie
+            key={input}
             campo={input}
             contador={index}
             estado={this.state[input]}
@@ -68,8 +77,10 @@ class AddMovie extends React.Component {
         {/* <label htmlFor="title">Título</label>
         <input name="title" type="text" value={title} onChange={this.addMovie} />
         */}
-        <Genero onChange={this.addMovie} DH="Gênero:" value={this.state.genre} />
-        <button type="submit" onClick={() => this.onClickMovie(onClick)}>Adicionar filme</button>
+        <Genero onChange={this.addMovie} DH="Gênero:" valor={this.state.genre} />
+        <button type="button" onClick={() => { this.onClickMovie(onClick); }}>
+          Adicionar filme
+        </button>
       </form>
     );
   }
