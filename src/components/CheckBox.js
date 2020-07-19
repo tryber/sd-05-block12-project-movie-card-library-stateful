@@ -1,13 +1,14 @@
 import React from 'react';
 
-class InputElement extends React.Component {
+class CheckBox extends React.Component {
   render() {
     return (
       <label htmlFor={this.props.label}>
         {this.props.topic}
         <input
-          type="text"
+          type="checkbox"
           name={this.props.label}
+          checked={this.props.checked}
           value={this.props.value}
           onChange={this.props.change}
         />
@@ -16,4 +17,4 @@ class InputElement extends React.Component {
   }
 }
 
-export default InputElement;
+export default CheckBox;

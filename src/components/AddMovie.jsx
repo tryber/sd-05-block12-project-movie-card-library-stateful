@@ -48,23 +48,19 @@ class AddMovie extends React.Component {
     return (
       <form>
         <InputElement
-          type="text" label="title" topic="Título"
-          value={this.state.title} change={this.handleChange}
+          label="title" topic="Título" value={this.state.title} change={this.handleChange}
         />
         <InputElement
-          type="text" label="subtitle" topic="Subtítulo"
-          value={this.state.subtitle} change={this.handleChange}
+          label="subtitle" topic="Subtítulo" value={this.state.subtitle} change={this.handleChange}
         />
         <InputElement
-          type="text" label="img" topic="Imagem"
-          value={this.state.imagePath} change={this.handleChange}
+          label="img" topic="Imagem" value={this.state.imagePath} change={this.handleChange}
         />
         <TextAreaInput
           label="storyline" topic="Sinopse" value={this.state.storyline} change={this.handleChange}
         />
         <InputNumber
-          label="rating" topic="Avaliação"
-          value={this.state.rating} change={this.handleChangeNumber}
+          label="rating" topic="Avaliação" value={this.state.rating} change={this.handleChangeNumber}
         />
         <SelectBox
           label="genre" topic="Gênero" value={this.state.genre} change={this.handleChange}

@@ -1,7 +1,8 @@
 // implement SearchBar component here
 import React from 'react';
 import InputElement from './InputElement';
-import SelectBox from './SelectBox';
+import SelectBoxSB from './SelectBoxSB';
+import CheckBox from './CheckBox';
 
 class SearchBar extends React.Component {
 
@@ -17,14 +18,12 @@ class SearchBar extends React.Component {
     return (
       <form>
         <InputElement
-          topic="Inclui o texto:" type="text"
-          label="search" value={searchText} change={onSearchTextChange}
+          topic="Inclui o texto:" label="search" value={searchText} change={onSearchTextChange}
         />
-        <InputElement
-          topic="Mostrar somente favoritos" type="checkbox"
-          label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange}
+        <CheckBox
+          topic="Mostrar somente favoritos" type="checkbox" label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange}
         />
-        <SelectBox
+        <SelectBoxSB
           topic="Filtrar por gênero" label="genre"
           value={selectedGenre} change={onSelectedGenreChange}
         />
