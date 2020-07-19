@@ -21,7 +21,8 @@ class SearchBar extends React.Component {
           topic="Inclui o texto:" label="search" value={searchText} change={onSearchTextChange}
         />
         <CheckBox
-          topic="Mostrar somente favoritos" type="checkbox" label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange}
+          topic="Mostrar somente favoritos" type="checkbox"
+          label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange}
         />
         <SelectBoxSB
           topic="Filtrar por gênero" label="genre"

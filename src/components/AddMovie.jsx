@@ -60,7 +60,8 @@ class AddMovie extends React.Component {
           label="storyline" topic="Sinopse" value={this.state.storyline} change={this.handleChange}
         />
         <InputNumber
-          label="rating" topic="Avaliação" value={this.state.rating} change={this.handleChangeNumber}
+          label="rating" topic="Avaliação"
+          value={this.state.rating} change={this.handleChangeNumber}
         />
         <SelectBox
           label="genre" topic="Gênero" value={this.state.genre} change={this.handleChange}
