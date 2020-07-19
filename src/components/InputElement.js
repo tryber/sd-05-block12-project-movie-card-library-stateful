@@ -6,10 +6,11 @@ class InputElement extends React.Component {
       <label htmlFor={this.props.label}>
         {this.props.topic}
         <input
-          type="text"
+          type={this.props.type}
           name={this.props.label}
+          checked={this.props.checked}
           value={this.props.value}
-          onChange={this.props.changeFunction}
+          onChange={this.props.change}
         />
       </label>
     );

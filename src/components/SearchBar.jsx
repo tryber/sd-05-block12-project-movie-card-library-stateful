@@ -1,35 +1,22 @@
 // implement SearchBar component here
 import React from 'react';
+import InputElement from './InputElement';
+import SelectBox from './SelectBox';
 
 class SearchBar extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
+  
   render() {
     const {
-      searchText, onSearchTextChange, bookmarkedOnly,
-      onBookmarkedChange, selectedGenre, onSelectedGenreChange,
+      searchText,
+      onSearchTextChange, bookmarkedOnly, onBookmarkedChange, selectedGenre, onSelectedGenreChange,
     } = this.props;
     return (
       <form>
-        <label htmlFor="search">
-          Inclui o texto:
-          <input type="text" value={searchText} onChange={onSearchTextChange} />
-        </label>
-        <label htmlFor="favorites">
-          Mostrar somente favoritos
-          <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
-        </label>
-        <label htmlFor="genre">
-          Filtrar por gênero
-          <select value={selectedGenre} onChange={onSelectedGenreChange} >
-            <option value="">Todos</option>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-          </select>
-        </label>
+        <InputElement topic="Inclui o texto: " type="text"
+        label="search" value={searchText} change={onSearchTextChange} />
+        <InputElement topic="Mostrar somente favoritos" type="checkbox"
+        label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange} />
+        <SelectBox topic="Filtrar por gênero" label="genre" value={selectedGenre} change={onSelectedGenreChange} />
       </form>
     );
   }

@@ -5,7 +5,8 @@ class SelectBox extends React.Component {
     return (
       <label htmlFor={this.props.label}>
         {this.props.topic}
-        <select name={this.props.label} value={this.props.value} onChange={this.props.changeFunction}>
+        <select name={this.props.label} value={this.props.value} onChange={this.props.change}>
+          <option value="">Todos</option>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
