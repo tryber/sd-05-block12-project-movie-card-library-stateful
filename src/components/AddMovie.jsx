@@ -1,26 +1,86 @@
 // implement AddMovie component here
 import React from 'react';
+
+const Input = (props) => {
+  const { type, id, onChange, name, value } = props;
+  return (
+    <input
+      type={type}
+      id={id}
+      onChange={onChange}
+      name={name}
+      value={value}
+    />
+  );
+};
+
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = { subtitle: '', title: '', imagePath: '', storyline: '', rating: 0, genre: 'action' };
+
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: [value] });
+  }
+
+  renderInputs() {
+    const { title, subtitle } = this.state;
+    return (
+      <div>
+        <label htmlFor="label1">Título</label>
+        <Input
+          name="title"
+          type="text"
+          value={title}
+          onChange={(e) => this.handleChange(e)}
+        />
+        <label htmlFor="label2">Subtítulo</label>
+        <Input
+          name="subtitle"
+          type="text"
+          value={subtitle}
+          onChange={(e) => this.handleChange(e)}
+        />
+      </div>
+    );
+  }
+
+  renderInputs2() {
+    const { imagePath, storyline, rating } = this.state;
+    return (
+      <div>
+        <label htmlFor="label3">Imagem</label>
+        <Input
+          name="imagePath"
+          type="file"
+          value={imagePath}
+          onChange={(e) => this.handleChange(e)}
+        />
+        <label htmlFor="label4">Sinopse</label>
+        <Input
+          name="sinopse"
+          type="textarea"
+          value={storyline}
+          onChange={(e) => this.handleChange(e)}
+        />
+        <label htmlFor="label5">Avaliação</label>
+        <Input name="rating" type="number" value={rating} onChange={(e) => this.handleChange(e)} />
+      </div>
+    );
+  }
+
   render() {
+    const { genre } = this.state;
     return (
       <form>
-        <label htmlFor="label1">Título</label>
-        <input type="text" value={this.state.title} onChange={this.title} id="label1" />
-        <label htmlFor="label2">Subtítulo</label>
-        <input type="text" value={this.state.subtitle} onChange={this.subtitle} id="label2" />
-        <label htmlFor="label3">Imagem</label>
-        <input type="text" value={this.state.imagePath} onChange={this.imagePath} id="label3" />
-        <input type="file" value={this.state.imagePath} onChange={this.imagePath} id="label3" />
-        <label htmlFor="label4">Sinopse</label>
-        <input type="textarea" value={this.state.storyline} onChange={this.storyline} id="label4" />
-        <label htmlFor="label5">Avaliação</label>
-        <input type="number" value={this.state.rating} onChange={this.rating} id="label5" />
+        {this.renderInputs()}
+        {this.renderInputs2()}
         <label htmlFor="label6">Gênero</label>
-        <select value={this.state.genre} onChange={this.genre} id="label6">
+        <select value={genre} onChange={(e) => this.handleChange(e)} id="label6">
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
@@ -30,4 +90,6 @@ class AddMovie extends React.Component {
     );
   }
 }
+
 export default AddMovie;
+
