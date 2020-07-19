@@ -18,13 +18,16 @@ class SearchBar extends React.Component {
       <form>
         <InputElement
           topic="Inclui o texto:" type="text"
-          label="search" value={searchText} change={onSearchTextChange} />
+          label="search" value={searchText} change={onSearchTextChange}
+        />
         <InputElement
           topic="Mostrar somente favoritos" type="checkbox"
-          label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange} />
+          label="favorites" checked={bookmarkedOnly} change={onBookmarkedChange}
+        />
         <SelectBox
           topic="Filtrar por gênero" label="genre"
-          value={selectedGenre} change={onSelectedGenreChange} />
+          value={selectedGenre} change={onSelectedGenreChange}
+        />
       </form>
     );
   }
