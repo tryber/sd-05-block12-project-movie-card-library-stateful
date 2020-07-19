@@ -4,6 +4,7 @@ import InputText from './InputText';
 import TextArea from './TextArea';
 import InputNumber from './InputNumber';
 import Select from './Select';
+import MovieButton from './MovieButton';
 
 class addMovie extends React.Component {
   constructor(props) {
@@ -20,6 +21,17 @@ class addMovie extends React.Component {
     this.numChangeHandler = this.numChangeHandler.bind(this);
   }
 
+  initState() {
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
+  }
+
   changeHandler(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -32,6 +44,7 @@ class addMovie extends React.Component {
 
   render() {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    const { onClick } = this.props;
     return (
       <form>
         <InputText id="title" texto="Título" e={this.changeHandler} value={title} />
@@ -40,6 +53,7 @@ class addMovie extends React.Component {
         <TextArea id="storyline" texto="Sinopse" e={this.changeHandler} value={storyline} />
         <InputNumber id="rating" texto="Avaliação" e={this.numChangeHandler} value={rating} />
         <Select id="genre" texto="Gênero" e={this.changeHandler} value={genre} />
+        <MovieButton onClick={() => { onClick(this.state); this.initState(); }} />
       </form>
     );
   }
