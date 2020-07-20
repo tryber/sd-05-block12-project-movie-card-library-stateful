@@ -10,12 +10,25 @@ class MovieLibrary extends Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
+    this.OnBookmarkedChange = this.OnBookmarkedChange.bind(this);
+  }
+
+  OnBookmarkedChange() {
+    const { bookmarkedOnly } = this.state;
+    this.setState({ bookmarkedOnly: !bookmarkedOnly });
   }
 
   render() {
-    const { searchText } = this.state;
+    const { searchText, bookmarkedOnly, selectedGenre } = this.state;
     return (
-      <SearchBar searchText={searchText} />
+      <SearchBar
+        searchText={searchText}
+        onSearchTextChange={(event) => this.setState({ searchText: event.target.value })}
+        bookmarkedOnly={bookmarkedOnly}
+        onBookmarkedChange={this.OnBookmarkedChange}
+        selectedGenre={selectedGenre}
+        onSelectedGenreChange={(event) => this.setState({ selectedGenre: event.target.value })}
+      />
     );
   }
 }
