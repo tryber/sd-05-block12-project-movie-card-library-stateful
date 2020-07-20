@@ -2,7 +2,7 @@ import React from 'react';
 
 class SelBx extends React.Component {
   render() {
-    const { name, val, func, texto }  = this.props;
+    const { name, val, func, texto } = this.props;
     return (
       <label htmlFor={name}>{texto}
         <select name={name} value={val} onChange={func}>
