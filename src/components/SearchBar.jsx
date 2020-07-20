@@ -18,6 +18,7 @@ const Input = (props) => {
       <input
         key="search-value"
         type="text"
+        name="searchText"
         value={searchText}
         onChange={onSearchTextChange}
       />

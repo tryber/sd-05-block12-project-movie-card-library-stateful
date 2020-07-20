@@ -98,7 +98,7 @@ Gênero
   </label>
 );
 
-const AddMovieButon = ({ onclick, resetState, actualState }) => (
+const AddMovieButon = ({ resetState }) => (
   <div>
     <button
       type="button"
