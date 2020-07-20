@@ -33,14 +33,11 @@ class MovieLibrary extends React.Component {
       <section>
         <SearchBar
           searchText={this.state.searchText}
-          onSearchTextChange={
-            (event) => { this.setState({ searchText: event.target.value }) }}
+          onSearchTextChange={(event) => { this.setState({ searchText: event.target.value }) }}
           bookmarkedOnly={this.state.bookmarkedOnly}
-          onBookmarkedChange={
-            (event) => { this.setState({ bookmarkedOnly: event.target.checked }) }}
+          onBookmarkedChange={(event) => { this.setState({ bookmarkedOnly: event.target.checked }) }}
           selectedGenre={this.state.selectedGenre}
-          onSelectedGenreChange={
-            (event) => { this.setState({ selectedGenre: event.target.value }) }}
+          onSelectedGenreChange={(event) => { this.setState({ selectedGenre: event.target.value }) }}
         />
         <MovieList movie={this.filteredMovie} />
       </section>
