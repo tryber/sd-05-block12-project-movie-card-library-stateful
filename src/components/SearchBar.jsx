@@ -21,10 +21,10 @@ class SearchBar extends React.Component {
   }
 
   favorites() {
-    const { bookmarkedOnly, onBookmarkedChange } = this.props
+    const { bookmarkedOnly, onBookmarkedChange } = this.props;
     return (
       <div>
-    <label htmlFor="Favorites">Mostrar somente favoritos
+        <label htmlFor="Favorites">Mostrar somente favoritos
         </label>
         <input
           type="checkbox"
@@ -32,24 +32,25 @@ class SearchBar extends React.Component {
           onChange={onBookmarkedChange}
         />
       </div>
-    )
+    );
   }
 
   selectGenere() {
-const { selectedGenre, onSelectedGenreChange } = this.props
-return(
-  <label htmlFor="genreBox"> Filtrar por gênero: 
-    <select name="genreBox"
-    value={selectedGenre}
-    onChange={onSelectedGenreChange}
-    >
+    const { selectedGenre, onSelectedGenreChange } = this.props;
+    return (
+  <label htmlFor="genreBox"> Filtrar por gênero:
+    <select 
+      name="genreBox"
+      value={selectedGenre}
+      onChange={onSelectedGenreChange}
+      >
     <option value="">Todos</option>
     <option value="action">Ação</option>
     <option value="comedy">Comédia</option>
     <option value="thriller">Suspense</option>
     </select>
   </label>
-    )
+    );
   }
 
   render () {
