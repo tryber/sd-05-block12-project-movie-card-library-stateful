@@ -35,7 +35,6 @@ class AddMovie extends React.Component {
     console.log(i.target);
     this.setState({ [name]: name === 'rating' ? Number(value) : value });
   }
-  
   render() {
     return (
       <form action="" type="submit">
