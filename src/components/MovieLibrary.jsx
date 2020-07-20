@@ -6,7 +6,7 @@ class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
     this.filteredMovie = this.filteredMovie.bind(this);
-    const movie = this.props
+    const movie = this.props;
     this.state = {
       searchText: '',
       bookmarkedOnly: false,
