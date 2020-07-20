@@ -11,8 +11,10 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
+    this.setFilterValue = this.setFilterValue.bind(this);
   }
-  setFilterValue = event => {
+
+  setFilterValue(event) {
     this.setState({
       title: event.target.value,
       subtitle: event.target.value,
