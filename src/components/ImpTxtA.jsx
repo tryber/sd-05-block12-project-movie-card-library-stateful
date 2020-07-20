@@ -13,8 +13,8 @@ class TxtA extends React.Component {
               name={nome}
               value={val}
               onChange={mud}
-              />
-            </div>
+            />
+          </div>
         </label>
       </div>
     );

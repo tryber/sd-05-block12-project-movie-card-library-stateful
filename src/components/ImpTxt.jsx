@@ -14,11 +14,11 @@ class Imptxt extends React.Component {
               id={id}
               name={nome}
               value={val}
-              />
+            />
           </div>
         </label>
       </div>
-      );
+    );
   }
 }
 export default Imptxt;
