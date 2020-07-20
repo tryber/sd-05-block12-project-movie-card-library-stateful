@@ -14,7 +14,7 @@ class MovieLibrary extends Component {
       movies: this.props,
     };
 
-  render() {
+    render();
     return (
       <div>
         <h2> My awesome movie library </h2>
