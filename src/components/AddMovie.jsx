@@ -22,7 +22,7 @@ class AddMovie extends React.Component {
       storyline: event.target.value,
       rating: event.target.value,
       genre: event.target.value,
-    })
+    });
   }
   render() {
     return (
@@ -35,7 +35,7 @@ class AddMovie extends React.Component {
           <label htmlFor="image">Imagem</label>
           <input type="text" id="image" onChange={this.setFilterValue} />
           <label htmlFor="synopsis">Sinopse</label>
-          <textarea id="synopsis" onChange={this.setFilterValue}></textarea>
+          <textarea id="synopsis" onChange={this.setFilterValue} />
           <label htmlFor="number">Avaliação</label>
           <input type="number" id="number" onChange={this.setFilterValue} />
           <label htmlFor="gender">Gênero</label>
