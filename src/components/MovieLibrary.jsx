@@ -1,4 +1,4 @@
-import React, { Componente } from 'react';
+import React, { Component } from 'react';
 
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
@@ -21,4 +21,4 @@ class MovieLibrary extends Component {
   }
 }
 
-export default MovieLlibrary;
+export default MovieLibrary;
