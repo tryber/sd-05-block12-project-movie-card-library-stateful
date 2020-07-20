@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TxtA  extends React.Component {
+class TxtA extends React.Component {
   render() {
     const { nome, txt, val, mud } = this.props;
     return (
@@ -16,4 +16,4 @@ class TxtA  extends React.Component {
     );
   }
 }
-export default TxtA ;
+export default TxtA;

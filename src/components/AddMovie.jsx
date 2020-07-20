@@ -16,7 +16,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
   }
-  addNovo = () => {
+  AddNovo() {
     const onClick = this.props.onClick;
     onClick(this.state);
     this.setState({
@@ -27,7 +27,7 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     });
-  };
+  }
   render() {
     const chaS = (i) => {
       const { nome, valor } = i.target;
@@ -41,7 +41,7 @@ class AddMovie extends React.Component {
         <TxtA nome="storyline" txt="Sinopse" val={this.state.storyline} mud={chaS} />
         <NumImp nome="rating" txt="Avaliação" val={this.state.rating} mud={chaS} />
         <SelBx name="genre" val={this.state.genre} func={chaS} texto="Gênero" />
-        <button onClick={this.addNovo} type="button">Adicionar filme</button>
+        <button onClick={this.AddNovo} type="button">Adicionar filme</button>
       </form>
     );
   }

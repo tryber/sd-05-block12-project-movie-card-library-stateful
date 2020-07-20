@@ -2,7 +2,7 @@ import React from 'react';
 
 class NumImp extends React.Component {
   render() {
-    const { nome, txt, id, val, mud, type } = this.props;
+    const { nome, txt, id, val, mud } = this.props;
     return (
       <label htmlFor={id}>{txt}
         <input
