@@ -16,9 +16,8 @@ class MovieLibrary extends React.Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: [...movies],
+      movies,
     };
-    console.log(this.state.movies);
     this.cadastraMovie = this.cadastraMovie.bind(this);
     this.onSearchTextChange = this.onSearchTextChange.bind(this);
     this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
@@ -39,9 +38,8 @@ class MovieLibrary extends React.Component {
   }
 
   cadastraMovie(filme) {
-    const { movies } = this.props;
-    this.setState({ movies: movies.push(filme) });
-    // console.log(this.state.movies);
+    this.setState((state) => ({ movies: [...state.movies, filme] }));
+  //  console.log(this.state.movies);
   }
 
   filtraSaida(lista) {
@@ -61,17 +59,6 @@ class MovieLibrary extends React.Component {
     return lista;
   }
 
-  // {
-  //   title: 'Resident Evil',
-  //   subtitle: 'Vendetta',
-  //   storyline: 'Chris Redfield enlists the help of Leon S.
-  // Kennedy and Rebecca Chambers to stop a death merchant, with a vengeance,
-  // from spreading a deadly virus in New York.',
-  //   rating: 4.2,
-  //   imagePath: 'images/Resident_Evil_Vendetta.jpg',
-  //   bookmarked: true,
-  //   genre: 'fantasy',
-  // },
   render() {
     const { searchText, selectedGenre, bookmarkedOnly } = this.state;
     const { movies } = this.props;

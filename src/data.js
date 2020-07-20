@@ -15,7 +15,7 @@ const movies = [
     rating: 4.5,
     imagePath: 'images/Final_Fantasy_Spirits_Within.jpg',
     bookmarked: false,
-    genre: 'fantasy',
+    genre: 'thriller',
   },
   {
     title: 'Ghost In The Shell',
@@ -42,7 +42,7 @@ const movies = [
     rating: 4.2,
     imagePath: 'images/Resident_Evil_Vendetta.jpg',
     bookmarked: true,
-    genre: 'fantasy',
+    genre: 'thriller',
   },
 ];
 
