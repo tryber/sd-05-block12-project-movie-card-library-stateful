@@ -15,7 +15,10 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
+    this.AddNovo = this.AddNovo.bind(this);
+    this.chaS = this.chaS.bind(this);
   }
+  
   AddNovo() {
     const onClick = this.props.onClick;
     onClick(this.state);
@@ -28,20 +31,26 @@ class AddMovie extends React.Component {
       genre: 'action',
     });
   }
+  
+  chaS(i) {
+    const { name, value } = i.target;
+    console.log(i.target)
+    this.setState({ [name]: name === 'rating' ? Number(value) : value });
+  };
+  
   render() {
-    const chaS = (i) => {
-      const { nome, valor } = i.target;
-      this.setState({ [nome]: nome === 'rating' ? Number(valor) : valor });
-    };
     return (
-      <form action="">
-        <ImpTxt nome="title" txt="Título" val={this.state.title} mud={chaS} />
-        <ImpTxt nome="subtitle" txt="Subtítulo" val={this.state.subtitle} mud={chaS} />
-        <ImpTxt nome="imagePath" txt="Imagem" val={this.state.imagePath} mud={chaS} />
-        <TxtA nome="storyline" txt="Sinopse" val={this.state.storyline} mud={chaS} />
-        <NumImp nome="rating" txt="Avaliação" val={this.state.rating} mud={chaS} />
-        <SelBx name="genre" val={this.state.genre} func={chaS} texto="Gênero" />
-        <button onClick={this.AddNovo} type="button">Adicionar filme</button>
+      <form action="" type="submir">
+        <div>
+
+          <ImpTxt nome="title" txt="Título" val={this.state.title} mud={this.chaS} />
+          <ImpTxt nome="subtitle" txt="Subtítulo" val={this.state.subtitle} mud={this.chaS} />
+          <ImpTxt nome="imagePath" txt="Imagem" val={this.state.imagePath} mud={this.chaS} />
+          <TxtA nome="storyline" txt="Sinopse" val={this.state.storyline} mud={this.chaS} />
+          <NumImp nome="rating" txt="Avaliação" val={this.state.rating} mud={this.chaS} />
+          <SelBx name="genre" val={this.state.genre} func={this.chaS} texto="Gênero" />
+          <button onClick={() =>  this.AddNovo(this.state)} type="button">Adicionar filme</button>
+        </div>
       </form>
     );
   }
