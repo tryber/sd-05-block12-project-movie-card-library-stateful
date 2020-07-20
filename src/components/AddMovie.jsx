@@ -30,8 +30,8 @@ class AddMovie extends React.Component {
   }
 
   changeInputRatingValue(e) {
-    const { name, num } = e.target;
-    this.setState({ [name]: Number(num) });
+    const { name, value } = e.target;
+    this.setState({ [name]: Number(value) });
   }
 
   changeInputValue(e) {
@@ -41,22 +41,22 @@ class AddMovie extends React.Component {
 
   render() {
     return (
-      <form> <label htmlFor="title"> Título
-          <input type="text" value={this.state.title} onChange={this.changeInputValue} />
-      </label>
-        <label htmlFor="subtitle"> Subtítulo
-          <input type="text" value={this.state.subtitle} onChange={this.changeInputValue} />
+      <form>
+        <label htmlFor="title">Título</label>
+        <input type="text" name="title" value={this.state.title} onChange={this.changeInputValue} />
+        <label htmlFor="subtitle">Subtítulo
+          <input type="text" name="" value={this.state.subtitle} onChange={this.changeInputValue} />
         </label>
-        <label htmlFor="image"> Imagem
+        <label htmlFor="image">Imagem
           <input type="text" value={this.state.imagePath} onChange={this.changeInputValue} />
         </label>
-        <label htmlFor="storyline"> Sinopse
+        <label htmlFor="storyline">Sinopse
           <textarea type="text" value={this.state.storyline} onChange={this.changeInputValue} />
         </label>
-        <label htmlFor="rating"> Rating
+        <label htmlFor="rating">Avaliação
           <input type="number" value={this.state.rating} onChange={this.changeInputRatingValue} />
         </label>
-        <label htmlFor="genre"> Gênero
+        <label htmlFor="genre">Gênero
           <select value={this.state.genre} onChange={this.changeInputValue}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
