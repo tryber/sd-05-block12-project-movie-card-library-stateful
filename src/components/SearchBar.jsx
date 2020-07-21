@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
   render() {
     const { searchText, onSearchTextChange, bookmarkedOnly } = this.props;
-    const { onBookmarkedChange, selectedGenre, onSelectedGenreChange } = this.props;
+    const { selectedGenre, onBookmarkedChange, onSelectedGenreChange } = this.props;
     return (
       <section>
         <form>

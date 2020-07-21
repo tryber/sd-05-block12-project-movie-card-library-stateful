@@ -63,9 +63,9 @@ class MovieLibrary extends Component {
         <h2> My awesome movie library </h2>
         <SearchBar
           searchText={this.state.searchText}
-          onSearchTextChange={this.state.onSearchTextChange}
           bookmarkedOnly={this.state.bookmarkedOnly}
-          onBookmarkedChange={this.state.selectedGenre}
+          selectedGenre={this.state.selectedGenre}
+          onBookmarkedChange={this.onBookmarkedChange}
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
         <MovieList movies={this.filterMovies()} />
