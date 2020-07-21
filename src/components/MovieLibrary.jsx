@@ -23,7 +23,7 @@ class MovieLibrary extends React.Component {
   }
 
   myChanGen(evento) {
-    console.log(evento.target.value)
+    console.log(evento.target.value);
     this.setState({ selectedGenre: evento.target.value });
   }
 
@@ -32,7 +32,7 @@ class MovieLibrary extends React.Component {
   }
 
   myChanTxt(evento) {
-    console.log(evento.target.value)
+    console.log(evento.target.value);
     this.setState({ searchText: evento.target.value });
   }
 
