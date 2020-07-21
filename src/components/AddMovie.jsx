@@ -24,6 +24,7 @@ class AddMovie extends React.Component {
       genre: event.target.value,
     });
   }
+
   render() {
     return (
       <div>

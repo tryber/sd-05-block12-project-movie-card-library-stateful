@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from './components/SearchBar';
 import AddMovie from './components/AddMovie';
 import './App.css';
 
@@ -9,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar />
       <AddMovie />
     </div>
   );
