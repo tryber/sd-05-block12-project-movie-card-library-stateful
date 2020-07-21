@@ -9,6 +9,7 @@ class InputField extends React.Component {
           {title}
         </label>
         <input
+          name={name}
           type={type}
           value={value}
           onChange={func}

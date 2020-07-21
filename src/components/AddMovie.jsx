@@ -51,7 +51,7 @@ class AddMovie extends React.Component {
           func={this.change}
         />
         <InputField
-          name="image" title="Imagem" type="text" value={this.state.imagePath} func={this.change}
+          name="imagePath" title="Imagem" type="text" value={this.state.imagePath} func={this.change}
         />
         <TextArea
           name="storyline" title="Sinopse" value={this.state.storyline} handleChange={this.change}

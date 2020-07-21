@@ -1,6 +1,7 @@
 // implement SearchBar component here
 import React from 'react';
 import Bookmarked from './Bookmarked';
+import InputField from './InputField';
 
 class SearchBar extends React.Component {
   render() {

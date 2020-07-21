@@ -9,6 +9,7 @@ class TextArea extends React.Component {
           {title}
         </label>
         <textarea
+          name={name}
           value={value}
           onChange={handleChange}
         />
