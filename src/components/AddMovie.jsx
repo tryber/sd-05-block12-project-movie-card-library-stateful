@@ -13,7 +13,7 @@ class AddMovie extends React.Component {
     }
   }
 
-  searchTitle = (element) => {
+  searchTitle(element) {
     const { name, value } = element.target;
     this.setState({[name]: value})
   }
