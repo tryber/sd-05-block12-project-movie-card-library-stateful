@@ -1,19 +1,14 @@
 import React from 'react';
-import './App.css';
-import MovieList from './components/MovieList';
 import data from './data';
-import SearchBar from './components/SearchBar';
-import AddMovie from './components/AddMovie';
-
+import MovieLibrary from './components/MovieLibrary'
 import Header from './components/Header';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar />
-      <MovieList movies={data} />
-      <AddMovie />
+      <MovieLibrary movies={data} />
     </div>
   );
 }
