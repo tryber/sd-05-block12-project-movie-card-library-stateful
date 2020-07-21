@@ -6,7 +6,7 @@ import InputNumber from './InputNumber';
 import Select from './Select';
 import MovieButton from './MovieButton';
 
-class addMovie extends React.Component {
+class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class addMovie extends React.Component {
   }
 }
 
-export default addMovie;
+export default AddMovie;
