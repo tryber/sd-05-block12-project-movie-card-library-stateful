@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from './SearchBar';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -16,7 +15,6 @@ class MovieLibrary extends React.Component {
     const { movies } = this.props;
     return(
       <div>
-        <SearchBar />
       </div>
     );
   }
