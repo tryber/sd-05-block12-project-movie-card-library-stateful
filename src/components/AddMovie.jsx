@@ -27,7 +27,7 @@ class AddMovie extends React.Component {
   }
 
   addMovie() {
-    const onClick = this.props.onClick
+    const onClick = this.props.onClick;
     onClick(this.state);
     this.state = {
       title: '',
@@ -50,7 +50,7 @@ class AddMovie extends React.Component {
           funChange={this.searchTitle}
         />
       </label>
-    )
+    );
   }
 
   subtitle() {
@@ -64,7 +64,7 @@ class AddMovie extends React.Component {
           funChange={this.searchTitle}
         />
       </label>
-    )
+    );
   }
 
   image() {
@@ -82,7 +82,7 @@ class AddMovie extends React.Component {
   }
 
   storyLine() {
-    return(
+    return (
       <label className="Sinopse" htmlFor="storyLine">Sinopse
         <textarea
           onChange={this.searchTitle}
@@ -92,11 +92,11 @@ class AddMovie extends React.Component {
           funChange={this.searchTitle}
         />
       </label>
-    )
+    );
   }
 
   rating() {
-    return(
+    return (
       <label className="avaliação" htmlFor="rating">Avaliação
         <input
           onChange={this.searchRating}
@@ -106,7 +106,7 @@ class AddMovie extends React.Component {
           funChange={this.searchRating}
         />
       </label>
-    )
+    );
   }
 
   genre() {
@@ -119,12 +119,12 @@ class AddMovie extends React.Component {
           funChange={this.searchTitle}
           id="genre"
         >
-        <option value="action">Ação</option>
-        <option value="comedy">Comédia</option>
-        <option value="thriller">Suspense</option>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
         </select>
       </label>
-    )
+    );
   }
   render() {
     return (
