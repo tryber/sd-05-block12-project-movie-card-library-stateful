@@ -10,22 +10,23 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
       imagePath: '',
-    }
+    };
   }
 
   searchTitle(element) {
     const { name, value } = element.target;
-    this.setState({[name]: value})
+    this.setState({ [name]: value });
   }
 
   render() {
     return (
       <div>
         <form>
-          <label>Título<input onChange={this.searchTitle} value={this.state.title} type="text" /></label>
+          <label htmlFor="title">Título<input onChange={this.searchTitle} 
+          value={this.state.title} id="title" type="text" /></label>
         </form>
       </div>
-    )
+    );
   }
 }
 
