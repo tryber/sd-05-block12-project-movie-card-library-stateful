@@ -20,8 +20,20 @@ class AddMovie extends React.Component {
     this.setState({ [eventoTarget.id]: eventoTarget.id === 'rating' ? parseFloat(eventoTarget.value) : eventoTarget.value });
   }
 
+  buttonChange() {
+    const { onClick } = this.props;
+    onClick(this.state);
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
+  }
+
   render() {
-   // const { onClick } = this.props;
     return (
       <form>
         <label htmlFor="title">Título</label>
@@ -40,7 +52,7 @@ class AddMovie extends React.Component {
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
-        <button>Adicionar filme</button>
+        <button onClick={this.buttonChange}>Adicionar filme</button>
       </form>
     );
   }
