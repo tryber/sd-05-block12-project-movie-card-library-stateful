@@ -22,8 +22,15 @@ class AddMovie extends React.Component {
     return (
       <div>
         <form>
-          <label htmlFor="title">Título<input onChange={this.searchTitle} 
-          value={this.state.title} id="title" type="text" /></label>
+          <label 
+            htmlFor="title">Título
+            <input 
+              onChange={this.searchTitle}
+              value={this.state.title} 
+              id="title" 
+              type="text" 
+            />
+          </label>
         </form>
       </div>
     );
