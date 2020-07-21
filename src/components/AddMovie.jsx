@@ -36,10 +36,10 @@ class AddMovie extends React.Component {
           <label htmlFor="number">Avaliação</label>
           <input type="number" name="rating" id="number" value={this.state.rating} onChange={this.setFilterValue} />
           <label htmlFor="gender">Gênero</label>
-          <select id="gender" onChange={this.setFilterValue}>
-            <option name="action" value={this.state.action}>Ação</option>
-            <option name="comedy" value={this.state.comedy}>Comédia</option>
-            <option name="thriller" value={this.state.thriller}>Suspense</option>
+          <select id="gender" name="gender" value={this.state.genre} onChange={this.setFilterValue}>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
           </select>
           <button>Adicionar filme</button>
         </form>

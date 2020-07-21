@@ -1,4 +1,8 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import MovieCard from './MovieCard';
+import AddMovie from './AddMovie';
+import MovieList from './MovieList';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -7,17 +11,36 @@ class MovieLibrary extends React.Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: '',
+      movies: this.props.movies,
     };
+    this.changingStatus = this.changingStatus.bind(this);
+  }
+
+  changeBookMarkedOnly() {
+    this.changingStatus(this.state);
+  }
+  changingStatus(state) {
+    this.setState({
+      bookmarkedOnly: state.bookmarkedOnly,
+    });
   }
 
   render() {
-    const { movies } = this.props;
+    const { searchText, bookmarkedOnly, selectedGenre, movies } = this.props;
     return(
-      <div>
+      <div >
+        <SearchBar
+          searchText={searchText}
+          bookmarkedOnly={bookmarkedOnly}
+          selectedGenre={selectedGenre}
+        />
+        <AddMovie />
+        <MovieCard />
+        <MovieList />
       </div>
     );
   }
 }
+
 
 export default MovieLibrary;
