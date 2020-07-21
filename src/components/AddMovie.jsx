@@ -4,7 +4,7 @@ import React from 'react';
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       subtitle: '',
       title: '',
       imagePath: '',
@@ -12,15 +12,16 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
+    this.change = this.change.bind(this);
   }
 
-  change = (event) => {
+  change(event) {
     const eventoTarget = event.target;
-    this.setState({[eventoTarget.id]:eventoTarget.id === "rating" ? parseFloat(eventoTarget.value) : eventoTarget.value})
+    this.setState({ [eventoTarget.id]: eventoTarget.id === 'rating' ? parseFloat(eventoTarget.value) : eventoTarget.value });
   }
 
   render() {
-    const { onClick } = this.props;
+   // const { onClick } = this.props;
     return (
       <form>
         <label htmlFor="title">Título</label>
