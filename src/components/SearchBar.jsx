@@ -7,11 +7,11 @@ class SearchBar extends React.Component {
       filter:'all'
     }
   }
-  setValueFilter = event => {
-    this.setState({
-      filter:event.target.value == '' ?  'all' : event.target.value
-      }) 
-   }
+  // setValueFilter = event => {
+  //   this.setState({
+  //     filter:event.target.value == '' ?  'all' : event.target.value
+  //     }) 
+  //  }
 
   render() {
     return (
