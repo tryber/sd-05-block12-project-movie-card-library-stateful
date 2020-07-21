@@ -1,25 +1,19 @@
 import React from 'react';
 
+const space = '  ';
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { filter: 'all' };
-  }
-  setValueFilter(event) {
-    this.setState({ filter: event.target.value === '' ? 'all' : event.target.value });
-  }
-
   render() {
+    const { searchText, onSearchTextChange, bookmarkedOnly } = this.props;
+    const { onBookmarkedChange, selectedGenre, onSelectedGenreChange } = this.props;
     return (
-      <div className="movie-list">
+      <div className='class-list'>
         <form>
-          <label htmlFor="incText">Inclui o texto
-            <input onChange={this.setValueFilter} type="text" />
-          </label>
-        </form>
+          <label htmlFor='incText'>Inclui o texto {space}
+            <input type='text' value={searchText} onChange={onSearchTextChange} />
+          </label><br />
+       '</form>
       </div>
     );
   }
 }
-
 export default SearchBar;
