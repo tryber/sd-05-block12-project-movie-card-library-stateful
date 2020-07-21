@@ -22,13 +22,12 @@ class AddMovie extends React.Component {
     return (
       <div>
         <form>
-          <label 
-            htmlFor="title">Título
-            <input 
+          <label htmlFor="title">Título
+            <input
               onChange={this.searchTitle}
-              value={this.state.title} 
-              id="title" 
-              type="text" 
+              value={this.state.title}
+              id="title"
+              type="text"
             />
           </label>
         </form>
