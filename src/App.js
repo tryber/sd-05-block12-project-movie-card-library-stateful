@@ -3,7 +3,9 @@ import './App.css';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar'
-import addMovie from './components/AddMovie'
+import AddMovie from './components/AddMovie'
+import MovieLibrary from './components/MovieLibrary'
+
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       onBookmarkedChange=""
       selectedGenre=""
       onSelectedGenreChange="" />
+      <AddMovie />
+      <MovieLibrary />
     </div>
   );
 }
