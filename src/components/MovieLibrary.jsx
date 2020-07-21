@@ -68,7 +68,7 @@ class MovieLibrary extends Component {
           onBookmarkedChange={this.state.selectedGenre}
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
-        <MovieList movies={this.props.movies} />
+        <MovieList movies={this.filterMovies()} />
         <AddMovie onClick={this.onClick} />
       </div>
     );
