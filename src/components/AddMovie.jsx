@@ -68,7 +68,7 @@ class AddMovie extends React.Component {
   }
 
   image() {
-    return(
+    return (
       <label className="Imagem" htmlFor="image">Imagem
          <input
            onChange={this.searchTitle}
@@ -78,7 +78,7 @@ class AddMovie extends React.Component {
            funChange={this.searchTitle}
          />
       </label>
-    )
+    );
   }
 
   storyLine() {
