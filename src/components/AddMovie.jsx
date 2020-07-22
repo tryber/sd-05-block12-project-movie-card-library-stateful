@@ -12,6 +12,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.setFilterValue = this.setFilterValue.bind(this);
+    this.buttonChange = this.buttonChange.bind(this);
   }
 
   setFilterValue(event) {
@@ -21,6 +22,19 @@ class AddMovie extends React.Component {
     });
   }
   
+  buttonChange() {
+    const { onClick } = this.props;
+    onClick(this.state);
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    })
+  }
+
   render() {
     const setFilterValue = this.setFilterValue;
     const title = this.state.title;
@@ -48,7 +62,7 @@ class AddMovie extends React.Component {
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
-          <button>Adicionar filme</button>
+          <button onClick={this.buttonChange}>Adicionar filme</button>
         </form>
       </div>
     );
