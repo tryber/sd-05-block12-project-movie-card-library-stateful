@@ -16,7 +16,8 @@ function SearchBar(props) {
         <label htmlFor="include-text">Inclui o texto: </label>
         <input type="text" id="include-text" value={searchText} onChange={onSearchTextChange} />
         <label htmlFor="favorites">Mostrar somente favoritos</label>
-        <input type="checkbox" id="favorites" value={bookmarkedOnly} onChange={onBookmarkedChange} />
+        <input type="checkbox" id="favorites"
+               value={bookmarkedOnly} onChange={onBookmarkedChange} />
         <label htmlFor="filter-by-gender">Filtrar por gênero</label>
         <select id="filter-by-gender" value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
