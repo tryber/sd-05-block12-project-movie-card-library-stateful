@@ -27,7 +27,8 @@ class AddMovie extends React.Component {
     this.setState({ [name]: value });
   }
 
-  addThisMovie() {
+  addThisMovie(e) {
+    e.preventDefault();
     const onClick = this.props.onClick;
     onClick(this.state);
     this.setState({
