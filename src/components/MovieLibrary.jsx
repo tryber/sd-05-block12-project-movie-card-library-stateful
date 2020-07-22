@@ -33,13 +33,13 @@ class MovieLibrary extends React.Component {
   changeMovies() {
     const { movies, bookmarkedOnly, selectedGenre, searchText } = this.state;
     if (bookmarkedOnly === true) {
-      return movies.filter(movie => movie.bookmarked === true)
+      return movies.filter((movie) => movie.bookmarked === true)
     }
     if (selectedGenre !== '') {
-      return movies.filter(movie => movie.genre === selectedGenre)
+      return movies.filter((movie) => movie.genre === selectedGenre)
     }
     if (searchText !== '') {
-      return movies.filter(movie => movie.title.indexOf(searchText) >= 0 ||
+      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
         movie.subtitle.indexOf(searchText) >= 0 ||
         movie.storyline.indexOf(searchText) >= 0);
     }
@@ -53,8 +53,8 @@ class MovieLibrary extends React.Component {
   }
 
   render() {
-    return (
 
+    return (
       <div >
         <SearchBar
           searchText={this.state.searchText}
