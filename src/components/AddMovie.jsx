@@ -13,7 +13,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.change = this.changeInput.bind(this);
-    this.buttonChange = this.buttonChange.bind(this);
+    this.buttonClick = this.buttonClick.bind(this);
   }
 
   changeInput(e) {
@@ -21,7 +21,7 @@ class AddMovie extends React.Component {
     this.setState({ [name]: value });
   }
 
-  buttonChange() {
+  buttonClick() {
     const { onClick } = this.props;
     onClick(this.state);
     this.setState({
@@ -43,7 +43,12 @@ class AddMovie extends React.Component {
         </label>
         <label htmlFor="subtitle">
           Subtítulo
-          <input name="subtitle" type="text" value={this.state.subtitle} onChange={this.changeInput} />
+          <input
+            name="subtitle"
+            type="text"
+            value={this.state.subtitle}
+            onChange={this.changeInput}
+          />
         </label>
         <label htmlFor="imagePath">
           Imagem
@@ -65,7 +70,7 @@ class AddMovie extends React.Component {
             <option value="thriller">Suspense</option>
           </select>
         </label>
-        <button onClick={this.buttonChange} type="button">Adicionar filme</button>
+        <button onClick={this.buttonClick} type="button">Adicionar filme</button>
       </form>
     );
   }
