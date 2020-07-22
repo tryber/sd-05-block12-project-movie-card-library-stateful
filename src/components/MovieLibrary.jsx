@@ -12,25 +12,25 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
-    this.changeSearchText = this.changeText.bind(this);
-    this.changeBookmarkedOnly = this.changeBook.bind(this);
-    this.changeSelectedGenre = this.changeGenre.bind(this);
+    this.changeSearchText = this.changeSearchText.bind(this);
+    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
+    this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
     this.newMovie = this.newMovie.bind(this);
   }
 
-  changeText(event) {
-    this.setState({ searchText: event.target.value });
+  changeSearchText(state) {
+    this.setState({ searchText: state.target.value });
   }
 
-  changeBook() {
+  changeBookmarkedOnly() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
 
-  changeGenre(event) {
-    this.setState({ selectedGenre: event.target.value });
+  changeSelectedGenre(state) {
+    this.setState({ selectedGenre: state.target.value });
   }
 
-  filteredMovies() {
+  changeMovies() {
     const { movies, searchText, bookmarkedOnly, selectedGenre } = this.state;
     if (bookmarkedOnly === true) {
       return movies.filter((movie) => movie.bookmarked === true);
@@ -56,11 +56,11 @@ class MovieLibrary extends React.Component {
     return (
       <div>
         <SearchBar
-          searchText={this.state.searchText} onSearchTextChange={this.changeText}
-          bookmarkedOnly={this.state.bookmarkedOnly} onBookmarkedChange={this.changeBook}
-          selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.changeGenre}
+          searchText={this.state.searchText} onSearchTextChange={this.changeSearchText}
+          bookmarkedOnly={this.state.bookmarkedOnly} onBookmarkedChange={this.changeBookmarkedOnly}
+          selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.changeSelectedGenre}
         />
-        <MovieList movies={this.filteredMovies()} />
+        <MovieList movies={this.changeMovies()} />
         <AddMovie onClick={this.newMovie} />
       </div>
     );
