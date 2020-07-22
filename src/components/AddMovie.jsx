@@ -17,7 +17,7 @@ class AddMovie extends Component {
 
   modificandoEstado(event) {
     const { name, value } = event.target;
-    this.state({ [name]: name === 'rating' ? parseFloat(value) : value });
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
 
   buttonChange() {
@@ -46,7 +46,7 @@ class AddMovie extends Component {
         <label htmlFor="storyline">Sinopse</label>
         <textarea name="storyline" value={storyline} onChange={this.modificandoEstado} />
         <label htmlFor="rating">Avaliação</label>
-        <input name="rating" value={rating} onChange={this.modificandoEstado} />
+        <input name="rating" type="number" value={rating} onChange={this.modificandoEstado} />
         <label htmlFor="genre">Gênero</label>
         <select name="genre" value={genre} onChange={this.modificandoEstado}>
           <option value="action">Ação</option>
