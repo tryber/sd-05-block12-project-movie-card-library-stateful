@@ -16,7 +16,6 @@ class AddMovie extends React.Component {
   }
 
   setFilterValue(event) {
-
     const { name, value } = event.target;
     this.setState({
       [name]: name === 'rating' ? parseFloat(value) : value,
@@ -44,17 +43,17 @@ class AddMovie extends React.Component {
       <div>
         <form>
           <label htmlFor="title">Título</label>
-          <input type="text"name="title"id="title"value={title}onChange={setFilterValue} />
+          <input type="text"name="title"value={title}onChange={setFilterValue} />
           <label htmlFor="subtitle">Subtítulo</label>
-          <input type="text"name="subtitle"id="subtitle"value={subtitle}onChange={setFilterValue} />
+          <input type="text"name="subtitle"value={subtitle}onChange={setFilterValue} />
           <label htmlFor="image">Imagem</label>
-          <input type="text"name="imagePath"id="image"value={imagePath}onChange={setFilterValue} />
+          <input type="text"name="imagePath"value={imagePath}onChange={setFilterValue} />
           <label htmlFor="synopsis">Sinopse</label>
-          <textarea id="synopsis" name="storyline"value={storyline} onChange={setFilterValue} />
+          <textarea name="storyline"value={storyline} onChange={setFilterValue} />
           <label htmlFor="number">Avaliação</label>
-          <input type="number"name="rating"id="number"value={rating}onChange={setFilterValue} />
+          <input type="number"name="rating"value={rating}onChange={setFilterValue} />
           <label htmlFor="gender">Gênero</label>
-          <select id="gender"name="gender"value={genre}onChange={setFilterValue}>
+          <select name="gender"value={genre}onChange={setFilterValue}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
