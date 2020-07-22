@@ -17,8 +17,8 @@ class AddMovie extends React.Component {
 
   change(event) {
     const { name, value } = event.target;
-    this.setState({[name]: name === 'rating' ? parseFloat(value) : value});
-    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value});
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
 
   buttonChange(event) {
