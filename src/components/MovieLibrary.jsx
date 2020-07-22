@@ -20,6 +20,10 @@ class MovieLibrary extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
+  onClick(state) {
+    this.setState({ movies: [...this.props.movies, state] });
+  }
+
   handleCheckedBox() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
@@ -42,10 +46,6 @@ class MovieLibrary extends React.Component {
     if (this.state.selectedGenre === '') {
       return true;
     } return genre === this.state.selectedGenre;
-  }
-
-  onClick(state) {
-    this.setState({ movies: [...this.props.movies, state] });
   }
 
   handleChangeOnText(event) {
