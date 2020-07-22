@@ -59,7 +59,7 @@ class MovieLibrary extends React.Component {
           newMovie={this.state.newMovie}onNewMovieChange={this.newMovie}
         />
         <MovieList movies={this.filteredMovies()} />
-        <AddMovie onClick={this.addMovies} />
+        <AddMovie onClick={this.newMovie} />
       </div>
     );
   }
