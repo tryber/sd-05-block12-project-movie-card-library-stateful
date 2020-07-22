@@ -31,7 +31,7 @@ class AddMovie extends React.Component {
     this.setState({
       title: '',
       subtitle: '',
-      magePath: '',
+      imagePath: '',
       storyline: '',
       rating: 0,
       genre: 'action',
