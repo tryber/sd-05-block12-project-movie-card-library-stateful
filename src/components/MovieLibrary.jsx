@@ -42,7 +42,7 @@ class MovieLibrary extends React.Component {
       return movies.filter(movie => {
         movie.title.indexOf(searchText) >= 0
         || movie.subtitle.indexOf(searchText) >= 0
-        || movie.storyline.indexOf(searchText) >= searchText
+        || movie.storyline.indexOf(searchText) >= 0
       });
     }
     return movies;
