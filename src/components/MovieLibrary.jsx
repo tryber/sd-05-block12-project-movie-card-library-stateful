@@ -26,17 +26,26 @@ class MovieLibrary extends React.Component {
   handleCheckedBox() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
-  
+
   handleSelectedGenre(event) {
-    this.setState({ selectedGenre: event.target.value })
+    this.setState({ selectedGenre: event.target.value });
   }
 
   filterMovies(movie) {
-    return (
-      this.state.bookmarkedOnly ? movie.bookmarked === this.state.bookmarkedOnly : true &&
-      this.state.selectedGenre === '' ? true : movie.genre === this.state.selectedGenre
-      // this.state.searchText === '' ? true : movie.title.includes(this.state.searchText)
-    );
+    const { title, subtitle, storyline, genre, bookmarked } = movie;
+    if(this.state.searchText !== '') {
+      return (title.includes(this.state.searchText)
+        || subtitle.includes(this.state.searchText)
+        || storyline.includes(this.state.searchText)
+      );
+    }
+    if(this.state.bookmarkedOnly) {
+      return bookmarked === this.state.bookmarkedOnly;
+    }
+    if(this.state.selectedGenre === '') {
+      return true;
+    } else return genre === this.state.selectedGenre;
+
   }
 
   render() {
