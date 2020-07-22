@@ -10,15 +10,17 @@ class AddMovie extends React.Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      genre: 'action';
+      genre: 'action',
     };
 
-    this.changeInputValue = this.changeInputValue.bind(this);
+    this.changeInput = this.changeInput.bind(this);
   }
 
-  changeInputValue(e) {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
+  changeInput(e) {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
   }
 
   changeInputRatingValue(e) {
@@ -46,19 +48,19 @@ class AddMovie extends React.Component {
         <form>
           <label>
             Título
-            <input type="text" name="title" value={this.state.title} onChange={this.changeInputValue} />
+            <input type="text" name="title" value={this.state.title} onChange={this.changeInput} />
           </label>
           <label>
             Subtítulo
-            <input type="text" name="subtitle" value={this.state.subtitle} onChange={this.changeInputValue} />
+            <input type="text" name="subtitle" value={this.state.subtitle} onChange={this.changeInput} />
           </label>
           <label>
             Imagem
-            <input type="text" name="image" value={this.state.imagePath} onChange={this.changeInputValue} />
+            <input type="text" name="image" value={this.state.imagePath} onChange={this.changeInput} />
           </label>
           <label>
             Sinopse
-            <textarea type="text" name="storyline" value={this.state.storyline} onChange={this.changeInputValue} />
+            <textarea type="text" name="storyline" value={this.state.storyline} onChange={this.changeInput} />
           </label>
           <label>
             Rating
@@ -66,7 +68,7 @@ class AddMovie extends React.Component {
           </label>
           <label>
             Gênero
-            <select name="genre" value={this.state.genre} onChange={this.changeInputValue}>
+            <select name="genre" value={this.state.genre} onChange={this.changeInput}>
               <option value="action">Ação</option>
               <option value="comedy">Comédia</option>
               <option value="thriller">Suspense</option>
