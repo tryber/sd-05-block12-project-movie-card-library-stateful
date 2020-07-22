@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <MovieLibrary />
-    </ div>
+    </div>
   );
 }
 

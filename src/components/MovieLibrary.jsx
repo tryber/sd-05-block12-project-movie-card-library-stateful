@@ -31,9 +31,8 @@ class MovieLibrary extends Component {
     this.setState({ selectedGenre: state.target.value });
   }
 
-  changeBookmark(event) {
-    this.setState({
-      bookmarkedOnly: !this.target.value});
+  changeBookmark() {
+    this.setState({ bookmarkedOnly: !this.target.value });
   }
 
   changeMovies() {
@@ -45,7 +44,9 @@ class MovieLibrary extends Component {
       return movies.filter((movie) => movie.genre === selectedGenre);
     }
     if (searchText !== '') {
-      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 || movie.subtitle.indexOf(searchText) >= 0 || movie.storyline.indexOf(searchText) >= 0);
+      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
+      movie.subtitle.indexOf(searchText) >= 0 ||
+      movie.storyline.indexOf(searchText) >= 0);
     }
     return movies;
   }
@@ -57,14 +58,15 @@ class MovieLibrary extends Component {
   render() {
     return (
       <div>
-        <SearchBar searchText={this.state.searchText}
-        onSearchTextChange={this.changeSearchText}
-        bookmarkedOnly={this.state.bookmarkedOnly}
-        onBookmarkedChange={this.changeBookMarkedOnly}
-        selectedGenre={this.state.selectedGenre}
-        onSelectedGenreChange={this.changeSelectedGenre}
+        <SearchBar
+          searchText={this.state.searchText}
+          onSearchTextChange={this.changeSearchText}
+          bookmarkedOnly={this.state.bookmarkedOnly}
+          onBookmarkedChange={this.changeBookMarkedOnly}
+          selectedGenre={this.state.selectedGenre}
+          onSelectedGenreChange={this.changeSelectedGenre}
         />
-        <MovieList movies= {this.changeMovies()} />
+        <MovieList movies={this.changeMovies()} />
         <AddMovie onClick={this.newMovie} />
       </div>
     );

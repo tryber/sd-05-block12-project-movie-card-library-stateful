@@ -1,9 +1,9 @@
 // implement SearchBar component here
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class SearchBar extends Component {
   render() {
-    const { 
+    const {
       searchText,
       onSearchTextChange,
       bookmarkedOnly,
@@ -11,13 +11,12 @@ class SearchBar extends Component {
       selectedGenre,
       onSelectedGenreChange,
     } = this.props;
-  
     return (
       <form>
         <label htmlFor="searchText">Inclui o texto: </label>
-        <input name ="searchText" type="text" value={searchText} onChange=    {onSearchTextChange} />
-        <label htmlFor="bookmarkedOnly">Mostrar somente favoritos</label>
-        <input type="checkbox" name='bookmarkedOnly' checked={bookmarkedOnly}     onChange={onBookmarkedChange} />
+        <input name="searchText" type="text" value={searchText} onChange={onSearchTextChange} />
+        <label htmlFor="b">Mostrar somente favoritos</label>
+        <input type="checkbox" id="b" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
         <label htmlFor="selec">Filtrar por gênero</label>
         <select value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
