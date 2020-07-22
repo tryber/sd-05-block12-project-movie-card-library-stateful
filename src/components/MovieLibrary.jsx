@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import MovieCard from './MovieCard';
 import AddMovie from './AddMovie';
 import MovieList from './MovieList';
 
@@ -13,34 +12,56 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
-    this.changingStatus = this.changingStatus.bind(this);
+    this.changeSearchText = this.changeSearchText.bind(this);
+    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
+    this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
   }
 
-  changeBookMarkedOnly() {
-    this.changingStatus(this.state);
+  changeSearchText(state) {
+    this.setState({ searchText: state.target.value });
   }
-  changingStatus(state) {
-    this.setState({
-      bookmarkedOnly: state.bookmarkedOnly,
-    });
+
+  changeBookmarkedOnly() {
+    this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
+  }
+
+  changeSelectedGenre(state) {
+    this.setState({ selectedGenre: state.target.value });
+  }
+
+  changeMovies() {
+    const { movies, bookmarkedOnly, selectedGenre, searchText } = this.state;
+    if (bookmarkedOnly === true) {
+      return movies.filter(movie => movie.bookmarked === true)
+    }
+    if (selectedGenre !== "") {
+      return movies.filter(movie => movie.genre === selectedGenre)
+    }
+    if (searchText !== "") {
+      return movies.filter(movie => movie.title.indexOf(searchText) >= 0 
+      || movie.subtitle.indexOf(searchText) >= 0 
+      || movie.storyline.indexOf(searchText) >= searchText)
+    }
+    return movies;
   }
 
   render() {
-    const { searchText, bookmarkedOnly, selectedGenre, movies } = this.props;
-    return(
+    // const { movie } = this.props;
+    return (
       <div >
         <SearchBar
-          searchText={searchText}
-          bookmarkedOnly={bookmarkedOnly}
-          selectedGenre={selectedGenre}
+          searchText={this.state.searchText}
+          onSearchTextChange={this.changeSearchText}
+          bookmarkedOnly={this.state.bookmarkedOnly}
+          onBookmarkedChange={this.changeBookmarkedOnly}
+          selectedGenre={this.state.selectedGenre}
+          onSelectedGenreChange={this.changeSelectedGenre}
         />
+        <MovieList movies={this.changeMovies()} />
         <AddMovie />
-        <MovieCard />
-        <MovieList />
       </div>
     );
   }
 }
-
 
 export default MovieLibrary;

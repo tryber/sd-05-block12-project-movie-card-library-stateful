@@ -20,23 +20,30 @@ class AddMovie extends React.Component {
       [name]: value,
     });
   }
-
+  
   render() {
+    const setFilterValue = this.setFilterValue;
+    const title = this.state.title;
+    const subtitle = this.state.subtitle;
+    const imagePath = this.state.imagePath;
+    const storyline = this.state.storyline;
+    const rating = this.state.rating;
+    const genre = this.state.genre;
     return (
       <div>
         <form>
           <label htmlFor="title">Título</label>
-          <input type="text" name="title" id="title" value={this.state.title} onChange={this.setFilterValue} />
+          <input type="text" name="title" id="title" value={title} onChange={setFilterValue} />
           <label htmlFor="subtitle">Subtítulo</label>
-          <input type="text" name="subtitle" id="subtitle" value={this.state.subtitle} onChange={this.setFilterValue} />
+          <input type="text"name="subtitle"id="subtitle"value={subtitle}onChange={setFilterValue} />
           <label htmlFor="image">Imagem</label>
-          <input type="text" name="imagePath" id="image" value={this.state.imagePath} onChange={this.setFilterValue} />
+          <input type="text"name="imagePath" id="image"value={imagePath}onChange={setFilterValue} />
           <label htmlFor="synopsis">Sinopse</label>
-          <textarea id="synopsis" name="storyline" value={this.state.storyline} onChange={this.setFilterValue} />
+          <textarea id="synopsis" name="storyline" value={storyline} onChange={setFilterValue} />
           <label htmlFor="number">Avaliação</label>
-          <input type="number" name="rating" id="number" value={this.state.rating} onChange={this.setFilterValue} />
+          <input type="number"name="rating"id="number"value={rating}onChange={setFilterValue} />
           <label htmlFor="gender">Gênero</label>
-          <select id="gender" name="gender" value={this.state.genre} onChange={this.setFilterValue}>
+          <select id="gender" name="gender" value={genre} onChange={setFilterValue}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
