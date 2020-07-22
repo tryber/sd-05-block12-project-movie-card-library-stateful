@@ -33,13 +33,11 @@ class MovieLibrary extends React.Component {
   filter() {
     const { searchText, selectedGenre, bookmarkedOnly, movies } = this.state;
     console.log(movies);
-    const filterByText = movies.filter((movie) => {
-      return (
+    const filterByText = movies.filter((movie) =>
         movie.title.includes(searchText) ||
         movie.subtitle.includes(searchText) ||
-        movie.storyline.includes(searchText)
-      );
-    });
+        movie.storyline.includes(searchText),
+    );
     const filterByGenre = selectedGenre === '' ? filterByText : filterByText.filter((movie) =>
       movie.genre === selectedGenre,
     );
