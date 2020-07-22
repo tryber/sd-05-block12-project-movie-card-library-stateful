@@ -35,11 +35,15 @@ class MovieLibrary extends React.Component {
     if (bookmarkedOnly === true) {
       return movies.filter(movie => movie.bookmarked === true)
     }
-    if (selectedGenre !== "") {
+    if (selectedGenre !== '') {
       return movies.filter(movie => movie.genre === selectedGenre)
     }
-    if (searchText !== "") {
-      return movies.filter(movie => movie.title.indexOf(searchText) >= 0 || movie.subtitle.indexOf(searchText) >= 0 || movie.storyline.indexOf(searchText) >= searchText);
+    if (searchText !== '') {
+      return movies.filter(movie => {
+        movie.title.indexOf(searchText) >= 0
+        || movie.subtitle.indexOf(searchText) >= 0
+        || movie.storyline.indexOf(searchText) >= searchText
+      });
     }
     return movies;
   }
