@@ -16,7 +16,7 @@ class AddMovie extends React.Component {
   }
   changeTitle(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({ [name] === 'rating'? parseFloat(value) : value });
   }
   buttonClick() {
     const { onClick } = this.props;
@@ -29,8 +29,8 @@ class AddMovie extends React.Component {
       storyline: '',
       genre: 'action',
     });
-    return true;
   }
+
   render() {
     const { title, subtitle, storyline, imagePath, rating } = this.state;
     return (
