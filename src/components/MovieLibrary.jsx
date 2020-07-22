@@ -52,7 +52,7 @@ class MovieLibrary extends React.Component {
         />
         <h2> My awesome movie library </h2>
         <MovieList movies={this.filteredMovies()} />
-        <AddMovie />
+        <AddMovie onClick={this.addMovies} />
       </div>
     );
   }
