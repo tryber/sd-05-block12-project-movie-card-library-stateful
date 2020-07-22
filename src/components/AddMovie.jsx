@@ -5,11 +5,11 @@ class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      subtitle: '',
       title: '',
-      imagePath: '',
+      subtitle: '',
       storyline: '',
       rating: 0,
+      imagePath: '',
       genre: 'action',
     };
 
@@ -119,7 +119,8 @@ class AddMovie extends React.Component {
   insertButton() {
     return (
       <button
-        onClick={this.resetState}
+        type="button"
+        onClick={() => this.props.onClick(this.state)}
       >
         Adicionar filme
       </button>

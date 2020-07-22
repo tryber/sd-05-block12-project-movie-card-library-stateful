@@ -17,6 +17,7 @@ class MovieLibrary extends React.Component {
     this.handleCheckedBox = this.handleCheckedBox.bind(this);
     this.handleSelectedGenre = this.handleSelectedGenre.bind(this);
     this.filterMovies = this.filterMovies.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   handleChangeOnText(event) {
@@ -47,6 +48,12 @@ class MovieLibrary extends React.Component {
     } return genre === this.state.selectedGenre;
   }
 
+  onClick(state) {
+    this.setState({
+      movies: [...this.props.movies, state],
+    });
+  }
+
   render() {
     return (
       <div>
@@ -61,7 +68,7 @@ class MovieLibrary extends React.Component {
         <MovieList
           movies={this.state.movies.filter(this.filterMovies)}
         />
-        <AddMovie />
+        <AddMovie onClick={this.onClick} />
       </div>
     );
   }
