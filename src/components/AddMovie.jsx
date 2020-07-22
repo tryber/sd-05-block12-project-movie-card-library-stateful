@@ -16,13 +16,15 @@ class AddMovie extends React.Component {
   }
 
   setFilterValue(event) {
+
     const { name, value } = event.target;
     this.setState({
-      [name]: value,
+      [name]: name === 'rating' ? parseFloat(value) : value,
     });
   }
   
-  buttonChange() {
+  buttonChange(event) {
+    event.preventDefault();
     const { onClick } = this.props;
     onClick(this.state);
     this.setState({

@@ -50,8 +50,8 @@ class MovieLibrary extends React.Component {
   }
 
   render() {
-    // const { movie } = this.props;
     return (
+
       <div >
         <SearchBar
           searchText={this.state.searchText}
