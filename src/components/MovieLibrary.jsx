@@ -39,18 +39,14 @@ class MovieLibrary extends React.Component {
       return movies.filter(movie => movie.genre === selectedGenre)
     }
     if (searchText !== "") {
-      return movies.filter(movie => movie.title.indexOf(searchText) >= 0 
-      || movie.subtitle.indexOf(searchText) >= 0 
-      || movie.storyline.indexOf(searchText) >= searchText)
+      return movies.filter(movie => movie.title.indexOf(searchText) >= 0 || movie.subtitle.indexOf(searchText) >= 0 || movie.storyline.indexOf(searchText) >= searchText);
     }
     return movies;
   }
 
   newMovie(newMovie) {
     const movies = this.state.movies;
-    this.setState({
-      movies: movies.push(newMovie),
-    })
+    this.setState({ movies: movies.push(newMovie) });
   }
 
   render() {
