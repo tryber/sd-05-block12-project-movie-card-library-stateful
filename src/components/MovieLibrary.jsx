@@ -14,7 +14,7 @@ class MovieLibrary extends React.Component {
     };
     this.changeSearchText = this.changeText.bind(this);
     this.changeBookmarkedOnly = this.changeBook.bind(this);
-    this.changeSelectGenre = this.changeGenre.bind(this);
+    this.changeSelectedGenre = this.changeGenre.bind(this);
     this.newMovie = this.newMovie.bind(this);
   }
 
@@ -27,7 +27,7 @@ class MovieLibrary extends React.Component {
   }
 
   changeGenre(event) {
-    this.setState({ selectGenre: event.target.value });
+    this.setState({ selectedGenre: event.target.value });
   }
 
   filteredMovies() {
@@ -59,7 +59,6 @@ class MovieLibrary extends React.Component {
           searchText={this.state.searchText} onSearchTextChange={this.changeText}
           bookmarkedOnly={this.state.bookmarkedOnly} onBookmarkedChange={this.changeBook}
           selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.changeGenre}
-          newMovie={this.state.newMovie}onNewMovieChange={this.newMovie}
         />
         <MovieList movies={this.filteredMovies()} />
         <AddMovie onClick={this.newMovie} />
