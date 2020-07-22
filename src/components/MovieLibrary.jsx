@@ -1,6 +1,7 @@
 // implement MovieLibrary component here
 import React from 'react';
 import SearchBar from './SearchBar';
+import MovieList from './MovieList';
 // Carla
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -28,6 +29,24 @@ class MovieLibrary extends React.Component {
     this.setState({ selectedGenre: event.target.value });
   }
 
+  filteredMovies() {
+    const { movies, searchText, bookmarkedOnly, selectedGenre } = this.state;
+    if (bookmarkedOnly === true) {
+      return movies.filter((movie) => movie.bookmarked === true);
+    }
+
+    if (selectedGenre !== '') {
+      return movies.filter((movie) => movie.genre === selectedGenre);
+    }
+
+    if (searchText !== '') {
+      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
+        movie.subtitle.indexOf(searchText) >= 0 || movie.storyline.indexOf(searchText) >= 0);
+    }
+
+    return movies;
+  }
+
   render() {
     // const { movies } = this.props;
     return (
@@ -37,6 +56,7 @@ class MovieLibrary extends React.Component {
           bookmarkedOnly={this.state.bookmarkedOnly} onBookmarkedChange={this.changeBook}
           selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.changeGenre}
         />
+        <MovieList movies={this.filteredMovies()} />
       </div>
     );
   }
