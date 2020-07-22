@@ -1,12 +1,12 @@
 // implement MovieLibrary component here
 import React from 'react';
-import SearchBar from './SearchBar';
 import MovieList from './MovieList';
+import SearchBar from './SearchBar';
 
 class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
-    this.filteredMovie = this.filteredMovie.bind(this);
+    this.filterMovie = this.filterMovie.bind(this);
     const movie = this.props;
     this.state = {
       searchText: '',
@@ -16,7 +16,7 @@ class MovieLibrary extends React.Component {
     };
   }
 
-  filteredMovie() {
+  filterMovie() {
     const { selectedGenre, movies, searchText, bookmarkedOnly } = this.state;
 
     if (bookmarkedOnly) return movies.filter((movie) => movie.bookmarked);
@@ -29,19 +29,18 @@ class MovieLibrary extends React.Component {
     ));
   }
 
-
   render() {
     return (
       <section>
         <SearchBar
           searchText={this.state.searchText}
-          onSearchTextChange={(event) => { this.setState({ searchText: event.target.value }); }}
+          onSearchTextChange={(e) => { this.setState({ searchText: e.target.value }); }}
           bookmarkedOnly={this.state.bookmarkedOnly}
-          onBookmarkedChange={(ev) => { this.setState({ bookmarkedOnly: ev.target.checked }); }}
+          onBookmarkedChange={(e) => { this.setState({ bookmarkedOnly: e.target.checked }); }}
           selectedGenre={this.state.selectedGenre}
-          onSelectedGenreChange={(ev) => { this.setState({ selectedGenre: ev.target.value }); }}
+          onSelectedGenreChange={(e) => { this.setState({ selectedGenre: e.target.value }); }}
         />
-        <MovieList movie={this.filteredMovie} />
+        <MovieList movie={this.filterMovie} />
       </section>
     );
   }
