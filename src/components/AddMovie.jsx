@@ -3,7 +3,7 @@ import React from 'react';
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
-    
+  
     this.state = {
       subtitle: '',
       title: '',
@@ -19,16 +19,12 @@ class AddMovie extends React.Component {
 
   newMovieInfo(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
+    this.setState({ [name]: value });
   }
 
   newMovieRating(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: Number(value),
-    });
+    this.setState({ [name]: Number(value) });
   }
 
   newMovie() {
