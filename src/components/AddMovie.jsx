@@ -13,14 +13,20 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.change = this.change.bind(this);
+    this.buttonChange = this.buttonChange.bind(this);
   }
 
   change(event) {
-    const eventoTarget = event.target;
-    this.setState({ [eventoTarget.id]: eventoTarget.id === 'rating' ? parseFloat(eventoTarget.value) : eventoTarget.value });
+    const { name, value } = event.target;
+    this.setState({
+      [name]: name === "rating" ? parseFloat(value) : value,
+    });
+    // const eventoTarget = event.target;
+    // this.setState({ [eventoTarget.id]: eventoTarget.id === 'rating' ? parseFloat(eventoTarget.value) : eventoTarget.value });
   }
 
-  buttonChange() {
+  buttonChange(event) {
+    event.preventDefault();
     const { onClick } = this.props;
     onClick(this.state);
     this.setState({

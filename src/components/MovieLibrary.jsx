@@ -2,6 +2,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import MovieList from './MovieList';
+import AddMovie from './AddMovie';
 // Carla
 class MovieLibrary extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class MovieLibrary extends React.Component {
     this.changeText = this.changeText.bind(this);
     this.changeBook = this.changeBook.bind(this);
     this.changeGenre = this.changeGenre.bind(this);
+    this.newMovie = this.newMovie.bind(this);
   }
 
   changeText(event) {
@@ -47,8 +49,13 @@ class MovieLibrary extends React.Component {
     return movies;
   }
 
+  newMovie(add) {
+    this.setState({ movies: [...this.state.movies, add] });
+    // const movies = this.state.movies;
+    // this.setState({ movies: movies.push(add) });
+  }
+
   render() {
-    // const { movies } = this.props;
     return (
       <div>
         <SearchBar
@@ -57,6 +64,7 @@ class MovieLibrary extends React.Component {
           selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.changeGenre}
         />
         <MovieList movies={this.filteredMovies()} />
+        <AddMovie onClick={this.newMovie} />
       </div>
     );
   }
