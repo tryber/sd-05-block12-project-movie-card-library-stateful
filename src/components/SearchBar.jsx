@@ -1,7 +1,7 @@
 // implement SearchBar component here
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
+class SearchBar extends React.Component {
   render() {
     const { searchText, onSearchTextChange, bookmarkedOnly } = this.props;
     const {

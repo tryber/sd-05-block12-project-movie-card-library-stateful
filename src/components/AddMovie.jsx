@@ -1,1 +1,14 @@
-// implement AddMovie component here
+// // implement AddMovie component here
+// import React from 'react';
+
+// // class AddMovie extends React.Component {
+// //   constructor(props) {
+// //     super(props);
+// //     this.state = {
+// //       subtitle: '',
+// //       title: '',
+// //       imagePath: '',
+// //       storyline: '',
+// //       rating: 0,
+// //       genre: 'action',
+// //     };
