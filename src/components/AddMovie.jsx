@@ -14,6 +14,7 @@ class AddMovie extends React.Component {
     };
     this.change = this.changeInput.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
+    this.changeRating = this.changeRating.bind(this);
   }
 
   changeInput(e) {
@@ -32,6 +33,11 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     });
+  }
+
+  changeRating(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: Number(value) });
   }
 
   render() {
@@ -65,10 +71,7 @@ class AddMovie extends React.Component {
         </label>
         <label htmlFor="rating">
           Avaliação
-          <input
-            name="rating"
-            type="number"
-            value={this.state.rating}
+          <input name="rating" type="number" value={this.state.rating}
             onChange={this.changeInput}
           />
         </label>
