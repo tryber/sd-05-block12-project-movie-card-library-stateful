@@ -13,8 +13,8 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
-  this.handleChangeOnText = this.handleChangeOnText.bind(this);
-  // this.handleChange = this.handleChange.bind(this);
+    this.handleChangeOnText = this.handleChangeOnText.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   handleChangeOnText(event) {
@@ -34,7 +34,7 @@ class MovieLibrary extends React.Component {
           onSearchTextChange={this.handleChangeOnText}
           bookmarkedOnly={this.state.bookmarkedOnly}
         />
-        <MovieList movies={this.props.movies}/>
+        <MovieList movies={this.props.movies} />
         <AddMovie />
       </div>
     );
