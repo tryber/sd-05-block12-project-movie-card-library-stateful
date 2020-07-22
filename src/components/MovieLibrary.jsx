@@ -20,10 +20,6 @@ class MovieLibrary extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  handleChangeOnText(event) {
-    this.setState({ searchText: event.target.value });
-  }
-
   handleCheckedBox() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
@@ -49,9 +45,11 @@ class MovieLibrary extends React.Component {
   }
 
   onClick(state) {
-    this.setState({
-      movies: [...this.props.movies, state],
-    });
+    this.setState({ movies: [...this.props.movies, state] });
+  }
+
+  handleChangeOnText(event) {
+    this.setState({ searchText: event.target.value });
   }
 
   render() {
