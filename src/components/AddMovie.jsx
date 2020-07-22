@@ -12,17 +12,17 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    this.newMovieInfo = this.newMovieInfo.bind(this);
-    this.newMovieRating = this.newMovieRating.bind(this);
+    this.newInfo = this.newInfo.bind(this);
+    this.newRate = this.newRate.bind(this);
     this.newMovie = this.newMovie.bind(this);
   }
 
-  newMovieInfo(event) {
+  newInfo(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
 
-  newMovieRating(event) {
+  newRate(event) {
     const { name, value } = event.target;
     this.setState({ [name]: Number(value) });
   }
@@ -48,17 +48,17 @@ class AddMovie extends React.Component {
       <div>
         <form>
           <label htmlFor="T">Título</label>
-          <input type="text" name="title" id="T" value={title} onChange={this.newMovieInfo} />
+          <input type="text" name="title" id="T" value={title} onChange={this.newInfo} />
           <label htmlFor="ST">Subtítulo</label>
-          <input type="text" name="subtitle" id="ST" value={subtitle} onChange={this.newMovieInfo} />
+          <input type="text" name="subtitle" id="ST" value={subtitle} onChange={this.newInfo} />
           <label htmlFor="IMG">Imagem</label>
-          <input type="text" name="imagePath" id="IMG" value={imagePath} onChange={this.newMovieInfo} />
+          <input type="text" name="imagePath" id="IMG" value={imagePath} onChange={this.newInfo} />
           <label htmlFor="ST">Sinopse</label>
-          <textarea name="storyline" id="ST" value={storyline} onChange={this.newMovieInfo} />
+          <textarea name="storyline" id="ST" value={storyline} onChange={this.newInfo} />
           <label htmlFor="R">Avaliação</label>
-          <input type="number" name="rating" id="R" value={rating} onChange={this.newMovieRating} />
+          <input type="number" name="rating" id="R" value={rating} onChange={this.newRate} />
           <label htmlFor="G">Gênero</label>
-          <select name="genre" id="G" value={genre} onChange={this.newMovieInfo}>
+          <select name="genre" id="G" value={genre} onChange={this.newInfo}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
