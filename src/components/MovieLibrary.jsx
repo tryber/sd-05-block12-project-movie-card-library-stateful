@@ -17,12 +17,15 @@ class MovieLibrary extends React.Component {
     this.changeSelectGenre = this.changeGenre.bind(this);
     this.newMovie = this.newMovie.bind(this);
   }
+
   changeText(event) {
     this.setState({ searchText: event.target.value });
   }
+
   changeBook() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
+  
   changeGenre(event) {
     this.setState({ selectedGenre: event.target.value });
   }
