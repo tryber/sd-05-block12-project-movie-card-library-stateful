@@ -4,21 +4,22 @@ import React from 'react';
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       subtitle: '',
       title: '',
       imagePath: '',
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
     this.upState = this.upState.bind(this);
     this.addButton = this.addButton.bind(this);
   }
   upState(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value }) };
-  
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value })
+  }
+
   addButton() {
     const { onClick } = this.props;
     onClick(this.state);
@@ -29,7 +30,7 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    })
+    });
   }
 
   render() {

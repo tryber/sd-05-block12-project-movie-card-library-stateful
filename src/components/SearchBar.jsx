@@ -17,7 +17,9 @@ class SearchBar extends React.Component {
         <label htmlFor="searchText">Inclui o texto: </label>
         <input name="searchText" type="text" value={searchText} onChange={onSearchTextChange} />
         <label htmlFor="bookmarkedOnly">Mostrar somente favoritos</label>
-        <input type="checkbox" name="bookmarkedOnly" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+        <input type="checkbox" name="bookmarkedOnly"
+          checked={bookmarkedOnly} onChange={onBookmarkedChange}
+        />
         <label htmlFor="generos">Filtrar por gênero</label>
         <select value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
