@@ -52,7 +52,12 @@ class AddMovie extends React.Component {
         </label>
         <label htmlFor="imagePath">
           Imagem
-          <input name="imagePath" type="text" value={this.state.imagePath} onChange={this.changeInput} />
+          <input
+            name="imagePath"
+            type="text"
+            value={this.state.imagePath}
+            onChange={this.changeInput}
+          />
         </label>
         <label htmlFor="storyline">
           Sinopse
@@ -60,7 +65,12 @@ class AddMovie extends React.Component {
         </label>
         <label htmlFor="rating">
           Avaliação
-          <input name="rating" type="number" value={this.state.rating} onChange={this.changeInput} />
+          <input
+            name="rating"
+            type="number"
+            value={this.state.rating}
+            onChange={this.changeInput}
+          />
         </label>
         <label htmlFor="genre">
           Gênero
