@@ -12,6 +12,9 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
+    this.setMovie= this.setMovie.bind(this);
+    this.setMovieRating = this.setMovieRating.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   setMovie(event) {

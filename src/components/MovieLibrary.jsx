@@ -12,6 +12,11 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
+    this.resetButton = this.resetButton.bind(this);
+    this.TextChange = this.TextChange.bind(this);
+    this.markedChanged = this.markedChanged.bind(this);
+    this.GenreChange = this.GenreChange.bind(this);
+    this.filter = this.filter.bind(this);
   }
 
   TextChange(event) {
