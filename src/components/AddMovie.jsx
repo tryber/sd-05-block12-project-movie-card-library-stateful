@@ -1,6 +1,5 @@
 // implement AddMovie component here
 import React from 'react';
-import Input from './Input';
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -35,16 +34,19 @@ class AddMovie extends React.Component {
     return true;
   }
   render() {
-    // const { onclick } = this.props;
     const { title, subtitle, storyline, imagePath, rating } = this.state;
     return (
       <form onSubmit={(e) => e.preventDefault()}>
-        <Input htmlFor="title" typeInput="text" textLabel="Título" valueInput={title} onChange={this.changeTitle} idInput="title" />
-        <Input htmlFor="subtitle" typeInput="text" textLabel="Subtítulo" valueInput={subtitle} onChange={this.changeTitle} idInput="subtitle" />
-        <Input htmlFor="imagePath" typeInput="text" textLabel="Imagem" valueInput={imagePath} onChange={this.changeTitle} idInput="imagePath" />
+        <label htmlFor="title">Título</label>
+        <input type="text" value={title} onChange={this.changeTitle} />
+        <label htmlFor="subtitle">Subtítulo</label>
+        <input type="text" value={subtitle} onChange={this.changeTitle} />
+        <label htmlFor="imagePath">Imagem</label>
+        <input type="text" value={imagePath} onChange={this.changeTitle} />
         <label htmlFor="storyline">Sinopse</label>
         <textarea value={storyline} onChange={this.changeTitle} id="storyline" />
-        <Input htmlFor="rating" typeInput="number" textLabel="Avaliação" valueInput={rating} onChange={this.changeTitle} idInput="rating" />
+        <label htmlFor="rating">Avaliação</label>
+        <input type="number" value={rating} onChange={this.changeTitle} />
         <label htmlFor="genre">Gênero</label>
         <select id="genre" onChange={this.changeTitle}>
           <option value="action">Ação</option>
