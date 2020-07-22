@@ -3,7 +3,7 @@ import React from 'react';
 class AddMovie extends React.Component {
   constructor(props) {
     super(props);
-  
+
     this.state = {
       subtitle: '',
       title: '',
@@ -50,13 +50,16 @@ class AddMovie extends React.Component {
           <label htmlFor="title">Título</label>
           <input type="text" name="title" id="title" value={title} onChange={this.newMovieInfo} />
           <label htmlFor="subtitle">Subtítulo</label>
-          <input type="text" name="subtitle" id="subtitle" value={subtitle} onChange={this.newMovieInfo} />
+          <input
+            type="text" name="subtitle" id="subtitle" value={subtitle} onChange={this.newMovieInfo} />
           <label htmlFor="image">Imagem</label>
-          <input type="text" name="imagePath" id="image" value={imagePath} onChange={this.newMovieInfo} />
+          <input
+            type="text" name="imagePath" id="image" value={imagePath} onChange={this.newMovieInfo} />
           <label htmlFor="story">Sinopse</label>
           <textarea id="story" name="storyline" value={storyline} onChange={this.newMovieInfo} />
           <label htmlFor="rating">Avaliação</label>
-          <input type="number" name="rating" id="rating" value={rating} onChange={this.newMovieRating} />
+          <input
+            type="number" name="rating" id="rating" value={rating} onChange={this.newMovieRating} />
           <label htmlFor="genre">Gênero</label>
           <select id="genre" name="genre" value={genre} onChange={this.newMovieInfo}>
             <option value="action">Ação</option>
