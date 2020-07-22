@@ -1,4 +1,3 @@
-// implement AddMovie component here
 import React from 'react';
 
 class AddMovie extends React.Component {
@@ -15,9 +14,10 @@ class AddMovie extends React.Component {
     this.upState = this.upState.bind(this);
     this.addButton = this.addButton.bind(this);
   }
+
   upState(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value })
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
 
   addButton() {
@@ -34,14 +34,7 @@ class AddMovie extends React.Component {
   }
 
   render() {
-    const {
-      subtitle,
-      title,
-      imagePath,
-      storyline,
-      rating,
-      genre,
-    } = this.state;
+    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
         <label htmlFor="title">Título</label>
