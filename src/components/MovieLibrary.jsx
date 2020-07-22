@@ -12,7 +12,7 @@ class MovieLibrary extends Components {
       bookmarkedOnly: false,
       selectedGenre: '',
       movies: this.props.movies,
-    }
+    };
     this.stateChange = this.changeState.bind(this);
     this.changeBookmark = this.changeBookmark.bind(this);
   }
@@ -20,25 +20,23 @@ class MovieLibrary extends Components {
   changeState(event) {
     this.setState({
       searchText: event.target.value,
-    })
+    });
   }
   changeBookmark(event) {
     this.setState({
-      bookmarkedOnly: !this.target.value,
-    })
+      bookmarkedOnly: !this.target.value});
   }
 
   render() {
     const { movies } = this.props;
     return (
       <div>
-        <SearchBar searchText={this.state.searchText} onSearchTextChange={this.changeState}
-        
-        />
-        <MovieList movies={this.props.movies} />
-        <AddMovie />
+        <SearchBar searchText={this.state.searchText}
+        onSearchTextChange={this.changeState}/>
+        <MovieList movies={this.props.movies}/>
+        <AddMovie/>
       </div>
-    )
+    );
   }
 }
 
