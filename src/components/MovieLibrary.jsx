@@ -27,7 +27,7 @@ class MovieLibrary extends React.Component {
   }
 
   changeGenre(event) {
-    this.setState({ selectedGenre: event.target.value });
+    this.setState({ selectGenre: event.target.value });
   }
 
   filteredMovies() {
