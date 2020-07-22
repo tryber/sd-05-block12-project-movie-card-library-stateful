@@ -17,11 +17,9 @@ class AddMovie extends React.Component {
 
   setFilterValue(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: name === 'rating' ? parseFloat(value) : value,
-    });
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
-  
+
   buttonChange(event) {
     event.preventDefault();
     const { onClick } = this.props;
@@ -33,7 +31,7 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    })
+    });
   }
 
   render() {
