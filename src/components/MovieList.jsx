@@ -4,7 +4,6 @@ import MovieCard from './MovieCard';
 
 class MovieList extends React.Component {
   render() {
-    console.log(this.props);
     const { movies } = this.props;
 
     return (
