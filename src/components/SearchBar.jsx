@@ -86,10 +86,7 @@ class SearchBar extends Component {
         <Input searchText={searchText} onSearchTextChange={onSearchTextChange} />
         <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
         <MovieGenre
-          onSelectedGenreChange={(event) => {
-            this.setState({ selGenre: event.target.value });
-            onSelectedGenreChange(event);
-          }}
+          onSelectedGenreChange={onSelectedGenreChange}
           selectedGenre={this.state.selGenre}
         />
       </form>
