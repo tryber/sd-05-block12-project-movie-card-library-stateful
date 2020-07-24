@@ -13,9 +13,10 @@ const Input = (props) => {
     onSearchTextChange,
   } = props;
   return (
-    <label htmlFor="search-value">
+    <label className="label-input" htmlFor="search-value">
           Inclui o texto
       <input
+        className="text-input"
         key="search-value"
         type="text"
         name="searchText"
@@ -29,7 +30,7 @@ const Input = (props) => {
 const Bookmarked = (props) => {
   const { onChange, checked } = props;
   return (
-    <label htmlFor="filter-bookmarked">
+    <label className="switch bookmarked-container" htmlFor="filter-bookmarked">
     Mostrar somente favoritos
       <input
         onChange={onChange}
@@ -81,11 +82,14 @@ class SearchBar extends Component {
       onSelectedGenreChange, onSearchTextChange,
     } = this.props;
     return (
-      <form>
+      <form className="search-bar">
         <Input searchText={searchText} onSearchTextChange={onSearchTextChange} />
         <Bookmarked onChange={onBookmarkedChange} checked={bookmarkedOnly} />
         <MovieGenre
-          onSelectedGenreChange={onSelectedGenreChange}
+          onSelectedGenreChange={(event) => {
+            this.setState({ selGenre: event.target.value });
+            onSelectedGenreChange(event);
+          }}
           selectedGenre={this.state.selGenre}
         />
       </form>
