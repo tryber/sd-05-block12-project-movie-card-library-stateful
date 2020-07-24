@@ -81,3 +81,24 @@ body {
   justify-content: flex-end;
   padding: 12px 20px;
 }
+
+.search-bar {
+  display: flex;
+  flex-direction: column ;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-input {
+  border-radius: 10px;
+}
+
+.bookmarked-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+}
