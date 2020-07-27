@@ -16,32 +16,32 @@ class SearchBar extends Component {
         <form>
 
           <input 
-            type="text"
-            id="text"
+            type='text'
+            id='text'
             value={this.props.SearchText}
             onChange={this.props.onSearchTextChange}
           ></input>
-          <label htmlFor="text">Inclui o texto:</label>
+          <label htmlFor='text'>Inclui o texto:</label>
 
           <input 
-            type="radio"
-            id="checkbox"
+            type='radio'
+            id='checkbox'
             checked={this.props.bookmarkedOnly}
             onChange={this.props.onBookmarkedChanged}
           ></input>
-          <label htmlFor="checkbox">Mostrar somente favoritos:</label>
+          <label htmlFor='checkbox'>Mostrar somente favoritos:</label>
 
           <select 
-            id="select"
+            id='select'
             value={this.props.selectedGenre}
             onChange={this.props.onSelectedGenreChange}
           >
-            <option value="">Todos</option>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
+            <option value=''>Todos</option>
+            <option value='action'>Ação</option>
+            <option value='comedy'>Comédia</option>
+            <option value='thriller'>Suspense</option>
           </select>
-          <label htmlFor="select">Filtrar por gênero</label>
+          <label htmlFor='select'>Filtrar por gênero</label>
 
         </form>
       </div>
