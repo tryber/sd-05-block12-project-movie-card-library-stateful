@@ -28,7 +28,7 @@ class AddMovie extends Component  {
       })
   }
 
-  handleButton = () => {
+  handleButton = (state) => {
 
   }
 
@@ -94,7 +94,7 @@ class AddMovie extends Component  {
         <label htmlFor='rating'>Gênero</label>
 
         <button
-          onClick={this.handleButton}
+          onClick={this.handleButton(this.state)}
         >Adicionar filme</button>
 
       </form>
