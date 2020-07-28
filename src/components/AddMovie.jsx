@@ -13,8 +13,8 @@ class AddMovie extends React.Component {
     }
   }
 
-  async updateState(name, value) {
-    await this.setState(() => ({
+  updateState = (name, value) => {
+    this.setState(() => ({
       [name]: value,
     }))
   }
