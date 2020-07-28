@@ -1,6 +1,6 @@
 import React from 'react';
 import InputText from './InputText';
-import InputTextArea from './TextArea'
+import InputTextArea from './TextArea';
 
 class AddMovie extends React.Component {
   constructor(props) {
