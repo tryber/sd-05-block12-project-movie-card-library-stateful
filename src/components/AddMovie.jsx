@@ -11,9 +11,12 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     }
+    this.updateState = this.updateState.bind(this);
+    this.changeHandler = this.changeHandler.bind(this);
+    this.addMovieReset = this.addMovieReset.bind(this);
   }
 
-  updateState (name, value) {
+  updateState(name, value) {
     this.setState(() => {
       if(name === 'rating') {return ({[name]: parseFloat(value)})}
       else return ({[name]: value})
@@ -21,12 +24,12 @@ class AddMovie extends React.Component {
   )
 }
 
-  changeHandler = (event) => {
+  changeHandler(event) {
     let { name, value } = event.target;
     this.updateState(name, value);
   }
   
-  addMovieReset = (event) => {
+  addMovieReset(event) {
     event.preventDefault();
     const callback = this.props.onClick;
     callback(this.state);
