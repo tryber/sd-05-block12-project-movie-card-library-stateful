@@ -1,4 +1,6 @@
 import React from 'react';
+import InputText from './InputText';
+import InputTextArea from './TextArea'
 
 class AddMovie extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
     this.updateState = this.updateState.bind(this);
-    this.changeHandler = this.changeHandler.bind(this);
+    this.cHandler = this.cHandler.bind(this);
     this.addMovieReset = this.addMovieReset.bind(this);
   }
 
@@ -24,10 +26,9 @@ class AddMovie extends React.Component {
   );
   }
 
-  changeHandler(event) {
-    const { name } = event.target;
-    let { value } = event.target;
-    this.updateState(name, value);
+  async cHandler(event) {
+    const { name, value } = event.target;
+    await this.updateState(name, value);
   }
 
   addMovieReset(event) {
@@ -43,27 +44,28 @@ class AddMovie extends React.Component {
       genre: 'action',
     }));
   }
-
-  render () {
-    return (<form>
-      <label htmlFor="FormTitle">Título <input type="text" name="title" id="FormTitle"
-      onChange={this.changeHandler} value={this.state.title} /></label>
-      <label htmlFor="FormSubtitle">Subtítulo<input type="text" name="subtitle" id="FormSubitle"
-      onChange={this.changeHandler} value={this.state.subtitle} /></label>
-      <label htmlFor="FormTitle">Imagem<input type="text" name="imagePath" id="FormImage" 
-      onChange={this.changeHandler} value={this.state.imagePath} /></label>
-      <label htmlFor="FormStoryline">Sinopse<textarea name="storyline" id="FormStoryLine"
-      onChange={this.changeHandler} value={this.state.storyline} /></label>
-      <label htmlFor="FormRating">Avaliação<input type="number" name="rating" id="FormRating" 
-      onChange={this.changeHandler} value={this.state.rating} /></label>
-      <label htmlFor="FormGenre">Gênero</label>
-      <select value={this.state.genre} id="FormGenre" name="genre" onChange={this.changeHandler}>
-        <option value="action">Ação</option>
-        <option value="comedy">Comédia</option>
-        <option value="thriller">Suspense</option>
-      </select>
-      <button onClick={this.addMovieReset}>Adicionar filme</button>
-    </form>);
+  
+  render() {
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    return (
+      <form>
+        <InputText name="title" value={title} onChange={this.cHandler} inputName="Título" />
+        <InputText name="subtitle" value={subtitle} onChange={this.cHandler} inputName="Subtítulo" />
+        <InputText name="imagePath" value={imagePath} onChange={this.cHandler} inputName="Imagem" />
+        <InputTextArea name="storyline" value={storyline} onChange={this.cHandler} inputName={'Sinopse'} />
+        <label htmlFor="FRating">
+          Avaliação
+          <input type="number" value={rating} onChange={this.cHandler} id="FRting" name="rating" />
+        </label>
+        <label htmlFor="FormGenre">Gênero</label>
+        <select value={genre} id="FormGenre" name="genre" onChange={this.cHandler}>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
+        <button onClick={this.addMovieReset}>Adicionar filme</button>
+      </form>
+    );
   }
 }
 
