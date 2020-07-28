@@ -2,13 +2,13 @@ import React from 'react';
 
 class TextArea extends React.Component {
   render() {
-    const { name, value, onChange = () => {}, inputName } = this.props;
+    const { name, value, onChange = () => {}, inName } = this.props;
     return (
       <label htmlFor={name}>
-        {inputName}
+        {inName}
         <textarea value={value} onChange={onChange} id={name} />
       </label>
-    )
+    );
   }
 }
 
