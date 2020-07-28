@@ -19,42 +19,43 @@ class AddMovie extends React.Component {
   updateState(name, value) {
     this.setState(() => {
       if (name === 'rating') { return ({ [name]: parseFloat(value) }); }
-      return ({ [name]: value })
-    }
-  )
-}
+      return ({ [name]: value });
+    },
+  );
+  }
 
   changeHandler(event) {
-    let { name, value } = event.target;
+    const { name } = event.target;
+    let { value } = event.target;
     this.updateState(name, value);
   }
-  
+
   addMovieReset(event) {
     event.preventDefault();
     const callback = this.props.onClick;
     callback(this.state);
-    this.setState(() => ({ 
+    this.setState(() => ({
       subtitle: '',
       title: '',
       imagePath: '',
       storyline: '',
       rating: 0,
       genre: 'action',
-    }))
+    }));
   }
-  
+
   render () {
     return (<form>
-      <label htmlFor="FormTitle">Título</label>
-      <input type="text" name="title" id="FormTitle" onChange={this.changeHandler} value={this.state.title} />
-      <label htmlFor="FormSubtitle">Subtítulo</label>
-      <input type="text" name="subtitle" id="FormSubitle" onChange={this.changeHandler} value={this.state.subtitle} />
-      <label htmlFor="FormTitle">Imagem</label>
-      <input type="text" name="imagePath" id="FormImage" onChange={this.changeHandler} value={this.state.imagePath} />
-      <label htmlFor="FormStoryline">Sinopse</label>
-      <textarea name="storyline" id="FormStoryLine" onChange={this.changeHandler} value={this.state.storyline} />
-      <label htmlFor="FormRating">Avaliação</label>
-      <input type="number" name="rating" id="FormRating" onChange={this.changeHandler} value={this.state.rating} />
+      <label htmlFor="FormTitle">Título <input type="text" name="title" id="FormTitle"
+      onChange={this.changeHandler} value={this.state.title} /></label>
+      <label htmlFor="FormSubtitle">Subtítulo<input type="text" name="subtitle" id="FormSubitle"
+      onChange={this.changeHandler} value={this.state.subtitle} /></label>
+      <label htmlFor="FormTitle">Imagem<input type="text" name="imagePath" id="FormImage" 
+      onChange={this.changeHandler} value={this.state.imagePath} /></label>
+      <label htmlFor="FormStoryline">Sinopse<textarea name="storyline" id="FormStoryLine"
+      onChange={this.changeHandler} value={this.state.storyline} /></label>
+      <label htmlFor="FormRating">Avaliação<input type="number" name="rating" id="FormRating" 
+      onChange={this.changeHandler} value={this.state.rating} /></label>
       <label htmlFor="FormGenre">Gênero</label>
       <select value={this.state.genre} id="FormGenre" name="genre" onChange={this.changeHandler}>
         <option value="action">Ação</option>
