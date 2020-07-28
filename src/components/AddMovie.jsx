@@ -1,7 +1,7 @@
 import React from 'react';
 
 class AddMovie extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       subtitle: '',
@@ -10,7 +10,7 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
     this.updateState = this.updateState.bind(this);
     this.changeHandler = this.changeHandler.bind(this);
     this.addMovieReset = this.addMovieReset.bind(this);
@@ -18,8 +18,8 @@ class AddMovie extends React.Component {
 
   updateState(name, value) {
     this.setState(() => {
-      if(name === 'rating') {return ({[name]: parseFloat(value)})}
-      else return ({[name]: value})
+      if (name === 'rating') { return ({ [name]: parseFloat(value) }); }
+      return ({ [name]: value })
     }
   )
 }
