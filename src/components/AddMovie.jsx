@@ -14,16 +14,12 @@ class AddMovie extends React.Component {
   }
 
   updateState (name, value) {
-    this.setState(() => ({
-      [name]: value,
-    }))
-  }
-  
-  changeHandlerInt = (event) => {
-    let { name, value } = event.target;
-    value = parseFloat(value);
-    this.updateState(name, value);
-  }
+    this.setState(() => {
+      if(name === 'rating') {return ({[name]: parseFloat(value)})}
+      else return ({[name]: value})
+    }
+  )
+}
 
   changeHandler = (event) => {
     let { name, value } = event.target;
@@ -59,7 +55,7 @@ class AddMovie extends React.Component {
       <textarea name="storyline" id="FormStoryLine" onChange={this.changeHandler}
       value={this.state.storyline}/>
       <label htmlFor="FormRating">Avaliação</label>
-      <input type="number" name="rating" id="FormRating" onChange={this.changeHandlerInt}
+      <input type="number" name="rating" id="FormRating" onChange={this.changeHandler}
       value={this.state.rating}/>
       <label htmlFor="FormGenre">Gênero</label>
       <select value={this.state.genre} id="FormGenre" name="genre" onChange={this.changeHandler}>
