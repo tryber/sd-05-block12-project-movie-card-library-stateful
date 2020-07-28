@@ -46,38 +46,23 @@ class AddMovie extends React.Component {
   render () {
     return (<form>
       <label htmlFor="FormTitle">Título</label>
-      <input type="text"
-      name="title"
-      id="FormTitle"
-      onChange={this.changeHandler}
+      <input type="text" name="title" id="FormTitle" onChange={this.changeHandler}
       value={this.state.title}
       />
       <label htmlFor="FormSubtitle">Subtítulo</label>
-      <input type="text"
-      name="subtitle"
-      id="FormSubitle"
-      onChange={this.changeHandler}
+      <input type="text" name="subtitle" id="FormSubitle" onChange={this.changeHandler}
       value={this.state.subtitle}
       />
       <label htmlFor="FormTitle">Imagem</label>
-      <input type="text"
-      name="imagePath"
-      id="FormImage"
-      onChange={this.changeHandler}
+      <input type="text" name="imagePath" id="FormImage" onChange={this.changeHandler}
       value={this.state.imagePath}
       />
       <label htmlFor="FormStoryline">Sinopse</label>
-      <textarea
-      name="storyline"
-      id="FormStoryLine"
-      onChange={this.changeHandler}
+      <textarea name="storyline" id="FormStoryLine" onChange={this.changeHandler}
       value={this.state.storyline}
       />
       <label htmlFor="FormRating">Avaliação</label>
-      <input type="number"
-      name="rating"
-      id="FormRating"
-      onChange={this.changeHandlerInt}
+      <input type="number" name="rating" id="FormRating" onChange={this.changeHandlerInt}
       value={this.state.rating}
       />
       <label htmlFor="FormGenre">Gênero</label>
