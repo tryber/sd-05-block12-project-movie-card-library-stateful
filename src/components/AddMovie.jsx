@@ -44,15 +44,16 @@ class AddMovie extends React.Component {
       genre: 'action',
     }));
   }
-  
+
   render() {
     const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    const sl = 'storyline';
     return (
       <form>
-        <InputText name="title" value={title} onChange={this.cHandler} inputName="Título" />
-        <InputText name="subtitle" value={subtitle} onChange={this.cHandler} inputName="Subtítulo" />
-        <InputText name="imagePath" value={imagePath} onChange={this.cHandler} inputName="Imagem" />
-        <InputTextArea name="storyline" value={storyline} onChange={this.cHandler} inputName={'Sinopse'} />
+        <InputText name="title" value={title} onChange={this.cHandler} inName="Título" />
+        <InputText name="subtitle" value={subtitle} onChange={this.cHandler} inName="Subtítulo" />
+        <InputText name="imagePath" value={imagePath} onChange={this.cHandler} inName="Imagem" />
+        <InputTextArea name={sl} value={storyline} onChange={this.cHandler} inName="Sinopse" />
         <label htmlFor="FRating">
           Avaliação
           <input type="number" value={rating} onChange={this.cHandler} id="FRting" name="rating" />

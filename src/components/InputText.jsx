@@ -2,10 +2,10 @@ import React from 'react';
 
 class InputText extends React.Component {
   render() {
-    const { name, value, onChange = () => {}, inputName } = this.props;
+    const { name, value, onChange = () => {}, inName } = this.props;
     return (
       <label htmlFor={name} >
-        {inputName}
+        {inName}
         <input
           type="text"
           name={name}
