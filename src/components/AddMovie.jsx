@@ -21,7 +21,7 @@ class AddMovie extends React.Component {
   
   changeHandlerInt = (event) => {
     let { name, value } = event.target;
-    this.setState(() => ({[name]: parseFloat(value)}))
+    this.updateState(name, parseFloat(value));
   }
 
   changeHandler = (event) => {
