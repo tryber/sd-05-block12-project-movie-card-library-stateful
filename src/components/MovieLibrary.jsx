@@ -28,9 +28,9 @@ class MovieLibrary extends React.Component {
     const { bookmarkedOnly } = this.state;
     if (bookmarkedOnly === true) {
       return this.setState({ bookmarkedOnly: false });
-    };
-    return this.setState({ bookmarkedOnly: true })
-  };
+    }
+    return this.setState({ bookmarkedOnly: true });
+  }
 
   async onSelectedGenreChange(event) {
     const { value } = event.target;
@@ -47,23 +47,21 @@ class MovieLibrary extends React.Component {
     const { movies } = this.state;
     let filtrados = movies;
     if (selectedGenre !== '') {
-      filtrados = filtrados.filter((item) => {
-        return item.genre === selectedGenre;
-      });
+      return filtrados.filter((item) => item.genre === selectedGenre);
     }
     if (bookmarkedOnly === true) {
-      filtrados = filtrados.filter((item) => {
-        return item.bookmarked === true;
-      });
+      return filtrados.filter((item) => item.bookmarked === true);
     }
     if (searchText !== '') {
-      filtrados = filtrados.map((item) => {
-        if (item.title.includes(searchText) === true ||
-        item.subtitle.includes(searchText) === true ||
-        item.storyline.includes(searchText) === true) {
-          return item;
-        }
-      })
+      return (
+        filtrados.map((item) => {
+          if (item.title.includes(searchText) === true ||
+          item.subtitle.includes(searchText) === true ||
+          item.storyline.includes(searchText) === true) {
+            return item;
+          }
+        })
+      ).filter((item) => item !== undefined);
     }
     if (filtrados) filtrados = filtrados.filter((item) => item !== undefined);
     return filtrados;
@@ -74,7 +72,7 @@ class MovieLibrary extends React.Component {
     const filtrados = this.filtroDeFilmes();
     return (
       <div>
-        <SearchBar 
+        <SearchBar
           searchText={searchText}
           onBookmarkedChange={this.onBookmarkedChange}
           bookmarkedOnly={bookmarkedOnly}
