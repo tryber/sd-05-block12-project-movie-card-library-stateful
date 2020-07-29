@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import MovieCard from './MovieCard'
 
 class AddMovie extends Component  {
   constructor(props) {
     super(props)
-
     this.state = {
       subtitle: '',
       title: '',
@@ -28,8 +28,17 @@ class AddMovie extends Component  {
       })
   }
 
-  handleButton = (state) => {
-
+  handleButton = () => {
+    const { onClick } = this.props;
+    onClick(this.state);
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action'
+    })
   }
 
   render() {
@@ -94,7 +103,8 @@ class AddMovie extends Component  {
         <label htmlFor='rating'>Gênero</label>
 
         <button
-          onClick={this.handleButton(this.state)}
+          onClick={this.handleButton}
+        
         >Adicionar filme</button>
 
       </form>
