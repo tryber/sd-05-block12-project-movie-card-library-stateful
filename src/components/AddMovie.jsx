@@ -28,7 +28,6 @@ class AddMovie extends React.Component {
 
   async cHandler(event) {
     const { name, value } = event.target;
-    console.log(name)
     await this.updateState(name, value);
   }
 
