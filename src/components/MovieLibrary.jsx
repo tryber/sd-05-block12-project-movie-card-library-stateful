@@ -39,7 +39,7 @@ class MovieLibrary extends React.Component {
 
   moviePusher(obj) {
     const { movies } = this.state;
-    this.setState({ movies: [obj, ...movies] })
+    this.setState({ movies: [obj, ...movies] });
   }
 
   filtroDeFilmes() {
@@ -53,7 +53,7 @@ class MovieLibrary extends React.Component {
       return filtrados.filter((item) => item.bookmarked);
     }
     if (searchText !== '') {
-      return filtrados.filter(item => (
+      return filtrados.filter((item) => (
         (item.title.includes(searchText))
         || (item.subtitle.includes(searchText))
         || (item.storyline.includes(searchText))
