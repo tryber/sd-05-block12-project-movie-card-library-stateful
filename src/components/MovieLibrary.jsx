@@ -39,7 +39,7 @@ class MovieLibrary extends React.Component {
 
   moviePusher(obj) {
     const { movies } = this.state;
-    this.setState({ movies: [obj, ...movies] });
+    this.setState(() => ({ movies: [...movies, obj] }));
   }
 
   filtroDeFilmes() {
