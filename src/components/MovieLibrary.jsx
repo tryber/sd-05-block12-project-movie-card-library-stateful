@@ -72,7 +72,6 @@ class MovieLibrary extends React.Component {
   render() {
     const { searchText, bookmarkedOnly, selectedGenre } = this.state;
     const filtrados = this.filtroDeFilmes();
-    console.log(filtrados)
     return (
       <div>
         <SearchBar 
