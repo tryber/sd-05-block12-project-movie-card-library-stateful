@@ -39,31 +39,26 @@ class MovieLibrary extends React.Component {
 
   moviePusher(obj) {
     const { movies } = this.state;
-    this.setState({ movies: [...movies, obj] })
+    this.setState({ movies: [obj, ...movies] })
   }
 
   filtroDeFilmes() {
     const { selectedGenre, bookmarkedOnly, searchText } = this.state;
     const { movies } = this.state;
-    let filtrados = movies;
+    const filtrados = movies;
     if (selectedGenre !== '') {
       return filtrados.filter((item) => item.genre === selectedGenre);
     }
     if (bookmarkedOnly === true) {
-      return filtrados.filter((item) => item.bookmarked === true);
+      return filtrados.filter((item) => item.bookmarked);
     }
     if (searchText !== '') {
-      return (
-        filtrados.map((item) => {
-          if (item.title.includes(searchText) === true ||
-          item.subtitle.includes(searchText) === true ||
-          item.storyline.includes(searchText) === true) {
-            return item;
-          }
-        })
-      ).filter((item) => item !== undefined);
+      return filtrados.filter(item => (
+        (item.title.includes(searchText))
+        || (item.subtitle.includes(searchText))
+        || (item.storyline.includes(searchText))
+      ));
     }
-    if (filtrados) filtrados = filtrados.filter((item) => item !== undefined);
     return filtrados;
   }
 
