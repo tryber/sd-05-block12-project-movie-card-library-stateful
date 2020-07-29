@@ -6,7 +6,7 @@ class TextArea extends React.Component {
     return (
       <label htmlFor={name}>
         {inName}
-        <textarea value={value} onChange={onChange} id={name} />
+        <textarea value={value} onChange={onChange} id={name} name={name} />
       </label>
     );
   }

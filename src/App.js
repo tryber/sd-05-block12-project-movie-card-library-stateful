@@ -4,6 +4,7 @@ import AddMovie from './components/AddMovie';
 import movies from './data';
 
 import Header from './components/Header';
+import SearchBar from './components/SearchBar';
 
 const pushNewMovie = (state) => {
   movies.push(state);
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Header />
       <AddMovie onClick={pushNewMovie} />
+      <SearchBar />
     </div>
   );
 }
