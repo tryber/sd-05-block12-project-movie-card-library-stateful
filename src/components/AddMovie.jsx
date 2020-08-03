@@ -16,6 +16,24 @@ class AddMovie extends Component {
     this.changeRating = this.changeRating.bind(this);
   }
 
+  changeInput({ target: { value } }, name) {
+    this.setState({ [name]: value });
+  }
+  changeRating({ target: { value } }, name) {
+    this.setState({ [name]: Number(value) });
+  }
+
+  resetMovie() {
+    this.setState({
+      title: '',
+      subtitle: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
+  }
+
   addMovieInfo(name, text, inputType = 'text', callback = this.changeInput) {
     return (
       <label htmlFor={name}>
@@ -40,7 +58,7 @@ class AddMovie extends Component {
           id="genre"
           name="genre"
           value={genre}
-          onchange={(element) => this.changeInput(element, 'genre')}
+          onChange={(filme) => this.changeInput(filme, 'genre')}
         >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
@@ -62,7 +80,7 @@ class AddMovie extends Component {
           Sinopse
           <textarea
             value={storyline}
-            onChange={(e) => this.changeInput(e, 'storyline')}
+            onChange={(event) => this.changeInput(event, 'storyline')}
           />
         </label>
         {this.addMovieInfo('rating', 'Avaliação', 'number', this.changeRating)}
@@ -72,6 +90,7 @@ class AddMovie extends Component {
           value="Adicionar filme"
           onClick={() => {
             onClick(this.state);
+            this.resetMovie(); // button tinha que ser o mesmo e não 2 buttons de add/reset
           }}
         >
           Adicionar filme
