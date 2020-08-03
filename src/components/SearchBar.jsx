@@ -12,11 +12,7 @@ export default class SearchBar extends React.Component {
       <form>
         <label htmlFor="a">Inclui o texto</label>
         <input type="text" value={searchText} onChange={onSearchTextChange} />
-        <input
-          type="checkbox"
-          checked={bookmarkedOnly}
-          onChange={onBookmarkedChange}
-        />
+        <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
         <label htmlFor="b">Mostrar somente favoritos</label>
         <select value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
