@@ -2,48 +2,27 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  codeClimate() {
+  render() {
     const {
-      searchText,
-      onSearchTextChange,
-      bookmarkedOnly,
-      onBookmarkedChange,
-      selectedGenre,
-      onSelectedGenreChange,
+      searchText, onSearchTextChange,
+      bookmarkedOnly, onBookmarkedChange,
+      selectedGenre, onSelectedGenreChange,
     } = this.props;
     return (
-      <form className="movie-card-search">
-        <label htmlFor="searchText">
-          Inclui o texto:
-          <input
-            type="text"
-            name="searchtext"
-            value="{searchText}"
-            onChange="{onSearchTextChange}"
-          />
-        </label>
-        <label htmlFor="bookMarker">
-          Mostrar somente favoritos
-          <input
-            type="checklist"
-            checked="{bookmarkedOnly}"
-            onChange="{onBookmarkedChange}"
-          />
-        </label>
-        <label htmlFor="selector">
-          Filtrar por gênero
-          <select
-            name="genreFilter"
-            id="genreFilter"
-            value="{selectedGenre}"
-            onChange="{onSelectedGenreChange}"
-          ></select>
-        </label>
+      <form>
+        <label htmlFor="text-input">Inclui o texto</label>
+        <input type="text" value={searchText} onChange={onSearchTextChange} />
+        <label htmlFor="checkbox">Mostrar somente favoritos</label>
+        <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+        <label htmlFor="select">Filtrar por gênero</label>
+        <select value={selectedGenre} onChange={onSelectedGenreChange}>
+          <option value="">Todos</option>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
       </form>
     );
-  }
-  render() {
-    return this.codeClimate();
   }
 }
 
