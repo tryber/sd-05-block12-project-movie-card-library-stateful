@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SearchBar extends React.Component {
   render() {
-    const = { 
+    const {
       searchText, 
       onSearchTextChange,
       bookmarkedOnly,
