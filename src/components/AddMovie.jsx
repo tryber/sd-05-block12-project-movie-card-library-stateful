@@ -10,15 +10,16 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    }
+    };
     // Mudar o valor do this e Alterar o número de parâmetros de uma função
     this.change = this.change.bind(this);
   }
 
   change(event) {
     const { nome, valor } = event.target;
-    // setState é para atualizar, parseFloat converter string em um valor de número com ponto flutuante (casas após a virgula
-    this.setState({[nome]: nome === 'rating' ? parseFloat(valor): valor });
+    /* setState é para atualizar, parseFloat converter string 
+    em um valor de número com ponto flutuante (casas após a virgula */
+    this.setState({ [nome]: nome === 'rating' ? parseFloat(valor): valor });
   }
 
   // preventDefault cancela o evento
@@ -33,7 +34,7 @@ class AddMovie extends React.Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    })
+    });
   }
 
   render() {
