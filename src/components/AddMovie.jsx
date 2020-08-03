@@ -67,9 +67,23 @@ class AddMovie extends Component {
       </label>
     );
   }
+  Button() {
+    const { onClick } = this.props;
+    return (
+      <button
+        type="button"
+        value="Adicionar filme"
+        onClick={() => {
+          onClick(this.state);
+          this.resetMovie(); // button tinha que ser o mesmo e não 2 buttons de add/reset
+        }}
+      >
+        Adicionar filme
+      </button>
+    );
+  }
 
   render() {
-    const { onClick } = this.props;
     const { storyline } = this.state;
     return (
       <form>
@@ -85,16 +99,7 @@ class AddMovie extends Component {
         </label>
         {this.addMovieInfo('rating', 'Avaliação', 'number', this.changeRating)}
         {this.genreSelector()}
-        <button
-          type="button"
-          value="Adicionar filme"
-          onClick={() => {
-            onClick(this.state);
-            this.resetMovie(); // button tinha que ser o mesmo e não 2 buttons de add/reset
-          }}
-        >
-          Adicionar filme
-        </button>
+        {this.Button()}
       </form>
     );
   }
