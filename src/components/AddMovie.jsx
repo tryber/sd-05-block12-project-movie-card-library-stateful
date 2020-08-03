@@ -42,15 +42,15 @@ export default class AddMovie extends Component {
     return (
       <form>
         <input type="text" name="title" value={this.state.title} onChange={this.all} />
-        <label htmlFor='a'>Título</label>
+        <label htmlFor="a">Título</label>
         <input type="text" name="subtitle" value={this.state.subtitle} onChange={this.all} />
-        <label htmlFor='b'>Subtítulo</label>
+        <label htmlFor="b">Subtítulo</label>
         <input type="text" name="imagePath" value={this.state.imagePath} onChange={this.all} />
-        <label htmlFor='c'>Imagem</label>
+        <label htmlFor="c">Imagem</label>
         <textarea name="storyline" value={this.state.storyline} onChange={this.all} />
-        <label htmlFor='d'>Sinopse</label>
+        <label htmlFor="d">Sinopse</label>
         <input type="number" name="rating" value={this.state.rating} onChange={this.num} />
-        <label htmlFor='e'>Avaliação</label>
+        <label htmlFor="e">Avaliação</label>
         <select type="text" name="genre" value={this.state.genre} onChange={this.all}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
@@ -59,7 +59,7 @@ export default class AddMovie extends Component {
         <button onClick={() => { onClick(this.state); this.RemoveTudo(); }}>
           Adicionar filme
         </button>
-        <label>Gênero</label>
+        <label htmlFor="f">Gênero</label>
       </form>
     );
   }
