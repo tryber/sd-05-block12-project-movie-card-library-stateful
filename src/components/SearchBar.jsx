@@ -10,18 +10,21 @@ export default class SearchBar extends React.Component {
     } = this.props;
     return (
       <form>
-        <label htmlFor='a'>Inclui o texto</label>
+        <label htmlFor="a">Inclui o texto</label>
         <input type="text" value={searchText} onChange={onSearchTextChange} />
         <input
           type="checkbox"
           checked={bookmarkedOnly}
           onChange={onBookmarkedChange}
         />
-        <label htmlFor='b'>Mostrar somente favoritos</label>
+        <label htmlFor="b">Mostrar somente favoritos</label>
         <select value={selectedGenre} onChange={onSelectedGenreChange}>
-          <option value="">Todos</option><option value="action">Ação</option><option value="comedy">Comédia</option><option value="thriller">Suspense</option>
+          <option value="">Todos</option>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
         </select>
-        <label htmlFor='c'>Filtrar por gênero</label>
+        <label htmlFor="c">Filtrar por gênero</label>
       </form>
     );
   }
