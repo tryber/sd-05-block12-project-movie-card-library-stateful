@@ -13,6 +13,14 @@ class MovieLibrary extends React.Component {
       movies: this.props.movies,
     };
   }
+
+  render() {
+    <div>
+      <SearchBar />
+      <MovieList movies={this.props.movies} />
+      <AddMovie />
+    </div>
+  }
 }
 
 export default MovieLibrary;

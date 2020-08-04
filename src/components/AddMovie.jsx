@@ -17,9 +17,9 @@ class AddMovie extends React.Component {
 
   change(event) {
     const { nome, valor } = event.target;
-    /* setState é para atualizar, parseFloat converter string 
+    /* setState é para atualizar, parseFloat converter string
     em um valor de número com ponto flutuante (casas após a virgula */
-    this.setState({ [nome]: nome === 'rating' ? parseFloat(valor): valor });
+    this.setState({ [ nome ]: nome === 'rating' ? parseFloat(valor): valor });
   }
 
   // preventDefault cancela o evento
@@ -56,7 +56,7 @@ class AddMovie extends React.Component {
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
-        <button onclick={this.changeButton}>Adicionar filme</button>
+        <button onClick={this.changeButton}>Adicionar filme</button>
       </form>
     );
   }
