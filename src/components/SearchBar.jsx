@@ -17,9 +17,11 @@ class SearchBar extends React.Component {
         <label htmlFor="find">Inclui o texto: </label>
         <input type="text" name="find" value={searchText} onChange={onSearchTextChange} />
         <label htmlFor="find2">Mostrar somente favoritos</label>
-        <input type="checkbox"
-        name="find2" checked={bookmarkedOnly}
-        onChange={onBookmarkedChange} />
+        <input
+          type="checkbox"
+          name="find2" checked={bookmarkedOnly}
+          onChange={onBookmarkedChange}
+        />
         <label htmlFor="find3">Filtrar por gênero</label>
         <select name="find3" value={selectedGenre} onChange={onSelectedGenreChange}>
           <option value="">Todos</option>
