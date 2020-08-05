@@ -7,24 +7,19 @@ class SearchBar extends React.Component {
       onBookmarkedChange, selectedGenre, onSelectedGenreChange,
     } = this.props;
     return (
-      <div className="search-bar">
-        <form>
-          <label htmlFor="search-text">Inclui o texto:
-            <input name="text" type="text" value={searchText} onChange={onSearchTextChange} />
-          </label>
-          <label htmlFor="checkbox">Mostrar somente favoritos
-            <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
-          </label>
-          <label htmlFor="select">Filtrar por gênero
-            <select value={selectedGenre} onChange={onSelectedGenreChange}>
-              <option value="">Todos</option>
-              <option value="action">Ação</option>
-              <option value="comedy">Comédia</option>
-              <option value="thriller">Suspense</option>
-            </select>
-          </label>
-        </form>
-      </div>
+      <form>
+        <label htmlFor="search-text">Inclui o texto:</label>
+        <input name="text" type="text" value={searchText} onChange={onSearchTextChange} />
+        <label htmlFor="checkbox">Mostrar somente favoritos</label>
+        <input type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+        <label htmlFor="select">Filtrar por gênero</label>
+        <select value={selectedGenre} onChange={onSelectedGenreChange}>
+          <option value="">Todos</option>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
+      </form>
     );
   }
 }
