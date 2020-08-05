@@ -37,6 +37,7 @@ class AddMovie extends React.Component {
   }
 
   render() {
+    const { onClick } = this.props;
     return (
       <form>
         <label htmlFor="titulo">Título</label>
@@ -55,7 +56,9 @@ class AddMovie extends React.Component {
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
-        <button onClick={this.changeButton}>Adicionar filme</button>
+        <button onClick={() => { onClick(this.state); this.changeButton(); }}>
+          Adicionar filme
+        </button>
       </form>
     );
   }
