@@ -1,7 +1,6 @@
 import React from 'react';
 
-import 
-class addMovie extends React.Component {  
+class MovieAdd extends React.Component {  
   constructor(props) {
     super(props);
     this.state = {
