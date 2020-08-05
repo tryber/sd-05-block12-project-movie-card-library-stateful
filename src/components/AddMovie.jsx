@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MovieAdd extends React.Component {  
+class MovieAdd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,12 +17,12 @@ class MovieAdd extends React.Component {
 class AddMovie extends React.Components {
   render() {
     const { onClick } = this.props;
-    return(
+    return (
       <form>
         <label htmlFor="link1">Título</label>
         <input type="text" name="link1" value={this.state[input.title]} />
       </form>
-    )
+    );
   }
 }
 
