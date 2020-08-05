@@ -15,11 +15,13 @@ class MovieLibrary extends React.Component {
   }
 
   render() {
-    <div>
-      <SearchBar />
-      <MovieList movies={this.props.movies} />
-      <AddMovie />
-    </div>
+    return (
+      <div>
+        <SearchBar />
+        <MovieList movies={this.props.movies} />
+        <AddMovie />
+      </div>
+    );
   }
 }
 
