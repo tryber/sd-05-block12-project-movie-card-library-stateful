@@ -5,6 +5,7 @@ import Header from './components/Header';
 import MovieList from './components/MovieList';
 import Movies from './data';
 import SearchBar from './components/SearchBar';
+import AddMovie from './components/AddMovie';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <SearchBar />
       <MovieList movies={Movies} />
+      <AddMovie />
     </div>
   );
 }
