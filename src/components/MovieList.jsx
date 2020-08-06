@@ -7,6 +7,8 @@ class MovieList extends React.Component {
     const { movies } = this.props;
 
     return (
+      //  todo o componente que passa por uma FOR
+      // precisa de uma chave única.
       <div className="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
       </div>
