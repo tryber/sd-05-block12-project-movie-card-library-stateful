@@ -49,12 +49,12 @@ class AddMovie extends React.Component {
         <textarea type="text" value={this.state.storyline} onChange={this.change} />
         <label htmlFor="rating">Avaliação</label>
         <input type="number" value={this.state.rating} onChange={this.change} />
-        <label htmlFor="genre">Gênero</label>
+        <label htmlFor="genre">Gênero
         <select value={this.state.genre} onChange={this.change}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
-        </select>
+        </select></label>
         <button type="button" onClick={this.changeButton}>Adicionar filme</button>
       </form>
     );
