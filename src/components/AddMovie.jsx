@@ -11,7 +11,6 @@ class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    // Mudar o valor do this e Alterar o número de parâmetros de uma função
     this.change = this.change.bind(this);
     this.changeButton = this.changeButton.bind(this);
     this.changeRating = this.changeRating.bind(this);
