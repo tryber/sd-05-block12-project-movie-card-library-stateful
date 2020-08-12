@@ -12,6 +12,11 @@ class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies: this.props.movies,
     };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(addNew) {
+    this.setState({ movies: [...this.props.movies, addNew] });
   }
 
   render() {
@@ -19,7 +24,7 @@ class MovieLibrary extends React.Component {
       <div>
         <SearchBar searchText={this.state.searchText} />
         <MovieList movies={this.props.movies} />
-        <AddMovie />
+        <AddMovie onClick={this.onClick} />
       </div>
     );
   }
