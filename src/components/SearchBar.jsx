@@ -22,12 +22,9 @@ export default props => {
           <option value="">Todos</option>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>          
+          <option value="thriller">Suspense </option>          
         </select>
-        
-      </form>
-      
+        </form>      
     </div>
   )
 }
-
