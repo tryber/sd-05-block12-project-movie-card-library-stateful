@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import Header from './components/Header';
 
-export default (props) => {
-  const [texto, setTexto] = useState('');
-  return (
-    <div className="App">
-      <Header />
-      <SearchBar searchText="Digite aqui" func={onSearchTextChange} />
-    </div>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-function onSearchTextChange() {
-  return 'teste';
+    this.state = {
+      texto: '',
+    };
+  }
+
+  onSearchTextChange() {
+    return 'teste';
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <SearchBar searchText="Digite aqui" func={this.onSearchTextChange} />
+      </div>
+    );
+  }
 }
+
+export default App;
