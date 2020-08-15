@@ -3,15 +3,13 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import Header from './components/Header';
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      texto: ''
-    }
+      texto: '',
+    };
   }
 
   onSearchTextChange() {
@@ -22,9 +20,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <SearchBar searchText="Digite aqui" func={this.onSearchTextChange}/>
+        <SearchBar searchText="Digite aqui" func={this.onSearchTextChange} />
       </div>
-    )
+    );
   }
 }
 
