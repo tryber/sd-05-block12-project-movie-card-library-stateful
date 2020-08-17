@@ -10,9 +10,9 @@ class App extends React.Component {
     this.state = { texto: '' };
   }
 
-  onSearchTextChange = () => {
+  onSearchTextChange() {
     return 'teste';
-  };
+  }
   render() {
     return (
       <div className="App">
