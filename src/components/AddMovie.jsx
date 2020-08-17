@@ -14,10 +14,10 @@ class AddMovie extends Component {
     this.mudar = this.mudar.bind(this);
     this.mudarBotao = this.mudarBotao.bind(this);
   }
-  EventoBotao = (event) => {
+  EventoBotao(event) {
     const { obj, valor } = event.target;
     this.setState({ [obj]: valor });
-  };
+  }
 
   MudancaDeBotao() {
     const { onClick } = this.props;
@@ -31,7 +31,6 @@ class AddMovie extends Component {
       genre: 'action',
     });
   }
-
   render() {
     return (
       <form>
@@ -70,7 +69,11 @@ class AddMovie extends Component {
           onChange={this.EventoBotao}
         />
         <label htmlFor="genre">Gênero</label>
-        <select name="genre" value={this.state.genre} onChange={this.EventoBotao}>
+        <select
+          name="genre"
+          value={this.state.genre}
+          onChange={this.EventoBotao}
+        >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
