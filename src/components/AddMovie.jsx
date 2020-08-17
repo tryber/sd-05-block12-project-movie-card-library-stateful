@@ -12,7 +12,7 @@ class AddMovie extends Component {
       genre: 'action',
     };
   }
-  botao = () => {
+  botao(){
     const click = this.props.click;
     click();
     this.setState({
