@@ -36,45 +36,17 @@ class AddMovie extends Component {
     return (
       <form>
         <label htmlFor="title">Título</label>
-        <input
-          name="title"
-          type="text"
-          value={title}
-          onChange={this.EventoBotao}
-        />
+        <input name="title" type="text" value={title} onChange={this.EventoBotao} />
         <label htmlFor="subtitle">Subtítulo</label>
-        <input
-          name="subtitle"
-          type="text"
-          value={subtitle}
-          onChange={this.EventoBotao}
-        />
+        <input name="subtitle" type="text" value={subtitle} onChange={this.EventoBotao} />
         <label htmlFor="imagePath">Imagem</label>
-        <input
-          name="imagePath"
-          type="text"
-          value={imagePath}
-          onChange={this.EventoBotao}
-        />
+        <input name="imagePath" type="text" value={imagePath} onChange={this.EventoBotao} />
         <label htmlFor="storyline">Sinopse</label>
-        <textarea
-          name="storyline"
-          value={storyline}
-          onChange={this.EventoBotao}
-        />
+        <textarea name="storyline" value={storyline} onChange={this.EventoBotao} />
         <label htmlFor="rating">Avaliação</label>
-        <input
-          name="rating"
-          type="number"
-          value={rating}
-          onChange={this.EventoBotao}
-        />
+        <input name="rating" type="number" value={rating} onChange={this.EventoBotao} />
         <label htmlFor="genre">Gênero</label>
-        <select
-          name="genre"
-          value={genre}
-          onChange={this.EventoBotao}
-        >
+        <select name="genre" value={genre} onChange={this.EventoBotao} >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
