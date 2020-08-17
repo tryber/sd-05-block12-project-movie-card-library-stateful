@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddMovie extends React.Component {
+export default class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class AddMovie extends React.Component {
     const { obj, valor } = event.target;
     this.setState({ [obj]: obj === 'rating' ? parseFloat(valor) : valor });
   }
-
+  
   MudancaDeBotao() {
     const { onClick } = this.props;
     onClick(this.state);
@@ -59,4 +59,4 @@ class AddMovie extends React.Component {
   }
 }
 
-export default AddMovie;
+
