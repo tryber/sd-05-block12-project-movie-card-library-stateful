@@ -18,7 +18,7 @@ export default class AddMovie extends React.Component {
     const { obj, valor } = event.target;
     this.setState({ [obj]: obj === 'rating' ? parseFloat(valor) : valor });
   }
-  
+
   MudancaDeBotao() {
     const { onClick } = this.props;
     onClick(this.state);
@@ -58,5 +58,3 @@ export default class AddMovie extends React.Component {
     );
   }
 }
-
-
