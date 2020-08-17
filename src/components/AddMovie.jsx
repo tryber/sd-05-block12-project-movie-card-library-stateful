@@ -24,7 +24,7 @@ class AddMovie extends Component {
       genre: 'action',
     });
   };
-  mudar = (event) => {
+  mudar(event){
     const { obj, valor } = event.target;
     this.setState({ [obj]: valor });
   };
