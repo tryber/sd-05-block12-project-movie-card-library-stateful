@@ -16,7 +16,7 @@ class AddMovie extends Component {
   }
   EventoBotao(event) {
     const { obj, valor } = event.target;
-    this.setState({ [obj]: valor });
+    this.setState({ [obj]: obj === 'rating' ? parseFloat(valor) : valor });
   }
 
   MudancaDeBotao() {
@@ -32,46 +32,47 @@ class AddMovie extends Component {
     });
   }
   render() {
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
     return (
       <form>
         <label htmlFor="title">Título</label>
         <input
           name="title"
           type="text"
-          value={this.state.title}
-          onChange={this.change}
+          value={title}
+          onChange={this.EventoBotao}
         />
         <label htmlFor="subtitle">Subtítulo</label>
         <input
           name="subtitle"
           type="text"
-          value={this.state.subtitle}
+          value={subtitle}
           onChange={this.EventoBotao}
         />
         <label htmlFor="imagePath">Imagem</label>
         <input
           name="imagePath"
           type="text"
-          value={this.state.imagePath}
+          value={imagePath}
           onChange={this.EventoBotao}
         />
         <label htmlFor="storyline">Sinopse</label>
         <textarea
           name="storyline"
-          value={this.state.storyline}
+          value={storyline}
           onChange={this.EventoBotao}
         />
         <label htmlFor="rating">Avaliação</label>
         <input
           name="rating"
           type="number"
-          value={this.state.rating}
+          value={rating}
           onChange={this.EventoBotao}
         />
         <label htmlFor="genre">Gênero</label>
         <select
           name="genre"
-          value={this.state.genre}
+          value={genre}
           onChange={this.EventoBotao}
         >
           <option value="action">Ação</option>
