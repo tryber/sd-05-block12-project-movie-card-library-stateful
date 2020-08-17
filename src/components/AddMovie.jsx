@@ -21,8 +21,8 @@ export default class AddMovie extends React.Component {
     return (
       <div>
         <form>
-          <label htmlFor="">Título</label>
-          <input type="text" value={this.state.title} />
+          <label htmlFor="titulo">Título</label>
+          <input id="titulo" type="text" value={this.state.title} />
         </form>
       </div>
     );
