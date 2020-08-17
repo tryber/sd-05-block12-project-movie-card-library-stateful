@@ -11,18 +11,15 @@ class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
-    this.change = this.change.bind(this);
-    this.buttonChange = this.buttonChange.bind(this);
+    this.mudar = this.mudar.bind(this);
+    this.mudarBotao = this.mudarBotao.bind(this);
   }
+  EventoBotao = (event) => {
+    const { obj, valor } = event.target;
+    this.setState({ [obj]: valor });
+  };
 
-  change(event) {
-    const e = event.target;
-    this.setState({
-      [e.name]: e.name === 'rating' ? parseFloat(e.value) : e.value,
-    });
-  }
-
-  buttonChange() {
+  MudancaDeBotao() {
     const { onClick } = this.props;
     onClick(this.state);
     this.setState({
@@ -50,35 +47,35 @@ class AddMovie extends Component {
           name="subtitle"
           type="text"
           value={this.state.subtitle}
-          onChange={this.change}
+          onChange={this.EventoBotao}
         />
         <label htmlFor="imagePath">Imagem</label>
         <input
           name="imagePath"
           type="text"
           value={this.state.imagePath}
-          onChange={this.change}
+          onChange={this.EventoBotao}
         />
         <label htmlFor="storyline">Sinopse</label>
         <textarea
           name="storyline"
           value={this.state.storyline}
-          onChange={this.change}
+          onChange={this.EventoBotao}
         />
         <label htmlFor="rating">Avaliação</label>
         <input
           name="rating"
           type="number"
           value={this.state.rating}
-          onChange={this.change}
+          onChange={this.EventoBotao}
         />
         <label htmlFor="genre">Gênero</label>
-        <select name="genre" value={this.state.genre} onChange={this.change}>
+        <select name="genre" value={this.state.genre} onChange={this.EventoBotao}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
         </select>
-        <button onClick={this.buttonChange} type="button">
+        <button onClick={this.MudancaDeBotao} type="button">
           Adicionar filme
         </button>
       </form>
