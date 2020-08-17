@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import inputGeral from './inputGeral';
-// import numeroGeral from './numeroGeral';
-// import boxGeral from './boxGeral';
-// import textareatGeral from './textareaGeral';
 
 class AddMovie extends Component {
   constructor(props) {
@@ -15,9 +11,6 @@ class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
-    this.mudar = this.mudar.bind(this);
-    this.mudarNumero = this.mudarNumero.bind(this);
-    this.botao = this.botao.bind(this);
   }
   botao = () => {
     const click = this.props.click;
@@ -35,23 +28,21 @@ class AddMovie extends Component {
     const { obj, valor } = event.target;
     this.setState({ [obj]: valor });
   };
-  mudarNumero = (event) => {
-    const { obj, valor } = event.target;
-    this.setState({ [obj]: valor });
-  };
 
   render() {
     return (
       <div>
         <form action="">
-          <label htmlFor="titulo">Título</label>
-          <input
-            id="titulo"
-            obj="title"
-            type="text"
-            value={this.state.title}
-            onChange={this.mudar}
-          />
+          <InputGeral>
+            <label htmlFor="titulo">Título</label>
+            <input
+              id="titulo"
+              obj="title"
+              type="text"
+              value={this.state.title}
+              onChange={this.mudar}
+            />
+          </InputGeral>
           <label htmlFor="subtitle">Título</label>
           <input
             id="subtitle"
@@ -90,7 +81,10 @@ class AddMovie extends Component {
               <option value="thriller">Suspense</option>
             </select>
           </label>
-          <button onClick={this.botao()}> Adicionar filme</button>
+          <button onClick={this.botao} type="button">
+            {' '}
+            Adicionar filme
+          </button>
         </form>
       </div>
     );
