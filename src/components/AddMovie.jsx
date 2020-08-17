@@ -4,90 +4,86 @@ class AddMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
       subtitle: '',
+      title: '',
       imagePath: '',
       storyline: '',
       rating: 0,
       genre: 'action',
     };
+    this.change = this.change.bind(this);
+    this.buttonChange = this.buttonChange.bind(this);
   }
-  botao(){
-    const click = this.props.click;
-    click();
+
+  change(event) {
+    const e = event.target;
     this.setState({
-      title: '',
+      [e.name]: e.name === 'rating' ? parseFloat(e.value) : e.value,
+    });
+  }
+
+  buttonChange() {
+    const { onClick } = this.props;
+    onClick(this.state);
+    this.setState({
       subtitle: '',
+      title: '',
       imagePath: '',
       storyline: '',
       rating: 0,
       genre: 'action',
     });
-  };
-  mudar(event){
-    const { obj, valor } = event.target;
-    this.setState({ [obj]: valor });
-  };
+  }
 
   render() {
     return (
-      <div>
-        <form action="">
-          <InputGeral>
-            <label htmlFor="titulo">Título</label>
-            <input
-              id="titulo"
-              obj="title"
-              type="text"
-              value={this.state.title}
-              onChange={this.mudar}
-            />
-          </InputGeral>
-          <label htmlFor="subtitle">Título</label>
-          <input
-            id="subtitle"
-            name="title"
-            type="text"
-            value={this.state.subtitle}
-            onChange={this.mudar}
-          />
-          <label htmlFor="imagePath">Imagem</label>
-          <input
-            id="imagePath"
-            name="title"
-            type="text"
-            value={this.state.imagePath}
-            onChange={this.mudar}
-          />
-          <label htmlFor="storyline">Sinopse</label>
-          <textarea
-            name="storyline"
-            value={this.state.storyline}
-            onChange={this.mudar}
-          ></textarea>
-          <label htmlFor="avaliaco">Avaliação</label>
-          <input
-            id="avaliaco"
-            name="avaliacao"
-            type="text"
-            value={this.state.rating}
-            onChange={this.mudar}
-          />
-          <label htmlFor="genero">
-            Gênero
-            <select id="genero" value={this.state.genre} onChange={this.mudar}>
-              <option value="action">Ação</option>
-              <option value="comedy">Comédia</option>
-              <option value="thriller">Suspense</option>
-            </select>
-          </label>
-          <button onClick={this.botao} type="button">
-            {' '}
-            Adicionar filme
-          </button>
-        </form>
-      </div>
+      <form>
+        <label htmlFor="title">Título</label>
+        <input
+          name="title"
+          type="text"
+          value={this.state.title}
+          onChange={this.change}
+        />
+        <label htmlFor="subtitle">Subtítulo</label>
+        <input
+          name="subtitle"
+          type="text"
+          value={this.state.subtitle}
+          onChange={this.change}
+        />
+        <label htmlFor="imagePath">Imagem</label>
+        <input
+          name="imagePath"
+          type="text"
+          value={this.state.imagePath}
+          onChange={this.change}
+        />
+        <label htmlFor="storyline">Sinopse</label>
+        <textarea
+          name="storyline"
+          value={this.state.storyline}
+          onChange={this.change}
+        />
+        <label htmlFor="rating">Avaliação</label>
+        <input
+          name="rating"
+          type="number"
+          value={this.state.rating}
+          onChange={this.change}
+        />
+        <label htmlFor="genre">Gênero</label>
+        <select name="genre" value={this.state.genre} onChange={this.change}>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
+        <button onClick={this.buttonChange} type="button">
+          Adicionar filme
+        </button>
+      </form>
     );
   }
 }
+
 export default AddMovie;
