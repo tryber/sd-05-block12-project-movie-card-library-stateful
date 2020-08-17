@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+// import inputGeral from './inputGeral';
+// import numeroGeral from './numeroGeral';
+// import boxGeral from './boxGeral';
+// import textareatGeral from './textareaGeral';
 
-export default class AddMovie extends React.Component {
+class AddMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +15,9 @@ export default class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
+    this.mudar = this.mudar.bind(this);
+    this.mudarNumero = this.mudarNumero.bind(this);
+    this.botao = this.botao.bind(this);
   }
   botao = () => {
     const click = this.props.click;
@@ -28,10 +35,15 @@ export default class AddMovie extends React.Component {
     const { obj, valor } = event.target;
     this.setState({ [obj]: valor });
   };
+  mudarNumero = (event) => {
+    const { obj, valor } = event.target;
+    this.setState({ [obj]: valor });
+  };
+
   render() {
     return (
       <div>
-        <form>
+        <form action="">
           <label htmlFor="titulo">Título</label>
           <input
             id="titulo"
@@ -56,14 +68,12 @@ export default class AddMovie extends React.Component {
             value={this.state.imagePath}
             onChange={this.mudar}
           />
-          <div>
-            <label htmlFor="storyline">Sinopse</label>
-            <textarea
-              name="storyline"
-              value={this.state.storyline}
-              onChange={this.mudar}
-            ></textarea>
-          </div>
+          <label htmlFor="storyline">Sinopse</label>
+          <textarea
+            name="storyline"
+            value={this.state.storyline}
+            onChange={this.mudar}
+          ></textarea>
           <label htmlFor="avaliaco">Avaliação</label>
           <input
             id="avaliaco"
@@ -74,10 +84,7 @@ export default class AddMovie extends React.Component {
           />
           <label htmlFor="genero">
             Gênero
-            <select
-              id="genero"
-              value={this.state.genre}
-              onChange={this.mudar}>
+            <select id="genero" value={this.state.genre} onChange={this.mudar}>
               <option value="action">Ação</option>
               <option value="comedy">Comédia</option>
               <option value="thriller">Suspense</option>
@@ -89,3 +96,4 @@ export default class AddMovie extends React.Component {
     );
   }
 }
+export default AddMovie;
