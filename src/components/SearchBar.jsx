@@ -3,10 +3,10 @@ import React from 'react';
 
 export default class SearchBar {
   render() {
-    return(
+    return (
       <div>
-
+        <input type="text"></input>
       </div>
-    )
+    );
   }
 }
