@@ -5,7 +5,7 @@ export default class SearchBar {
   render() {
     return (
       <div>
-        <input type="text"/>
+        <input type="text" />
       </div>
     );
   }
