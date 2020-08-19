@@ -1,4 +1,5 @@
 import React from 'react';
+// avaliação
 
 class Rating extends React.Component {
   render() {

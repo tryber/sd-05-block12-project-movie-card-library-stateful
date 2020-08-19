@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Rating from './Rating';
+// cartão de filme
 
 class MovieCard extends React.Component {
   render() {
