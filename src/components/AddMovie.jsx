@@ -14,12 +14,12 @@ export default class AddMovie extends React.Component {
   }
 
   render() {
-    const { onClick } = this.props;
+    // const { onClick } = this.props;
 
     return (
       <form>
-        <label htmlFor="tit"></label>
-        <input type="text" id="tit"></input>
+        <label forHtml="tit" />
+        <input type="text" id="tit" />
       </form>
     );
   }
