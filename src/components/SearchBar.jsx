@@ -1,4 +1,3 @@
-// implement SearchBar component here
 import React from 'react';
 import '../SearchBar.css';
 
