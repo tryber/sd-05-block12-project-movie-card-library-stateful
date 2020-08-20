@@ -10,7 +10,7 @@ export default class SearchBar extends React.Component {
       <div>
         <form>
           <label htmlFor="stext">Pesquisa</label>
-          <input type="text" value={searchText} id="stext" onChange={onSearchTextChange}/>
+          <input type="text" value={searchText} id="stext" onChange={onSearchTextChange} />
         </form>
       </div>
     );
