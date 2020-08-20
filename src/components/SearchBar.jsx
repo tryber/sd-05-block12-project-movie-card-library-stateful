@@ -2,9 +2,9 @@
 import React from 'react';
 import '../SearchBar.css';
 
-export default class SearchBar extends React.Component{
+export default class SearchBar extends React.Component {
   render() {
-    const { searchText, onSearchTextChange, bookmarkedOnly, onSelectedGenreChange, selectedGenre, onBookmarkedChange } = this.props;
+    const { searchText } = this.props;
 
     return (
       <div>
