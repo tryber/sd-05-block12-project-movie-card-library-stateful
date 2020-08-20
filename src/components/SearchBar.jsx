@@ -4,16 +4,13 @@ import '../SearchBar.css';
 
 export default class SearchBar extends React.Component{
   render() {
+    const { searchText, onSearchTextChange, bookmarkedOnly, onSelectedGenreChange, selectedGenre, onBookmarkedChange } = this.props;
+
     return (
-      <div className="sbar">
+      <div>
         <form>
-          <br />
-          <input type="text" />
-          <br />
-          <input type="checkbox" />
-          <label for="Filmes">Filmes</label>
-          <input type="checkbox" />
-          <label for="Séries">Séries</label>
+          <label htmlFor="stext" />
+          <input type="text" value={searchText} name="stext" />
         </form>
       </div>
     );
