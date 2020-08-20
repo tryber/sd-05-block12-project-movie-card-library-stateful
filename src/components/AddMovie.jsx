@@ -18,7 +18,7 @@ export default class AddMovie extends React.Component {
 
     return (
       <form>
-        <label forHtml="tit" />
+        <label htmlFor="tit" />
         <input type="text" id="tit" />
       </form>
     );
