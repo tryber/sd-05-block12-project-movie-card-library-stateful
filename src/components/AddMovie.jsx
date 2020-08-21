@@ -36,6 +36,27 @@ export default class AddMovie extends Component {
       />
     </span>);
   }
+
+  funSubtitulo(subtitulo) {
+    return (<span>
+      <label htmlFor="form5">Subtítulo</label>
+      <input
+        type="text" value={subtitle}
+        onChange={(e) => this.setState({ subtitle: e.target.value })}
+      />
+    </span>);
+  }
+
+  funImagem(imagem) {
+    return (<span>
+      <label htmlFor="form6">Imagem</label>
+      <input
+        type="text" value={imagePath}
+        onChange={(e) => this.setState({ imagePath: e.target.value })}
+      />
+    </span>);
+  }
+
   render() {
     const { onClick } = this.props;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
@@ -43,17 +64,8 @@ export default class AddMovie extends Component {
       <div>
         <form action="">
           {this.funTitle(title)}
-          <label htmlFor="form5">Subtítulo</label>
-          <input
-            type="text" value={subtitle}
-            onChange={(e) => this.setState({ subtitle: e.target.value })}
-          />
-
-          <label htmlFor="form6">Imagem</label>
-          <input
-            type="text" value={imagePath}
-            onChange={(e) => this.setState({ imagePath: e.target.value })}
-          />
+          {this.funSubtitulo(subtitle)}
+          {this.funImagem(imagePath)}
 
           <label htmlFor="forn7">Sinopse</label>
           <textarea
@@ -68,7 +80,6 @@ export default class AddMovie extends Component {
             onChange={
               ({ target: { value } }) => this.setState({ rating: parseFloat(value) })}
           />
-
           <label htmlFor="form9">Gênero</label>
           <select
             value={genre}
