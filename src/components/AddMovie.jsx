@@ -66,6 +66,19 @@ export default class AddMovie extends Component {
       />
     </span>);
   }
+
+  funAvaliação(rating) {
+    return (<span>
+      <label htmlFor="form8">Avaliação</label>
+      <input
+        type="number"
+        id="form8"
+        value={rating}
+        onChange={
+          ({ target: { value } }) => this.setState({ rating: parseFloat(value) })}
+      />
+    </span>);
+  }
   render() {
     const { onClick } = this.props;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
@@ -76,14 +89,7 @@ export default class AddMovie extends Component {
           {this.funSubtitulo(subtitle)}
           {this.funImagem(imagePath)}
           {this.funStoryline(storyline)}
-          <label htmlFor="form8">Avaliação</label>
-          <input
-            type="number"
-            id="form8"
-            value={rating}
-            onChange={
-              ({ target: { value } }) => this.setState({ rating: parseFloat(value) })}
-          />
+          {this.funAvaliação(Avaliação)}
           <label htmlFor="form9">Gênero</label>
           <select
             value={genre}
