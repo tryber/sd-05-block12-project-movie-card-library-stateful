@@ -21,7 +21,8 @@ export default class SearchBar extends Component {
           <label htmlFor="idform1">Mostrar somente favoritos</label>
           <input id="idfrom1" type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
           <label htmlFor="idfrom2">Filtrar por gênero</label>
-          <select value={selectedGenre} onChange={onSelectedGenreChange} >
+          <select
+            value={selectedGenre} onChange={onSelectedGenreChange}>
             {options.map((op) => (<option value={op[1]}>{op[0]}</option>))}
           </select>
         </form>
