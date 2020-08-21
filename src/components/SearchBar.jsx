@@ -16,16 +16,16 @@ export default class SearchBar extends Component {
     return (
       <div>
         <form >
-          <label htmlFor="idform">Inclui o texto:</label>
-          <input id="idform" type="text" value={searchText} onChange={onSearchTextChange} />
-          <label htmlFor="idform1">Mostrar somente favoritos</label>
+          <label htmlFor="filme">Inclui o texto:</label>
+          <input id="filme" type="text" value={searchText} onChange={onSearchTextChange} />
+          <label htmlFor="check">Mostrar somente favoritos</label>
           <input
-            id="idfrom1"
+            id="check"
             type="checkbox"
             checked={bookmarkedOnly} onChange={onBookmarkedChange}
           />
-          <label htmlFor="idfrom2">Filtrar por gênero</label>
-          <select
+          <label htmlFor="tipo">Filtrar por gênero</label>
+          <select id="tipo"
             value={selectedGenre}
             onChange={onSelectedGenreChange}
           >

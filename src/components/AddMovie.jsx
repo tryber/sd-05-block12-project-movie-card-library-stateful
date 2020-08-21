@@ -12,6 +12,8 @@ export default class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
+    this.handleChange = this.handleChange.bind(this)
+    this.handleButton = this.handleButton.bind(this)
   }
 
   handleButton() {
@@ -28,13 +30,13 @@ export default class AddMovie extends Component {
   }
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
+    this.setState({ [name]: value });
   }
   render() {
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
       <div>
-        <form action="">
+        <form>
           <label htmlFor="form4">Título</label>
           <input type="text" value={title} onChange={this.handleChange} />
           <label htmlFor="form5">Subtítulo</label>
