@@ -17,7 +17,7 @@ export default class AddMovie extends Component {
   }
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
 
   handleButton() {
