@@ -19,7 +19,7 @@ export default class AddMovie extends React.Component {
     return (
       <form>
         <label htmlFor="tit" />
-        <input type="text" id="tit" value={this.state.title} onChange={this.setState((e) => {})} />
+        <input type="text" id="tit" value={this.state.title} onChange={this.setState()} />
       </form>
     );
   }
