@@ -25,7 +25,8 @@ export default class SearchBar extends Component {
             checked={bookmarkedOnly} onChange={onBookmarkedChange}
           />
           <label htmlFor="tipo">Filtrar por gênero</label>
-          <select id="tipo"
+          <select
+            id="tipo"
             value={selectedGenre}
             onChange={onSelectedGenreChange}
           >
