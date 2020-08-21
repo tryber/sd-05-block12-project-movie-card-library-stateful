@@ -15,6 +15,14 @@ export default class AddMovie extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleButton = this.handleButton.bind(this);
   }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
 
   handleButton() {
     const { onClick } = this.props;
@@ -27,11 +35,9 @@ export default class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     });
+    return true;
   }
-  handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  }
+
   render() {
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (

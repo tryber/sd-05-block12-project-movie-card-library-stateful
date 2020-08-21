@@ -44,10 +44,10 @@ export default class MovieLibrary extends Component {
     if (selectedGenre !== '') {
       return movies.filter((movie) => movie.genre === selectedGenre);
     }
-    if (searchText !== '') {
-      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
-        movie.subtitle.indexOf(searchText) >= 0 ||
-        movie.storyline.indexOf(searchText) >= 0);
+    if (searchText) {
+      return movies.filter((movie) => movie.title.indexOf(searchText) ||
+        movie.subtitle.indexOf(searchText) ||
+        movie.storyline.indexOf(searchText));
     }
     return movies;
   }
@@ -56,7 +56,7 @@ export default class MovieLibrary extends Component {
     return (
       <div>
         <SearchBar
-          searchText={searchText}
+          searchText={this.searchText}
           onSearchTextChange={this.onSearchTextChange}
           bookmarkedOnly={this.bookmarkedOnly}
           onBookmarkedChange={this.onBookmarkedChange}
