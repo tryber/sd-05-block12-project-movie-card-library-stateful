@@ -285,8 +285,6 @@ Dentro desse formulário haverá campos usados para preencher informações do n
   - Executa a callback passada para o componente `AddMovie` via props, chamada `onClick`, que recebe como parâmetro o estado atual de `AddMovie`;
   - Reseta o estado de `AddMovie`, voltando para o inicial, conforme mencionado anteriormente.
 
-#### Crie um componente chamado `MovieLibrary`
-
 Esse componente renderizará a biblioteca de filmes, com a possiblidade de filtrar por filmes e adicionar um filme à biblioteca.
 
 `MovieLibrary` deve receber como props:
