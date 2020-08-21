@@ -41,7 +41,7 @@ export default class MovieLibrary extends Component {
       return list.filter((film) => film.genre === selectedGenre);
     }
     if (searchText !== '') {
-      return list.filter((list) => list.title.indexOf(searchText) >= 0 ||
+      return filter((list) => list.title.indexOf(searchText) >= 0 ||
         list.subtitle.indexOf(searchText) >= 0 ||
         list.storyline.indexOf(searchText) >= 0);
     }

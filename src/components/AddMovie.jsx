@@ -13,7 +13,7 @@ export default class AddMovie extends Component {
       genre: 'action',
     };
   }
-  handleChange = (e) => {
+  handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
