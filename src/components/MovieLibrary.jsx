@@ -18,7 +18,9 @@ export default class MovieLibrary extends Component {
     this.changeSearchText = this.changeSearchText.bind(this);
     this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
     this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
+    this.moviesFilter = this.moviesFilter.bind(this)
     this.registerMovie = this.registerMovie.bind(this);
+
   }
   changeSearchText(e) {
     this.setState({ searchText: e.target.value });
@@ -32,10 +34,6 @@ export default class MovieLibrary extends Component {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
 
-  registerMovie(film) {
-    this.setState({ movies: [...this.state.movies, film] });
-  }
-
   moviesFilter() {
     const { movies, searchText, bookmarkedOnly, selectedGenre } = this.state;
     if (bookmarkedOnly === true) {
@@ -44,26 +42,28 @@ export default class MovieLibrary extends Component {
     if (selectedGenre !== '') {
       return movies.filter((movie) => movie.genre === selectedGenre);
     }
-    if (searchText) {
-      return movies.filter((movie) => movie.title.indexOf(searchText) ||
-        movie.subtitle.indexOf(searchText) ||
-        movie.storyline.indexOf(searchText));
+    if (searchText !== '') {
+      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
+        movie.subtitle.indexOf(searchText) >= 0 ||
+        movie.storyline.indexOf(searchText) >= 0);
     }
     return movies;
   }
-
+  registerMovie(film) {
+    this.setState({ movies: [...this.state.movies, film] });
+  }
   render() {
     return (
       <div>
         <SearchBar
-          searchText={this.searchText}
-          onSearchTextChange={this.onSearchTextChange}
-          bookmarkedOnly={this.bookmarkedOnly}
-          onBookmarkedChange={this.onBookmarkedChange}
-          selectedGenre={this.selectedGenre}
-          onSelectedGenreChange={this.onSelectedGenreChange}
+          searchText={this.state.searchText}
+          onSearchTextChange={this.changeSearchText}
+          bookmarkedOnly={this.state.bookmarkedOnly}
+          onBookmarkedChange={this.changeBookMarkedOnly}
+          selectedGenre={this.state.selectedGenre}
+          onSelectedGenreChange={this.changeSelectedGenre}
         />
-        <MovieList movies={this.moviesFilter} />
+        <MovieList movies={this.moviesFilter()} />
         <AddMovie onClick={this.registerMovie} />
       </div>
     );
