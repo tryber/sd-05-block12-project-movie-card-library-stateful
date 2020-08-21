@@ -12,8 +12,8 @@ export default class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
-    this.handleChange = this.handleChange.bind(this)
-    this.handleButton = this.handleButton.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   handleButton() {
