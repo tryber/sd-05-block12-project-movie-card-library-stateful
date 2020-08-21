@@ -14,7 +14,7 @@ export default class AddMovie extends Component {
     };
   }
 
-  handleButton = () => {
+  handleButton() {
     const { onClick } = this.props
     onClick(this.state);
     this.setState({

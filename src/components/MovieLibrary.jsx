@@ -15,10 +15,10 @@ export default class MovieLibrary extends Component {
       selectedGenre: '',
       movies,
     };
-    this.changeSearchText = this.changeSearchText.bind(this)
-    this.changeSelectedGenre = this.changeSelectedGenre.bind(this)
-    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this)
-    this.registerMovie = this.registerMovie.bind(this)
+    this.changeSearchText = this.changeSearchText.bind(this);
+    this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
+    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
+    this.registerMovie = this.registerMovie.bind(this);
   }
   changeSearchText(e) {
     this.setState({ searchText: e.target.value });
@@ -33,7 +33,7 @@ export default class MovieLibrary extends Component {
   }
 
   registerMovie(film) {
-    this.setState({ movies: [...this.state.movies, film] })
+    this.setState({ movies: [...this.state.movies, film] });
   }
 
   moviesFilter() {
