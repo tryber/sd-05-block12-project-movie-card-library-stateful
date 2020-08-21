@@ -16,9 +16,7 @@ export default class MovieLibrary extends Component {
     this.registerMovie = this.registerMovie.bind(this);
     this.onsearchTextChange = this.onsearchTextChange.bind(this);
     this.onBookChange = this.onBookChange.bind(this);
-    this.onselectChangeGenre = this.onselectChangeGenre = this.onselectChange.bind(
-      this,
-    );
+    this.onselectChangeGenre = this.onselectChangeGenre.bind(this);
     this.exitFilter = this.exitFilter.bind(this);
   }
   onsearchTextChange(e) {
@@ -46,9 +44,9 @@ export default class MovieLibrary extends Component {
       return list.filter((film) => film.genre === selectedGenre);
     }
     if (searchText !== '') {
-      return lista.filter(
-        (film) =>
-          film.title.includes(searchText) ||
+      return list.filter(
+        (filme) =>
+          filme.title.includes(searchText) ||
           filme.subtitle.includes(searchText) ||
           filme.storyline.includes(searchText),
       );
@@ -62,14 +60,14 @@ export default class MovieLibrary extends Component {
       <div>
         <SearchBar
           searchText={searchText}
-          onSearchTextChange={onSearchTextChange}
-          bookmarkedOnly={bookmarkedOnly}
-          onBookmarkedChange={onBookmarkedChange}
+          onSearchTextChange={this.onSearchTextChange}
+          bookmarkedOnly={this.bookmarkedOnly}
+          onBookmarkedChange={this.onBookmarkedChange}
           selectedGenre={selectedGenre}
-          onSelectedGenreChange={onSelectedGenreChange}
+          onSelectedGenreChange={this.onSelectedGenreChange}
         />
-        <MovieList movies={this.exitFilter(movies)} />
-        <AddMovie onClick={this.registerMovie} />
+        <MovieList movies={this.exitFilter()(movies)} />
+        <AddMovie onClick={this.registerMovie()} />
       </div>
     );
   }
