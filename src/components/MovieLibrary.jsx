@@ -15,6 +15,10 @@ export default class MovieLibrary extends Component {
       selectedGenre: '',
       movies,
     };
+    this.changeSearchText = this.changeSearchText.bind(this)
+    this.changeSelectedGenre = this.changeSelectedGenre.bind(this)
+    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this)
+    this.registerMovie = this.registerMovie.bind(this)
   }
   changeSearchText(e) {
     this.setState({ searchText: e.target.value });
@@ -29,23 +33,23 @@ export default class MovieLibrary extends Component {
   }
 
   registerMovie(film) {
-    this.setState((state) => ({ movies: [...state.moveis, film] }));
+    this.setState({ movies: [...this.state.movies, film] })
   }
 
-  exitFilter(list) {
-    const { searchText, bookmarkedOnly, selectedGenre } = this.state;
+  moviesFilter() {
+    const { movies, searchText, bookmarkedOnly, selectedGenre } = this.state;
     if (bookmarkedOnly === true) {
-      return list.filter((film) => film.bookmarked === true);
+      return movies.filter((movie) => movie.bookmarked === true);
     }
     if (selectedGenre !== '') {
-      return list.filter((film) => film.genre === selectedGenre);
+      return movies.filter((movie) => movie.genre === selectedGenre);
     }
     if (searchText !== '') {
-      return filter((list) => list.title.indexOf(searchText) >= 0 ||
-        list.subtitle.indexOf(searchText) >= 0 ||
-        list.storyline.indexOf(searchText) >= 0);
+      return movies.filter((movie) => movie.title.indexOf(searchText) >= 0 ||
+        movie.subtitle.indexOf(searchText) >= 0 ||
+        movie.storyline.indexOf(searchText) >= 0);
     }
-    return list;
+    return movies;
   }
 
   render() {
@@ -59,7 +63,7 @@ export default class MovieLibrary extends Component {
           selectedGenre={this.selectedGenre}
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
-        <MovieList movies={this.exitFilter} />
+        <MovieList movies={this.moviesFilter} />
         <AddMovie onClick={this.registerMovie} />
       </div>
     );

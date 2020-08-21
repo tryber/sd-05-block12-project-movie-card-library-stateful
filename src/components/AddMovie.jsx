@@ -13,10 +13,7 @@ export default class AddMovie extends Component {
       genre: 'action',
     };
   }
-  handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
-  }
+
   handleButton = () => {
     const { onClick } = this.props
     onClick(this.state);
@@ -28,6 +25,10 @@ export default class AddMovie extends Component {
       rating: 0,
       genre: 'action'
     })
+  }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
   render() {
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
