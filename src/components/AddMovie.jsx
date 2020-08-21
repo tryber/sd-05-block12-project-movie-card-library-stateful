@@ -57,6 +57,15 @@ export default class AddMovie extends Component {
     </span>);
   }
 
+  funStoryline(storyline) {
+    return (<span>
+      <label htmlFor="forn7">Sinopse</label>
+      <textarea
+        value={storyline}
+        onChange={({ target: { value } }) => this.setState({ storyline: value })}
+      />
+    </span>);
+  }
   render() {
     const { onClick } = this.props;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
@@ -66,12 +75,7 @@ export default class AddMovie extends Component {
           {this.funTitle(title)}
           {this.funSubtitulo(subtitle)}
           {this.funImagem(imagePath)}
-
-          <label htmlFor="forn7">Sinopse</label>
-          <textarea
-            value={storyline}
-            onChange={({ target: { value } }) => this.setState({ storyline: value })}
-          />
+          {this.funStoryline(storyline)}
           <label htmlFor="form8">Avaliação</label>
           <input
             type="number"
