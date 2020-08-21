@@ -47,7 +47,7 @@ export default class AddMovie extends Component {
     </span>);
   }
 
-  funImagem(imagem) {
+  funImagem(imagePath) {
     return (<span>
       <label htmlFor="form6">Imagem</label>
       <input
