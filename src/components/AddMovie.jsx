@@ -47,13 +47,12 @@ export default class AddMovie extends Component {
           <input type="number" id="form8" value={rating} onChange={({ target: { value } }) => this.setState({ rating: parseFloat(value) })} />
 
           <label htmlFor="form9">Gênero</label>
-          <select value={genre}
-            onChange={({ target: { value } }) => this.setState({ genre: value })}>
+          <select value={genre} onChange={({ target: { value } }) => this.setState({ genre: value })}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
-          <button onClick={() => { onClick(this.state); this.resetState() }} >Adicionar filme</button>
+          <button onClick={() => { onClick(this.state); this.resetState() }} >Adicionar filme</button>;
         </form>
       </div>
     );
