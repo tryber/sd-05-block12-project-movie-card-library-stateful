@@ -46,7 +46,10 @@ export default class AddMovie extends Component {
           />
 
           <label htmlFor="forn7">Sinopse</label>
-          <textarea value={storyline} onChange={({ target: { value } }) => this.setState({ storyline: value })} />
+          <textarea
+            value={storyline}
+            onChange={({ target: { value } }) => this.setState({ storyline: value })}
+          />
           <label htmlFor="form8">Avaliação</label>
           <input
             type="number"
