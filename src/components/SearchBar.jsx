@@ -35,10 +35,7 @@ export default class SearchBar extends Component {
             onChange={onBookmarkedChange}
           />
           <label htmlFor="idfrom2">Filtrar por gênero</label>
-          <select
-            name=""
-            id=""
-            value={selectedGenre}
+          <select value={selectedGenre}
             onChange={onSelectedGenreChange}
           >
             {options.map((op) => (
