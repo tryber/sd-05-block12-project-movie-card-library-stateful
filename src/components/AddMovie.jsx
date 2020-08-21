@@ -42,7 +42,8 @@ export default class AddMovie extends Component {
 
           <label htmlFor="form6">Imagem</label>
           <input
-            type="text" value={imagePath} onChange={(e) => this.setState({ imagePath: e.target.value })}
+            type="text" value={imagePath}
+            onChange={(e) => this.setState({ imagePath: e.target.value })}
           />
 
           <label htmlFor="forn7">Sinopse</label>
