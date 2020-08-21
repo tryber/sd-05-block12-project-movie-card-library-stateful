@@ -29,12 +29,11 @@ export default class AddMovie extends Component {
   render() {
     const { onClick } = this.props;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
-    function title(e){return this.setState({ title: e.target.value })}
     return (
       <div>
         <form action="">
           <label htmlFor="form4">Título</label>
-          <input type="text" value={title} onChange={title(e)} />
+          <input type="text" value={title} onChange={(e) => this.setState({ title: e.target.value })} />
 
           <label htmlFor="form5">Subtítulo</label>
           <input
