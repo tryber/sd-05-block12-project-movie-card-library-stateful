@@ -24,7 +24,7 @@ export default class AddMovie extends Component {
         rating: 0,
         genre: 'action',
       }
-    )
+    );
   }
   render() {
     const { onClick } = this.props;
@@ -33,13 +33,19 @@ export default class AddMovie extends Component {
       <div>
         <form action="">
           <label htmlFor="form4">Título</label>
-          <input type="text" value={title} onChange={(e) => this.setState({ title: e.target.value })} />
+          <input
+            type="text" value={title} onChange={(e) => this.setState({ title: e.target.value })}
+          />
 
           <label htmlFor="form5">Subtítulo</label>
-          <input type="text" value={subtitle} onChange={(e) => this.setState({ subtitle: e.target.value })} />
+          <input
+            type="text" value={subtitle} onChange={(e) => this.setState({ subtitle: e.target.value })}
+          />
 
           <label htmlFor="form6">Imagem</label>
-          <input type="text" value={imagePath} onChange={(e) => this.setState({ imagePath: e.target.value })} />
+          <input
+            type="text" value={imagePath} onChange={(e) => this.setState({ imagePath: e.target.value })}
+          />
 
           <label htmlFor="forn7">Sinopse</label>
           <textarea value={storyline} onChange={({ target: { value } }) => this.setState({ storyline: value })} />
