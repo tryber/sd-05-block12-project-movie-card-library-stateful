@@ -17,11 +17,8 @@ export default class MovieLibrary extends React.Component {
     const { movies } = this.props;
     const { searchText, bookmarkedOnly, selectedGenre } = this.state;
     return (
-      <div>
-        <SearchBar
-          searchText={searchText}
-          bookmarkedOnly={bookmarkedOnly}
-          selectedGenre={selectedGenre} />
+    <div>
+      <SearchBar searchText={searchText} bookmarkedOnly={bookmarkedOnly} selectedGenre={selectedGenre} />
         <MovieList movies={movies} />
       </div>
     );
