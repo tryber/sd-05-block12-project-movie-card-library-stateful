@@ -15,7 +15,7 @@ export default class AddMovie extends Component {
   }
 
   handleButton() {
-    const { onClick } = this.props
+    const { onClick } = this.props;
     onClick(this.state);
     this.setState({
       subtitle: '',
@@ -23,8 +23,8 @@ export default class AddMovie extends Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      genre: 'action'
-    })
+      genre: 'action',
+    });
   }
   handleChange(e) {
     const { name, value } = e.target;
@@ -51,7 +51,7 @@ export default class AddMovie extends Component {
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
-          <button onclick={this.handleButton}>Adicionar filme</button>
+          <button onClick={this.handleButton}>Adicionar filme</button>
         </form>
       </div>
     );
