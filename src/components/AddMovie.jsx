@@ -26,15 +26,23 @@ export default class AddMovie extends Component {
       },
     );
   }
-   name() {
-    <form action="">
-          <label htmlFor="form4">Título</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => this.setState({ title: e.target.value })}
-          />
-
+  funTitle() {
+    return <span>
+      <label htmlFor="form4">Título</label>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => this.setState({ title: e.target.value })}
+      />
+    </span>
+  }
+  render() {
+    const { onClick } = this.props;
+    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
+    return (
+      <div>
+        <form action="">
+          {this.funTitle()}
           <label htmlFor="form5">Subtítulo</label>
           <input
             type="text" value={subtitle}
@@ -74,13 +82,6 @@ export default class AddMovie extends Component {
             Adicionar filme
           </button>
         </form>
-  }
-  render() {
-    const { onClick } = this.props;
-    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
-    return (
-      <div>
-        {nome()}
       </div>
     );
   }
