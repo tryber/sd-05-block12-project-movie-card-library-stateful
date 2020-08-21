@@ -33,7 +33,11 @@ export default class AddMovie extends Component {
       <div>
         <form action="">
           <label htmlFor="form4">Título</label>
-          <input type="text" value={title} onChange={(e) => this.setState({ title: e.target.value })} />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => this.setState({ title: e.target.value })}
+          />
 
           <label htmlFor="form5">Subtítulo</label>
           <input
