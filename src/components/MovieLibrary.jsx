@@ -18,10 +18,10 @@ export default class MovieLibrary extends Component {
     this.changeSearchText = this.changeSearchText.bind(this);
     this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
     this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
-    this.moviesFilter = this.moviesFilter.bind(this)
+    this.moviesFilter = this.moviesFilter.bind(this);
     this.registerMovie = this.registerMovie.bind(this);
-
   }
+
   changeSearchText(e) {
     this.setState({ searchText: e.target.value });
   }
