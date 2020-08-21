@@ -52,7 +52,10 @@ export default class AddMovie extends Component {
             ({ target: { value } }) => this.setState({ rating: parseFloat(value) })} />
 
           <label htmlFor="form9">Gênero</label>
-          <select value={genre} onChange={({ target: { value } }) => this.setState({ genre: value })}>
+          <select
+            value={genre}
+            onChange={({ target: { value } }) => this.setState({ genre: value })}
+          >
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
