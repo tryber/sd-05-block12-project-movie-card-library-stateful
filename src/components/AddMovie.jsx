@@ -24,7 +24,7 @@ export default class AddMovie extends Component {
         rating: 0,
         genre: 'action',
       }
-    )
+    );
   }
   render() {
     const { onClick } = this.props;
