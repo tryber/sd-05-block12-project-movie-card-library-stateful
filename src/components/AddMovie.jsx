@@ -89,7 +89,7 @@ export default class AddMovie extends Component {
           {this.funSubtitulo(subtitle)}
           {this.funImagem(imagePath)}
           {this.funStoryline(storyline)}
-          {this.funAvaliação(Avaliação)}
+          {this.funAvaliação(rating)}
           <label htmlFor="form9">Gênero</label>
           <select
             value={genre}
