@@ -1,44 +1,30 @@
-import React from 'react';
+// implement SearchBar component here
+import React, { Component } from 'react';
 
-export default (props) => {
-  const {
-    searchText,
-    onSearchTextChange,
-    bookmarkedOnly,
-    onBookmarkedChange,
-    selectedGenre,
-    onSelectedGenreChange,
-  } = props;
-
-  return (
-    <div>
-      <form>
-        <label htmlFor="inpu">Inclui o texto:</label>
-        <input
-          id="inpu"
-          type="text"
-          value={searchText}
-          onChange={onSearchTextChange}
-        />
-        <label htmlFor="somenteFavoritos">Mostrar somente favoritos</label>
-        <input
-          id="somenteFavoritos"
-          type="checkbox"
-          checked={bookmarkedOnly}
-          onChange={onBookmarkedChange}
-        />
-        <label htmlFor="selectGenero">Filtrar por gênero</label>
-        <select
-          id="selectGenero"
-          value={selectedGenre}
-          onChange={onSelectedGenreChange}
-        >
-          <option value="">Todos</option>
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
-      </form>
-    </div>
-  );
-};
+const options = [['Todos', ''], ['Ação', 'action'], ['Comédia', 'comedy'], ['Suspense', 'thriller']];
+export default class SearchBar extends Component {
+  render() {
+    const {
+      searchText,
+      onSearchTextChange,
+      bookmarkedOnly,
+      onBookmarkedChange,
+      onSelectedGenreChange,
+      selectedGenre,
+    } = this.props;
+    return (
+      <div>
+        <form action="">
+          <label htmlFor="idform">Inclui o texto:</label>
+          <input id="idform" type="text" value={searchText} onChange={onSearchTextChange} />
+          <label htmlFor="idform1">Mostrar somente favoritos</label>
+          <input id="idform1" type="checkbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+          <label htmlFor="idfrom2">Filtrar por gênero</label>
+          <select name="" id="" value={selectedGenre} onChange={onSelectedGenreChange}>
+            {options.map((op) => <option value={op[1]}>{op[0]}</option>)}
+          </select>
+        </form>
+      </div>
+    );
+  }
+}

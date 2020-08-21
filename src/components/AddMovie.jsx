@@ -1,6 +1,8 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+// implement AddMovie component here
+import React, { Component } from 'react';
 
-export default class AddMovie extends React.Component {
+export default class AddMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,50 +13,48 @@ export default class AddMovie extends React.Component {
       rating: 0,
       genre: 'action',
     };
-    this.mudar = this.mudar.bind(this);
-    this.mudarBotao = this.mudarBotao.bind(this);
   }
-  EventoBotao(event) {
-    const { obj, valor } = event.target;
-    this.setState({ [obj]: obj === 'rating' ? parseFloat(valor) : valor });
-  }
-
-  MudancaDeBotao() {
-    const { onClick } = this.props;
-    onClick(this.state);
-    this.setState({
-      subtitle: '',
-      title: '',
-      imagePath: '',
-      storyline: '',
-      rating: 0,
-      genre: 'action',
-    });
+  resetState() {
+    this.setState(
+      this.state = {
+        subtitle: '',
+        title: '',
+        imagePath: '',
+        storyline: '',
+        rating: 0,
+        genre: 'action',
+      }
+    )
   }
   render() {
-    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
+    const { onClick } = this.props;
+    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
-      <form>
-        <label htmlFor="title">Título</label>
-        <input name="title" type="text" value={title} onChange={this.EventoBotao} />
-        <label htmlFor="subtitle">Subtítulo</label>
-        <input name="subtitle" type="text" value={subtitle} onChange={this.EventoBotao} />
-        <label htmlFor="imagePath">Imagem</label>
-        <input name="imagePath" type="text" value={imagePath} onChange={this.EventoBotao} />
-        <label htmlFor="storyline">Sinopse</label>
-        <textarea name="storyline" value={storyline} onChange={this.EventoBotao} />
-        <label htmlFor="rating">Avaliação</label>
-        <input name="rating" type="number" value={rating} onChange={this.EventoBotao} />
-        <label htmlFor="genre">Gênero</label>
-        <select name="genre" value={genre} onChange={this.EventoBotao} >
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
-        <button onClick={this.MudancaDeBotao} type="button">
-          Adicionar filme
-        </button>
-      </form>
+      <div>
+        <form action="">
+          <label htmlFor="form4">Título</label>
+          <input type="text" value={title} onChange={(e) => this.setState({ title: e.target.value })} />
+
+          <label htmlFor="form5">Subtítulo</label>
+          <input type="text" value={subtitle} onChange={(e) => this.setState({ subtitle: e.target.value })} />
+
+          <label htmlFor="form6">Imagem</label>
+          <input type="text" value={imagePath} onChange={(e) => this.setState({ imagePath: e.target.value })} />
+
+          <label htmlFor="forn7">Sinopse</label>
+          <textarea value={storyline} onChange={({ target: { value } }) => this.setState({ storyline: value })} />
+          <label htmlFor="form8">Avaliação</label>
+          <input type="number" id="form8" value={rating} onChange={({ target: { value } }) => this.setState({ rating: parseFloat(value )})} />
+
+          <label htmlFor="form9">Gênero</label>
+          <select value={genre} onChange={({ target: { value } }) => this.setState({ genre: value })}>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
+          <button onClick={() => { onClick(this.state); this.resetState() }} >Adicionar filme</button>
+        </form>
+      </div>
     );
   }
 }
