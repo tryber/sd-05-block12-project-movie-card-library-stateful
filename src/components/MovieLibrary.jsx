@@ -39,7 +39,7 @@ export default class MovieLibrary extends React.Component {
           searchText={searchText}
           onSearchTextChange={this.onSearchTextChange}
           bookmarkedOnly={bookmarkedOnly}
-          onBookmarkedChange={this.onBookmarkedChange}
+          onBookmarkedChange={this.onBookmarkedChange()}
           selectedGenre={selectedGenre}
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
