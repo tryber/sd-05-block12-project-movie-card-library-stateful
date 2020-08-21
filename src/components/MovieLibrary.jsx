@@ -13,7 +13,23 @@ export default class MovieLibrary extends React.Component {
       selectedGenre: '',
       movies,
     };
+    // Essa função pertence a esse componente afirmação.
+    this.onSearchTextChange = this.onSearchTextChange.bind(this);
+    this.onBookmarkedChange = this.onBookmarkedChange.bind(this);
+    this.onSelectedGenreChange = this.onSelectedGenreChange.bind(this);
   }
+  onSearchTextChange(event) {
+    this.setState({ searchText: event.target.value });
+  }
+
+  onBookmarkedChange(event) {
+    this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
+  }
+
+  onSelectedGenreChange(event) {
+    this.setState({ selectedGenre: event.target.value });
+  }
+
   render() {
     const { movies } = this.props;
     const { searchText, bookmarkedOnly, selectedGenre } = this.state;
@@ -21,11 +37,14 @@ export default class MovieLibrary extends React.Component {
       <div>
         <SearchBar
           searchText={searchText}
+          onSearchTextChange={this.onSearchTextChange}
           bookmarkedOnly={bookmarkedOnly}
-          selectedGenr={selectedGenre}
+          onBookmarkedChange={this.onBookmarkedChange}
+          selectedGenre={selectedGenre}
+          onSelectedGenreChange={this.onSelectedGenreChange}
         />
-        <AddMovie />
         <MovieList movies={movies} />
+        <AddMovie />
       </div>
     );
   }
