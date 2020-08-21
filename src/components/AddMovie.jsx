@@ -34,7 +34,7 @@ export default class AddMovie extends Component {
         value={title}
         onChange={(e) => this.setState({ title: e.target.value })}
       />
-    </span>)
+    </span>);
   }
   render() {
     const { onClick } = this.props;
