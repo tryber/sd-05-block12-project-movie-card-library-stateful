@@ -1,7 +1,7 @@
 // implement MovieLibrary component here
 import React, { Component } from 'react';
-import SearchBar from '/components/SearchBar.jsx';
-import MovieList from '/components/MovieList.jsx';
+import SearchBar from './components/SearchBar ';
+import MovieList from './components/MovieList';
 
 export default class MovieLibrary extends Component {
   constructor(props) {

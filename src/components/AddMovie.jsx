@@ -21,7 +21,7 @@ export default class AddMovie extends Component {
       storyline: '',
       rating: 0,
       genre: 'action',
-    })
+    });
   }
   render() {
     const { onClick } = this.props;
@@ -30,22 +30,64 @@ export default class AddMovie extends Component {
       <div>
         <form action="">
           <label htmlFor="form4">Título</label>
-          <input type="text" value={title} onChange={({ target: { value } }) => this.setState({ title: value })} />
+          <input
+            type="text"
+            value={title}
+            onChange={({ target: { value } }) =>
+              this.setState({ title: value })
+            }
+          />
           <label htmlFor="form5">Subtítulo</label>
-          <input type="text" value={subtitle} onChange={({ target: { value } }) => this.setState({ subtitle: value })} />
+          <input
+            type="text"
+            value={subtitle}
+            onChange={({ target: { value } }) =>
+              this.setState({ subtitle: value })
+            }
+          />
           <label htmlFor="form6">Imagem</label>
-          <input type="text" value={imagePath} onChange={({ target: { value } }) => this.setState({ imagePath: value })} />
+          <input
+            type="text"
+            value={imagePath}
+            onChange={({ target: { value } }) =>
+              this.setState({ imagePath: value })
+            }
+          />
           <label htmlFor="form7">Sinopse</label>
-          <textarea value={storyline} onChange={({ target: { value } }) => this.setState({ storyline: value })} />
+          <textarea
+            value={storyline}
+            onChange={({ target: { value } }) =>
+              this.setState({ storyline: value })
+            }
+          />
           <label htmlFor="form8">Avaliação</label>
-          <input type="number" id="form8" value={rating} onChange={({ target: { value } }) => this.setState({ rating: value })} />
+          <input
+            type="number"
+            id="form8"
+            value={rating}
+            onChange={({ target: { value } }) =>
+              this.setState({ rating: parseFloat(value) })
+            }
+          />
           <label htmlFor="form9">Gênero</label>
-          <select value={genre} onChange={({ target: { value } }) => this.setState({ genre: value })} >
+          <select
+            value={genre}
+            onChange={({ target: { value } }) =>
+              this.setState({ genre: value })
+            }
+          >
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
-          <button onClick={() => { onClick(this.state); this.resetState() }} >Adicionar filme</button>
+          <button
+            onClick={() => {
+              onClick(this.state);
+              this.resetState();
+            }}
+          >
+            Adicionar filme
+          </button>
         </form>
       </div>
     );
