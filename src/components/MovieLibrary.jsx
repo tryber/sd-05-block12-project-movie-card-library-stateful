@@ -22,7 +22,7 @@ export default class MovieLibrary extends React.Component {
     this.setState({ searchText: event.target.value });
   }
 
-  onBookmarkedChange(event) {
+  onBookmarkedChange() {
     this.setState({ bookmarkedOnly: !this.state.bookmarkedOnly });
   }
 
@@ -39,7 +39,7 @@ export default class MovieLibrary extends React.Component {
           searchText={searchText}
           onSearchTextChange={this.onSearchTextChange}
           bookmarkedOnly={bookmarkedOnly}
-          onBookmarkedChange={this.onBookmarkedChange()}
+          onBookmarkedChange={this.onBookmarkedChange}
           selectedGenre={selectedGenre}
           onSelectedGenreChange={this.onSelectedGenreChange}
         />
