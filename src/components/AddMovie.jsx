@@ -12,16 +12,13 @@ export default class AddMovie extends Component {
       rating: 0,
       genre: 'action',
     };
-    this.stateFilter = this.stateFilter.bind(this);
-    this.resetInput = this.resetInput.bind(this);
   }
-  stateFilter(e) {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
-  resetInput(e) {
-    e.preventDefault();
-    const { onClick } = this.props;
+  handleButton = () => {
+    const { onClick } = this.props
     onClick(this.state);
     this.setState({
       subtitle: '',
@@ -29,32 +26,31 @@ export default class AddMovie extends Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      genre: 'action',
-    });
+      genre: 'action'
+    })
   }
   render() {
-    const stateFilter = this.stateFilter;
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
       <div>
         <form action="">
           <label htmlFor="form4">Título</label>
-          <input type="text" value={title} onChange={stateFilter} />
+          <input type="text" value={title} onChange={this.handleChange} />
           <label htmlFor="form5">Subtítulo</label>
-          <input type="text" value={subtitle} onChange={stateFilter} />
+          <input type="text" value={subtitle} onChange={this.handleChange} />
           <label htmlFor="form6">Imagem</label>
-          <input type="text" value={imagePath} onChange={stateFilter} />
+          <input type="text" value={imagePath} onChange={this.handleChange} />
           <label htmlFor="form7">Sinopse</label>
-          <textarea value={storyline} onChange={stateFilter} />
+          <textarea value={storyline} onChange={this.handleChange} />
           <label htmlFor="form8">Avaliação</label>
-          <input type="number" id="form8" value={rating} onChange={stateFilter} />
+          <input type="number" id="form8" value={rating} onChange={this.handleChange} />
           <label htmlFor="form9">Gênero</label>
-          <select value={genre} onChange={stateFilter}>
+          <select value={genre} onChange={this.handleChange}>
             <option value="action">Ação</option>
             <option value="comedy">Comédia</option>
             <option value="thriller">Suspense</option>
           </select>
-          <button onclick={this.resetInput}>Adicionar filme</button>
+          <button onclick={this.handleButton}>Adicionar filme</button>
         </form>
       </div>
     );

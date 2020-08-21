@@ -15,10 +15,6 @@ export default class MovieLibrary extends Component {
       selectedGenre: '',
       movies,
     };
-    this.novoFilm = this.novoFilm.bind(this)
-    this.changeSearchText = this.changeSearchText.bind(this);
-    this.changeBookmarkedOnly = this.changeBookmarkedOnly.bind(this);
-    this.changeSelectedGenre = this.changeSelectedGenre.bind(this);
   }
   changeSearchText(e) {
     this.setState({ searchText: e.target.value });
@@ -37,7 +33,7 @@ export default class MovieLibrary extends Component {
   }
 
   exitFilter(list) {
-    const { moveis, searchText, bookmarkedOnly, selectedGenre } = this.state;
+    const { searchText, bookmarkedOnly, selectedGenre } = this.state;
     if (bookmarkedOnly === true) {
       return list.filter((film) => film.bookmarked === true);
     }
