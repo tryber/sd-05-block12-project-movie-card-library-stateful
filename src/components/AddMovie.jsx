@@ -37,7 +37,7 @@ export default class AddMovie extends Component {
     </span>);
   }
 
-  funSubtitulo(subtitulo) {
+  funSubtitulo(subtitle) {
     return (<span>
       <label htmlFor="form5">Subtítulo</label>
       <input
