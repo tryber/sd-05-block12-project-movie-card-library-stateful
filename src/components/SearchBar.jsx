@@ -21,12 +21,14 @@ export default class SearchBar extends React.Component {
         <label htmlFor="sel" value={selectedGenre} onChange={onSelectedGenreChange}>
           Filtrar por gênero
         </label>
-        <select name="select" id="sel">
-          <option value="">Todos</option>
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
+        <label htmlFor="sel">
+          <select id="sel">
+            <option value="">Todos</option>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
+        </label>
       </form>
     );
   }
