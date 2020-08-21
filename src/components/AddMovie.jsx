@@ -27,14 +27,14 @@ export default class AddMovie extends Component {
     );
   }
   funTitle(title) {
-    return <span>
+    return (<span>
       <label htmlFor="form4">Título</label>
       <input
         type="text"
         value={title}
         onChange={(e) => this.setState({ title: e.target.value })}
       />
-    </span>
+    </span>)
   }
   render() {
     const { onClick } = this.props;
