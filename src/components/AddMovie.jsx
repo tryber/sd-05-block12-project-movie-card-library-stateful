@@ -26,7 +26,7 @@ export default class AddMovie extends Component {
       },
     );
   }
-  funTitle() {
+  funTitle(title) {
     return <span>
       <label htmlFor="form4">Título</label>
       <input
@@ -42,7 +42,7 @@ export default class AddMovie extends Component {
     return (
       <div>
         <form action="">
-          {this.funTitle()}
+          {this.funTitle(title)}
           <label htmlFor="form5">Subtítulo</label>
           <input
             type="text" value={subtitle}
