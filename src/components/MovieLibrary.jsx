@@ -60,11 +60,11 @@ export default class MovieLibrary extends Component {
       <div>
         <SearchBar
           searchText={searchText}
-          onSearchTextChange={this.onSearchTextChange}
-          bookmarkedOnly={this.bookmarkedOnly}
-          onBookmarkedChange={this.onBookmarkedChange}
+          onSearchTextChange={onSearchTextChange}
+          bookmarkedOnly={bookmarkedOnly}
+          onBookmarkedChange={onBookmarkedChange}
           selectedGenre={selectedGenre}
-          onSelectedGenreChange={this.onSelectedGenreChange}
+          onSelectedGenreChange={onSelectedGenreChange}
         />
         <MovieList movies={this.exitFilter()(movies)} />
         <AddMovie onClick={this.registerMovie()} />
