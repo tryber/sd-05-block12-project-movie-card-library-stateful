@@ -26,12 +26,8 @@ export default class AddMovie extends Component {
       },
     );
   }
-  render() {
-    const { onClick } = this.props;
-    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
-    return (
-      <div>
-        <form action="">
+   name() {
+    <form action="">
           <label htmlFor="form4">Título</label>
           <input
             type="text"
@@ -78,6 +74,13 @@ export default class AddMovie extends Component {
             Adicionar filme
           </button>
         </form>
+  }
+  render() {
+    const { onClick } = this.props;
+    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
+    return (
+      <div>
+        {nome()}
       </div>
     );
   }
