@@ -22,7 +22,7 @@ export default class SearchBar extends React.Component {
         <label htmlFor="sel" value={selectedGenre} onChange={onSelectedGenreChange}>
           Filtrar por gênero
         </label>
-        <Select />
+        <Select value={selectedGenre} onChange={onSelectedGenreChange} />
       </form>
     );
   }
