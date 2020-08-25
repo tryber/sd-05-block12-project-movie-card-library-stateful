@@ -17,16 +17,16 @@ export default class MovieLibrary extends React.Component {
   }
 
   addMovie(movie) {
-    this.setState((state) => {
-      return { movies: [...state.movies, movie] };
-    });
+    const { movies } = this.state;
+    this.setState({ movies: [...movies, movie] });
   }
 
   render() {
+    const { movies } = this.state;
     return (
       <div>
         <SearchBar />
-        <MovieList movies={ this.state.movies } />
+        <MovieList movies={movies} />
         <AddMovie onClick={this.addMovie} />
       </div>
     );
