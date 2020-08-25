@@ -11,16 +11,23 @@ export default class MovieLibrary extends React.Component {
       searchText: '',
       bookMarkedOnly: false,
       selectedGenre: '',
-      movies: '',
+      movies: [...data],
     };
+    this.addMovie = this.addMovie.bind(this);
+  }
+
+  addMovie(movie) {
+    this.setState((state) => {
+      return { movies: [...state.movies, movie] };
+    });
   }
 
   render() {
     return (
       <div>
         <SearchBar />
-        <MovieList movies={data} />
-        <AddMovie />
+        <MovieList movies={ this.state.movies } />
+        <AddMovie onClick={this.addMovie} />
       </div>
     );
   }
