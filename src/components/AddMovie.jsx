@@ -19,6 +19,14 @@ export default class AddMovie extends React.Component {
     e.preventDefault();
     const { onClick } = this.props;
     onClick(this.state);
+    this.setState(() => ({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    }));
   }
 
   hc(e) {
@@ -38,8 +46,8 @@ export default class AddMovie extends React.Component {
         <input type="text" id="image" name="imagePath" value={imagePath} onChange={this.hc} />
         <label htmlFor="sinopse">Sinopse</label>
         <textarea id="sinopse" name="storyLine" value={storyline} onChange={this.hc} />
-        <label htmlFor="avaliacao">Avaliação</label>
-        <input type="number" id="avaliacao" name="rating" value={rating} onChange={this.hc} />
+        <label htmlFor="rt">Avaliação</label>
+        <input type="number" id="rt" name="rating" value={rating} onChange={this.hc} />
         <label htmlFor="genre">Gênero</label>
         <select id="genre" onChange={this.hc}>
           <option value="action">Ação</option>
