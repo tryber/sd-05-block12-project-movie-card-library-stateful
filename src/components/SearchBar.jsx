@@ -2,6 +2,11 @@ import React from 'react';
 import '../SearchBar.css';
 
 export default class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const {
       searchText,
@@ -13,19 +18,23 @@ export default class SearchBar extends React.Component {
     } = this.props;
 
     return (
-      <form className="sbar">
-        <label htmlFor="stext">Inclui o texto:</label>
-        <input type="text" value={searchText} id="stext" onChange={onSearchTextChange} />
-        <label htmlFor="cbox">Mostrar somente favoritos</label>
-        <input type="checkbox" id="cbox" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
+      <form>
+        <label htmlFor="stext">
+          Inclui o texto
+          <input type="text" value={searchText} onChange={onSearchTextChange} id="stext" />
+        </label>
+        <label htmlFor="check">
+          Mostrar somente favoritos
+          <input type="checkbox" onChange={onBookmarkedChange} checked={bookmarkedOnly} id="check" />
+        </label>
         <label htmlFor="sel">
-        Filtrar por gênero
-        <select value={selectedGenre} onChange={onSelectedGenreChange} id="sel">
-          <option value="">Todos</option>
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
+          Filtrar por gênero
+          <select value={selectedGenre} onChange={onSelectedGenreChange} id="sel">
+            <option value="">Todos</option>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
         </label>
       </form>
     );
