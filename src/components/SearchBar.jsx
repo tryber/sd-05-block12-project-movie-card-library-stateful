@@ -9,12 +9,8 @@ export default class SearchBar extends React.Component {
 
   render() {
     const {
-      searchText,
-      onSearchTextChange,
-      bookmarkedOnly,
-      onBookmarkedChange,
-      selectedGenre,
-      onSelectedGenreChange,
+      searchText, onSearchTextChange, bookmarkedOnly,
+      onBookmarkedChange, selectedGenre, onSelectedGenreChange,
     } = this.props;
 
     return (
@@ -23,9 +19,9 @@ export default class SearchBar extends React.Component {
           Inclui o texto
           <input type="text" value={searchText} onChange={onSearchTextChange} id="stext" />
         </label>
-        <label htmlFor="check">
+        <label htmlFor="c">
           Mostrar somente favoritos
-          <input type="checkbox" onChange={onBookmarkedChange} checked={bookmarkedOnly} id="check" />
+          <input type="checkbox" onChange={onBookmarkedChange} checked={bookmarkedOnly} id="c" />
         </label>
         <label htmlFor="sel">
           Filtrar por gênero
