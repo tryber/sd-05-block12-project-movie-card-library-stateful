@@ -9,7 +9,7 @@ export default class MovieLibrary extends React.Component {
     super(props);
     this.state = {
       searchText: '',
-      bookMarkedOnly: false,
+      bookmarkedOnly: false,
       selectedGenre: '',
       movies: [...data],
     };
@@ -25,7 +25,11 @@ export default class MovieLibrary extends React.Component {
     const { movies } = this.state;
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          searchText={this.state.searchText} onSearchTextChange={this.upTex}
+          bookmarkedOnly={this.state.bookmarkedOnly} onBookmarkedChange={this.upBook}
+          selectedGenre={this.state.selectedGenre} onSelectedGenreChange={this.upGenre}
+        />
         <MovieList movies={movies} />
         <AddMovie onClick={this.addMovie} />
       </div>
