@@ -34,7 +34,7 @@ export default class AddMovie extends React.Component {
   }
 
   render() {
-    const { title, subtitle, imagePath, storyline, rating } = this.state;
+    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
 
     return (
       <form>
@@ -48,8 +48,8 @@ export default class AddMovie extends React.Component {
         <textarea id="sinopse" name="storyLine" value={storyline} onChange={this.hc} />
         <label htmlFor="rt">Avaliação</label>
         <input type="number" id="rt" name="rating" value={rating} onChange={this.hc} />
-        <label htmlFor="genre">Gênero</label>
-        <select id="genre" onChange={this.hc}>
+        <label htmlFor="genreid">Gênero</label>
+        <select id="genreid" onChange={this.hc} name="genre" value={genre}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>

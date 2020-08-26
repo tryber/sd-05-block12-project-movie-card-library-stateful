@@ -2,22 +2,22 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
 import MovieList from './MovieList';
-import data from '../data';
 
 export default class MovieLibrary extends React.Component {
   constructor(props) {
     super(props);
+    const { movies } = this.props;
     this.state = {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: [...data],
+      movies: [...movies],
     };
-    this.addMovie = this.addMovie.bind(this);
     this.search = this.search.bind(this);
     this.mark = this.mark.bind(this);
     this.genre = this.genre.bind(this);
     this.filter = this.filter.bind(this);
+    this.addMovie = this.addMovie.bind(this);
   }
 
   mark() {
