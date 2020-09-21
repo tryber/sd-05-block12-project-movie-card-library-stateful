@@ -1,18 +1,26 @@
 import React from 'react';
 
-export default class AddMovie extends React.Component {
-  constructor(props) {
-    super(props);
+class AddMovie extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      subtitle: '',
       title: '',
+      subtitle: '',
       imagePath: '',
       storyline: '',
       rating: 0,
-      genre: 'action',
+      genre: 'action'
     };
-    this.hc = this.hc.bind(this);
+
+    this.click = this.click.bind(this);
     this.add = this.add.bind(this);
+  }
+
+  click({ target }) {
+    const {name} = target;
+    this.setState({
+      [name]: target.value
+    })
   }
 
   add(e) {
@@ -29,33 +37,35 @@ export default class AddMovie extends React.Component {
     }));
   }
 
-  hc(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
   render() {
-    const { title, subtitle, imagePath, storyline, rating, genre } = this.state;
-
     return (
       <form>
-        <label htmlFor="tit">Título</label>
-        <input type="text" id="tit" name="title" value={title} onChange={this.hc} />
-        <label htmlFor="subtit">Subtítulo</label>
-        <input type="text" id="subtit" name="subtitle" value={subtitle} onChange={this.hc} />
-        <label htmlFor="image">Imagem</label>
-        <input type="text" id="image" name="imagePath" value={imagePath} onChange={this.hc} />
-        <label htmlFor="sinopse">Sinopse</label>
-        <textarea id="sinopse" name="storyLine" value={storyline} onChange={this.hc} />
-        <label htmlFor="rt">Avaliação</label>
-        <input type="number" id="rt" name="rating" value={rating} onChange={this.hc} />
-        <label htmlFor="genreid">Gênero</label>
-        <select id="genreid" onChange={this.hc} name="genre" value={genre}>
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-        </select>
-        <button onClick={this.add}>Adicionar filme</button>
+          <label>Título</label>
+          <input type="text" value={this.state.title} name="title" onChange={this.click}></input><br />
+
+          <label>Subtítulo</label>
+          <input type="text" value={this.state.subtitle} name="subtitle" onChange={this.click}></input><br />
+
+          <label>Imagem</label>
+          <input type="text" value={this.state.imagePath} name="imagePath" onChange={this.click}></input><br />
+
+          <label>Sinopse</label>
+          <textarea value={this.state.storyline} name="storyline" onChange={this.click}></textarea><br />
+
+          <label>Avaliação</label>
+          <input type="number" value={this.state.rating} name="rating" onChange={this.click}></input><br />
+
+          <label>Gênero</label>
+          <select value={this.state.genre} name="genre" onChange={this.click}>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+          </select>
+
+          <button onClick={this.add}>Adicionar Filme</button>
       </form>
     );
   }
 }
+
+export default AddMovie;
