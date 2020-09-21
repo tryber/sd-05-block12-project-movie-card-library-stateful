@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
 import MovieList from './MovieList';
+import data from '../data';
 
 export default class MovieLibrary extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class MovieLibrary extends React.Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: [...movies],
+      movies: [...data],
     };
     this.search = this.search.bind(this);
     this.mark = this.mark.bind(this);
