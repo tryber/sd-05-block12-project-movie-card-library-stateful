@@ -9,7 +9,7 @@ class AddMovie extends React.Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      genre: 'action'
+      genre: 'action',
     };
 
     this.click = this.click.bind(this);
@@ -17,10 +17,10 @@ class AddMovie extends React.Component {
   }
 
   click({ target }) {
-    const {name} = target;
+    const { name } = target;
     this.setState({
-      [name]: target.value
-    })
+      [name]: target.value,
+    });
   }
 
   add(e) {
@@ -40,29 +40,29 @@ class AddMovie extends React.Component {
   render() {
     return (
       <form>
-          <label>Título</label>
-          <input type="text" value={this.state.title} name="title" onChange={this.click}></input><br />
+        <label htmlFor="t">Título</label>
+        <input type="text" id="t" value={this.state.title} name="title" onChange={this.click} /><br />
 
-          <label>Subtítulo</label>
-          <input type="text" value={this.state.subtitle} name="subtitle" onChange={this.click}></input><br />
+        <label htmlFor="s">Subtítulo</label>
+        <input type="text" id="s" value={this.state.subtitle} name="subtitle" onChange={this.click} /><br />
 
-          <label>Imagem</label>
-          <input type="text" value={this.state.imagePath} name="imagePath" onChange={this.click}></input><br />
+        <label htmlFor="i">Imagem</label>
+        <input type="text" id="i" value={this.state.imagePath} name="imagePath" onChange={this.click} /><br />
 
-          <label>Sinopse</label>
-          <textarea value={this.state.storyline} name="storyline" onChange={this.click}></textarea><br />
+        <label htmlFor="sn">Sinopse</label>
+        <textarea value={this.state.storyline} id="sn" name="storyline" onChange={this.click} /><br />
 
-          <label>Avaliação</label>
-          <input type="number" value={this.state.rating} name="rating" onChange={this.click}></input><br />
+        <label htmlFor="a">Avaliação</label>
+        <input type="number" id="a" value={this.state.rating} name="rating" onChange={this.click} /><br />
 
-          <label>Gênero</label>
-          <select value={this.state.genre} name="genre" onChange={this.click}>
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-          </select>
+        <label htmlFor="gen">Gênero</label>
+        <select value={this.state.genre} id="gen" name="genre" onChange={this.click}>
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+        </select>
 
-          <button onClick={this.add}>Adicionar Filme</button>
+        <button onClick={this.add}>Adicionar Filme</button>
       </form>
     );
   }

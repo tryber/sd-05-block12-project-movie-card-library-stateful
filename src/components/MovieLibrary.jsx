@@ -11,7 +11,7 @@ export default class MovieLibrary extends React.Component {
       searchText: '',
       bookmarkedOnly: false,
       selectedGenre: '',
-      movies: [...data]
+      movies: [...data],
     };
     this.click = this.click.bind(this);
     this.add = this.add.bind(this);
@@ -19,7 +19,7 @@ export default class MovieLibrary extends React.Component {
 
   click({ target }) {
     this.setState({
-      [target]: target.value
+      [target]: target.value,
     })
   }
 
