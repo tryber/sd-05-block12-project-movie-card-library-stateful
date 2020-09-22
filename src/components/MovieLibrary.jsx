@@ -18,9 +18,7 @@ export default class MovieLibrary extends React.Component {
   }
 
   click({ target }) {
-    this.setState({
-      [target]: target.value,
-    })
+    this.setState({ [target]: target.value, });
   }
 
   add(newMovie) {
@@ -30,7 +28,7 @@ export default class MovieLibrary extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar 
+        <SearchBar
           searchText={this.state.searchText}
           onSearchTextChange={this.click}
           bookmarkedOnly={this.state.bookmarkedOnly}
