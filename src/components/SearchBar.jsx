@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
       <form>
         <label htmlFor="stext">Inclui o texto</label>
         <input type="text" id="stext" value={searchText} onChange={onSearchTextChange} />
-        <label htmlFor="fav">Mostrar somente os favoritos</label>
+        <label htmlFor="fav">Mostrar somente favoritos</label>
         <input type="checkbox" id="fav" checked={bookmarkedOnly} onChange={onBookmarkedChange} />
         <select id="filt" value={selectedGenre} onChange={onSelectedGenreChange}>
           <label htmlFor="filt">Filtrar por gênero</label>

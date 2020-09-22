@@ -17,8 +17,8 @@ class AddMovie extends React.Component {
   }
 
   c({ target }) {
-    const { name } = target;
-    this.setState({ [name]: target.value });
+    const { name, value } = target;
+    this.setState({ [name]: target.type === 'number' ? parseFloat(value) : value });
   }
 
   add(e) {
@@ -60,7 +60,7 @@ class AddMovie extends React.Component {
           <option value="thriller">Suspense</option>
         </select>
 
-        <button onClick={this.add}>Adicionar Filme</button>
+        <button onClick={this.add}>Adicionar filme</button>
       </form>
     );
   }
