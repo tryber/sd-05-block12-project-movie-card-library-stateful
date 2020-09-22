@@ -18,7 +18,7 @@ class AddMovie extends React.Component {
 
   c({ target }) {
     const { name, value } = target;
-    this.setState({ [name]: target.type === 'number' ? parseFloat(value) : value });
+    this.setState({ [name]: name === 'rating' ? parseFloat(value) : value });
   }
 
   add(e) {
