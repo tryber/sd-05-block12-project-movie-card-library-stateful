@@ -18,7 +18,7 @@ export default class MovieLibrary extends React.Component {
   }
 
   click({ target }) {
-    this.setState({ [target]: target.value, });
+    this.setState({ [target]: target.value });
   }
 
   add(newMovie) {

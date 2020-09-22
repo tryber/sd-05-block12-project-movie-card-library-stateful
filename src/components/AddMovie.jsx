@@ -12,13 +12,13 @@ class AddMovie extends React.Component {
       genre: 'action',
     };
 
-    this.click = this.click.bind(this);
+    this.c = this.c.bind(this);
     this.add = this.add.bind(this);
   }
 
-  click({ target }) {
+  c({ target }) {
     const { name } = target;
-    this.setState({ [name]: target.value, });
+    this.setState({ [name]: target.value });
   }
 
   add(e) {
@@ -39,22 +39,22 @@ class AddMovie extends React.Component {
     return (
       <form>
         <label htmlFor="t">Título</label>
-        <input type="text" id="t" value={this.state.title} name="title" onChange={this.click} />
+        <input type="text" id="t" value={this.state.title} name="title" onChange={this.c} />
 
         <label htmlFor="s">Subtítulo</label>
-        <input type="text" id="s" value={this.state.subtitle} name="subtitle" onChange={this.click} />
+        <input type="text" id="s" value={this.state.subtitle} name="subtitle" onChange={this.c} />
 
         <label htmlFor="i">Imagem</label>
-        <input type="text" id="i" value={this.state.imagePath} name="imagePath" onChange={this.click} />
+        <input type="text" id="i" value={this.state.imagePath} name="imagePath" onChange={this.c} />
 
         <label htmlFor="sn">Sinopse</label>
-        <textarea value={this.state.storyline} id="sn" name="storyline" onChange={this.click} />
+        <textarea value={this.state.storyline} id="sn" name="storyline" onChange={this.c} />
 
         <label htmlFor="a">Avaliação</label>
-        <input type="number" id="a" value={this.state.rating} name="rating" onChange={this.click} />
+        <input type="number" id="a" value={this.state.rating} name="rating" onChange={this.c} />
 
         <label htmlFor="gen">Gênero</label>
-        <select value={this.state.genre} id="gen" name="genre" onChange={this.click}>
+        <select value={this.state.genre} id="gen" name="genre" onChange={this.c}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
